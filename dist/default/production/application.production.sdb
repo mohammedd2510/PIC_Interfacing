@@ -31,7 +31,7 @@ PORTC_INDEX 2
 PORTD_INDEX 3
 PORTE_INDEX 4
 ]
-"14 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
+"15 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
 [e E2819 . `uc
 PORTA_INDEX 0
 PORTB_INDEX 1
@@ -54,8 +54,35 @@ LED_OFF 0
 LED_ON 1
 ]
 "20
+[e E2879 . `uc
+BUTTON_PRESSED 0
+BUTTON_RELEASED 1
+]
+[e E2883 . `uc
+BUTTON_ACTIVE_HIGH 0
+BUTTON_ACTIVE_LOW 1
+]
+[e E2805 . `uc
+OUTPUT 0
+INPUT 1
+]
+"7 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/button/ecu_button.c
+[e E2861 . `uc
+BUTTON_PRESSED 0
+BUTTON_RELEASED 1
+]
+[e E2865 . `uc
+BUTTON_ACTIVE_HIGH 0
+BUTTON_ACTIVE_LOW 1
+]
+"25
+[e E2801 . `uc
+LOW 0
+HIGH 1
+]
+"30 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
 [v _main main `(i  1 e 2 0 ]
-"28
+"52
 [v _application_initialize application_initialize `(v  1 e 1 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -81,6 +108,10 @@ LED_ON 1
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
+"7 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/button/ecu_button.c
+[v _button_initialize button_initialize `(uc  1 e 1 0 ]
+"23
+[v _button_read_state button_read_state `(uc  1 e 1 0 ]
 "7 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/LED/ecu_led.c
 [v _led_initialize led_initialize `(uc  1 e 1 0 ]
 "55
@@ -91,26 +122,43 @@ LED_ON 1
 [v _gpio_pin_direction_initialize gpio_pin_direction_initialize `(uc  1 e 1 0 ]
 "94
 [v _gpio_pin_write_logic gpio_pin_write_logic `(uc  1 e 1 0 ]
+"122
+[v _gpio_pin_read_logic gpio_pin_read_logic `(uc  1 e 1 0 ]
 "141
 [v _gpio_pin_toggle_logic gpio_pin_toggle_logic `(uc  1 e 1 0 ]
 [s S24 . 1 `uc 1 port_name 1 0 :4:0 
 `uc 1 pin 1 0 :3:4 
 `uc 1 led_status 1 0 :1:7 
 ]
-"14 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
+"15 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
 [v _led1 led1 `S24  1 e 1 0 ]
-"19
+[s S28 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"20
+[s S244 . 3 `S28 1 button_pin 1 0 `E2879 1 button_state 1 1 `E2883 1 button_connection 1 2 ]
+[v _btn1 btn1 `S244  1 e 3 0 ]
+"27
 [v _ret ret `uc  1 e 1 0 ]
+"28
+[v _btn1_state btn1_state `E2879  1 e 1 0 ]
+"29
+[v _btn1_state2 btn1_state2 `E2879  1 e 1 0 ]
 "9 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/GPIO/hal_gpio.c
 [v _tris_registers tris_registers `[5]*.39VEuc  1 e 10 0 ]
 "11
 [v _lat_registers lat_registers `[5]*.39VEuc  1 e 10 0 ]
 "13
 [v _port_registers port_registers `[5]*.39VEuc  1 e 10 0 ]
-"20 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
+"30 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
 [v _main main `(i  1 e 2 0 ]
 {
-"27
+"33
+[v main@counter1 counter1 `ul  1 a 4 23 ]
+[v main@counter2 counter2 `ul  1 a 4 19 ]
+"51
 } 0
 "55 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/LED/ecu_led.c
 [v _led_toggle led_toggle `(uc  1 e 1 0 ]
@@ -146,10 +194,41 @@ LED_ON 1
 [v gpio_pin_toggle_logic@pin_config pin_config `*.39CS28  1 p 2 0 ]
 "150
 } 0
-"28 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
+"23 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/button/ecu_button.c
+[v _button_read_state button_read_state `(uc  1 e 1 0 ]
+{
+"25
+[v button_read_state@logic_status logic_status `E2801  1 a 1 15 ]
+[s S28 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"23
+[s S244 . 3 `S28 1 button_pin 1 0 `E2879 1 button_state 1 1 `E2883 1 button_connection 1 2 ]
+[v button_read_state@btn btn `*.39CS244  1 p 2 10 ]
+[v button_read_state@btn_state btn_state `*.39E2861  1 p 2 12 ]
+"46
+} 0
+"122 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/GPIO/hal_gpio.c
+[v _gpio_pin_read_logic gpio_pin_read_logic `(uc  1 e 1 0 ]
+{
+"123
+[v gpio_pin_read_logic@ret ret `uc  1 a 1 9 ]
+[s S28 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"122
+[v gpio_pin_read_logic@pin_config pin_config `*.39CS28  1 p 2 0 ]
+[v gpio_pin_read_logic@logic logic `*.39E2801  1 p 2 2 ]
+"131
+} 0
+"52 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
 [v _application_initialize application_initialize `(v  1 e 1 0 ]
 {
-"30
+"55
 } 0
 "7 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/LED/ecu_led.c
 [v _led_initialize led_initialize `(uc  1 e 1 0 ]
@@ -202,7 +281,22 @@ LED_ON 1
 [v gpio_pin_write_logic@logic logic `E2801  1 p 1 2 ]
 "111
 } 0
-"44
+"7 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/button/ecu_button.c
+[v _button_initialize button_initialize `(uc  1 e 1 0 ]
+{
+"8
+[v button_initialize@ret ret `uc  1 a 1 11 ]
+[s S28 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"7
+[s S244 . 3 `S28 1 button_pin 1 0 `E2879 1 button_state 1 1 `E2883 1 button_connection 1 2 ]
+[v button_initialize@btn btn `*.39CS244  1 p 2 9 ]
+"16
+} 0
+"44 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/GPIO/hal_gpio.c
 [v _gpio_pin_direction_initialize gpio_pin_direction_initialize `(uc  1 e 1 0 ]
 {
 "45
