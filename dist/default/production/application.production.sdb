@@ -1,0 +1,172 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4620 ]
+[d frameptr 4065 ]
+"31 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/GPIO/hal_gpio.c
+[e E2801 . `uc
+LOW 0
+HIGH 1
+]
+"58
+[e E2805 . `uc
+OUTPUT 0
+INPUT 1
+]
+"161
+[e E2819 . `uc
+PORTA_INDEX 0
+PORTB_INDEX 1
+PORTC_INDEX 2
+PORTD_INDEX 3
+PORTE_INDEX 4
+]
+"13 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
+[e E2819 . `uc
+PORTA_INDEX 0
+PORTB_INDEX 1
+PORTC_INDEX 2
+PORTD_INDEX 3
+PORTE_INDEX 4
+]
+[e E2809 . `uc
+PIN0 0
+PIN1 1
+PIN2 2
+PIN3 3
+PIN4 4
+PIN5 5
+PIN6 6
+PIN7 7
+]
+[e E2805 . `uc
+OUTPUT 0
+INPUT 1
+]
+[e E2801 . `uc
+LOW 0
+HIGH 1
+]
+"43
+[v _main main `(i  1 e 2 0 ]
+"51
+[v _application_initialize application_initialize `(v  1 e 1 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"44 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/GPIO/hal_gpio.c
+[v _gpio_pin_direction_initialize gpio_pin_direction_initialize `(uc  1 e 1 0 ]
+"94
+[v _gpio_pin_write_logic gpio_pin_write_logic `(uc  1 e 1 0 ]
+"161
+[v _gpio_port_direction_initialize gpio_port_direction_initialize `(uc  1 e 1 0 ]
+"181
+[v _gpio_port_get_direction_status gpio_port_get_direction_status `(uc  1 e 1 0 ]
+"202
+[v _gpio_port_write_logic gpio_port_write_logic `(uc  1 e 1 0 ]
+"222
+[v _gpio_port_read_logic gpio_port_read_logic `(uc  1 e 1 0 ]
+"242
+[v _gpio_port_toggle_logic gpio_port_toggle_logic `(uc  1 e 1 0 ]
+"38 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
+[v _ret ret `uc  1 e 1 0 ]
+"41
+[v _port_dir port_dir `uc  1 e 1 0 ]
+"42
+[v _port_log port_log `uc  1 e 1 0 ]
+"9 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/GPIO/hal_gpio.c
+[v _tris_registers tris_registers `[5]*.39VEuc  1 e 10 0 ]
+"11
+[v _lat_registers lat_registers `[5]*.39VEuc  1 e 10 0 ]
+"13
+[v _port_registers port_registers `[5]*.39VEuc  1 e 10 0 ]
+"43 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
+[v _main main `(i  1 e 2 0 ]
+{
+"50
+} 0
+"242 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/GPIO/hal_gpio.c
+[v _gpio_port_toggle_logic gpio_port_toggle_logic `(uc  1 e 1 0 ]
+{
+[v gpio_port_toggle_logic@port port `E2819  1 a 1 wreg ]
+"243
+[v gpio_port_toggle_logic@ret ret `uc  1 a 1 2 ]
+"242
+[v gpio_port_toggle_logic@port port `E2819  1 a 1 wreg ]
+[v gpio_port_toggle_logic@port port `E2819  1 a 1 3 ]
+"252
+} 0
+"51 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
+[v _application_initialize application_initialize `(v  1 e 1 0 ]
+{
+"56
+} 0
+"202 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/GPIO/hal_gpio.c
+[v _gpio_port_write_logic gpio_port_write_logic `(uc  1 e 1 0 ]
+{
+[v gpio_port_write_logic@port port `E2819  1 a 1 wreg ]
+"203
+[v gpio_port_write_logic@ret ret `uc  1 a 1 3 ]
+"202
+[v gpio_port_write_logic@port port `E2819  1 a 1 wreg ]
+[v gpio_port_write_logic@logic logic `uc  1 p 1 0 ]
+[v gpio_port_write_logic@port port `E2819  1 a 1 4 ]
+"211
+} 0
+"222
+[v _gpio_port_read_logic gpio_port_read_logic `(uc  1 e 1 0 ]
+{
+[v gpio_port_read_logic@port port `E2819  1 a 1 wreg ]
+"223
+[v gpio_port_read_logic@ret ret `uc  1 a 1 4 ]
+"222
+[v gpio_port_read_logic@port port `E2819  1 a 1 wreg ]
+[v gpio_port_read_logic@logic logic `*.39uc  1 p 2 0 ]
+[v gpio_port_read_logic@port port `E2819  1 a 1 5 ]
+"232
+} 0
+"181
+[v _gpio_port_get_direction_status gpio_port_get_direction_status `(uc  1 e 1 0 ]
+{
+[v gpio_port_get_direction_status@port port `E2819  1 a 1 wreg ]
+"182
+[v gpio_port_get_direction_status@ret ret `uc  1 a 1 4 ]
+"181
+[v gpio_port_get_direction_status@port port `E2819  1 a 1 wreg ]
+[v gpio_port_get_direction_status@direction_status direction_status `*.39uc  1 p 2 0 ]
+[v gpio_port_get_direction_status@port port `E2819  1 a 1 5 ]
+"191
+} 0
+"161
+[v _gpio_port_direction_initialize gpio_port_direction_initialize `(uc  1 e 1 0 ]
+{
+[v gpio_port_direction_initialize@port port `E2819  1 a 1 wreg ]
+"162
+[v gpio_port_direction_initialize@ret ret `uc  1 a 1 3 ]
+"161
+[v gpio_port_direction_initialize@port port `E2819  1 a 1 wreg ]
+[v gpio_port_direction_initialize@direction direction `uc  1 p 1 0 ]
+[v gpio_port_direction_initialize@port port `E2819  1 a 1 4 ]
+"170
+} 0
