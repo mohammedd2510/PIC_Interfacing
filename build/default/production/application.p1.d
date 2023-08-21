@@ -8,4 +8,5 @@ ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h  \
 ECU_Layer/LED/../../MCAL_Layer/GPIO/../compiler.h  \
 ECU_Layer/LED/../../MCAL_Layer/GPIO/../device_config.h  \
 ECU_Layer/LED/../../MCAL_Layer/GPIO/../my_pic18f4620.h  \
-ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio_cfg.h 
+ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio_cfg.h  \
+ECU_Layer/LED/ecu_led_cfg.h 

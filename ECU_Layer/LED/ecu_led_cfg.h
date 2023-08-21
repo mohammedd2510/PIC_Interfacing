@@ -1,12 +1,12 @@
 /* 
- * File:   newfile.h
+ * File:   ecu_led_cfg.h
  * Author: Mohamed Osama
  *
- * Created on August 15, 2023, 4:33 PM
+ * Created on August 21, 2023, 7:25 PM
  */
 
-#ifndef NEWFILE_H
-#define	NEWFILE_H
+#ifndef ECU_LED_CFG_H
+#define	ECU_LED_CFG_H
 
 /* Section : Includes */
 
@@ -22,5 +22,5 @@
 
 /* Section : Functions Declaration */
 
-#endif	/* NEWFILE_H */
+#endif	/* ECU_LED_CFG_H */
 

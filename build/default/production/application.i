@@ -4704,6 +4704,26 @@ Std_ReturnType gpio_port_write_logic(port_index_t port, uint8 logic);
 Std_ReturnType gpio_port_read_logic(port_index_t port, uint8* logic);
 Std_ReturnType gpio_port_toggle_logic(port_index_t port);
 # 12 "./ECU_Layer/LED/ecu_led.h" 2
+
+# 1 "./ECU_Layer/LED/ecu_led_cfg.h" 1
+# 13 "./ECU_Layer/LED/ecu_led.h" 2
+# 22 "./ECU_Layer/LED/ecu_led.h"
+typedef enum{
+  LED_OFF = 0,
+  LED_ON
+}led_status_t;
+
+typedef struct{
+uint8 port_name:4;
+uint8 pin:3;
+uint8 led_status:1;
+}led_t;
+
+
+Std_ReturnType led_initialize(const led_t *led);
+Std_ReturnType led_turn_on(const led_t *led);
+Std_ReturnType led_turn_off(const led_t *led);
+Std_ReturnType led_toggle(const led_t *led);
 # 12 "./application.h" 2
 # 24 "./application.h"
 void application_initialize(void);
@@ -4713,47 +4733,21 @@ void application_initialize(void);
 
 
 
-pin_config_t led1={
-        .port=PORTC_INDEX,
-        .pin=PIN0,
-        .direction=OUTPUT,
-        .logic=HIGH
-    };
-pin_config_t led2={
-        .port=PORTC_INDEX,
-        .pin=PIN1,
-        .direction=OUTPUT,
-        .logic=HIGH
-    };
-pin_config_t led3={
-        .port=PORTC_INDEX,
-        .pin=PIN2,
-        .direction=OUTPUT,
-        .logic=HIGH
-    };
-pin_config_t btn_1={
-    .port=PORTD_INDEX,
-        .pin=PIN0,
-        .direction=INPUT,
-        .logic=LOW
-};
 
- Std_ReturnType ret=(Std_ReturnType)0x00;
- direction_t led1_st;
- logic_t btn1_st;
- uint8 port_dir=0;
-  uint8 port_log=0;
+led_t led1={
+    .port_name=PORTC_INDEX,
+    .pin=PIN0,
+    .led_status=LED_OFF
+};
+Std_ReturnType ret=(Std_ReturnType)0x00;
 int main() {
     application_initialize();
     while(1){
-        ret=gpio_port_toggle_logic(PORTC_INDEX);
+        led_toggle(&led1);
         _delay((unsigned long)((500)*(4000000/4000.0)));
     }
     return (0);
 }
 void application_initialize(void){
-  ret=gpio_port_direction_initialize(PORTC_INDEX,0x55);
-  ret=gpio_port_get_direction_status(PORTC_INDEX,&port_dir);
-  ret=gpio_port_write_logic(PORTC_INDEX,0xff);
-  ret=gpio_port_read_logic(PORTC_INDEX,&port_log);
+    ret=led_initialize(&led1);
 }
