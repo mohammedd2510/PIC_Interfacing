@@ -6,30 +6,47 @@
  */
 
 #include "application.h"
-#include "ECU_Layer/LED/ecu_led.h"
-#include "ECU_Layer/button/ecu_button.h"
-#include"ECU_Layer/Relay/ecu_relay.h"
 /**
  * 
  * @return 
  */
-relay_t relay1={
-    .relay_port=PORTC_INDEX,
-    .relay_pin=PIN0,
-    .relay_status=RELAY_OFF_STATUS
+dc_motor_t Motor1={
+    .dc_motor_pin[0].pin=PIN0,
+    .dc_motor_pin[0].port=PORTC_INDEX,
+    .dc_motor_pin[0].direction=OUTPUT,
+    .dc_motor_pin[0].logic=DC_MOTOR_OFF_STATUS,
+    .dc_motor_pin[1].pin=PIN1,
+    .dc_motor_pin[1].port=PORTC_INDEX,
+    .dc_motor_pin[1].direction=OUTPUT,
+    .dc_motor_pin[1].logic=DC_MOTOR_OFF_STATUS
 };
-
+dc_motor_t Motor2={
+    .dc_motor_pin[0].pin=PIN2,
+    .dc_motor_pin[0].port=PORTC_INDEX,
+    .dc_motor_pin[0].direction=OUTPUT,
+    .dc_motor_pin[0].logic=DC_MOTOR_OFF_STATUS,
+    .dc_motor_pin[1].pin=PIN3,
+    .dc_motor_pin[1].port=PORTC_INDEX,
+    .dc_motor_pin[1].direction=OUTPUT,
+    .dc_motor_pin[1].logic=DC_MOTOR_OFF_STATUS
+};
 Std_ReturnType ret=E_NOT_OK;
 int main() {
     application_initialize();
     while(1){
-        relay_turn_on(&relay1);
-        __delay_ms(5000);
-        relay_turn_off(&relay1);
-        __delay_ms(5000);
+        dc_motor_move_right(&Motor1);
+        dc_motor_move_right(&Motor2);
+        __delay_ms(3000);
+        dc_motor_move_left(&Motor1);
+        dc_motor_move_left(&Motor2);
+        __delay_ms(3000);
+         dc_motor_stop(&Motor1);
+        dc_motor_stop(&Motor2);
+        __delay_ms(3000);
     }
     return (EXIT_SUCCESS);
 }
 void application_initialize(void){
-    ret=relay_initialize(&relay1);
+    ret=dc_motor_initialize(&Motor1);
+     ret=dc_motor_initialize(&Motor2);
 }

@@ -1,4 +1,4 @@
-# 1 "application.c"
+# 1 "ECU_Layer/DC_Motor/ecu_dc_motor.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,27 +6,18 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "application.c" 2
+# 1 "ECU_Layer/DC_Motor/ecu_dc_motor.c" 2
+# 1 "ECU_Layer/DC_Motor/ecu_dc_motor.h" 1
+# 12 "ECU_Layer/DC_Motor/ecu_dc_motor.h"
+# 1 "ECU_Layer/DC_Motor/ecu_dc_motor_cfg.h" 1
+# 12 "ECU_Layer/DC_Motor/ecu_dc_motor.h" 2
 
-
-
-
-
-
-
-# 1 "./application.h" 1
-# 12 "./application.h"
-# 1 "./ECU_Layer/DC_Motor/ecu_dc_motor.h" 1
-# 12 "./ECU_Layer/DC_Motor/ecu_dc_motor.h"
-# 1 "./ECU_Layer/DC_Motor/ecu_dc_motor_cfg.h" 1
-# 12 "./ECU_Layer/DC_Motor/ecu_dc_motor.h" 2
-
-# 1 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio.h" 1
-# 11 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio.h"
-# 1 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../mcal_std_types.h" 1
-# 12 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../mcal_std_types.h"
-# 1 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../std_libraries.h" 1
-# 11 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../std_libraries.h"
+# 1 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio.h" 1
+# 11 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio.h"
+# 1 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../mcal_std_types.h" 1
+# 12 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../mcal_std_types.h"
+# 1 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../std_libraries.h" 1
+# 11 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
 
 
@@ -191,7 +182,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 11 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+# 11 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../std_libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
@@ -255,11 +246,11 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 12 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../std_libraries.h" 2
-# 12 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
+# 12 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+# 12 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
 
-# 1 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../compiler.h" 1
-# 11 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../compiler.h"
+# 1 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../compiler.h" 1
+# 11 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../compiler.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4634,8 +4625,8 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 2 3
-# 11 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../compiler.h" 2
-# 13 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
+# 11 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../compiler.h" 2
+# 13 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
 
 
 typedef unsigned char uint8;
@@ -4646,17 +4637,17 @@ typedef signed int sint16;
 typedef signed long sint32;
 
 typedef uint8 Std_ReturnType;
-# 11 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 11 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
-# 1 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../device_config.h" 1
-# 12 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 1 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../device_config.h" 1
+# 12 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
-# 1 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../my_pic18f4620.h" 1
-# 13 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 1 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../my_pic18f4620.h" 1
+# 13 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
-# 1 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
-# 14 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio.h" 2
-# 31 "./ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio.h"
+# 1 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
+# 14 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 31 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio.h"
 typedef enum{
     LOW=0,
     HIGH
@@ -4706,8 +4697,8 @@ Std_ReturnType gpio_port_get_direction_status(port_index_t port, uint8* directio
 Std_ReturnType gpio_port_write_logic(port_index_t port, uint8 logic);
 Std_ReturnType gpio_port_read_logic(port_index_t port, uint8* logic);
 Std_ReturnType gpio_port_toggle_logic(port_index_t port);
-# 13 "./ECU_Layer/DC_Motor/ecu_dc_motor.h" 2
-# 26 "./ECU_Layer/DC_Motor/ecu_dc_motor.h"
+# 13 "ECU_Layer/DC_Motor/ecu_dc_motor.h" 2
+# 26 "ECU_Layer/DC_Motor/ecu_dc_motor.h"
 typedef struct {
     pin_config_t dc_motor_pin[2];
 }dc_motor_t;
@@ -4717,52 +4708,69 @@ Std_ReturnType dc_motor_initialize (const dc_motor_t *_dc_motor);
 Std_ReturnType dc_motor_move_right (const dc_motor_t *_dc_motor);
 Std_ReturnType dc_motor_move_left (const dc_motor_t *_dc_motor);
 Std_ReturnType dc_motor_stop (const dc_motor_t *_dc_motor);
-# 12 "./application.h" 2
-# 24 "./application.h"
-void application_initialize(void);
-# 8 "application.c" 2
+# 1 "ECU_Layer/DC_Motor/ecu_dc_motor.c" 2
 
 
 
 
 
-dc_motor_t Motor1={
-    .dc_motor_pin[0].pin=PIN0,
-    .dc_motor_pin[0].port=PORTC_INDEX,
-    .dc_motor_pin[0].direction=OUTPUT,
-    .dc_motor_pin[0].logic=0x00U,
-    .dc_motor_pin[1].pin=PIN1,
-    .dc_motor_pin[1].port=PORTC_INDEX,
-    .dc_motor_pin[1].direction=OUTPUT,
-    .dc_motor_pin[1].logic=0x00U
-};
-dc_motor_t Motor2={
-    .dc_motor_pin[0].pin=PIN2,
-    .dc_motor_pin[0].port=PORTC_INDEX,
-    .dc_motor_pin[0].direction=OUTPUT,
-    .dc_motor_pin[0].logic=0x00U,
-    .dc_motor_pin[1].pin=PIN3,
-    .dc_motor_pin[1].port=PORTC_INDEX,
-    .dc_motor_pin[1].direction=OUTPUT,
-    .dc_motor_pin[1].logic=0x00U
-};
-Std_ReturnType ret=(Std_ReturnType)0x00;
-int main() {
-    application_initialize();
-    while(1){
-        dc_motor_move_right(&Motor1);
-        dc_motor_move_right(&Motor2);
-        _delay((unsigned long)((3000)*(4000000/4000.0)));
-        dc_motor_move_left(&Motor1);
-        dc_motor_move_left(&Motor2);
-        _delay((unsigned long)((3000)*(4000000/4000.0)));
-         dc_motor_stop(&Motor1);
-        dc_motor_stop(&Motor2);
-        _delay((unsigned long)((3000)*(4000000/4000.0)));
+
+Std_ReturnType dc_motor_initialize (const dc_motor_t *_dc_motor){
+    Std_ReturnType ret=(Std_ReturnType)0x01;
+    if(_dc_motor==((void*)0)){
+        ret=(Std_ReturnType)0x00;
     }
-    return (0);
+    else{
+        ret=gpio_pin_initialize(&(_dc_motor->dc_motor_pin[0X00U]));
+        ret=gpio_pin_initialize(&(_dc_motor->dc_motor_pin[0X01U]));
+        }
+    return ret;
 }
-void application_initialize(void){
-    ret=dc_motor_initialize(&Motor1);
-     ret=dc_motor_initialize(&Motor2);
+
+
+
+
+
+Std_ReturnType dc_motor_move_right (const dc_motor_t *_dc_motor){
+    Std_ReturnType ret=(Std_ReturnType)0x01;
+    if(_dc_motor==((void*)0)){
+        ret=(Std_ReturnType)0x00;
+    }
+    else{
+        ret=gpio_pin_write_logic(&(_dc_motor->dc_motor_pin[0X00U]),HIGH);
+        ret=gpio_pin_write_logic(&(_dc_motor->dc_motor_pin[0X01U]),LOW);
+        }
+    return ret;
+}
+
+
+
+
+
+Std_ReturnType dc_motor_move_left (const dc_motor_t *_dc_motor){
+    Std_ReturnType ret=(Std_ReturnType)0x01;
+    if(_dc_motor==((void*)0)){
+        ret=(Std_ReturnType)0x00;
+    }
+    else{
+        ret=gpio_pin_write_logic(&(_dc_motor->dc_motor_pin[0X00U]),LOW);
+        ret=gpio_pin_write_logic(&(_dc_motor->dc_motor_pin[0X01U]),HIGH);
+        }
+      return ret;
+}
+
+
+
+
+
+Std_ReturnType dc_motor_stop (const dc_motor_t *_dc_motor){
+    Std_ReturnType ret=(Std_ReturnType)0x01;
+    if(_dc_motor==((void*)0)){
+        ret=(Std_ReturnType)0x00;
+    }
+    else{
+        ret=gpio_pin_write_logic(&(_dc_motor->dc_motor_pin[0X00U]),LOW);
+        ret=gpio_pin_write_logic(&(_dc_motor->dc_motor_pin[0X01U]),LOW);
+        }
+      return ret;
 }
