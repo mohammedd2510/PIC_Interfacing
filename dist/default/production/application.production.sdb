@@ -17,6 +17,11 @@ BUTTON_ACTIVE_LOW 1
 LOW 0
 HIGH 1
 ]
+"29 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/DC_Motor/ecu_dc_motor.c
+[e E2801 . `uc
+LOW 0
+HIGH 1
+]
 "9 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/LED/ecu_led.c
 [e E2805 . `uc
 OUTPUT 0
@@ -56,6 +61,10 @@ PORTD_INDEX 3
 PORTE_INDEX 4
 ]
 "13 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
+[e E2861 . `uc
+SEGMENT_COMMON_ANODE 0
+SEGMENT_COMMON_CATHODE 1
+]
 [e E2819 . `uc
 PORTA_INDEX 0
 PORTB_INDEX 1
@@ -77,14 +86,23 @@ PIN7 7
 OUTPUT 0
 INPUT 1
 ]
-"29 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/DC_Motor/ecu_dc_motor.c
+[e E2801 . `uc
+LOW 0
+HIGH 1
+]
+"7 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/7_Segment/ecu_seven_seg.c
+[e E2861 . `uc
+SEGMENT_COMMON_ANODE 0
+SEGMENT_COMMON_CATHODE 1
+]
+"32
 [e E2801 . `uc
 LOW 0
 HIGH 1
 ]
 "34 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
 [v _main main `(i  1 e 2 0 ]
-"49
+"45
 [v _application_initialize application_initialize `(v  1 e 1 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -110,14 +128,10 @@ HIGH 1
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"7 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/DC_Motor/ecu_dc_motor.c
-[v _dc_motor_initialize dc_motor_initialize `(uc  1 e 1 0 ]
-"23
-[v _dc_motor_move_right dc_motor_move_right `(uc  1 e 1 0 ]
-"39
-[v _dc_motor_move_left dc_motor_move_left `(uc  1 e 1 0 ]
-"55
-[v _dc_motor_stop dc_motor_stop `(uc  1 e 1 0 ]
+"7 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/7_Segment/ecu_seven_seg.c
+[v _seven_segment_initialize seven_segment_initialize `(uc  1 e 1 0 ]
+"26
+[v _seven_segment_write_number seven_segment_write_number `(uc  1 e 1 0 ]
 "24 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/GPIO/hal_gpio.c
 [v _gpio_pin_initialize gpio_pin_initialize `(uc  1 e 1 0 ]
 "44
@@ -134,10 +148,8 @@ HIGH 1
 `uc 1 logic 1 0 :1:7 
 ]
 "13 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
-[s S328 . 2 `[2]S24 1 dc_motor_pin 2 0 ]
-[v _Motor1 Motor1 `S328  1 e 2 0 ]
-"23
-[v _Motor2 Motor2 `S328  1 e 2 0 ]
+[s S359 . 5 `[4]S24 1 segment_pins 4 0 `E2861 1 segment_type 1 4 ]
+[v _seg1 seg1 `S359  1 e 5 0 ]
 "33
 [v _ret ret `uc  1 e 1 0 ]
 "9 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/GPIO/hal_gpio.c
@@ -149,72 +161,45 @@ HIGH 1
 "34 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
 [v _main main `(i  1 e 2 0 ]
 {
-"48
+"36
+[v main@cnt cnt `uc  1 a 1 19 ]
+"44
 } 0
-"55 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/DC_Motor/ecu_dc_motor.c
-[v _dc_motor_stop dc_motor_stop `(uc  1 e 1 0 ]
+"26 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/7_Segment/ecu_seven_seg.c
+[v _seven_segment_write_number seven_segment_write_number `(uc  1 e 1 0 ]
 {
-"56
-[v dc_motor_stop@ret ret `uc  1 a 1 12 ]
+"27
+[v seven_segment_write_number@ret ret `uc  1 a 1 13 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"55
-[s S328 . 2 `[2]S24 1 dc_motor_pin 2 0 ]
-[v dc_motor_stop@_dc_motor _dc_motor `*.39CS328  1 p 2 10 ]
-"65
+"26
+[s S359 . 5 `[4]S24 1 segment_pins 4 0 `E2861 1 segment_type 1 4 ]
+[v seven_segment_write_number@seg seg `*.39CS359  1 p 2 10 ]
+[v seven_segment_write_number@number number `uc  1 p 1 12 ]
+"38
 } 0
-"23
-[v _dc_motor_move_right dc_motor_move_right `(uc  1 e 1 0 ]
-{
-"24
-[v dc_motor_move_right@ret ret `uc  1 a 1 12 ]
-[s S24 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
-]
-"23
-[s S328 . 2 `[2]S24 1 dc_motor_pin 2 0 ]
-[v dc_motor_move_right@_dc_motor _dc_motor `*.39CS328  1 p 2 10 ]
-"33
-} 0
-"39
-[v _dc_motor_move_left dc_motor_move_left `(uc  1 e 1 0 ]
-{
-"40
-[v dc_motor_move_left@ret ret `uc  1 a 1 12 ]
-[s S24 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
-]
-"39
-[s S328 . 2 `[2]S24 1 dc_motor_pin 2 0 ]
-[v dc_motor_move_left@_dc_motor _dc_motor `*.39CS328  1 p 2 10 ]
-"49
-} 0
-"49 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
+"45 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
 [v _application_initialize application_initialize `(v  1 e 1 0 ]
 {
-"52
+"47
 } 0
-"7 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/DC_Motor/ecu_dc_motor.c
-[v _dc_motor_initialize dc_motor_initialize `(uc  1 e 1 0 ]
+"7 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/7_Segment/ecu_seven_seg.c
+[v _seven_segment_initialize seven_segment_initialize `(uc  1 e 1 0 ]
 {
 "8
-[v dc_motor_initialize@ret ret `uc  1 a 1 16 ]
+[v seven_segment_initialize@ret ret `uc  1 a 1 16 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
 "7
-[s S328 . 2 `[2]S24 1 dc_motor_pin 2 0 ]
-[v dc_motor_initialize@_dc_motor _dc_motor `*.39CS328  1 p 2 14 ]
-"17
+[s S359 . 5 `[4]S24 1 segment_pins 4 0 `E2861 1 segment_type 1 4 ]
+[v seven_segment_initialize@seg seg `*.39CS359  1 p 2 14 ]
+"19
 } 0
 "24 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/GPIO/hal_gpio.c
 [v _gpio_pin_initialize gpio_pin_initialize `(uc  1 e 1 0 ]

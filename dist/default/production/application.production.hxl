@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\mohop\AppData\Local\Temp\xcAs6qc.\driver_tmp_3.o
+ C:\Users\mohop\AppData\Local\Temp\xcAs4vk.\driver_tmp_3.o
  -Odist/default/production\application.production.hex
  -logfile=dist/default/production\application.production.hxl
  -addressing=1
@@ -9,30 +9,26 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(C:\Users\mohop\AppData\Local\Temp\xcAs6qc.\driver_tmp_3.o)
-  FAC0h - FFFFh		(C:\Users\mohop\AppData\Local\Temp\xcAs6qc.\driver_tmp_3.o)
-  300000h - 30000Dh		(C:\Users\mohop\AppData\Local\Temp\xcAs6qc.\driver_tmp_3.o)
+  0h - 3h		(C:\Users\mohop\AppData\Local\Temp\xcAs4vk.\driver_tmp_3.o)
+  FB28h - FB37h		(C:\Users\mohop\AppData\Local\Temp\xcAs4vk.\driver_tmp_3.o)
+  FB39h - FFFFh		(C:\Users\mohop\AppData\Local\Temp\xcAs4vk.\driver_tmp_3.o)
+  300000h - 30000Dh		(C:\Users\mohop\AppData\Local\Temp\xcAs4vk.\driver_tmp_3.o)
  Unused ranges:
-  4h - FABFh
+  4h - FB27h
+  FB38h - FB38h
   10000h - 2FFFFFh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\mohop\AppData\Local\Temp\xcAs6qc.\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\mohop\AppData\Local\Temp\xcAs4vk.\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
 00000000 | H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
-0000FAC0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-0000FAD0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-0000FAE0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-0000FAF0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-0000FB00 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-0000FB10 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-0000FB20 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-0000FB30 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000FB20 | -- -- -- -- -- -- -- -- H1 H1 H1 H1 H1 H1 H1 H1
+0000FB30 | H1 H1 H1 H1 H1 H1 H1 H1 -- H1 H1 H1 H1 H1 H1 H1
 0000FB40 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 0000FB50 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 0000FB60 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1

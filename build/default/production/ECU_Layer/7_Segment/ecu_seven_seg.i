@@ -1,4 +1,4 @@
-# 1 "application.c"
+# 1 "ECU_Layer/7_Segment/ecu_seven_seg.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,27 +6,18 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "application.c" 2
+# 1 "ECU_Layer/7_Segment/ecu_seven_seg.c" 2
+# 1 "ECU_Layer/7_Segment/ecu_seven_seg.h" 1
+# 12 "ECU_Layer/7_Segment/ecu_seven_seg.h"
+# 1 "ECU_Layer/7_Segment/ecu_seven_seg_cfg.h" 1
+# 12 "ECU_Layer/7_Segment/ecu_seven_seg.h" 2
 
-
-
-
-
-
-
-# 1 "./application.h" 1
-# 12 "./application.h"
-# 1 "./ECU_Layer/7_Segment/ecu_seven_seg.h" 1
-# 12 "./ECU_Layer/7_Segment/ecu_seven_seg.h"
-# 1 "./ECU_Layer/7_Segment/ecu_seven_seg_cfg.h" 1
-# 12 "./ECU_Layer/7_Segment/ecu_seven_seg.h" 2
-
-# 1 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 1
-# 11 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h"
-# 1 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../mcal_std_types.h" 1
-# 12 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../mcal_std_types.h"
-# 1 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../std_libraries.h" 1
-# 11 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../std_libraries.h"
+# 1 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 1
+# 11 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h"
+# 1 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../mcal_std_types.h" 1
+# 12 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../mcal_std_types.h"
+# 1 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../std_libraries.h" 1
+# 11 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
 
 
@@ -191,7 +182,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 11 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+# 11 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../std_libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
@@ -255,11 +246,11 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 12 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../std_libraries.h" 2
-# 12 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
+# 12 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+# 12 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
 
-# 1 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../compiler.h" 1
-# 11 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../compiler.h"
+# 1 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../compiler.h" 1
+# 11 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../compiler.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4634,8 +4625,8 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 2 3
-# 11 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../compiler.h" 2
-# 13 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
+# 11 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../compiler.h" 2
+# 13 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
 
 
 typedef unsigned char uint8;
@@ -4646,17 +4637,17 @@ typedef signed int sint16;
 typedef signed long sint32;
 
 typedef uint8 Std_ReturnType;
-# 11 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 11 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
-# 1 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../device_config.h" 1
-# 12 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 1 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../device_config.h" 1
+# 12 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
-# 1 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../my_pic18f4620.h" 1
-# 13 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 1 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../my_pic18f4620.h" 1
+# 13 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
-# 1 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
-# 14 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
-# 31 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h"
+# 1 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
+# 14 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 31 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h"
 typedef enum{
     LOW=0,
     HIGH
@@ -4706,8 +4697,8 @@ Std_ReturnType gpio_port_get_direction_status(port_index_t port, uint8* directio
 Std_ReturnType gpio_port_write_logic(port_index_t port, uint8 logic);
 Std_ReturnType gpio_port_read_logic(port_index_t port, uint8* logic);
 Std_ReturnType gpio_port_toggle_logic(port_index_t port);
-# 13 "./ECU_Layer/7_Segment/ecu_seven_seg.h" 2
-# 26 "./ECU_Layer/7_Segment/ecu_seven_seg.h"
+# 13 "ECU_Layer/7_Segment/ecu_seven_seg.h" 2
+# 26 "ECU_Layer/7_Segment/ecu_seven_seg.h"
 typedef enum{
     SEGMENT_COMMON_ANODE,
     SEGMENT_COMMON_CATHODE
@@ -4721,47 +4712,42 @@ typedef struct{
 
 Std_ReturnType seven_segment_initialize(const segment_t *seg);
 Std_ReturnType seven_segment_write_number(const segment_t *seg , uint8 number);
-# 12 "./application.h" 2
-# 24 "./application.h"
-void application_initialize(void);
-# 8 "application.c" 2
+# 1 "ECU_Layer/7_Segment/ecu_seven_seg.c" 2
 
 
 
 
 
-segment_t seg1={
-    .segment_pins[0].pin=PIN0,
-    .segment_pins[0].port=PORTC_INDEX,
-    .segment_pins[0].direction=OUTPUT,
-    .segment_pins[0].logic=LOW,
-    .segment_pins[1].pin=PIN1,
-    .segment_pins[1].port=PORTC_INDEX,
-    .segment_pins[1].direction=OUTPUT,
-    .segment_pins[1].logic=LOW,
-    .segment_pins[2].pin=PIN2,
-    .segment_pins[2].port=PORTC_INDEX,
-    .segment_pins[2].direction=OUTPUT,
-    .segment_pins[2].logic=LOW,
-    .segment_pins[3].pin=PIN3,
-    .segment_pins[3].port=PORTC_INDEX,
-    .segment_pins[3].direction=OUTPUT,
-    .segment_pins[3].logic=LOW,
-    .segment_type=SEGMENT_COMMON_ANODE
-};
 
-Std_ReturnType ret=(Std_ReturnType)0x00;
-int main() {
-    application_initialize();
-    uint8 cnt=0;
-    while(1){
-        for(cnt=0;cnt<=9;cnt++){
-            seven_segment_write_number(&seg1,cnt);
-            _delay((unsigned long)((500)*(4000000/4000.0)));
-        }
+Std_ReturnType seven_segment_initialize(const segment_t *seg){
+    Std_ReturnType ret=(Std_ReturnType)0x01;
+    if(seg==((void*)0)){
+        ret=(Std_ReturnType)0x00;
     }
-    return (0);
+    else{
+        ret=gpio_pin_initialize(&(seg->segment_pins[0]));
+        ret=gpio_pin_initialize(&(seg->segment_pins[1]));
+        ret=gpio_pin_initialize(&(seg->segment_pins[2]));
+        ret=gpio_pin_initialize(&(seg->segment_pins[3]));
+        }
+    return ret;
 }
-void application_initialize(void){
-    ret=seven_segment_initialize(&seg1);
+
+
+
+
+
+
+Std_ReturnType seven_segment_write_number(const segment_t *seg , uint8 number){
+    Std_ReturnType ret=(Std_ReturnType)0x01;
+    if((seg==((void*)0))||(number>9)){
+        ret=(Std_ReturnType)0x00;
+    }
+    else{
+        ret=gpio_pin_write_logic(&(seg->segment_pins[0]),(number&0x01));
+        ret=gpio_pin_write_logic(&(seg->segment_pins[1]),((number>>1)&0x01));
+        ret=gpio_pin_write_logic(&(seg->segment_pins[2]),((number>>2)&0x01));
+        ret=gpio_pin_write_logic(&(seg->segment_pins[3]),((number>>3)&0x01));
+        }
+    return ret;
 }

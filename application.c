@@ -10,43 +10,38 @@
  * 
  * @return 
  */
-dc_motor_t Motor1={
-    .dc_motor_pin[0].pin=PIN0,
-    .dc_motor_pin[0].port=PORTC_INDEX,
-    .dc_motor_pin[0].direction=OUTPUT,
-    .dc_motor_pin[0].logic=DC_MOTOR_OFF_STATUS,
-    .dc_motor_pin[1].pin=PIN1,
-    .dc_motor_pin[1].port=PORTC_INDEX,
-    .dc_motor_pin[1].direction=OUTPUT,
-    .dc_motor_pin[1].logic=DC_MOTOR_OFF_STATUS
+segment_t seg1={
+    .segment_pins[0].pin=PIN0,
+    .segment_pins[0].port=PORTC_INDEX,
+    .segment_pins[0].direction=OUTPUT,
+    .segment_pins[0].logic=LOW,
+    .segment_pins[1].pin=PIN1,
+    .segment_pins[1].port=PORTC_INDEX,
+    .segment_pins[1].direction=OUTPUT,
+    .segment_pins[1].logic=LOW,
+    .segment_pins[2].pin=PIN2,
+    .segment_pins[2].port=PORTC_INDEX,
+    .segment_pins[2].direction=OUTPUT,
+    .segment_pins[2].logic=LOW,
+    .segment_pins[3].pin=PIN3,
+    .segment_pins[3].port=PORTC_INDEX,
+    .segment_pins[3].direction=OUTPUT,
+    .segment_pins[3].logic=LOW,
+    .segment_type=SEGMENT_COMMON_ANODE
 };
-dc_motor_t Motor2={
-    .dc_motor_pin[0].pin=PIN2,
-    .dc_motor_pin[0].port=PORTC_INDEX,
-    .dc_motor_pin[0].direction=OUTPUT,
-    .dc_motor_pin[0].logic=DC_MOTOR_OFF_STATUS,
-    .dc_motor_pin[1].pin=PIN3,
-    .dc_motor_pin[1].port=PORTC_INDEX,
-    .dc_motor_pin[1].direction=OUTPUT,
-    .dc_motor_pin[1].logic=DC_MOTOR_OFF_STATUS
-};
+
 Std_ReturnType ret=E_NOT_OK;
 int main() {
     application_initialize();
+    uint8 cnt=0;
     while(1){
-        dc_motor_move_right(&Motor1);
-        dc_motor_move_right(&Motor2);
-        __delay_ms(3000);
-        dc_motor_move_left(&Motor1);
-        dc_motor_move_left(&Motor2);
-        __delay_ms(3000);
-         dc_motor_stop(&Motor1);
-        dc_motor_stop(&Motor2);
-        __delay_ms(3000);
+        for(cnt=0;cnt<=9;cnt++){
+            seven_segment_write_number(&seg1,cnt);
+            __delay_ms(500);
+        }
     }
     return (EXIT_SUCCESS);
 }
 void application_initialize(void){
-    ret=dc_motor_initialize(&Motor1);
-     ret=dc_motor_initialize(&Motor2);
-}
+    ret=seven_segment_initialize(&seg1);
+}     

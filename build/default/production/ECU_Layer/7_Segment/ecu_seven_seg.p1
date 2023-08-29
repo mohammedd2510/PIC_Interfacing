@@ -1,40 +1,26 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"60 ./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h
-[; ;./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h: 60: typedef struct{
+"60 ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h
+[; ;ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h: 60: typedef struct{
 [s S272 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S272 . port pin direction logic ]
-"13 application.c
-[; ;application.c: 13: segment_t seg1={
+"7 ECU_Layer/7_Segment/ecu_seven_seg.c
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 7: Std_ReturnType seven_segment_initialize(const segment_t *seg){
 [c E2861 0 1 .. ]
 [n E2861 . SEGMENT_COMMON_ANODE SEGMENT_COMMON_CATHODE  ]
-"31 ./ECU_Layer/7_Segment/ecu_seven_seg.h
-[; ;./ECU_Layer/7_Segment/ecu_seven_seg.h: 31: typedef struct{
+"31 ECU_Layer/7_Segment/ecu_seven_seg.h
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.h: 31: typedef struct{
 [s S273 `S272 -> 4 `i `E2861 1 ]
 [n S273 . segment_pins segment_type ]
-"13 application.c
-[; ;application.c: 13: segment_t seg1={
-[c E2819 0 1 2 3 4 .. ]
-[n E2819 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
-[c E2809 0 1 2 3 4 5 6 7 .. ]
-[n E2809 . PIN0 PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7  ]
-[c E2805 0 1 .. ]
-[n E2805 . OUTPUT INPUT  ]
+"68 ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h
+[; ;ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h: 68: Std_ReturnType gpio_pin_initialize(const pin_config_t *pin_config);
+[v _gpio_pin_initialize `(uc ~T0 @X0 0 ef1`*CS272 ]
+"32 ECU_Layer/7_Segment/ecu_seven_seg.c
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 32:         ret=gpio_pin_write_logic(&(seg->segment_pins[0]),(number&0x01));
 [c E2801 0 1 .. ]
 [n E2801 . LOW HIGH  ]
-[p mainexit ]
-"24 ./application.h
-[; ;./application.h: 24: void application_initialize(void);
-[v _application_initialize `(v ~T0 @X0 0 ef ]
-"38 ./ECU_Layer/7_Segment/ecu_seven_seg.h
-[; ;./ECU_Layer/7_Segment/ecu_seven_seg.h: 38: Std_ReturnType seven_segment_write_number(const segment_t *seg , uint8 number);
-[v _seven_segment_write_number `(uc ~T0 @X0 0 ef2`*CS273`uc ]
-[v F513 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\builtins.h
-[v __delay `JF513 ~T0 @X0 0 e ]
-[p i __delay ]
-"37 ./ECU_Layer/7_Segment/ecu_seven_seg.h
-[; ;./ECU_Layer/7_Segment/ecu_seven_seg.h: 37: Std_ReturnType seven_segment_initialize(const segment_t *seg);
-[v _seven_segment_initialize `(uc ~T0 @X0 0 ef1`*CS273 ]
+"71 ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h
+[; ;ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h: 71: Std_ReturnType gpio_pin_write_logic(const pin_config_t *pin_config, logic_t logic);
+[v _gpio_pin_write_logic `(uc ~T0 @X0 0 ef2`*CS272`E2801 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -446,111 +432,104 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"13 application.c
-[; ;application.c: 13: segment_t seg1={
-[v _seg1 `S273 ~T0 @X0 1 e ]
-[i _seg1
-:U ..
-:U ..
-:U ..
-:U ..
--> . `E2819 2 `uc
--> . `E2809 0 `uc
--> . `E2805 0 `uc
--> . `E2801 0 `uc
-..
-:U ..
--> . `E2819 2 `uc
--> . `E2809 1 `uc
--> . `E2805 0 `uc
--> . `E2801 0 `uc
-..
-:U ..
--> . `E2819 2 `uc
--> . `E2809 2 `uc
--> . `E2805 0 `uc
--> . `E2801 0 `uc
-..
-:U ..
--> . `E2819 2 `uc
--> . `E2809 3 `uc
--> . `E2805 0 `uc
--> . `E2801 0 `uc
-..
-..
-. `E2861 0
-..
-..
-]
-"33
-[; ;application.c: 33: Std_ReturnType ret=(Std_ReturnType)0x00;
-[v _ret `uc ~T0 @X0 1 e ]
-[i _ret
--> -> 0 `i `uc
-]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"34
-[; ;application.c: 34: int main() {
-[v _main `(i ~T0 @X0 1 ef ]
+"7 ECU_Layer/7_Segment/ecu_seven_seg.c
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 7: Std_ReturnType seven_segment_initialize(const segment_t *seg){
+[v _seven_segment_initialize `(uc ~T0 @X0 1 ef1`*CS273 ]
 {
-[e :U _main ]
+[e :U _seven_segment_initialize ]
+[v _seg `*CS273 ~T0 @X0 1 r1 ]
 [f ]
-"35
-[; ;application.c: 35:     application_initialize();
-[e ( _application_initialize ..  ]
-"36
-[; ;application.c: 36:     uint8 cnt=0;
-[v _cnt `uc ~T0 @X0 1 a ]
-[e = _cnt -> -> 0 `i `uc ]
-"37
-[; ;application.c: 37:     while(1){
-[e :U 276 ]
+"8
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 8:     Std_ReturnType ret=(Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"9
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 9:     if(seg==((void*)0)){
+[e $ ! == _seg -> -> -> 0 `i `*v `*CS273 275  ]
 {
-"38
-[; ;application.c: 38:         for(cnt=0;cnt<=9;cnt++){
-{
-[e = _cnt -> -> 0 `i `uc ]
-[e $ <= -> _cnt `i -> 9 `i 278  ]
-[e $U 279  ]
-[e :U 278 ]
-{
-"39
-[; ;application.c: 39:             seven_segment_write_number(&seg1,cnt);
-[e ( _seven_segment_write_number (2 , -> &U _seg1 `*CS273 _cnt ]
-"40
-[; ;application.c: 40:             _delay((unsigned long)((500)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"41
-[; ;application.c: 41:         }
+"10
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 10:         ret=(Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"11
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 11:     }
 }
-[e ++ _cnt -> -> 1 `i `uc ]
-[e $ <= -> _cnt `i -> 9 `i 278  ]
-[e :U 279 ]
-}
-"42
-[; ;application.c: 42:     }
-}
-[e :U 275 ]
 [e $U 276  ]
-[e :U 277 ]
-"43
-[; ;application.c: 43:     return (0);
-[e ) -> 0 `i ]
+"12
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 12:     else{
+[e :U 275 ]
+{
+"13
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 13:         ret=gpio_pin_initialize(&(seg->segment_pins[0]));
+[e = _ret ( _gpio_pin_initialize (1 &U *U + &U . *U _seg 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _seg 0 `ui `ux ]
+"14
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 14:         ret=gpio_pin_initialize(&(seg->segment_pins[1]));
+[e = _ret ( _gpio_pin_initialize (1 &U *U + &U . *U _seg 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _seg 0 `ui `ux ]
+"15
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 15:         ret=gpio_pin_initialize(&(seg->segment_pins[2]));
+[e = _ret ( _gpio_pin_initialize (1 &U *U + &U . *U _seg 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U _seg 0 `ui `ux ]
+"16
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 16:         ret=gpio_pin_initialize(&(seg->segment_pins[3]));
+[e = _ret ( _gpio_pin_initialize (1 &U *U + &U . *U _seg 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U _seg 0 `ui `ux ]
+"17
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 17:         }
+}
+[e :U 276 ]
+"18
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 18:     return ret;
+[e ) _ret ]
 [e $UE 274  ]
-"44
-[; ;application.c: 44: }
+"19
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 19: }
 [e :UE 274 ]
 }
-"45
-[; ;application.c: 45: void application_initialize(void){
-[v _application_initialize `(v ~T0 @X0 1 ef ]
+"26
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 26: Std_ReturnType seven_segment_write_number(const segment_t *seg , uint8 number){
+[v _seven_segment_write_number `(uc ~T0 @X0 1 ef2`*CS273`uc ]
 {
-[e :U _application_initialize ]
+[e :U _seven_segment_write_number ]
+[v _seg `*CS273 ~T0 @X0 1 r1 ]
+[v _number `uc ~T0 @X0 1 r2 ]
 [f ]
-"46
-[; ;application.c: 46:     ret=seven_segment_initialize(&seg1);
-[e = _ret ( _seven_segment_initialize (1 -> &U _seg1 `*CS273 ]
-"47
-[; ;application.c: 47: }
-[e :UE 281 ]
+"27
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 27:     Std_ReturnType ret=(Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"28
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 28:     if((seg==((void*)0))||(number>9)){
+[e $ ! || == _seg -> -> -> 0 `i `*v `*CS273 > -> _number `i -> 9 `i 278  ]
+{
+"29
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 29:         ret=(Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"30
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 30:     }
+}
+[e $U 279  ]
+"31
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 31:     else{
+[e :U 278 ]
+{
+"32
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 32:         ret=gpio_pin_write_logic(&(seg->segment_pins[0]),(number&0x01));
+[e = _ret ( _gpio_pin_write_logic (2 , &U *U + &U . *U _seg 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _seg 0 `ui `ux -> & -> _number `i -> 1 `i `E2801 ]
+"33
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 33:         ret=gpio_pin_write_logic(&(seg->segment_pins[1]),((number>>1)&0x01));
+[e = _ret ( _gpio_pin_write_logic (2 , &U *U + &U . *U _seg 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _seg 0 `ui `ux -> & >> -> _number `i -> 1 `i -> 1 `i `E2801 ]
+"34
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 34:         ret=gpio_pin_write_logic(&(seg->segment_pins[2]),((number>>2)&0x01));
+[e = _ret ( _gpio_pin_write_logic (2 , &U *U + &U . *U _seg 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U _seg 0 `ui `ux -> & >> -> _number `i -> 2 `i -> 1 `i `E2801 ]
+"35
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 35:         ret=gpio_pin_write_logic(&(seg->segment_pins[3]),((number>>3)&0x01));
+[e = _ret ( _gpio_pin_write_logic (2 , &U *U + &U . *U _seg 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U _seg 0 `ui `ux -> & >> -> _number `i -> 3 `i -> 1 `i `E2801 ]
+"36
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 36:         }
+}
+[e :U 279 ]
+"37
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 37:     return ret;
+[e ) _ret ]
+[e $UE 277  ]
+"38
+[; ;ECU_Layer/7_Segment/ecu_seven_seg.c: 38: }
+[e :UE 277 ]
 }
