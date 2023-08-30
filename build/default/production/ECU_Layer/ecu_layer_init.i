@@ -1,4 +1,4 @@
-# 1 "application.c"
+# 1 "ECU_Layer/ecu_layer_init.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,27 +6,20 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "application.c" 2
+# 1 "ECU_Layer/ecu_layer_init.c" 2
+# 1 "ECU_Layer/ecu_layer_init.h" 1
+# 12 "ECU_Layer/ecu_layer_init.h"
+# 1 "ECU_Layer/7_Segment/ecu_seven_seg.h" 1
+# 12 "ECU_Layer/7_Segment/ecu_seven_seg.h"
+# 1 "ECU_Layer/7_Segment/ecu_seven_seg_cfg.h" 1
+# 12 "ECU_Layer/7_Segment/ecu_seven_seg.h" 2
 
-
-
-
-
-
-
-# 1 "./application.h" 1
-# 11 "./application.h"
-# 1 "./ECU_Layer/KeyPad/ecu_keypad.h" 1
-# 12 "./ECU_Layer/KeyPad/ecu_keypad.h"
-# 1 "./ECU_Layer/KeyPad/ecu_keypad_cfg.h" 1
-# 12 "./ECU_Layer/KeyPad/ecu_keypad.h" 2
-
-# 1 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/hal_gpio.h" 1
-# 11 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/hal_gpio.h"
-# 1 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../mcal_std_types.h" 1
-# 12 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../mcal_std_types.h"
-# 1 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../std_libraries.h" 1
-# 11 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../std_libraries.h"
+# 1 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 1
+# 11 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h"
+# 1 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../mcal_std_types.h" 1
+# 12 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../mcal_std_types.h"
+# 1 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../std_libraries.h" 1
+# 11 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
 
 
@@ -191,7 +184,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 11 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+# 11 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../std_libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
@@ -255,11 +248,11 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 12 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../std_libraries.h" 2
-# 12 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
+# 12 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+# 12 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
 
-# 1 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../compiler.h" 1
-# 11 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../compiler.h"
+# 1 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../compiler.h" 1
+# 11 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../compiler.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4634,8 +4627,8 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 2 3
-# 11 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../compiler.h" 2
-# 13 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
+# 11 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../compiler.h" 2
+# 13 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
 
 
 typedef unsigned char uint8;
@@ -4646,17 +4639,17 @@ typedef signed int sint16;
 typedef signed long sint32;
 
 typedef uint8 Std_ReturnType;
-# 11 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 11 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
-# 1 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../device_config.h" 1
-# 12 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 1 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../device_config.h" 1
+# 12 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
-# 1 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../my_pic18f4620.h" 1
-# 13 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 1 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../my_pic18f4620.h" 1
+# 13 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
-# 1 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
-# 14 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/hal_gpio.h" 2
-# 31 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/hal_gpio.h"
+# 1 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
+# 14 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 31 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h"
 typedef enum{
     LOW=0,
     HIGH
@@ -4706,25 +4699,8 @@ Std_ReturnType gpio_port_get_direction_status(port_index_t port, uint8* directio
 Std_ReturnType gpio_port_write_logic(port_index_t port, uint8 logic);
 Std_ReturnType gpio_port_read_logic(port_index_t port, uint8* logic);
 Std_ReturnType gpio_port_toggle_logic(port_index_t port);
-# 13 "./ECU_Layer/KeyPad/ecu_keypad.h" 2
-# 23 "./ECU_Layer/KeyPad/ecu_keypad.h"
-typedef struct {
-    pin_config_t keypad_row_pins[4];
-    pin_config_t keypad_columns_pins[4];
-}keypad_t;
-
-
-Std_ReturnType keypad_initialize(const keypad_t * keypad_obj);
-Std_ReturnType keypad_get_value(const keypad_t * keypad_obj , uint8 * value);
-# 11 "./application.h" 2
-
-# 1 "./ECU_Layer/ecu_layer_init.h" 1
-# 12 "./ECU_Layer/ecu_layer_init.h"
-# 1 "./ECU_Layer/7_Segment/ecu_seven_seg.h" 1
-# 12 "./ECU_Layer/7_Segment/ecu_seven_seg.h"
-# 1 "./ECU_Layer/7_Segment/ecu_seven_seg_cfg.h" 1
-# 12 "./ECU_Layer/7_Segment/ecu_seven_seg.h" 2
-# 26 "./ECU_Layer/7_Segment/ecu_seven_seg.h"
+# 13 "ECU_Layer/7_Segment/ecu_seven_seg.h" 2
+# 26 "ECU_Layer/7_Segment/ecu_seven_seg.h"
 typedef enum{
     SEGMENT_COMMON_ANODE,
     SEGMENT_COMMON_CATHODE
@@ -4738,13 +4714,13 @@ typedef struct{
 
 Std_ReturnType seven_segment_initialize(const segment_t *seg);
 Std_ReturnType seven_segment_write_number(const segment_t *seg , uint8 number);
-# 12 "./ECU_Layer/ecu_layer_init.h" 2
+# 12 "ECU_Layer/ecu_layer_init.h" 2
 
-# 1 "./ECU_Layer/DC_Motor/ecu_dc_motor.h" 1
-# 12 "./ECU_Layer/DC_Motor/ecu_dc_motor.h"
-# 1 "./ECU_Layer/DC_Motor/ecu_dc_motor_cfg.h" 1
-# 12 "./ECU_Layer/DC_Motor/ecu_dc_motor.h" 2
-# 26 "./ECU_Layer/DC_Motor/ecu_dc_motor.h"
+# 1 "ECU_Layer/DC_Motor/ecu_dc_motor.h" 1
+# 12 "ECU_Layer/DC_Motor/ecu_dc_motor.h"
+# 1 "ECU_Layer/DC_Motor/ecu_dc_motor_cfg.h" 1
+# 12 "ECU_Layer/DC_Motor/ecu_dc_motor.h" 2
+# 26 "ECU_Layer/DC_Motor/ecu_dc_motor.h"
 typedef struct {
     pin_config_t dc_motor_pin[2];
 }dc_motor_t;
@@ -4754,14 +4730,28 @@ Std_ReturnType dc_motor_initialize (const dc_motor_t *_dc_motor);
 Std_ReturnType dc_motor_move_right (const dc_motor_t *_dc_motor);
 Std_ReturnType dc_motor_move_left (const dc_motor_t *_dc_motor);
 Std_ReturnType dc_motor_stop (const dc_motor_t *_dc_motor);
-# 13 "./ECU_Layer/ecu_layer_init.h" 2
+# 13 "ECU_Layer/ecu_layer_init.h" 2
+
+# 1 "ECU_Layer/KeyPad/ecu_keypad.h" 1
+# 12 "ECU_Layer/KeyPad/ecu_keypad.h"
+# 1 "ECU_Layer/KeyPad/ecu_keypad_cfg.h" 1
+# 12 "ECU_Layer/KeyPad/ecu_keypad.h" 2
+# 23 "ECU_Layer/KeyPad/ecu_keypad.h"
+typedef struct {
+    pin_config_t keypad_row_pins[4];
+    pin_config_t keypad_columns_pins[4];
+}keypad_t;
 
 
-# 1 "./ECU_Layer/LED/ecu_led.h" 1
-# 13 "./ECU_Layer/LED/ecu_led.h"
-# 1 "./ECU_Layer/LED/ecu_led_cfg.h" 1
-# 13 "./ECU_Layer/LED/ecu_led.h" 2
-# 22 "./ECU_Layer/LED/ecu_led.h"
+Std_ReturnType keypad_initialize(const keypad_t * keypad_obj);
+Std_ReturnType keypad_get_value(const keypad_t * keypad_obj , uint8 * value);
+# 14 "ECU_Layer/ecu_layer_init.h" 2
+
+# 1 "ECU_Layer/LED/ecu_led.h" 1
+# 13 "ECU_Layer/LED/ecu_led.h"
+# 1 "ECU_Layer/LED/ecu_led_cfg.h" 1
+# 13 "ECU_Layer/LED/ecu_led.h" 2
+# 22 "ECU_Layer/LED/ecu_led.h"
 typedef enum{
   LED_OFF = 0,
   LED_ON
@@ -4778,13 +4768,13 @@ Std_ReturnType led_initialize(const led_t *led);
 Std_ReturnType led_turn_on(const led_t *led);
 Std_ReturnType led_turn_off(const led_t *led);
 Std_ReturnType led_toggle(const led_t *led);
-# 15 "./ECU_Layer/ecu_layer_init.h" 2
+# 15 "ECU_Layer/ecu_layer_init.h" 2
 
-# 1 "./ECU_Layer/Relay/ecu_relay.h" 1
-# 12 "./ECU_Layer/Relay/ecu_relay.h"
-# 1 "./ECU_Layer/Relay/ecu_relay_cfg.h" 1
-# 12 "./ECU_Layer/Relay/ecu_relay.h" 2
-# 22 "./ECU_Layer/Relay/ecu_relay.h"
+# 1 "ECU_Layer/Relay/ecu_relay.h" 1
+# 12 "ECU_Layer/Relay/ecu_relay.h"
+# 1 "ECU_Layer/Relay/ecu_relay_cfg.h" 1
+# 12 "ECU_Layer/Relay/ecu_relay.h" 2
+# 22 "ECU_Layer/Relay/ecu_relay.h"
 typedef struct {
     uint8 relay_port:4;
     uint8 relay_pin:3;
@@ -4795,13 +4785,13 @@ typedef struct {
 Std_ReturnType relay_initialize(const relay_t *_relay);
 Std_ReturnType relay_turn_on(const relay_t *_relay);
 Std_ReturnType relay_turn_off(const relay_t *_relay);
-# 16 "./ECU_Layer/ecu_layer_init.h" 2
+# 16 "ECU_Layer/ecu_layer_init.h" 2
 
-# 1 "./ECU_Layer/button/ecu_button.h" 1
-# 12 "./ECU_Layer/button/ecu_button.h"
-# 1 "./ECU_Layer/button/ecu_button_cfg.h" 1
-# 12 "./ECU_Layer/button/ecu_button.h" 2
-# 22 "./ECU_Layer/button/ecu_button.h"
+# 1 "ECU_Layer/button/ecu_button.h" 1
+# 12 "ECU_Layer/button/ecu_button.h"
+# 1 "ECU_Layer/button/ecu_button_cfg.h" 1
+# 12 "ECU_Layer/button/ecu_button.h" 2
+# 22 "ECU_Layer/button/ecu_button.h"
 typedef enum{
     BUTTON_PRESSED =0,
     BUTTON_RELEASED
@@ -4821,34 +4811,54 @@ typedef struct{
 
 Std_ReturnType button_initialize(const button_t *btn);
 Std_ReturnType button_read_state(const button_t *btn,button_state_t *btn_state);
-# 17 "./ECU_Layer/ecu_layer_init.h" 2
-# 28 "./ECU_Layer/ecu_layer_init.h"
+# 17 "ECU_Layer/ecu_layer_init.h" 2
+# 28 "ECU_Layer/ecu_layer_init.h"
 void ecu_layer_initialize(void);
-# 12 "./application.h" 2
-# 24 "./application.h"
-extern keypad_t keypad1;
-extern led_t led1;
-# 8 "application.c" 2
+# 1 "ECU_Layer/ecu_layer_init.c" 2
 
 
+keypad_t keypad1={
+    .keypad_row_pins[0].pin=PIN0,
+    .keypad_row_pins[0].port=PORTC_INDEX,
+    .keypad_row_pins[0].direction=OUTPUT,
+    .keypad_row_pins[0].logic=LOW,
+    .keypad_row_pins[1].pin=PIN1,
+    .keypad_row_pins[1].port=PORTC_INDEX,
+    .keypad_row_pins[1].direction=OUTPUT,
+    .keypad_row_pins[1].logic=LOW,
+    .keypad_row_pins[2].pin=PIN2,
+    .keypad_row_pins[2].port=PORTC_INDEX,
+    .keypad_row_pins[2].direction=OUTPUT,
+    .keypad_row_pins[2].logic=LOW,
+    .keypad_row_pins[3].pin=PIN3,
+    .keypad_row_pins[3].port=PORTC_INDEX,
+    .keypad_row_pins[3].direction=OUTPUT,
+    .keypad_row_pins[3].logic=LOW,
+    .keypad_columns_pins[0].pin=PIN4,
+    .keypad_columns_pins[0].port=PORTC_INDEX,
+    .keypad_columns_pins[0].direction=INPUT,
+    .keypad_columns_pins[0].logic=LOW,
+    .keypad_columns_pins[1].pin=PIN5,
+    .keypad_columns_pins[1].port=PORTC_INDEX,
+    .keypad_columns_pins[1].direction=INPUT,
+    .keypad_columns_pins[1].logic=LOW,
+    .keypad_columns_pins[2].pin=PIN6,
+    .keypad_columns_pins[2].port=PORTC_INDEX,
+    .keypad_columns_pins[2].direction=INPUT,
+    .keypad_columns_pins[2].logic=LOW,
+    .keypad_columns_pins[3].pin=PIN7,
+    .keypad_columns_pins[3].port=PORTC_INDEX,
+    .keypad_columns_pins[3].direction=INPUT,
+    .keypad_columns_pins[3].logic=LOW
+};
 
-
-
-
-uint8 keypad_value=0;
-Std_ReturnType ret=(Std_ReturnType)0x00;
-int main() {
-    ecu_layer_initialize();
-
-    while(1){
-        ret=keypad_get_value(&keypad1,&keypad_value);
-        if(keypad_value=='7'){
-            led_turn_on(&led1);
-        }
-        else if (keypad_value=='8'){
-            led_turn_off(&led1);
-        }
-        else {}
-    }
-    return (0);
+led_t led1 = {
+    .port_name=PORTD_INDEX,
+    .pin=PIN0,
+    .led_status=LOW
+};
+void ecu_layer_initialize(void){
+     Std_ReturnType ret=(Std_ReturnType)0x00;
+    ret=keypad_initialize(&keypad1);
+    ret=led_initialize(&led1);
 }

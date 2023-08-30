@@ -10,38 +10,21 @@
  * 
  * @return 
  */
-segment_t seg1={
-    .segment_pins[0].pin=PIN0,
-    .segment_pins[0].port=PORTC_INDEX,
-    .segment_pins[0].direction=OUTPUT,
-    .segment_pins[0].logic=LOW,
-    .segment_pins[1].pin=PIN1,
-    .segment_pins[1].port=PORTC_INDEX,
-    .segment_pins[1].direction=OUTPUT,
-    .segment_pins[1].logic=LOW,
-    .segment_pins[2].pin=PIN2,
-    .segment_pins[2].port=PORTC_INDEX,
-    .segment_pins[2].direction=OUTPUT,
-    .segment_pins[2].logic=LOW,
-    .segment_pins[3].pin=PIN3,
-    .segment_pins[3].port=PORTC_INDEX,
-    .segment_pins[3].direction=OUTPUT,
-    .segment_pins[3].logic=LOW,
-    .segment_type=SEGMENT_COMMON_ANODE
-};
 
+uint8 keypad_value=ZERO_INIT;
 Std_ReturnType ret=E_NOT_OK;
 int main() {
-    application_initialize();
-    uint8 cnt=0;
+    ecu_layer_initialize();
+ 
     while(1){
-        for(cnt=0;cnt<=9;cnt++){
-            seven_segment_write_number(&seg1,cnt);
-            __delay_ms(500);
+        ret=keypad_get_value(&keypad1,&keypad_value);
+        if(keypad_value=='7'){
+            led_turn_on(&led1);
         }
+        else if (keypad_value=='8'){
+            led_turn_off(&led1);
+        }
+        else {}
     }
     return (EXIT_SUCCESS);
 }
-void application_initialize(void){
-    ret=seven_segment_initialize(&seg1);
-}     

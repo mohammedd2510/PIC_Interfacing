@@ -1,18 +1,18 @@
 /* 
- * File:   device_config.h
- * Author: mohop
+ * File:   ecu_keypad_cfg.h
+ * Author: Mohamed Osama
  *
- * Created on August 15, 2023, 1:40 PM
+ * Created on August 30, 2023, 12:30 AM
  */
 
-#ifndef DEVICE_CONFIG_H
-#define	DEVICE_CONFIG_H
+#ifndef ECU_KEYPAD_CFG_H
+#define	ECU_KEYPAD_CFG_H
 
 /* Section : Includes */
 
 
 /* Section : Macros Declaration */
-#define _XTAL_FREQ 4000000
+
 
 /* Section : Macro Functions Declaration */
 
@@ -22,5 +22,5 @@
 
 /* Section : Functions Declaration */
 
-#endif	/* DEVICE_CONFIG_H */
+#endif	/* ECU_KEYPAD_CFG_H */
 

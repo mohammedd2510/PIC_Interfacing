@@ -8,20 +8,23 @@
 #ifndef APPLICATION_H
 #define	APPLICATION_H
 
+#include "ECU_Layer/KeyPad/ecu_keypad.h"
+#include"ECU_Layer/ecu_layer_init.h"
+
 /* Section : Includes */
-#include "ECU_Layer/7_Segment/ecu_seven_seg.h"
+
 
 /* Section : Macros Declaration */
-#define _XTAL_FREQ 4000000
+
 
 /* Section : Macro Functions Declaration */
 
 
 /* Section : Data Types Declaration */
-
-
+extern keypad_t keypad1;
+extern led_t led1;
 /* Section : Functions Declaration */
-void application_initialize(void);
+
 
 
 #endif	/* APPLICATION_H */
