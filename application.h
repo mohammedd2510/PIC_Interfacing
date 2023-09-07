@@ -21,10 +21,10 @@
 
 
 /* Section : Data Types Declaration */
-extern keypad_t keypad1;
-extern led_t led1;
+extern chr_lcd_4bit_t lcd1;
+extern chr_lcd_8bit_t lcd_2;
 /* Section : Functions Declaration */
-
+void application_initialize(void);
 
 
 #endif	/* APPLICATION_H */

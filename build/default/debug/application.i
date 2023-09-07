@@ -14,6 +14,19 @@
 
 
 
+# 1 "./application.h" 1
+# 11 "./application.h"
+# 1 "./ECU_Layer/KeyPad/ecu_keypad.h" 1
+# 12 "./ECU_Layer/KeyPad/ecu_keypad.h"
+# 1 "./ECU_Layer/KeyPad/ecu_keypad_cfg.h" 1
+# 12 "./ECU_Layer/KeyPad/ecu_keypad.h" 2
+
+# 1 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/hal_gpio.h" 1
+# 11 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/hal_gpio.h"
+# 1 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../mcal_std_types.h" 1
+# 12 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../mcal_std_types.h"
+# 1 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../std_libraries.h" 1
+# 11 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
 
 
@@ -178,7 +191,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 8 "application.c" 2
+# 11 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../std_libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
@@ -242,14 +255,151 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 9 "application.c" 2
+# 12 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+# 12 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
 
-# 1 "./application.h" 1
-# 12 "./application.h"
-# 1 "./ECU_Layer/LED/ecu_led.h" 1
-# 12 "./ECU_Layer/LED/ecu_led.h"
-# 1 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio.h" 1
-# 11 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio.h"
+# 1 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../compiler.h" 1
+# 11 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../compiler.h"
+# 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 1 3
+# 18 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 3
+extern const char __xc8_OPTIM_SPEED;
+
+extern double __fpnormalize(double);
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\xc8debug.h" 1 3
+# 12 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\xc8debug.h" 3
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
+# 24 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 2 3
+# 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\builtins.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 1 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 142 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 158 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+# 173 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 188 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+# 209 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 229 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 23 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+typedef int24_t int_fast24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+typedef uint24_t uint_fast24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int16_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint16_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 145 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
+# 5 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\builtins.h" 2 3
+
+
+#pragma intrinsic(__nop)
+extern void __nop(void);
+
+
+#pragma intrinsic(_delay)
+extern __attribute__((nonreentrant)) void _delay(uint32_t);
+#pragma intrinsic(_delaywdt)
+extern __attribute__((nonreentrant)) void _delaywdt(uint32_t);
+
+#pragma intrinsic(_delay3)
+extern __attribute__((nonreentrant)) void _delay3(uint8_t);
+# 25 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 2 3
+
+
+
+
+
+
+
+
+# 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\pic18.h" 1 3
+
+
+
+
+# 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\htc.h" 1 3
+
+
+
+# 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 1 3
+# 5 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\htc.h" 2 3
+# 6 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\pic18.h" 2 3
+
+
+# 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\pic18_chip_select.h" 1 3
+# 369 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\pic18_chip_select.h" 3
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\proc\\pic18f4620.h" 1 3
 # 44 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\proc\\pic18f4620.h" 3
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\__at.h" 1 3
@@ -4462,154 +4612,7 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 11 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio.h" 2
-
-# 1 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../mcal_std_types.h" 1
-# 12 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../mcal_std_types.h"
-# 1 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h" 1
-# 12 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
-
-# 1 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../compiler.h" 1
-# 11 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../compiler.h"
-# 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 1 3
-# 18 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 3
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\xc8debug.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\xc8debug.h" 3
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-# 24 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 2 3
-# 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\builtins.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 127 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 142 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 158 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
-
-
-
-
-typedef short int16_t;
-# 173 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 188 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 209 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 229 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 23 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-typedef int24_t int_fast24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-typedef uint24_t uint_fast24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int16_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint16_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 145 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
-# 5 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\builtins.h" 2 3
-
-
-#pragma intrinsic(__nop)
-extern void __nop(void);
-
-
-#pragma intrinsic(_delay)
-extern __attribute__((nonreentrant)) void _delay(uint32_t);
-#pragma intrinsic(_delaywdt)
-extern __attribute__((nonreentrant)) void _delaywdt(uint32_t);
-
-#pragma intrinsic(_delay3)
-extern __attribute__((nonreentrant)) void _delay3(uint8_t);
-# 25 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 2 3
-
-
-
-
-
-
-
-
-# 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\pic18.h" 1 3
-
-
-
-
-# 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\htc.h" 1 3
-
-
-
-# 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 1 3
-# 5 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\htc.h" 2 3
-# 6 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\pic18.h" 2 3
-
-
-# 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\pic18_chip_select.h" 1 3
+# 370 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\pic18_chip_select.h" 2 3
 # 9 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\pic18.h" 2 3
 # 19 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\pic18.h" 3
 __attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
@@ -4631,36 +4634,266 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 2 3
-# 11 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../compiler.h" 2
-# 13 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
+# 11 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../compiler.h" 2
+# 13 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
 
 
 typedef unsigned char uint8;
-typedef unsigned short uint16;
-typedef unsigned int uint32;
+typedef unsigned int uint16;
+typedef unsigned long uint32;
 typedef signed char sint8;
-typedef signed short sint16;
-typedef signed int sint32;
+typedef signed int sint16;
+typedef signed long sint32;
 
 typedef uint8 Std_ReturnType;
-# 12 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 11 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
-# 1 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../device_config.h" 1
-# 13 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 1 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../device_config.h" 1
+# 12 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
-# 1 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../my_pic18f4620.h" 1
-# 14 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio.h" 2
-# 12 "./ECU_Layer/LED/ecu_led.h" 2
+# 1 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../my_pic18f4620.h" 1
+# 13 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+
+# 1 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
+# 14 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 31 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/hal_gpio.h"
+typedef enum{
+    LOW=0,
+    HIGH
+}logic_t;
+
+typedef enum{
+    OUTPUT=0,
+    INPUT
+}direction_t;
+
+typedef enum{
+    PIN0=0,
+    PIN1,
+    PIN2,
+    PIN3,
+    PIN4,
+    PIN5,
+    PIN6,
+    PIN7
+}pin_index_t;
+
+typedef enum{
+    PORTA_INDEX=0,
+    PORTB_INDEX,
+    PORTC_INDEX,
+    PORTD_INDEX,
+    PORTE_INDEX
+}port_index_t;
+
+typedef struct{
+    uint8 port:3;
+    uint8 pin:3;
+    uint8 direction:1;
+    uint8 logic:1;
+}pin_config_t;
+
+
+Std_ReturnType gpio_pin_initialize(const pin_config_t *pin_config);
+Std_ReturnType gpio_pin_direction_initialize(const pin_config_t *pin_config);
+Std_ReturnType gpio_pin_get_direction_status(const pin_config_t *pin_config, direction_t* direction_status);
+Std_ReturnType gpio_pin_write_logic(const pin_config_t *pin_config, logic_t logic);
+Std_ReturnType gpio_pin_read_logic(const pin_config_t *pin_config, logic_t* logic);
+Std_ReturnType gpio_pin_toggle_logic(const pin_config_t *pin_config);
+
+Std_ReturnType gpio_port_direction_initialize(port_index_t port,uint8 direction);
+Std_ReturnType gpio_port_get_direction_status(port_index_t port, uint8* direction_status);
+Std_ReturnType gpio_port_write_logic(port_index_t port, uint8 logic);
+Std_ReturnType gpio_port_read_logic(port_index_t port, uint8* logic);
+Std_ReturnType gpio_port_toggle_logic(port_index_t port);
+# 13 "./ECU_Layer/KeyPad/ecu_keypad.h" 2
+# 23 "./ECU_Layer/KeyPad/ecu_keypad.h"
+typedef struct {
+    pin_config_t keypad_row_pins[4];
+    pin_config_t keypad_columns_pins[4];
+}keypad_t;
+
+
+Std_ReturnType keypad_initialize(const keypad_t * keypad_obj);
+Std_ReturnType keypad_get_value(const keypad_t * keypad_obj , uint8 * value);
+# 11 "./application.h" 2
+
+# 1 "./ECU_Layer/ecu_layer_init.h" 1
+# 12 "./ECU_Layer/ecu_layer_init.h"
+# 1 "./ECU_Layer/7_Segment/ecu_seven_seg.h" 1
+# 12 "./ECU_Layer/7_Segment/ecu_seven_seg.h"
+# 1 "./ECU_Layer/7_Segment/ecu_seven_seg_cfg.h" 1
+# 12 "./ECU_Layer/7_Segment/ecu_seven_seg.h" 2
+# 26 "./ECU_Layer/7_Segment/ecu_seven_seg.h"
+typedef enum{
+    SEGMENT_COMMON_ANODE,
+    SEGMENT_COMMON_CATHODE
+}segment_type_t;
+
+typedef struct{
+    pin_config_t segment_pins[4];
+    segment_type_t segment_type;
+}segment_t;
+
+
+Std_ReturnType seven_segment_initialize(const segment_t *seg);
+Std_ReturnType seven_segment_write_number(const segment_t *seg , uint8 number);
+# 12 "./ECU_Layer/ecu_layer_init.h" 2
+
+# 1 "./ECU_Layer/DC_Motor/ecu_dc_motor.h" 1
+# 12 "./ECU_Layer/DC_Motor/ecu_dc_motor.h"
+# 1 "./ECU_Layer/DC_Motor/ecu_dc_motor_cfg.h" 1
+# 12 "./ECU_Layer/DC_Motor/ecu_dc_motor.h" 2
+# 26 "./ECU_Layer/DC_Motor/ecu_dc_motor.h"
+typedef struct {
+    pin_config_t dc_motor_pin[2];
+}dc_motor_t;
+
+
+Std_ReturnType dc_motor_initialize (const dc_motor_t *_dc_motor);
+Std_ReturnType dc_motor_move_right (const dc_motor_t *_dc_motor);
+Std_ReturnType dc_motor_move_left (const dc_motor_t *_dc_motor);
+Std_ReturnType dc_motor_stop (const dc_motor_t *_dc_motor);
+# 13 "./ECU_Layer/ecu_layer_init.h" 2
+
+
+# 1 "./ECU_Layer/LED/ecu_led.h" 1
+# 13 "./ECU_Layer/LED/ecu_led.h"
+# 1 "./ECU_Layer/LED/ecu_led_cfg.h" 1
+# 13 "./ECU_Layer/LED/ecu_led.h" 2
+# 22 "./ECU_Layer/LED/ecu_led.h"
+typedef enum{
+  LED_OFF = 0,
+  LED_ON
+}led_status_t;
+
+typedef struct{
+uint8 port_name:4;
+uint8 pin:3;
+uint8 led_status:1;
+}led_t;
+
+
+Std_ReturnType led_initialize(const led_t *led);
+Std_ReturnType led_turn_on(const led_t *led);
+Std_ReturnType led_turn_off(const led_t *led);
+Std_ReturnType led_toggle(const led_t *led);
+# 15 "./ECU_Layer/ecu_layer_init.h" 2
+
+# 1 "./ECU_Layer/Relay/ecu_relay.h" 1
+# 12 "./ECU_Layer/Relay/ecu_relay.h"
+# 1 "./ECU_Layer/Relay/ecu_relay_cfg.h" 1
+# 12 "./ECU_Layer/Relay/ecu_relay.h" 2
+# 22 "./ECU_Layer/Relay/ecu_relay.h"
+typedef struct {
+    uint8 relay_port:4;
+    uint8 relay_pin:3;
+    uint8 relay_status:1;
+}relay_t;
+
+
+Std_ReturnType relay_initialize(const relay_t *_relay);
+Std_ReturnType relay_turn_on(const relay_t *_relay);
+Std_ReturnType relay_turn_off(const relay_t *_relay);
+# 16 "./ECU_Layer/ecu_layer_init.h" 2
+
+# 1 "./ECU_Layer/button/ecu_button.h" 1
+# 12 "./ECU_Layer/button/ecu_button.h"
+# 1 "./ECU_Layer/button/ecu_button_cfg.h" 1
+# 12 "./ECU_Layer/button/ecu_button.h" 2
+# 22 "./ECU_Layer/button/ecu_button.h"
+typedef enum{
+    BUTTON_PRESSED =0,
+    BUTTON_RELEASED
+}button_state_t;
+
+typedef enum{
+    BUTTON_ACTIVE_HIGH,
+    BUTTON_ACTIVE_LOW
+}button_active_t;
+
+typedef struct{
+    pin_config_t button_pin;
+    button_state_t button_state;
+    button_active_t button_connection;
+}button_t;
+
+
+Std_ReturnType button_initialize(const button_t *btn);
+Std_ReturnType button_read_state(const button_t *btn,button_state_t *btn_state);
+# 17 "./ECU_Layer/ecu_layer_init.h" 2
+
+# 1 "./ECU_Layer/Chr_LCD/ecu_chr_lcd.h" 1
+# 12 "./ECU_Layer/Chr_LCD/ecu_chr_lcd.h"
+# 1 "./ECU_Layer/Chr_LCD/ecu_chr_lcd_cfg.h" 1
+# 12 "./ECU_Layer/Chr_LCD/ecu_chr_lcd.h" 2
+# 53 "./ECU_Layer/Chr_LCD/ecu_chr_lcd.h"
+typedef struct {
+    pin_config_t lcd_rs;
+    pin_config_t lcd_en;
+    pin_config_t lcd_data[4];
+}chr_lcd_4bit_t;
+
+typedef struct {
+    pin_config_t lcd_rs;
+    pin_config_t lcd_en;
+    pin_config_t lcd_data[8];
+}chr_lcd_8bit_t;
+
+Std_ReturnType lcd_4bit_initialize (const chr_lcd_4bit_t *lcd);
+Std_ReturnType lcd_4bit_send_command (const chr_lcd_4bit_t *lcd, uint8 command);
+Std_ReturnType lcd_4bit_send_char_data (const chr_lcd_4bit_t *lcd, uint8 data);
+Std_ReturnType lcd_4bit_send_char_data_pos (const chr_lcd_4bit_t *lcd ,uint8 row ,uint8 column , uint8 data);
+Std_ReturnType lcd_4bit_send_string (const chr_lcd_4bit_t *lcd, uint8 *str);
+Std_ReturnType lcd_4bit_send_string_pos (const chr_lcd_4bit_t *lcd ,uint8 row ,uint8 column , uint8 *str);
+Std_ReturnType lcd_4bit_send_custom_char(const chr_lcd_4bit_t *lcd ,uint8 row ,uint8 column ,
+                                         const uint8 _chr[],uint8 mem_pos);
+
+
+Std_ReturnType lcd_8bit_initialize (const chr_lcd_8bit_t *lcd);
+Std_ReturnType lcd_8bit_send_command (const chr_lcd_8bit_t *lcd, uint8 command);
+Std_ReturnType lcd_8bit_send_char_data (const chr_lcd_8bit_t *lcd, uint8 data);
+Std_ReturnType lcd_8bit_send_char_data_pos (const chr_lcd_8bit_t *lcd ,uint8 row ,uint8 column , uint8 data);
+Std_ReturnType lcd_8bit_send_string (const chr_lcd_8bit_t *lcd, uint8 *str);
+Std_ReturnType lcd_8bit_send_string_pos (const chr_lcd_8bit_t *lcd ,uint8 row ,uint8 column , uint8 *str);
+Std_ReturnType lcd_8bit_send_custom_char(const chr_lcd_8bit_t *lcd ,uint8 row ,uint8 column ,
+                                         const uint8 _chr[],uint8 mem_pos);
+
+void convert_byte_to_string(uint8 value , uint8 *str);
+void convert_short_to_string(uint16 value , uint8 *str);
+void convert_long_to_string(uint32 value , uint8 *str);
+# 18 "./ECU_Layer/ecu_layer_init.h" 2
+# 29 "./ECU_Layer/ecu_layer_init.h"
+void ecu_layer_initialize(void);
 # 12 "./application.h" 2
-# 10 "application.c" 2
+# 24 "./application.h"
+extern chr_lcd_4bit_t lcd1;
+extern chr_lcd_8bit_t lcd_2;
+
+void application_initialize(void);
+# 8 "application.c" 2
 
 
 
+
+
+
+
+Std_ReturnType ret=(Std_ReturnType)0x00;
 
 int main() {
-    int x=sizeof(int);
-    int y=x+3;
-    TRISC=0x00;
-    LATC=x;
+    application_initialize();
+
+
+    while(1){
+
+        lcd_4bit_send_string_pos(&lcd1,1,1,"EMBEDDED DIPLOMA");
+        lcd_8bit_send_string_pos(&lcd_2,1,1,"EMBEDDED DIPLOMA");
+
+    }
     return (0);
+}
+void application_initialize(void){
+    Std_ReturnType ret=(Std_ReturnType)0x00;
+    ecu_layer_initialize();
 }

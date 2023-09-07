@@ -256,6 +256,65 @@ typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
 # 12 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 411 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 26 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 2 3
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+
+
+
+
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 13 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../std_libraries.h" 2
 # 12 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
 
 # 1 "./ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../compiler.h" 1
@@ -4822,12 +4881,55 @@ typedef struct{
 Std_ReturnType button_initialize(const button_t *btn);
 Std_ReturnType button_read_state(const button_t *btn,button_state_t *btn_state);
 # 17 "./ECU_Layer/ecu_layer_init.h" 2
-# 28 "./ECU_Layer/ecu_layer_init.h"
+
+# 1 "./ECU_Layer/Chr_LCD/ecu_chr_lcd.h" 1
+# 12 "./ECU_Layer/Chr_LCD/ecu_chr_lcd.h"
+# 1 "./ECU_Layer/Chr_LCD/ecu_chr_lcd_cfg.h" 1
+# 12 "./ECU_Layer/Chr_LCD/ecu_chr_lcd.h" 2
+# 53 "./ECU_Layer/Chr_LCD/ecu_chr_lcd.h"
+typedef struct {
+    pin_config_t lcd_rs;
+    pin_config_t lcd_en;
+    pin_config_t lcd_data[4];
+}chr_lcd_4bit_t;
+
+typedef struct {
+    pin_config_t lcd_rs;
+    pin_config_t lcd_en;
+    pin_config_t lcd_data[8];
+}chr_lcd_8bit_t;
+
+Std_ReturnType lcd_4bit_initialize (const chr_lcd_4bit_t *lcd);
+Std_ReturnType lcd_4bit_send_command (const chr_lcd_4bit_t *lcd, uint8 command);
+Std_ReturnType lcd_4bit_send_char_data (const chr_lcd_4bit_t *lcd, uint8 data);
+Std_ReturnType lcd_4bit_send_char_data_pos (const chr_lcd_4bit_t *lcd ,uint8 row ,uint8 column , uint8 data);
+Std_ReturnType lcd_4bit_send_string (const chr_lcd_4bit_t *lcd, uint8 *str);
+Std_ReturnType lcd_4bit_send_string_pos (const chr_lcd_4bit_t *lcd ,uint8 row ,uint8 column , uint8 *str);
+Std_ReturnType lcd_4bit_send_custom_char(const chr_lcd_4bit_t *lcd ,uint8 row ,uint8 column ,
+                                         const uint8 _chr[],uint8 mem_pos);
+
+
+Std_ReturnType lcd_8bit_initialize (const chr_lcd_8bit_t *lcd);
+Std_ReturnType lcd_8bit_send_command (const chr_lcd_8bit_t *lcd, uint8 command);
+Std_ReturnType lcd_8bit_send_char_data (const chr_lcd_8bit_t *lcd, uint8 data);
+Std_ReturnType lcd_8bit_send_char_data_pos (const chr_lcd_8bit_t *lcd ,uint8 row ,uint8 column , uint8 data);
+Std_ReturnType lcd_8bit_send_string (const chr_lcd_8bit_t *lcd, uint8 *str);
+Std_ReturnType lcd_8bit_send_string_pos (const chr_lcd_8bit_t *lcd ,uint8 row ,uint8 column , uint8 *str);
+Std_ReturnType lcd_8bit_send_custom_char(const chr_lcd_8bit_t *lcd ,uint8 row ,uint8 column ,
+                                         const uint8 _chr[],uint8 mem_pos);
+
+Std_ReturnType convert_byte_to_string(uint8 value , uint8 *str);
+Std_ReturnType convert_short_to_string(uint16 value , uint8 *str);
+Std_ReturnType convert_long_to_string(uint32 value , uint8 *str);
+# 18 "./ECU_Layer/ecu_layer_init.h" 2
+# 29 "./ECU_Layer/ecu_layer_init.h"
 void ecu_layer_initialize(void);
 # 12 "./application.h" 2
 # 24 "./application.h"
-extern keypad_t keypad1;
-extern led_t led1;
+extern chr_lcd_4bit_t lcd1;
+extern chr_lcd_8bit_t lcd_2;
+
+void application_initialize(void);
 # 8 "application.c" 2
 
 
@@ -4835,20 +4937,95 @@ extern led_t led1;
 
 
 
-uint8 keypad_value=0;
+
 Std_ReturnType ret=(Std_ReturnType)0x00;
+uint32 counter_txt[4];
+uint32 counter=0;
+
+uint8 custom_char1[] = {
+  0x0E,
+  0x0A,
+  0x11,
+  0x11,
+  0x11,
+  0x11,
+  0x1F,
+  0x00
+};
+uint8 custom_char2[] = {
+  0x0E,
+  0x0A,
+  0x11,
+  0x11,
+  0x11,
+  0x1F,
+  0x1F,
+  0x00
+};
+uint8 custom_char3[] = {
+  0x0E,
+  0x0A,
+  0x11,
+  0x11,
+  0x1F,
+  0x1F,
+  0x1F,
+  0x00
+};
+uint8 custom_char4[] = {
+  0x0E,
+  0x0A,
+  0x11,
+  0x1F,
+  0x1F,
+  0x1F,
+  0x1F,
+  0x00
+};
+uint8 custom_char5[] = {
+  0x0E,
+  0x0A,
+  0x1F,
+  0x1F,
+  0x1F,
+  0x1F,
+  0x1F,
+  0x00
+};
+uint8 custom_char6[] = {
+  0x0E,
+  0x0E,
+  0x1F,
+  0x1F,
+  0x1F,
+  0x1F,
+  0x1F,
+  0x00
+};
 int main() {
-    ecu_layer_initialize();
+    application_initialize();
+
 
     while(1){
-        ret=keypad_get_value(&keypad1,&keypad_value);
-        if(keypad_value=='7'){
-            led_turn_on(&led1);
-        }
-        else if (keypad_value=='8'){
-            led_turn_off(&led1);
-        }
-        else {}
+        lcd_4bit_send_custom_char(&lcd1,1,20,custom_char1,0);_delay((unsigned long)((250)*(4000000/4000.0)));
+        lcd_4bit_send_custom_char(&lcd1,1,20,custom_char2,0);_delay((unsigned long)((250)*(4000000/4000.0)));
+        lcd_4bit_send_custom_char(&lcd1,1,20,custom_char3,0);_delay((unsigned long)((250)*(4000000/4000.0)));
+        lcd_4bit_send_custom_char(&lcd1,1,20,custom_char4,0);_delay((unsigned long)((250)*(4000000/4000.0)));
+        lcd_4bit_send_custom_char(&lcd1,1,20,custom_char5,0);_delay((unsigned long)((250)*(4000000/4000.0)));
+        lcd_4bit_send_custom_char(&lcd1,1,20,custom_char6,0);_delay((unsigned long)((250)*(4000000/4000.0)));
+        lcd_8bit_send_custom_char(&lcd_2,1,20,custom_char1,0);_delay((unsigned long)((250)*(4000000/4000.0)));
+        lcd_8bit_send_custom_char(&lcd_2,1,20,custom_char2,0);_delay((unsigned long)((250)*(4000000/4000.0)));
+        lcd_8bit_send_custom_char(&lcd_2,1,20,custom_char3,0);_delay((unsigned long)((250)*(4000000/4000.0)));
+        lcd_8bit_send_custom_char(&lcd_2,1,20,custom_char4,0);_delay((unsigned long)((250)*(4000000/4000.0)));
+        lcd_8bit_send_custom_char(&lcd_2,1,20,custom_char5,0);_delay((unsigned long)((250)*(4000000/4000.0)));
+        lcd_8bit_send_custom_char(&lcd_2,1,20,custom_char6,0);_delay((unsigned long)((250)*(4000000/4000.0)));
+
+
+
     }
     return (0);
+}
+void application_initialize(void){
+    Std_ReturnType ret=(Std_ReturnType)0x00;
+    ecu_layer_initialize();
 }

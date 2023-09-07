@@ -15,6 +15,7 @@
 #include "LED/ecu_led.h"
 #include "Relay/ecu_relay.h"
 #include "button/ecu_button.h"
+#include "Chr_LCD/ecu_chr_lcd.h"
 /* Section : Macros Declaration */
 
 
