@@ -56,7 +56,7 @@
 #define PORTE HWREG(PORTE_ADD)
 
 
-/***********************************************/
+/**********************INTERRUPT REGISTERS*********************/
 
 typedef union {
   struct {  
@@ -206,7 +206,27 @@ typedef struct {
 #define RCON_bits (*((volatile RCON_t *)(0xFD0)))
 #define RCON (*((volatile uint8 *)(0xFD0)))
 
+/**********************************************/
+/*EEPROM Registers*/
+#define EEDATA (*((volatile uint8 *)(0xFA8)))
+#define EEADR (*((volatile uint8 *)(0xFA9)))
+#define EEADRH (*((volatile uint8 *)(0xFAA)))
+#define EECON2 (*((volatile uint8 *)(0xFA7)))
+#define EECON1 (*((volatile uint8 *)(0xFA6)))
 
+typedef struct {
+  uint8  RD :1;
+  uint8  WR  :1;
+  uint8  WREN  :1;
+  uint8  WRERR :1;
+  uint8  FREE :1;
+  uint8       :1;
+  uint8  CFGS    :1;
+  uint8  EEPGD    :1; 
+}EECON1_t;
 
+#define EECON1_bits (*((volatile EECON1_t *)(0xFA6)))
+
+/***************************************/
 #endif	/* MY_PIC18F4620_H */
 

@@ -4858,6 +4858,17 @@ typedef struct {
   uint8 SBOREN :1;
   uint8 IPEN :1;
 }RCON_t;
+# 217 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
+typedef struct {
+  uint8 RD :1;
+  uint8 WR :1;
+  uint8 WREN :1;
+  uint8 WRERR :1;
+  uint8 FREE :1;
+  uint8 :1;
+  uint8 CFGS :1;
+  uint8 EEPGD :1;
+}EECON1_t;
 # 13 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
 # 1 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
@@ -5083,56 +5094,24 @@ extern led_t led4;
 void ecu_layer_initialize(void);
 # 11 "./application.h" 2
 
-# 1 "./MCAL_Layer/Interrupt/mcal_external_interrupt.h" 1
-# 12 "./MCAL_Layer/Interrupt/mcal_external_interrupt.h"
-# 1 "./MCAL_Layer/Interrupt/mcal_interrupt_config.h" 1
-# 14 "./MCAL_Layer/Interrupt/mcal_interrupt_config.h"
-# 1 "./MCAL_Layer/Interrupt/mcal_interrupt_gen_cfg.h" 1
-# 14 "./MCAL_Layer/Interrupt/mcal_interrupt_config.h" 2
-# 59 "./MCAL_Layer/Interrupt/mcal_interrupt_config.h"
+
+# 1 "./MCAL_Layer/EEPROM/hal_eeprom.h" 1
+# 14 "./MCAL_Layer/EEPROM/hal_eeprom.h"
+# 1 "./MCAL_Layer/EEPROM/../Interrupt/mcal_interrupt_config.h" 1
+# 14 "./MCAL_Layer/EEPROM/../Interrupt/mcal_interrupt_config.h"
+# 1 "./MCAL_Layer/EEPROM/../Interrupt/mcal_interrupt_gen_cfg.h" 1
+# 14 "./MCAL_Layer/EEPROM/../Interrupt/mcal_interrupt_config.h" 2
+# 59 "./MCAL_Layer/EEPROM/../Interrupt/mcal_interrupt_config.h"
 typedef enum {
     INTERRUPT_LOW_PRIORITY = 0 ,
     INTERRUPT_HIGH_PRIORITY
 }interrupt_priority_cfg;
-# 12 "./MCAL_Layer/Interrupt/mcal_external_interrupt.h" 2
-# 85 "./MCAL_Layer/Interrupt/mcal_external_interrupt.h"
-typedef void (*InterruptHandler)(void);
-
-typedef enum {
-    INTERRUPT_FALLING_EDGE = 0 ,
-    INTERRUPT_RISING_EDGE
-}interrupt_INTx_edge;
-
-typedef enum {
-    INTERRUPT_EXTERNAL_INT0 = 0 ,
-    INTERRUPT_EXTERNAL_INT1,
-    INTERRUPT_EXTERNAL_INT2
-}interrupt_INTx_src;
-
-
-
-typedef struct {
-    void (*EXT_InterruptHandler)(void);
-    pin_config_t mcu_pin;
-    interrupt_INTx_edge edge ;
-    interrupt_INTx_src source ;
-    interrupt_priority_cfg priority;
-}interrupt_INTx_t;
-
-typedef struct {
-    void (*EXT_InterruptHandler)(void);
-    pin_config_t mcu_pin;
-    interrupt_priority_cfg priority;
-    uint8 RBx_Pin_init_value;
-}interrupt_RBx_t;
-
-
-Std_ReturnType Interrupt_INTx_Init (const interrupt_INTx_t *int_obj);
-Std_ReturnType Interrupt_INTx_DeInit (const interrupt_INTx_t *int_obj);
-Std_ReturnType Interrupt_RBx_Init (const interrupt_RBx_t *int_obj);
-Std_ReturnType Interrupt_RBx_DeInit (const interrupt_RBx_t *int_obj);
-# 12 "./application.h" 2
-# 25 "./application.h"
+# 14 "./MCAL_Layer/EEPROM/hal_eeprom.h" 2
+# 40 "./MCAL_Layer/EEPROM/hal_eeprom.h"
+Std_ReturnType Data_EEPROM_WriteByte(uint16 bAdd ,uint8 bData);
+Std_ReturnType Data_EEPROM_ReadByte(uint16 bAdd ,uint8 *bData);
+# 13 "./application.h" 2
+# 26 "./application.h"
 void application_initialize(void);
 # 8 "application.c" 2
 
@@ -5140,58 +5119,13 @@ void application_initialize(void);
 
 
 
-void RB4_INT_HANDLER (void){
-    led_toggle(&led1);
-}
-void RB5_INT_HANDLER (void){
-    led_toggle(&led2);
-}
-void RB6_INT_HANDLER (void){
-    led_toggle(&led3);
-}
-void RB7_INT_HANDLER (void){
-    led_toggle(&led4);
-}
 
-Std_ReturnType ret=(Std_ReturnType)0x00;
-
-
-interrupt_RBx_t RB4_INT = {
-    .mcu_pin.port=PORTB_INDEX ,
-    .mcu_pin.pin=PIN4,
-    .mcu_pin.direction = INPUT ,
-    .EXT_InterruptHandler = RB4_INT_HANDLER,
-    .RBx_Pin_init_value=0,
-};
-interrupt_RBx_t RB5_INT = {
-    .mcu_pin.port=PORTB_INDEX ,
-    .mcu_pin.pin=PIN5,
-    .mcu_pin.direction = INPUT ,
-    .EXT_InterruptHandler = RB5_INT_HANDLER,
-    .RBx_Pin_init_value=0,
-};
-interrupt_RBx_t RB6_INT = {
-    .mcu_pin.port=PORTB_INDEX ,
-    .mcu_pin.pin=PIN6,
-    .mcu_pin.direction = INPUT ,
-    .EXT_InterruptHandler = RB6_INT_HANDLER,
-    .RBx_Pin_init_value=0,
-};
-interrupt_RBx_t RB7_INT = {
-    .mcu_pin.port=PORTB_INDEX ,
-    .mcu_pin.pin=PIN7,
-    .mcu_pin.direction = INPUT ,
-    .EXT_InterruptHandler = RB7_INT_HANDLER,
-    .RBx_Pin_init_value=0,
-};
+uint8 EEPROM_READ_VALUE =0;
 int main() {
-    application_initialize();
-    Interrupt_RBx_Init(&RB4_INT);
-    Interrupt_RBx_Init(&RB5_INT);
-    Interrupt_RBx_Init(&RB6_INT);
-    Interrupt_RBx_Init(&RB7_INT);
-    while(1){
 
+    Data_EEPROM_WriteByte(0X3FF ,0x33);
+    Data_EEPROM_ReadByte(0x3ff,&EEPROM_READ_VALUE);
+    while(1){
 
 
 

@@ -4848,6 +4848,17 @@ typedef struct {
   uint8 SBOREN :1;
   uint8 IPEN :1;
 }RCON_t;
+# 217 "MCAL_Layer/GPIO/../my_pic18f4620.h"
+typedef struct {
+  uint8 RD :1;
+  uint8 WR :1;
+  uint8 WREN :1;
+  uint8 WRERR :1;
+  uint8 FREE :1;
+  uint8 :1;
+  uint8 CFGS :1;
+  uint8 EEPGD :1;
+}EECON1_t;
 # 13 "MCAL_Layer/GPIO/hal_gpio.h" 2
 
 # 1 "MCAL_Layer/GPIO/hal_gpio_cfg.h" 1

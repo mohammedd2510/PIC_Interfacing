@@ -1,50 +1,11 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"27 ./ECU_Layer/LED/ecu_led.h
-[; ;./ECU_Layer/LED/ecu_led.h: 27: typedef struct{
-[s S289 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S289 . port_name pin led_status ]
-"37
-[; ;./ECU_Layer/LED/ecu_led.h: 37: Std_ReturnType led_toggle(const led_t *led);
-[v _led_toggle `(uc ~T0 @X0 0 ef1`*CS289 ]
-"26 ./ECU_Layer/ecu_layer_init.h
-[; ;./ECU_Layer/ecu_layer_init.h: 26: extern led_t led1;
-[v _led1 `S289 ~T0 @X0 0 e ]
-"27
-[; ;./ECU_Layer/ecu_layer_init.h: 27: extern led_t led2;
-[v _led2 `S289 ~T0 @X0 0 e ]
-"28
-[; ;./ECU_Layer/ecu_layer_init.h: 28: extern led_t led3;
-[v _led3 `S289 ~T0 @X0 0 e ]
-"29
-[; ;./ECU_Layer/ecu_layer_init.h: 29: extern led_t led4;
-[v _led4 `S289 ~T0 @X0 0 e ]
-[v F3317 `(v ~T0 @X0 0 tf ]
-"60 ./MCAL_Layer/Interrupt/../GPIO/hal_gpio.h
-[s S285 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S285 . port pin direction logic ]
-"29 application.c
-[; ;application.c: 29: interrupt_RBx_t RB4_INT = {
-[c E3292 0 1 .. ]
-[n E3292 . INTERRUPT_LOW_PRIORITY INTERRUPT_HIGH_PRIORITY  ]
-"108 ./MCAL_Layer/Interrupt/mcal_external_interrupt.h
-[; ;./MCAL_Layer/Interrupt/mcal_external_interrupt.h: 108: typedef struct {
-[s S295 `*F3317 1 `S285 1 `E3292 1 `uc 1 ]
-[n S295 . EXT_InterruptHandler mcu_pin priority RBx_Pin_init_value ]
-"29 application.c
-[; ;application.c: 29: interrupt_RBx_t RB4_INT = {
-[c E3093 0 1 2 3 4 .. ]
-[n E3093 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
-[c E3083 0 1 2 3 4 5 6 7 .. ]
-[n E3083 . PIN0 PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7  ]
-[c E3079 0 1 .. ]
-[n E3079 . OUTPUT INPUT  ]
 [p mainexit ]
-"25 ./application.h
-[; ;./application.h: 25: void application_initialize(void);
-[v _application_initialize `(v ~T0 @X0 0 ef ]
-"118 ./MCAL_Layer/Interrupt/mcal_external_interrupt.h
-[; ;./MCAL_Layer/Interrupt/mcal_external_interrupt.h: 118: Std_ReturnType Interrupt_RBx_Init (const interrupt_RBx_t *int_obj);
-[v _Interrupt_RBx_Init `(uc ~T0 @X0 0 ef1`*CS295 ]
+"40 ./MCAL_Layer/EEPROM/hal_eeprom.h
+[; ;./MCAL_Layer/EEPROM/hal_eeprom.h: 40: Std_ReturnType Data_EEPROM_WriteByte(uint16 bAdd ,uint8 bData);
+[v _Data_EEPROM_WriteByte `(uc ~T0 @X0 0 ef2`ui`uc ]
+"41
+[; ;./MCAL_Layer/EEPROM/hal_eeprom.h: 41: Std_ReturnType Data_EEPROM_ReadByte(uint16 bAdd ,uint8 *bData);
+[v _Data_EEPROM_ReadByte `(uc ~T0 @X0 0 ef2`ui`*uc ]
 "32 ./ECU_Layer/ecu_layer_init.h
 [; ;./ECU_Layer/ecu_layer_init.h: 32: void ecu_layer_initialize(void);
 [v _ecu_layer_initialize `(v ~T0 @X0 0 ef ]
@@ -459,194 +420,57 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"13 application.c
-[; ;application.c: 13: void RB4_INT_HANDLER (void){
-[v _RB4_INT_HANDLER `(v ~T0 @X0 1 ef ]
-{
-[e :U _RB4_INT_HANDLER ]
-[f ]
-"14
-[; ;application.c: 14:     led_toggle(&led1);
-[e ( _led_toggle (1 -> &U _led1 `*CS289 ]
-"15
-[; ;application.c: 15: }
-[e :UE 296 ]
-}
-"16
-[; ;application.c: 16: void RB5_INT_HANDLER (void){
-[v _RB5_INT_HANDLER `(v ~T0 @X0 1 ef ]
-{
-[e :U _RB5_INT_HANDLER ]
-[f ]
-"17
-[; ;application.c: 17:     led_toggle(&led2);
-[e ( _led_toggle (1 -> &U _led2 `*CS289 ]
-"18
-[; ;application.c: 18: }
-[e :UE 297 ]
-}
-"19
-[; ;application.c: 19: void RB6_INT_HANDLER (void){
-[v _RB6_INT_HANDLER `(v ~T0 @X0 1 ef ]
-{
-[e :U _RB6_INT_HANDLER ]
-[f ]
-"20
-[; ;application.c: 20:     led_toggle(&led3);
-[e ( _led_toggle (1 -> &U _led3 `*CS289 ]
-"21
-[; ;application.c: 21: }
-[e :UE 298 ]
-}
-"22
-[; ;application.c: 22: void RB7_INT_HANDLER (void){
-[v _RB7_INT_HANDLER `(v ~T0 @X0 1 ef ]
-{
-[e :U _RB7_INT_HANDLER ]
-[f ]
-"23
-[; ;application.c: 23:     led_toggle(&led4);
-[e ( _led_toggle (1 -> &U _led4 `*CS289 ]
-"24
-[; ;application.c: 24: }
-[e :UE 299 ]
-}
-"26
-[; ;application.c: 26: Std_ReturnType ret=(Std_ReturnType)0x00;
-[v _ret `uc ~T0 @X0 1 e ]
-[i _ret
+"14 application.c
+[; ;application.c: 14: uint8 EEPROM_READ_VALUE =0;
+[v _EEPROM_READ_VALUE `uc ~T0 @X0 1 e ]
+[i _EEPROM_READ_VALUE
 -> -> 0 `i `uc
-]
-"29
-[; ;application.c: 29: interrupt_RBx_t RB4_INT = {
-[v _RB4_INT `S295 ~T0 @X0 1 e ]
-[i _RB4_INT
-:U ..
-:U ..
-&U _RB4_INT_HANDLER
-:U ..
-:U ..
--> . `E3093 1 `uc
--> . `E3083 4 `uc
--> . `E3079 1 `uc
-..
-..
--> -> 0 `i `E3292
--> -> 0 `i `uc
-..
-..
-]
-"36
-[; ;application.c: 36: interrupt_RBx_t RB5_INT = {
-[v _RB5_INT `S295 ~T0 @X0 1 e ]
-[i _RB5_INT
-:U ..
-:U ..
-&U _RB5_INT_HANDLER
-:U ..
-:U ..
--> . `E3093 1 `uc
--> . `E3083 5 `uc
--> . `E3079 1 `uc
-..
-..
--> -> 0 `i `E3292
--> -> 0 `i `uc
-..
-..
-]
-"43
-[; ;application.c: 43: interrupt_RBx_t RB6_INT = {
-[v _RB6_INT `S295 ~T0 @X0 1 e ]
-[i _RB6_INT
-:U ..
-:U ..
-&U _RB6_INT_HANDLER
-:U ..
-:U ..
--> . `E3093 1 `uc
--> . `E3083 6 `uc
--> . `E3079 1 `uc
-..
-..
--> -> 0 `i `E3292
--> -> 0 `i `uc
-..
-..
-]
-"50
-[; ;application.c: 50: interrupt_RBx_t RB7_INT = {
-[v _RB7_INT `S295 ~T0 @X0 1 e ]
-[i _RB7_INT
-:U ..
-:U ..
-&U _RB7_INT_HANDLER
-:U ..
-:U ..
--> . `E3093 1 `uc
--> . `E3083 7 `uc
--> . `E3079 1 `uc
-..
-..
--> -> 0 `i `E3292
--> -> 0 `i `uc
-..
-..
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"57
-[; ;application.c: 57: int main() {
+"15
+[; ;application.c: 15: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"58
-[; ;application.c: 58:     application_initialize();
-[e ( _application_initialize ..  ]
-"59
-[; ;application.c: 59:     Interrupt_RBx_Init(&RB4_INT);
-[e ( _Interrupt_RBx_Init (1 -> &U _RB4_INT `*CS295 ]
-"60
-[; ;application.c: 60:     Interrupt_RBx_Init(&RB5_INT);
-[e ( _Interrupt_RBx_Init (1 -> &U _RB5_INT `*CS295 ]
-"61
-[; ;application.c: 61:     Interrupt_RBx_Init(&RB6_INT);
-[e ( _Interrupt_RBx_Init (1 -> &U _RB6_INT `*CS295 ]
-"62
-[; ;application.c: 62:     Interrupt_RBx_Init(&RB7_INT);
-[e ( _Interrupt_RBx_Init (1 -> &U _RB7_INT `*CS295 ]
-"63
-[; ;application.c: 63:     while(1){
-[e :U 302 ]
+"17
+[; ;application.c: 17:     Data_EEPROM_WriteByte(0X3FF ,0x33);
+[e ( _Data_EEPROM_WriteByte (2 , -> -> 1023 `i `ui -> -> 51 `i `uc ]
+"18
+[; ;application.c: 18:     Data_EEPROM_ReadByte(0x3ff,&EEPROM_READ_VALUE);
+[e ( _Data_EEPROM_ReadByte (2 , -> -> 1023 `i `ui &U _EEPROM_READ_VALUE ]
+"19
+[; ;application.c: 19:     while(1){
+[e :U 297 ]
 {
-"68
-[; ;application.c: 68:     }
+"23
+[; ;application.c: 23:     }
 }
-[e :U 301 ]
-[e $U 302  ]
-[e :U 303 ]
-"69
-[; ;application.c: 69:     return (0);
+[e :U 296 ]
+[e $U 297  ]
+[e :U 298 ]
+"24
+[; ;application.c: 24:     return (0);
 [e ) -> 0 `i ]
-[e $UE 300  ]
-"70
-[; ;application.c: 70: }
-[e :UE 300 ]
+[e $UE 295  ]
+"25
+[; ;application.c: 25: }
+[e :UE 295 ]
 }
-"71
-[; ;application.c: 71: void application_initialize(void){
+"26
+[; ;application.c: 26: void application_initialize(void){
 [v _application_initialize `(v ~T0 @X0 1 ef ]
 {
 [e :U _application_initialize ]
 [f ]
-"72
-[; ;application.c: 72:     Std_ReturnType ret=(Std_ReturnType)0x00;
+"27
+[; ;application.c: 27:     Std_ReturnType ret=(Std_ReturnType)0x00;
 [v _ret `uc ~T0 @X0 1 a ]
 [e = _ret -> -> 0 `i `uc ]
-"73
-[; ;application.c: 73:     ecu_layer_initialize();
+"28
+[; ;application.c: 28:     ecu_layer_initialize();
 [e ( _ecu_layer_initialize ..  ]
-"74
-[; ;application.c: 74: }
-[e :UE 304 ]
+"29
+[; ;application.c: 29: }
+[e :UE 299 ]
 }
