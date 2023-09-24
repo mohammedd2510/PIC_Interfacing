@@ -108,8 +108,25 @@ led_t led1 = {
     .pin=PIN0,
     .led_status=LOW
 };
+led_t led2 = {
+    .port_name=PORTD_INDEX,
+    .pin=PIN1,
+    .led_status=LOW
+};
+led_t led3 = {
+    .port_name=PORTD_INDEX,
+    .pin=PIN2,
+    .led_status=LOW
+};
+led_t led4 = {
+    .port_name=PORTD_INDEX,
+    .pin=PIN3,
+    .led_status=LOW
+};
 void ecu_layer_initialize(void){
      Std_ReturnType ret=E_NOT_OK;
-    ret=lcd_4bit_initialize(&lcd1);
-    ret=lcd_8bit_initialize(&lcd_2);
+     led_initialize(&led1);
+     led_initialize(&led2);
+     led_initialize(&led3);
+     led_initialize(&led4);
 }

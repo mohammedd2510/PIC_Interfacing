@@ -23,7 +23,10 @@
 
 
 /* Section : Data Types Declaration */
-
+extern led_t led1;
+extern led_t led2;
+extern led_t led3;
+extern led_t led4;
 
 /* Section : Functions Declaration */
 void ecu_layer_initialize(void);

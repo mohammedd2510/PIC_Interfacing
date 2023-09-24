@@ -10,89 +10,58 @@
  * 
  * @return 
  */
-
+void RB4_INT_HANDLER (void){
+    led_toggle(&led1);
+} 
+void RB5_INT_HANDLER (void){
+    led_toggle(&led2);
+} 
+void RB6_INT_HANDLER (void){
+    led_toggle(&led3);
+} 
+void RB7_INT_HANDLER (void){
+    led_toggle(&led4);
+} 
 
 Std_ReturnType ret=E_NOT_OK;
-uint32 counter_txt[4];
-uint32 counter=ZERO_INIT;
 
-uint8 custom_char1[] = {
-  0x0E,
-  0x0A,
-  0x11,
-  0x11,
-  0x11,
-  0x11,
-  0x1F,
-  0x00
+
+interrupt_RBx_t RB4_INT = {
+    .mcu_pin.port=PORTB_INDEX ,
+    .mcu_pin.pin=PIN4,
+    .mcu_pin.direction = INPUT ,
+    .EXT_InterruptHandler = RB4_INT_HANDLER,
+    .RBx_Pin_init_value=0,
 };
-uint8 custom_char2[] = {
-  0x0E,
-  0x0A,
-  0x11,
-  0x11,
-  0x11,
-  0x1F,
-  0x1F,
-  0x00
+interrupt_RBx_t RB5_INT = {
+    .mcu_pin.port=PORTB_INDEX ,
+    .mcu_pin.pin=PIN5,
+    .mcu_pin.direction = INPUT ,
+    .EXT_InterruptHandler = RB5_INT_HANDLER,
+    .RBx_Pin_init_value=0,
 };
-uint8 custom_char3[] = {
-  0x0E,
-  0x0A,
-  0x11,
-  0x11,
-  0x1F,
-  0x1F,
-  0x1F,
-  0x00
+interrupt_RBx_t RB6_INT = {
+    .mcu_pin.port=PORTB_INDEX ,
+    .mcu_pin.pin=PIN6,
+    .mcu_pin.direction = INPUT ,
+    .EXT_InterruptHandler = RB6_INT_HANDLER,
+    .RBx_Pin_init_value=0,
 };
-uint8 custom_char4[] = {
-  0x0E,
-  0x0A,
-  0x11,
-  0x1F,
-  0x1F,
-  0x1F,
-  0x1F,
-  0x00
-};
-uint8 custom_char5[] = {
-  0x0E,
-  0x0A,
-  0x1F,
-  0x1F,
-  0x1F,
-  0x1F,
-  0x1F,
-  0x00
-};
-uint8 custom_char6[] = {
-  0x0E,
-  0x0E,
-  0x1F,
-  0x1F,
-  0x1F,
-  0x1F,
-  0x1F,
-  0x00
+interrupt_RBx_t RB7_INT = {
+    .mcu_pin.port=PORTB_INDEX ,
+    .mcu_pin.pin=PIN7,
+    .mcu_pin.direction = INPUT ,
+    .EXT_InterruptHandler = RB7_INT_HANDLER,
+    .RBx_Pin_init_value=0,
 };
 int main() {
     application_initialize();
-     
-  
+    Interrupt_RBx_Init(&RB4_INT);
+    Interrupt_RBx_Init(&RB5_INT);
+    Interrupt_RBx_Init(&RB6_INT);
+    Interrupt_RBx_Init(&RB7_INT);
     while(1){
-        lcd_4bit_send_custom_char(&lcd1,1,20,custom_char1,0);__delay_ms(250);
-        lcd_4bit_send_custom_char(&lcd1,1,20,custom_char2,0);__delay_ms(250);
-        lcd_4bit_send_custom_char(&lcd1,1,20,custom_char3,0);__delay_ms(250);
-        lcd_4bit_send_custom_char(&lcd1,1,20,custom_char4,0);__delay_ms(250);
-        lcd_4bit_send_custom_char(&lcd1,1,20,custom_char5,0);__delay_ms(250);
-        lcd_4bit_send_custom_char(&lcd1,1,20,custom_char6,0);__delay_ms(250);
-        lcd_8bit_send_custom_char(&lcd_2,1,20,custom_char1,0);__delay_ms(250);
-        lcd_8bit_send_custom_char(&lcd_2,1,20,custom_char2,0);__delay_ms(250);
-        lcd_8bit_send_custom_char(&lcd_2,1,20,custom_char3,0);__delay_ms(250);
-        lcd_8bit_send_custom_char(&lcd_2,1,20,custom_char4,0);__delay_ms(250);
-        lcd_8bit_send_custom_char(&lcd_2,1,20,custom_char5,0);__delay_ms(250);
-        lcd_8bit_send_custom_char(&lcd_2,1,20,custom_char6,0);__delay_ms(250);
+   
         
         
        

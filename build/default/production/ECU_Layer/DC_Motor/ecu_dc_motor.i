@@ -4702,6 +4702,151 @@ typedef uint8 Std_ReturnType;
 # 12 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
 # 1 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../my_pic18f4620.h" 1
+# 61 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
+typedef union {
+  struct {
+   uint8 RBIF :1;
+   uint8 INT0IF :1;
+   uint8 TMR0IF :1;
+   uint8 RBIE :1;
+   uint8 INT0IE :1;
+   uint8 TMR0IE :1;
+   uint8 PEIE :1;
+   uint8 GIE :1;
+};
+  struct {
+   uint8 :6;
+   uint8 GIEL :1;
+   uint8 GIEH :1;
+};
+}INTCON_t;
+
+
+
+
+typedef struct {
+   uint8 RBIP :1;
+   uint8 :1;
+   uint8 TMR0IP:1;
+   uint8 :1;
+   uint8 INTEDG2 :1;
+   uint8 INTEDG1:1;
+   uint8 INTEDG0 :1;
+   uint8 RBPU :1;
+}INTCON2_t;
+
+
+
+
+typedef struct {
+   uint8 INT1IF :1;
+   uint8 INT2IF :1;
+   uint8 :1;
+   uint8 INT1IE :1;
+   uint8 INT2IE :1;
+   uint8 :1;
+   uint8 INT1IP :1;
+   uint8 INT2IP :1;
+}INTCON3_t;
+
+
+
+
+typedef struct {
+  uint8 TMR1IF :1;
+  uint8 TMR2IF :1;
+  uint8 CCP1IF :1;
+  uint8 SSPIF :1;
+  uint8 TXIF :1;
+  uint8 RCIF :1;
+  uint8 ADIF :1;
+  uint8 PSPIF :1;
+}PIR1_t;
+
+
+
+
+typedef struct {
+  uint8 CCP2IF :1;
+  uint8 TMR3IF :1;
+  uint8 HLVDIF :1;
+  uint8 BCLIF :1;
+  uint8 EEIF :1;
+  uint8 :1;
+  uint8 CMIF :1;
+  uint8 OSCFIF :1;
+}PIR2_t;
+
+
+
+
+
+typedef struct {
+  uint8 TMR1IE :1;
+  uint8 TMR2IE :1;
+  uint8 CCP1IE :1;
+  uint8 SSPIE :1;
+  uint8 TXIE :1;
+  uint8 RCIE :1;
+  uint8 ADIE :1;
+  uint8 PSPIE :1;
+}PIE1_t;
+
+
+
+
+typedef struct {
+  uint8 CCP2IE :1;
+  uint8 TMR3IE :1;
+  uint8 HLVDIE :1;
+  uint8 BCLIE :1;
+  uint8 EEIE :1;
+  uint8 :1;
+  uint8 CMIE :1;
+  uint8 OSCFIE :1;
+}PIE2_t;
+
+
+
+
+typedef struct {
+  uint8 TMR1IP :1;
+  uint8 TMR2IP :1;
+  uint8 CCP1IP :1;
+  uint8 SSPIP :1;
+  uint8 TXIP :1;
+  uint8 RCIP :1;
+  uint8 ADIP :1;
+  uint8 PSPIP :1;
+}IPR1_t;
+
+
+
+
+typedef struct {
+  uint8 CCP2IP :1;
+  uint8 TMR3IP :1;
+  uint8 HLVDIP :1;
+  uint8 BCLIP :1;
+  uint8 EEIP :1;
+  uint8 :1;
+  uint8 CMIP :1;
+  uint8 OSCFIP :1;
+}IPR2_t;
+
+
+
+
+typedef struct {
+  uint8 BOR :1;
+  uint8 POR :1;
+  uint8 PD :1;
+  uint8 TO :1;
+  uint8 RI :1;
+  uint8 :1;
+  uint8 SBOREN :1;
+  uint8 IPEN :1;
+}RCON_t;
 # 13 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
 # 1 "ECU_Layer/DC_Motor/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1

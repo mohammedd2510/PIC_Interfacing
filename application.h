@@ -8,9 +8,8 @@
 #ifndef APPLICATION_H
 #define	APPLICATION_H
 
-#include "ECU_Layer/KeyPad/ecu_keypad.h"
 #include"ECU_Layer/ecu_layer_init.h"
-
+#include "MCAL_Layer/Interrupt/mcal_external_interrupt.h"
 /* Section : Includes */
 
 
@@ -21,8 +20,7 @@
 
 
 /* Section : Data Types Declaration */
-extern chr_lcd_4bit_t lcd1;
-extern chr_lcd_8bit_t lcd_2;
+
 /* Section : Functions Declaration */
 void application_initialize(void);
 
