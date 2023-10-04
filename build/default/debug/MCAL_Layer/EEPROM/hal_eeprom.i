@@ -1,4 +1,4 @@
-# 1 "ECU_Layer/LED/ecu_led.c"
+# 1 "MCAL_Layer/EEPROM/hal_eeprom.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,15 +6,13 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "ECU_Layer/LED/ecu_led.c" 2
-# 1 "ECU_Layer/LED/ecu_led.h" 1
-# 12 "ECU_Layer/LED/ecu_led.h"
-# 1 "ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio.h" 1
-# 11 "ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio.h"
-# 1 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../mcal_std_types.h" 1
-# 12 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../mcal_std_types.h"
-# 1 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h" 1
-# 11 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h"
+# 1 "MCAL_Layer/EEPROM/hal_eeprom.c" 2
+# 1 "MCAL_Layer/EEPROM/hal_eeprom.h" 1
+# 12 "MCAL_Layer/EEPROM/hal_eeprom.h"
+# 1 "MCAL_Layer/EEPROM/../../MCAL_Layer/mcal_std_types.h" 1
+# 12 "MCAL_Layer/EEPROM/../../MCAL_Layer/mcal_std_types.h"
+# 1 "MCAL_Layer/EEPROM/../../MCAL_Layer/std_libraries.h" 1
+# 11 "MCAL_Layer/EEPROM/../../MCAL_Layer/std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
 
 
@@ -179,7 +177,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 11 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+# 11 "MCAL_Layer/EEPROM/../../MCAL_Layer/std_libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
@@ -243,7 +241,7 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 12 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+# 12 "MCAL_Layer/EEPROM/../../MCAL_Layer/std_libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 3
@@ -302,11 +300,11 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 13 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h" 2
-# 12 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
+# 13 "MCAL_Layer/EEPROM/../../MCAL_Layer/std_libraries.h" 2
+# 12 "MCAL_Layer/EEPROM/../../MCAL_Layer/mcal_std_types.h" 2
 
-# 1 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../compiler.h" 1
-# 11 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../compiler.h"
+# 1 "MCAL_Layer/EEPROM/../../MCAL_Layer/compiler.h" 1
+# 11 "MCAL_Layer/EEPROM/../../MCAL_Layer/compiler.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4681,8 +4679,8 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 2 3
-# 11 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../compiler.h" 2
-# 13 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
+# 11 "MCAL_Layer/EEPROM/../../MCAL_Layer/compiler.h" 2
+# 13 "MCAL_Layer/EEPROM/../../MCAL_Layer/mcal_std_types.h" 2
 
 
 typedef unsigned char uint8;
@@ -4693,13 +4691,10 @@ typedef signed int sint16;
 typedef signed long sint32;
 
 typedef uint8 Std_ReturnType;
-# 11 "ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 12 "MCAL_Layer/EEPROM/hal_eeprom.h" 2
 
-# 1 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../device_config.h" 1
-# 12 "ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio.h" 2
-
-# 1 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../my_pic18f4620.h" 1
-# 60 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
+# 1 "MCAL_Layer/EEPROM/../../MCAL_Layer/my_pic18f4620.h" 1
+# 101 "MCAL_Layer/EEPROM/../../MCAL_Layer/my_pic18f4620.h"
 typedef union {
   struct {
    uint8 RBIF :1;
@@ -4723,9 +4718,9 @@ typedef union {
 
 typedef struct {
    uint8 RBIP :1;
-   uint8 reserved :1;
+   uint8 :1;
    uint8 TMR0IP:1;
-   uint8 reserved :1;
+   uint8 :1;
    uint8 INTEDG2 :1;
    uint8 INTEDG1:1;
    uint8 INTEDG0 :1;
@@ -4738,10 +4733,10 @@ typedef struct {
 typedef struct {
    uint8 INT1IF :1;
    uint8 INT2IF :1;
-   uint8 Reserved:1;
+   uint8 :1;
    uint8 INT1IE :1;
    uint8 INT2IE :1;
-   uint8 Reserved :1;
+   uint8 :1;
    uint8 INT1IP :1;
    uint8 INT2IP :1;
 }INTCON3_t;
@@ -4769,7 +4764,7 @@ typedef struct {
   uint8 HLVDIF :1;
   uint8 BCLIF :1;
   uint8 EEIF :1;
-  uint8 Reserved :1;
+  uint8 :1;
   uint8 CMIF :1;
   uint8 OSCFIF :1;
 }PIR2_t;
@@ -4840,15 +4835,101 @@ typedef struct {
   uint8 PD :1;
   uint8 TO :1;
   uint8 RI :1;
-  uint8 Reserved :1;
+  uint8 :1;
   uint8 SBOREN :1;
   uint8 IPEN :1;
 }RCON_t;
-# 13 "ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 257 "MCAL_Layer/EEPROM/../../MCAL_Layer/my_pic18f4620.h"
+typedef struct {
+  uint8 RD :1;
+  uint8 WR :1;
+  uint8 WREN :1;
+  uint8 WRERR :1;
+  uint8 FREE :1;
+  uint8 :1;
+  uint8 CFGS :1;
+  uint8 EEPGD :1;
+}EECON1_t;
 
-# 1 "ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
-# 14 "ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio.h" 2
-# 31 "ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio.h"
+
+
+
+typedef union {
+  struct {
+   uint8 ADON :1;
+   uint8 GO_DONE :1;
+   uint8 CHS0 :1;
+   uint8 CHS1 :1;
+   uint8 CHS2 :1;
+   uint8 CHS3 :1;
+   uint8 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 :2;
+   uint8 CHS :4;
+   uint8 :2;
+};
+}ADCON0_t;
+
+
+
+
+typedef union {
+  struct {
+   uint8 PCFG0 :1;
+   uint8 PCFG1 :1;
+   uint8 PCFG2 :1;
+   uint8 PCFG3 :1;
+   uint8 VCFG0 :1;
+   uint8 VCFG1 :1;
+   uint8 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 PCFG :4;
+   uint8 VCFG :2;
+   uint8 :2;
+};
+}ADCON1_t;
+
+
+
+
+typedef union {
+  struct {
+   uint8 ADCS0 :1;
+   uint8 ADCS1 :1;
+   uint8 ADCS2 :1;
+   uint8 ACQT0 :1;
+   uint8 ACQT1 :1;
+   uint8 ACQT2 :1;
+   uint8 :1;
+   uint8 ADFM :1;
+};
+  struct {
+   uint8 ADCS :3;
+   uint8 ACQT :3;
+   uint8 :1;
+   uint8 :1;
+};
+}ADCON2_t;
+# 13 "MCAL_Layer/EEPROM/hal_eeprom.h" 2
+
+# 1 "MCAL_Layer/EEPROM/../Interrupt/mcal_interrupt_config.h" 1
+# 14 "MCAL_Layer/EEPROM/../Interrupt/mcal_interrupt_config.h"
+# 1 "MCAL_Layer/EEPROM/../Interrupt/mcal_interrupt_gen_cfg.h" 1
+# 14 "MCAL_Layer/EEPROM/../Interrupt/mcal_interrupt_config.h" 2
+
+# 1 "MCAL_Layer/EEPROM/../Interrupt/../GPIO/hal_gpio.h" 1
+# 12 "MCAL_Layer/EEPROM/../Interrupt/../GPIO/hal_gpio.h"
+# 1 "MCAL_Layer/EEPROM/../Interrupt/../GPIO/../device_config.h" 1
+# 12 "MCAL_Layer/EEPROM/../Interrupt/../GPIO/hal_gpio.h" 2
+
+
+# 1 "MCAL_Layer/EEPROM/../Interrupt/../GPIO/hal_gpio_cfg.h" 1
+# 14 "MCAL_Layer/EEPROM/../Interrupt/../GPIO/hal_gpio.h" 2
+# 31 "MCAL_Layer/EEPROM/../Interrupt/../GPIO/hal_gpio.h"
 typedef enum{
     LOW=0,
     HIGH
@@ -4898,43 +4979,57 @@ Std_ReturnType gpio_port_get_direction_status(port_index_t port, uint8* directio
 Std_ReturnType gpio_port_write_logic(port_index_t port, uint8 logic);
 Std_ReturnType gpio_port_read_logic(port_index_t port, uint8* logic);
 Std_ReturnType gpio_port_toggle_logic(port_index_t port);
-# 12 "ECU_Layer/LED/ecu_led.h" 2
+# 15 "MCAL_Layer/EEPROM/../Interrupt/mcal_interrupt_config.h" 2
+# 59 "MCAL_Layer/EEPROM/../Interrupt/mcal_interrupt_config.h"
+typedef enum {
+    INTERRUPT_LOW_PRIORITY = 0 ,
+    INTERRUPT_HIGH_PRIORITY
+}interrupt_priority_cfg;
 
-# 1 "ECU_Layer/LED/ecu_led_cfg.h" 1
-# 13 "ECU_Layer/LED/ecu_led.h" 2
-# 22 "ECU_Layer/LED/ecu_led.h"
-typedef enum{
-  LED_OFF = 0,
-  LED_ON
-}led_status_t;
-
-typedef struct{
-uint8 port_name:4;
-uint8 pin:3;
-uint8 led_status:1;
-}led_t;
+typedef void (*InterruptHandler)(void);
+# 14 "MCAL_Layer/EEPROM/hal_eeprom.h" 2
+# 40 "MCAL_Layer/EEPROM/hal_eeprom.h"
+Std_ReturnType Data_EEPROM_WriteByte(uint16 bAdd ,uint8 bData);
+Std_ReturnType Data_EEPROM_ReadByte(uint16 bAdd ,uint8 *bData);
+# 1 "MCAL_Layer/EEPROM/hal_eeprom.c" 2
 
 
-Std_ReturnType led_initialize(const led_t *led);
-Std_ReturnType led_turn_on(const led_t *led);
-Std_ReturnType led_turn_off(const led_t *led);
-Std_ReturnType led_toggle(const led_t *led);
-# 1 "ECU_Layer/LED/ecu_led.c" 2
+static void EEPROM_UPDATE_ADDRESS_REG(uint16 ADD);
+static void EEPROM_UPDATE_DATA_REG(uint8 DATA);
+static void EEPROM_READ_DATA_REG(uint8 *DATA);
+static void EEPROM_READ_GLOBAL_INTERRUPT_STATUS(uint8*Global_Interrupt_Status);
+static void EEPROM_RESTORE_GLOBAL_INTERRUPT_STATUS(uint8*Global_Interrupt_Status);
 
 
 
 
 
 
-Std_ReturnType led_initialize(const led_t *led){
+Std_ReturnType Data_EEPROM_WriteByte(uint16 bAdd ,uint8 bData){
+    uint8 Global_Interrupt_Status=0;
     Std_ReturnType ret=(Std_ReturnType)0x01;
-    pin_config_t pin_obj={.port = led->port_name,.pin = led->pin,.direction=OUTPUT,.logic=led->led_status };
-    if(led==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        ret=gpio_pin_initialize(&pin_obj);
-        }
+
+    EEPROM_READ_GLOBAL_INTERRUPT_STATUS(&Global_Interrupt_Status);
+
+    EEPROM_UPDATE_ADDRESS_REG(bAdd);
+
+    EEPROM_UPDATE_DATA_REG(bData);
+
+    (*((volatile EECON1_t *)(0xFA6))).EEPGD = 0;(*((volatile EECON1_t *)(0xFA6))).CFGS = 0;
+
+    (*((volatile EECON1_t *)(0xFA6))).WREN=1;
+
+    ((*((volatile INTCON_t *)(0xFF2))).GIE = 0);
+
+    (*((volatile uint8 *)(0xFA7)))=0X55;(*((volatile uint8 *)(0xFA7)))=0xAA;
+
+    (*((volatile EECON1_t *)(0xFA6))).WR=1;
+
+    while((*((volatile EECON1_t *)(0xFA6))).WR);
+
+    (*((volatile EECON1_t *)(0xFA6))).WREN=0;
+
+    EEPROM_RESTORE_GLOBAL_INTERRUPT_STATUS(&Global_Interrupt_Status);
     return ret;
 }
 
@@ -4942,46 +5037,39 @@ Std_ReturnType led_initialize(const led_t *led){
 
 
 
-Std_ReturnType led_turn_on(const led_t *led){
-     Std_ReturnType ret=(Std_ReturnType)0x01;
-    pin_config_t pin_obj={.port = led->port_name,.pin = led->pin,.direction=OUTPUT,.logic=led->led_status };
-    if(led==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        ret=gpio_pin_write_logic(&pin_obj,HIGH);
-        }
-    return ret;
-}
 
-
-
-
-
-Std_ReturnType led_turn_off(const led_t *led){
-     Std_ReturnType ret=(Std_ReturnType)0x01;
-    pin_config_t pin_obj={.port = led->port_name,.pin = led->pin,.direction=OUTPUT,.logic=led->led_status };
-    if(led==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        ret=gpio_pin_write_logic(&pin_obj,LOW);
-        }
-    return ret;
-}
-
-
-
-
-
-Std_ReturnType led_toggle(const led_t *led){
+Std_ReturnType Data_EEPROM_ReadByte(uint16 bAdd ,uint8 *bData){
     Std_ReturnType ret=(Std_ReturnType)0x01;
-    pin_config_t pin_obj={.port = led->port_name,.pin = led->pin,.direction=OUTPUT,.logic=led->led_status };
-    if(led==((void*)0)){
+    if(bData==((void*)0)){
         ret=(Std_ReturnType)0x00;
     }
     else{
-        ret=gpio_pin_toggle_logic(&pin_obj);
+
+    EEPROM_UPDATE_ADDRESS_REG(bAdd);
+
+    (*((volatile EECON1_t *)(0xFA6))).EEPGD = 0;(*((volatile EECON1_t *)(0xFA6))).CFGS = 0;
+
+    (*((volatile EECON1_t *)(0xFA6))).RD=1;
+
+    __asm("NOP");__asm("NOP");
+
+    EEPROM_READ_DATA_REG(bData);
         }
     return ret;
+}
+static void EEPROM_UPDATE_ADDRESS_REG(uint16 ADD){
+    (*((volatile uint8 *)(0xFAA))) = (uint8)((ADD>>8)&(0x03));
+    (*((volatile uint8 *)(0xFA9))) = (uint8)(ADD &(0xFF));
+}
+static void EEPROM_UPDATE_DATA_REG(uint8 DATA){
+    (*((volatile uint8 *)(0xFA8))) =DATA;
+}
+static void EEPROM_READ_GLOBAL_INTERRUPT_STATUS(uint8*Global_Interrupt_Status){
+    *Global_Interrupt_Status = (*((volatile INTCON_t *)(0xFF2))).GIE ;
+}
+static void EEPROM_RESTORE_GLOBAL_INTERRUPT_STATUS(uint8*Global_Interrupt_Status){
+    (*((volatile INTCON_t *)(0xFF2))).GIE = *Global_Interrupt_Status;
+}
+static void EEPROM_READ_DATA_REG(uint8 *DATA){
+    *DATA = (*((volatile uint8 *)(0xFA8)));
 }

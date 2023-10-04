@@ -9,4 +9,7 @@ MCAL_Layer/Interrupt/../my_pic18f4620.h  \
 MCAL_Layer/Interrupt/mcal_interrupt_gen_cfg.h  \
 MCAL_Layer/Interrupt/../GPIO/hal_gpio.h  \
 MCAL_Layer/Interrupt/../GPIO/../device_config.h  \
-MCAL_Layer/Interrupt/../GPIO/hal_gpio_cfg.h 
+MCAL_Layer/Interrupt/../GPIO/hal_gpio_cfg.h  \
+MCAL_Layer/Interrupt/../ADC/hal_adc.h  \
+MCAL_Layer/Interrupt/../ADC/hal_adc_cfg.h  \
+MCAL_Layer/Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h 

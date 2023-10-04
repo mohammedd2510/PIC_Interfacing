@@ -55,6 +55,46 @@
 #define PORTE_ADD 0xF84
 #define PORTE HWREG(PORTE_ADD)
 
+/* Bit Positions */
+#define RA0 0
+#define RA1 1
+#define RA2 2
+#define RA3 3
+#define RA4 4
+#define RA5 5
+#define RA6 6
+#define RA7 7
+
+#define RB0 0
+#define RB1 1
+#define RB2 2
+#define RB3 3
+#define RB4 4
+#define RB5 5
+#define RB6 6
+#define RB7 7
+
+#define RC0 0
+#define RC1 1
+#define RC2 2
+#define RC3 3
+#define RC4 4
+#define RC5 5
+#define RC6 6
+#define RC7 7
+
+#define RD0 0
+#define RD1 1
+#define RD2 2
+#define RD3 3
+#define RD4 4
+#define RD5 5
+#define RD6 6
+#define RD7 7
+
+#define RE0 0
+#define RE1 1
+#define RE2 2
 
 /**********************INTERRUPT REGISTERS*********************/
 
@@ -226,6 +266,74 @@ typedef struct {
 }EECON1_t;
 
 #define EECON1_bits (*((volatile EECON1_t *)(0xFA6)))
+
+/********************ADC Registers************************/
+typedef union {
+  struct {  
+   uint8 ADON   :1;
+   uint8 GO_DONE :1;
+   uint8 CHS0 :1;
+   uint8 CHS1   :1;
+   uint8 CHS2 :1;
+   uint8 CHS3 :1;
+   uint8      :1;
+   uint8      :1; 
+};
+  struct {
+   uint8      :2;
+   uint8 CHS  :4;
+   uint8      :2; 
+};
+}ADCON0_t;
+
+#define ADCON0_bits (*((volatile ADCON0_t *)(0xFC2)))
+#define ADCON0 (*((volatile uint8 *)(0xFC2)))
+
+typedef union {
+  struct {  
+   uint8 PCFG0   :1;
+   uint8 PCFG1 :1;
+   uint8 PCFG2 :1;
+   uint8 PCFG3   :1;
+   uint8 VCFG0 :1;
+   uint8 VCFG1 :1;
+   uint8      :1;
+   uint8      :1; 
+};
+  struct {
+   uint8 PCFG  :4;
+   uint8 VCFG  :2;
+   uint8       :2;  
+};
+}ADCON1_t;
+
+#define ADCON1_bits (*((volatile ADCON1_t *)(0xFC1)))
+#define ADCON1 (*((volatile uint8 *)(0xFC1)))
+
+typedef union {
+  struct {  
+   uint8 ADCS0   :1;
+   uint8 ADCS1  :1;
+   uint8 ADCS2  :1;
+   uint8 ACQT0   :1;
+   uint8 ACQT1 :1;
+   uint8 ACQT2 :1;
+   uint8       :1;
+   uint8 ADFM   :1; 
+};
+  struct {
+   uint8 ADCS  :3;
+   uint8 ACQT  :3;
+   uint8       :1;  
+   uint8       :1;
+};
+}ADCON2_t;
+
+#define ADCON2_bits (*((volatile ADCON2_t *)(0xFC0)))
+#define ADCON2 (*((volatile uint8 *)(0xFC0)))
+
+/********************************************/
+
 
 /***************************************/
 #endif	/* MY_PIC18F4620_H */

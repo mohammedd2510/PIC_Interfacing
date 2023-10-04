@@ -202,31 +202,31 @@ static Std_ReturnType Interrupt_INTx_Enable (const interrupt_INTx_t *int_obj){
             case INTERRUPT_EXTERNAL_INT0 :
                  #if INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_ENABLE
                     INTERRUPT_PriorityLevelsEnable();
-                    INTERRUPT_GlobalInterruputHighEnable();
+                    INTERRUPT_GlobalInterruptHighEnable();
                 #else
-                    INTERRUPT_GlobalInterruputEnable(); 
+                    INTERRUPT_GlobalInterruptEnable(); 
                 #endif
                 EXT_INT0_InterruptEnable();
                 break;
             case INTERRUPT_EXTERNAL_INT1 : 
                 #if INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_ENABLE 
                     INTERRUPT_PriorityLevelsEnable();
-                    if (INTERRUPT_LOW_PRIORITY == int_obj->priority){ INTERRUPT_GlobalInterruputLowEnable(); }
-                    else if (INTERRUPT_HIGH_PRIORITY == int_obj->priority){ INTERRUPT_GlobalInterruputHighEnable(); }
+                    if (INTERRUPT_LOW_PRIORITY == int_obj->priority){ INTERRUPT_GlobalInterruptLowEnable(); }
+                    else if (INTERRUPT_HIGH_PRIORITY == int_obj->priority){ INTERRUPT_GlobalInterruptHighEnable(); }
                     else {ret=E_NOT_OK;}
                 #else
-                    INTERRUPT_GlobalInterruputEnable(); 
+                    INTERRUPT_GlobalInterruptEnable(); 
                 #endif
                 EXT_INT1_InterruptEnable();
                 break;
             case INTERRUPT_EXTERNAL_INT2 :
                 #if INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_ENABLE
                     INTERRUPT_PriorityLevelsEnable();
-                    if (INTERRUPT_LOW_PRIORITY == int_obj->priority){ INTERRUPT_GlobalInterruputLowEnable(); }
-                    else if (INTERRUPT_HIGH_PRIORITY == int_obj->priority){ INTERRUPT_GlobalInterruputHighEnable(); }
+                    if (INTERRUPT_LOW_PRIORITY == int_obj->priority){ INTERRUPT_GlobalInterruptLowEnable(); }
+                    else if (INTERRUPT_HIGH_PRIORITY == int_obj->priority){ INTERRUPT_GlobalInterruptHighEnable(); }
                     else {ret=E_NOT_OK;}
                 #else
-                    INTERRUPT_GlobalInterruputEnable(); 
+                    INTERRUPT_GlobalInterruptEnable(); 
                 #endif
                 EXT_INT2_InterruptEnable();
                 break;
@@ -431,11 +431,11 @@ static Std_ReturnType Interrupt_RBx_Enable (const interrupt_RBx_t *int_obj){
     else{
          #if INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_ENABLE 
                     INTERRUPT_PriorityLevelsEnable();
-                    if (INTERRUPT_LOW_PRIORITY == int_obj->priority){ INTERRUPT_GlobalInterruputLowEnable(); }
-                    else if (INTERRUPT_HIGH_PRIORITY == int_obj->priority){ INTERRUPT_GlobalInterruputHighEnable(); }
+                    if (INTERRUPT_LOW_PRIORITY == int_obj->priority){ INTERRUPT_GlobalInterruptLowEnable(); }
+                    else if (INTERRUPT_HIGH_PRIORITY == int_obj->priority){ INTERRUPT_GlobalInterruptHighEnable(); }
                     else {ret=E_NOT_OK;}
                 #else
-                    INTERRUPT_GlobalInterruputEnable(); 
+                    INTERRUPT_GlobalInterruptEnable(); 
                 #endif
                 EXT_RBx_InterruptEnable();
         }

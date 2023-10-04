@@ -34,23 +34,23 @@
 /* This macro will disable priority levels on interrupts. */
 #define INTERRUPT_PriorityLevelsDisable() (RCON_bits.IPEN=0)
 /* This macro will enable high priority global interrupts. */
-#define INTERRUPT_GlobalInterruputHighEnable() (INTCON_bits.GIEH = 1)
+#define INTERRUPT_GlobalInterruptHighEnable() (INTCON_bits.GIEH = 1)
 /* This macro will disable high priority global interrupts. */
-#define INTERRUPT_GlobalInterruputHighDisable() (INTCON_bits.GIEH = 0)
+#define INTERRUPT_GlobalInterruptHighDisable() (INTCON_bits.GIEH = 0)
 /* This macro will enable low priority global interrupts. */
-#define INTERRUPT_GlobalInterruputLowEnable() (INTCON_bits.GIEL = 1)
+#define INTERRUPT_GlobalInterruptLowEnable() (INTCON_bits.GIEL = 1)
 /* This macro will disable low priority global interrupts. */
-#define INTERRUPT_GlobalInterruputLowDisable() (INTCON_bits.GIEL = 0)
+#define INTERRUPT_GlobalInterruptLowDisable() (INTCON_bits.GIEL = 0)
 
 #else
 /* This macro will enable global interrupts. */
-#define INTERRUPT_GlobalInterruputEnable() (INTCON_bits.GIE = 1)
+#define INTERRUPT_GlobalInterruptEnable() (INTCON_bits.GIE = 1)
 /* This macro will disable global interrupts. */
-#define INTERRUPT_GlobalInterruputDisable() (INTCON_bits.GIE = 0)
+#define INTERRUPT_GlobalInterruptDisable() (INTCON_bits.GIE = 0)
 /* This macro will enable peripheral interrupts. */
-#define INTERRUPT_PeripheralInterruputEnable() (INTCON_bits.PEIE = 1)
+#define INTERRUPT_PeripheralInterruptEnable() (INTCON_bits.PEIE = 1)
 /* This macro will disable peripheral interrupts. */
-#define INTERRUPT_PeripheralInterruputDisable() (INTCON_bits.PEIE = 0)
+#define INTERRUPT_PeripheralInterruptDisable() (INTCON_bits.PEIE = 0)
 
 
 #endif
@@ -61,6 +61,7 @@ typedef enum {
     INTERRUPT_HIGH_PRIORITY
 }interrupt_priority_cfg;
 
+typedef  void (*InterruptHandler)(void);
 /* Section : Functions Declaration */
 
 #endif	/* MCAL_INTERRUPT_CONFIG_H */

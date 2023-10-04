@@ -26,6 +26,28 @@ chr_lcd_4bit_t lcd1 ={
   .lcd_data[3].direction=OUTPUT,
   .lcd_data[3].logic=LOW
 };
+dc_motor_t dc_motor_1 = {
+    .dc_motor_pin[0].port = PORTD_INDEX,
+    .dc_motor_pin[0].pin = PIN0,
+    .dc_motor_pin[0].logic = DC_MOTOR_OFF_STATUS,
+    .dc_motor_pin[0].direction = OUTPUT,
+    .dc_motor_pin[1].port = PORTD_INDEX,
+    .dc_motor_pin[1].pin = PIN1,
+    .dc_motor_pin[1].logic = DC_MOTOR_OFF_STATUS,
+    .dc_motor_pin[1].direction = OUTPUT
+};
+
+dc_motor_t dc_motor_2 = {
+    .dc_motor_pin[0].port = PORTD_INDEX,
+    .dc_motor_pin[0].pin = PIN2,
+    .dc_motor_pin[0].logic = DC_MOTOR_OFF_STATUS,
+    .dc_motor_pin[0].direction = OUTPUT,
+    .dc_motor_pin[1].port = PORTD_INDEX,
+    .dc_motor_pin[1].pin = PIN3,
+    .dc_motor_pin[1].logic = DC_MOTOR_OFF_STATUS,
+    .dc_motor_pin[1].direction = OUTPUT
+};
+/*
 chr_lcd_8bit_t lcd_2 ={
   .lcd_rs.port=PORTC_INDEX,
   .lcd_rs.pin=PIN6,
@@ -123,10 +145,10 @@ led_t led4 = {
     .pin=PIN3,
     .led_status=LOW
 };
+*/
 void ecu_layer_initialize(void){
      Std_ReturnType ret=E_NOT_OK;
-     led_initialize(&led1);
-     led_initialize(&led2);
-     led_initialize(&led3);
-     led_initialize(&led4);
+     ret = lcd_4bit_initialize(&lcd1);
+     ret &= dc_motor_initialize(&dc_motor_1);
+     ret &= dc_motor_initialize(&dc_motor_2);
 }

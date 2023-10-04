@@ -4696,7 +4696,7 @@ typedef uint8 Std_ReturnType;
 # 12 "MCAL_Layer/Interrupt/mcal_interrupt_config.h" 2
 
 # 1 "MCAL_Layer/Interrupt/../my_pic18f4620.h" 1
-# 61 "MCAL_Layer/Interrupt/../my_pic18f4620.h"
+# 101 "MCAL_Layer/Interrupt/../my_pic18f4620.h"
 typedef union {
   struct {
    uint8 RBIF :1;
@@ -4841,7 +4841,7 @@ typedef struct {
   uint8 SBOREN :1;
   uint8 IPEN :1;
 }RCON_t;
-# 217 "MCAL_Layer/Interrupt/../my_pic18f4620.h"
+# 257 "MCAL_Layer/Interrupt/../my_pic18f4620.h"
 typedef struct {
   uint8 RD :1;
   uint8 WR :1;
@@ -4852,6 +4852,70 @@ typedef struct {
   uint8 CFGS :1;
   uint8 EEPGD :1;
 }EECON1_t;
+
+
+
+
+typedef union {
+  struct {
+   uint8 ADON :1;
+   uint8 GO_DONE :1;
+   uint8 CHS0 :1;
+   uint8 CHS1 :1;
+   uint8 CHS2 :1;
+   uint8 CHS3 :1;
+   uint8 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 :2;
+   uint8 CHS :4;
+   uint8 :2;
+};
+}ADCON0_t;
+
+
+
+
+typedef union {
+  struct {
+   uint8 PCFG0 :1;
+   uint8 PCFG1 :1;
+   uint8 PCFG2 :1;
+   uint8 PCFG3 :1;
+   uint8 VCFG0 :1;
+   uint8 VCFG1 :1;
+   uint8 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 PCFG :4;
+   uint8 VCFG :2;
+   uint8 :2;
+};
+}ADCON1_t;
+
+
+
+
+typedef union {
+  struct {
+   uint8 ADCS0 :1;
+   uint8 ADCS1 :1;
+   uint8 ADCS2 :1;
+   uint8 ACQT0 :1;
+   uint8 ACQT1 :1;
+   uint8 ACQT2 :1;
+   uint8 :1;
+   uint8 ADFM :1;
+};
+  struct {
+   uint8 ADCS :3;
+   uint8 ACQT :3;
+   uint8 :1;
+   uint8 :1;
+};
+}ADCON2_t;
 # 13 "MCAL_Layer/Interrupt/mcal_interrupt_config.h" 2
 
 # 1 "MCAL_Layer/Interrupt/mcal_interrupt_gen_cfg.h" 1
@@ -4921,10 +4985,10 @@ typedef enum {
     INTERRUPT_LOW_PRIORITY = 0 ,
     INTERRUPT_HIGH_PRIORITY
 }interrupt_priority_cfg;
-# 12 "MCAL_Layer/Interrupt/mcal_external_interrupt.h" 2
-# 85 "MCAL_Layer/Interrupt/mcal_external_interrupt.h"
-typedef void (*InterruptHandler)(void);
 
+typedef void (*InterruptHandler)(void);
+# 12 "MCAL_Layer/Interrupt/mcal_external_interrupt.h" 2
+# 87 "MCAL_Layer/Interrupt/mcal_external_interrupt.h"
 typedef enum {
     INTERRUPT_FALLING_EDGE = 0 ,
     INTERRUPT_RISING_EDGE
@@ -5016,7 +5080,7 @@ Std_ReturnType Interrupt_INTx_Init (const interrupt_INTx_t *int_obj){
         ret &= Interrupt_INTx_Edge_Init(int_obj);
 
 
-        ret &= Interrupt_INTx_Priority_Init(int_obj);
+
 
 
         ret &= Interrupt_INTx_Pin_Init(int_obj);
@@ -5061,7 +5125,7 @@ Std_ReturnType Interrupt_RBx_Init (const interrupt_RBx_t *int_obj){
          ((*((volatile INTCON_t *)(0xFF2))).RBIF=0);
 
 
-        ret &= Interrupt_RBx_Priority_Init(int_obj);
+
 
 
         ret &= Interrupt_RBx_Pin_Init(int_obj);
@@ -5162,32 +5226,32 @@ static Std_ReturnType Interrupt_INTx_Enable (const interrupt_INTx_t *int_obj){
         switch (int_obj->source){
             case INTERRUPT_EXTERNAL_INT0 :
 
-                    ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
-                    ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
 
 
+
+                    ((*((volatile INTCON_t *)(0xFF2))).GIE = 1);
 
                 ((*((volatile INTCON_t *)(0xFF2))).INT0IE=1);
                 break;
             case INTERRUPT_EXTERNAL_INT1 :
 
-                    ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
-                    if (INTERRUPT_LOW_PRIORITY == int_obj->priority){ ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1); }
-                    else if (INTERRUPT_HIGH_PRIORITY == int_obj->priority){ ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1); }
-                    else {ret=(Std_ReturnType)0x00;}
 
 
+
+
+
+                    ((*((volatile INTCON_t *)(0xFF2))).GIE = 1);
 
                 ((*((volatile INTCON3_t *)(0xFF0))).INT1IE=1);
                 break;
             case INTERRUPT_EXTERNAL_INT2 :
 
-                    ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
-                    if (INTERRUPT_LOW_PRIORITY == int_obj->priority){ ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1); }
-                    else if (INTERRUPT_HIGH_PRIORITY == int_obj->priority){ ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1); }
-                    else {ret=(Std_ReturnType)0x00;}
 
 
+
+
+
+                    ((*((volatile INTCON_t *)(0xFF2))).GIE = 1);
 
                 ((*((volatile INTCON3_t *)(0xFF0))).INT2IE=1);
                 break;
@@ -5216,40 +5280,7 @@ static Std_ReturnType Interrupt_INTx_Disable (const interrupt_INTx_t *int_obj){
         }
     return ret;
 }
-
-
-
-
-
-
-static Std_ReturnType Interrupt_INTx_Priority_Init (const interrupt_INTx_t *int_obj){
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-    if(int_obj==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        switch (int_obj->source){
-            case INTERRUPT_EXTERNAL_INT1 :
-                if (INTERRUPT_LOW_PRIORITY == int_obj->priority){ ((*((volatile INTCON3_t *)(0xFF0))).INT1IP=0); }
-                else if (INTERRUPT_HIGH_PRIORITY == int_obj->priority){ ((*((volatile INTCON3_t *)(0xFF0))).INT1IP=1); }
-                else {ret=(Std_ReturnType)0x00;}
-                break;
-            case INTERRUPT_EXTERNAL_INT2 :
-                if (INTERRUPT_LOW_PRIORITY == int_obj->priority){ ((*((volatile INTCON3_t *)(0xFF0))).INT2IP=1); }
-                else if (INTERRUPT_HIGH_PRIORITY == int_obj->priority){ ((*((volatile INTCON3_t *)(0xFF0))).INT2IP=1); }
-                else {ret=(Std_ReturnType)0x00;}
-                break;
-            default: ret=(Std_ReturnType)0x00;
-        }
-        }
-    return ret;
-}
-
-
-
-
-
-
+# 292 "MCAL_Layer/Interrupt/mcal_external_interrupt.c"
 static Std_ReturnType Interrupt_INTx_Edge_Init (const interrupt_INTx_t *int_obj){
     Std_ReturnType ret=(Std_ReturnType)0x01;
     if(int_obj==((void*)0)){
@@ -5391,12 +5422,12 @@ static Std_ReturnType Interrupt_RBx_Enable (const interrupt_RBx_t *int_obj){
     }
     else{
 
-                    ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
-                    if (INTERRUPT_LOW_PRIORITY == int_obj->priority){ ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1); }
-                    else if (INTERRUPT_HIGH_PRIORITY == int_obj->priority){ ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1); }
-                    else {ret=(Std_ReturnType)0x00;}
 
 
+
+
+
+                    ((*((volatile INTCON_t *)(0xFF2))).GIE = 1);
 
                 ((*((volatile INTCON_t *)(0xFF2))).RBIE=1);
         }
@@ -5417,25 +5448,7 @@ static Std_ReturnType Interrupt_RBx_Disable (const interrupt_RBx_t *int_obj){
         }
     return ret;
 }
-
-
-
-
-
-
-static Std_ReturnType Interrupt_RBx_Priority_Init (const interrupt_RBx_t *int_obj){
- Std_ReturnType ret=(Std_ReturnType)0x01;
-    if(int_obj==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-       if (INTERRUPT_LOW_PRIORITY == int_obj->priority){ ((*((volatile INTCON2_t *)(0xFF1))).RBIP=0); }
-       else if (INTERRUPT_HIGH_PRIORITY == int_obj->priority){ ((*((volatile INTCON2_t *)(0xFF1))).RBIP=1); }
-       else {ret=(Std_ReturnType)0x00;}
-        }
-    return ret;
-}
-
+# 478 "MCAL_Layer/Interrupt/mcal_external_interrupt.c"
 static Std_ReturnType Interrupt_RBx_Pin_Init (const interrupt_RBx_t *int_obj){
     Std_ReturnType ret=(Std_ReturnType)0x01;
     if(int_obj==((void*)0)){

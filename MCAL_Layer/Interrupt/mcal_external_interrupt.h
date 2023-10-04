@@ -82,7 +82,7 @@
 
 /* Section : Data Types Declaration */
 
-typedef  void (*InterruptHandler)(void);
+
 
 typedef enum {
     INTERRUPT_FALLING_EDGE = 0 ,

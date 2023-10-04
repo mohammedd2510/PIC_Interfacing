@@ -4699,7 +4699,7 @@ typedef uint8 Std_ReturnType;
 # 12 "ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
 # 1 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../my_pic18f4620.h" 1
-# 61 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
+# 101 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
 typedef union {
   struct {
    uint8 RBIF :1;
@@ -4844,7 +4844,7 @@ typedef struct {
   uint8 SBOREN :1;
   uint8 IPEN :1;
 }RCON_t;
-# 217 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
+# 257 "ECU_Layer/LED/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
 typedef struct {
   uint8 RD :1;
   uint8 WR :1;
@@ -4855,6 +4855,70 @@ typedef struct {
   uint8 CFGS :1;
   uint8 EEPGD :1;
 }EECON1_t;
+
+
+
+
+typedef union {
+  struct {
+   uint8 ADON :1;
+   uint8 GO_DONE :1;
+   uint8 CHS0 :1;
+   uint8 CHS1 :1;
+   uint8 CHS2 :1;
+   uint8 CHS3 :1;
+   uint8 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 :2;
+   uint8 CHS :4;
+   uint8 :2;
+};
+}ADCON0_t;
+
+
+
+
+typedef union {
+  struct {
+   uint8 PCFG0 :1;
+   uint8 PCFG1 :1;
+   uint8 PCFG2 :1;
+   uint8 PCFG3 :1;
+   uint8 VCFG0 :1;
+   uint8 VCFG1 :1;
+   uint8 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 PCFG :4;
+   uint8 VCFG :2;
+   uint8 :2;
+};
+}ADCON1_t;
+
+
+
+
+typedef union {
+  struct {
+   uint8 ADCS0 :1;
+   uint8 ADCS1 :1;
+   uint8 ADCS2 :1;
+   uint8 ACQT0 :1;
+   uint8 ACQT1 :1;
+   uint8 ACQT2 :1;
+   uint8 :1;
+   uint8 ADFM :1;
+};
+  struct {
+   uint8 ADCS :3;
+   uint8 ACQT :3;
+   uint8 :1;
+   uint8 :1;
+};
+}ADCON2_t;
 # 13 "ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
 # 1 "ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1

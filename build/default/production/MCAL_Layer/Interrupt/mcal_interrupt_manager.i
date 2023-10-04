@@ -4696,7 +4696,7 @@ typedef uint8 Std_ReturnType;
 # 12 "MCAL_Layer/Interrupt/mcal_interrupt_config.h" 2
 
 # 1 "MCAL_Layer/Interrupt/../my_pic18f4620.h" 1
-# 61 "MCAL_Layer/Interrupt/../my_pic18f4620.h"
+# 101 "MCAL_Layer/Interrupt/../my_pic18f4620.h"
 typedef union {
   struct {
    uint8 RBIF :1;
@@ -4841,7 +4841,7 @@ typedef struct {
   uint8 SBOREN :1;
   uint8 IPEN :1;
 }RCON_t;
-# 217 "MCAL_Layer/Interrupt/../my_pic18f4620.h"
+# 257 "MCAL_Layer/Interrupt/../my_pic18f4620.h"
 typedef struct {
   uint8 RD :1;
   uint8 WR :1;
@@ -4852,6 +4852,70 @@ typedef struct {
   uint8 CFGS :1;
   uint8 EEPGD :1;
 }EECON1_t;
+
+
+
+
+typedef union {
+  struct {
+   uint8 ADON :1;
+   uint8 GO_DONE :1;
+   uint8 CHS0 :1;
+   uint8 CHS1 :1;
+   uint8 CHS2 :1;
+   uint8 CHS3 :1;
+   uint8 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 :2;
+   uint8 CHS :4;
+   uint8 :2;
+};
+}ADCON0_t;
+
+
+
+
+typedef union {
+  struct {
+   uint8 PCFG0 :1;
+   uint8 PCFG1 :1;
+   uint8 PCFG2 :1;
+   uint8 PCFG3 :1;
+   uint8 VCFG0 :1;
+   uint8 VCFG1 :1;
+   uint8 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 PCFG :4;
+   uint8 VCFG :2;
+   uint8 :2;
+};
+}ADCON1_t;
+
+
+
+
+typedef union {
+  struct {
+   uint8 ADCS0 :1;
+   uint8 ADCS1 :1;
+   uint8 ADCS2 :1;
+   uint8 ACQT0 :1;
+   uint8 ACQT1 :1;
+   uint8 ACQT2 :1;
+   uint8 :1;
+   uint8 ADFM :1;
+};
+  struct {
+   uint8 ADCS :3;
+   uint8 ACQT :3;
+   uint8 :1;
+   uint8 :1;
+};
+}ADCON2_t;
 # 13 "MCAL_Layer/Interrupt/mcal_interrupt_config.h" 2
 
 # 1 "MCAL_Layer/Interrupt/mcal_interrupt_gen_cfg.h" 1
@@ -4921,6 +4985,8 @@ typedef enum {
     INTERRUPT_LOW_PRIORITY = 0 ,
     INTERRUPT_HIGH_PRIORITY
 }interrupt_priority_cfg;
+
+typedef void (*InterruptHandler)(void);
 # 12 "MCAL_Layer/Interrupt/mcal_interrupt_manager.h" 2
 # 24 "MCAL_Layer/Interrupt/mcal_interrupt_manager.h"
 extern volatile uint8 RB4_pin_init_value;
@@ -4935,71 +5001,44 @@ void RB4_ISR(void);
 void RB5_ISR(void);
 void RB6_ISR(void);
 void RB7_ISR(void);
+void ADC_ISR (void);
 # 1 "MCAL_Layer/Interrupt/mcal_interrupt_manager.c" 2
-
-
-void __attribute__((picinterrupt(("")))) InterruptManagerHigh(void){
+# 76 "MCAL_Layer/Interrupt/mcal_interrupt_manager.c"
+void __attribute__((picinterrupt(("")))) InterruptManager(void){
     if((1 == (*((volatile INTCON_t *)(0xFF2))).INT0IE)&&(1 == (*((volatile INTCON_t *)(0xFF2))).INT0IF)){
         INT0_ISR();
     }
     else { }
-     if((1 == (*((volatile INTCON3_t *)(0xFF0))).INT1IP)&&(1 == (*((volatile INTCON3_t *)(0xFF0))).INT1IF)){
+    if((1 == (*((volatile INTCON3_t *)(0xFF0))).INT1IE)&&(1 == (*((volatile INTCON3_t *)(0xFF0))).INT1IF)){
         INT1_ISR();
     }
     else { }
-    if((1 == (*((volatile INTCON3_t *)(0xFF0))).INT2IP)&&(1 == (*((volatile INTCON3_t *)(0xFF0))).INT2IF)){
+    if((1 == (*((volatile INTCON3_t *)(0xFF0))).INT2IE)&&(1 == (*((volatile INTCON3_t *)(0xFF0))).INT2IF)){
         INT2_ISR();
     }
     else { }
-     if((1 == (*((volatile INTCON2_t *)(0xFF1))).RBIP)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>4)&((uint8)0x01)))!=RB4_pin_init_value)){
+    if((1 == (*((volatile INTCON_t *)(0xFF2))).RBIE)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>4)&((uint8)0x01)))!=RB4_pin_init_value)){
         RB4_pin_init_value^=1;
         RB4_ISR();
     }
     else { }
-       if((1 == (*((volatile INTCON2_t *)(0xFF1))).RBIP)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>5)&((uint8)0x01)))!=RB5_pin_init_value)){
+       if((1 == (*((volatile INTCON_t *)(0xFF2))).RBIE)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>5)&((uint8)0x01)))!=RB5_pin_init_value)){
         RB5_pin_init_value^=1;
         RB5_ISR();
     }
     else { }
-       if((1 == (*((volatile INTCON2_t *)(0xFF1))).RBIP)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>6)&((uint8)0x01)))!=RB6_pin_init_value)){
+       if((1 == (*((volatile INTCON_t *)(0xFF2))).RBIE)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>6)&((uint8)0x01)))!=RB6_pin_init_value)){
         RB6_pin_init_value^=1;
         RB6_ISR();
     }
     else { }
-       if((1 == (*((volatile INTCON2_t *)(0xFF1))).RBIP)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>7)&((uint8)0x01)))!=RB7_pin_init_value)){
+       if((1 == (*((volatile INTCON_t *)(0xFF2))).RBIE)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>7)&((uint8)0x01)))!=RB7_pin_init_value)){
         RB7_pin_init_value^=1;
         RB7_ISR();
     }
     else { }
-
-}
-void __attribute__((picinterrupt(("low_priority")))) InterruptManagerLow(void){
-      if((0 == (*((volatile INTCON3_t *)(0xFF0))).INT1IP)&&(1 == (*((volatile INTCON3_t *)(0xFF0))).INT1IF)){
-        INT1_ISR();
-    }
-    else { }
-    if((0 == (*((volatile INTCON3_t *)(0xFF0))).INT2IP)&&(1 == (*((volatile INTCON3_t *)(0xFF0))).INT2IF)){
-        INT2_ISR();
-    }
-    else { }
-     if((0 == (*((volatile INTCON2_t *)(0xFF1))).RBIP)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>4)&((uint8)0x01)))!=RB4_pin_init_value)){
-        RB4_pin_init_value^=1;
-        RB4_ISR();
-    }
-    else { }
-       if((0 == (*((volatile INTCON2_t *)(0xFF1))).RBIP)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>5)&((uint8)0x01)))!=RB5_pin_init_value)){
-        RB5_pin_init_value^=1;
-        RB5_ISR();
-    }
-    else { }
-       if((0 == (*((volatile INTCON2_t *)(0xFF1))).RBIP)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>6)&((uint8)0x01)))!=RB6_pin_init_value)){
-        RB6_pin_init_value^=1;
-        RB6_ISR();
-    }
-    else { }
-       if((0 == (*((volatile INTCON2_t *)(0xFF1))).RBIP)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>7)&((uint8)0x01)))!=RB7_pin_init_value)){
-        RB7_pin_init_value^=1;
-        RB7_ISR();
+     if((1== (*((volatile PIE1_t *)(0xF9D))).ADIE)&&(1 == (*((volatile PIR1_t *)(0xF9E))).ADIF)){
+        ADC_ISR();
     }
     else { }
 }

@@ -323,14 +323,21 @@ Std_ReturnType lcd_8bit_send_custom_char(const chr_lcd_8bit_t *lcd ,uint8 row ,u
  * @param value
  * @param str
  */
-Std_ReturnType convert_byte_to_string(uint8 value , uint8 *str){
-    Std_ReturnType ret=E_OK;
+Std_ReturnType convert_uint8_to_string(uint8 value , uint8 *str){
+   Std_ReturnType ret=E_OK;
+   uint8 Temp_str[4]={0};
+   uint8 cnt =0;
     if(str==NULL){
         ret=E_NOT_OK;
     }
     else{
-        memset(str,'\0',4);
-        sprintf(str,"%i",value);
+        memset(str,' ',4);
+        sprintf(Temp_str,"%i",value);
+        while (Temp_str[cnt] != '\0'){
+            str[cnt] = Temp_str [cnt];
+            cnt++;
+        }
+        str[3] = '\0';
         }
     return ret;
 }
@@ -339,14 +346,21 @@ Std_ReturnType convert_byte_to_string(uint8 value , uint8 *str){
  * @param value
  * @param str
  */
-Std_ReturnType convert_short_to_string(uint16 value , uint8 *str){
+Std_ReturnType convert_uint16_to_string(uint16 value , uint8 *str){
     Std_ReturnType ret=E_OK;
+   uint8 Temp_str[6]={0};
+   uint8 cnt =0;
     if(str==NULL){
         ret=E_NOT_OK;
     }
     else{
-        memset(str,'\0',6);
-        sprintf(str,"%i",value);
+        memset(str,' ',6);
+        sprintf(Temp_str,"%i",value);
+        while (Temp_str[cnt] != '\0'){
+            str[cnt] = Temp_str [cnt];
+            cnt++;
+        }
+        str[5] = '\0';
         }
     return ret;
 }
@@ -355,14 +369,21 @@ Std_ReturnType convert_short_to_string(uint16 value , uint8 *str){
  * @param value
  * @param str
  */
-Std_ReturnType convert_long_to_string(uint32 value , uint8 *str){
-    Std_ReturnType ret=E_OK;
+Std_ReturnType convert_uint32_to_string(uint32 value , uint8 *str){
+   Std_ReturnType ret=E_OK;
+   uint8 Temp_str[11]={0};
+   uint8 cnt =0;
     if(str==NULL){
         ret=E_NOT_OK;
     }
     else{
-        memset(str,'\0',11);
-        sprintf(str,"%i",value);
+        memset(str,' ',11);
+        sprintf(Temp_str,"%i",value);
+        while (Temp_str[cnt] != '\0'){
+            str[cnt] = Temp_str [cnt];
+            cnt++;
+        }
+        str[10] = '\0';
         }
     return ret;
 }

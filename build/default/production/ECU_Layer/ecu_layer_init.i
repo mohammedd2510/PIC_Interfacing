@@ -4704,7 +4704,7 @@ typedef uint8 Std_ReturnType;
 # 12 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
 # 1 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../my_pic18f4620.h" 1
-# 61 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
+# 101 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
 typedef union {
   struct {
    uint8 RBIF :1;
@@ -4849,7 +4849,7 @@ typedef struct {
   uint8 SBOREN :1;
   uint8 IPEN :1;
 }RCON_t;
-# 217 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
+# 257 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
 typedef struct {
   uint8 RD :1;
   uint8 WR :1;
@@ -4860,6 +4860,70 @@ typedef struct {
   uint8 CFGS :1;
   uint8 EEPGD :1;
 }EECON1_t;
+
+
+
+
+typedef union {
+  struct {
+   uint8 ADON :1;
+   uint8 GO_DONE :1;
+   uint8 CHS0 :1;
+   uint8 CHS1 :1;
+   uint8 CHS2 :1;
+   uint8 CHS3 :1;
+   uint8 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 :2;
+   uint8 CHS :4;
+   uint8 :2;
+};
+}ADCON0_t;
+
+
+
+
+typedef union {
+  struct {
+   uint8 PCFG0 :1;
+   uint8 PCFG1 :1;
+   uint8 PCFG2 :1;
+   uint8 PCFG3 :1;
+   uint8 VCFG0 :1;
+   uint8 VCFG1 :1;
+   uint8 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 PCFG :4;
+   uint8 VCFG :2;
+   uint8 :2;
+};
+}ADCON1_t;
+
+
+
+
+typedef union {
+  struct {
+   uint8 ADCS0 :1;
+   uint8 ADCS1 :1;
+   uint8 ADCS2 :1;
+   uint8 ACQT0 :1;
+   uint8 ACQT1 :1;
+   uint8 ACQT2 :1;
+   uint8 :1;
+   uint8 ADFM :1;
+};
+  struct {
+   uint8 ADCS :3;
+   uint8 ACQT :3;
+   uint8 :1;
+   uint8 :1;
+};
+}ADCON2_t;
 # 13 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
 # 1 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
@@ -5064,9 +5128,9 @@ Std_ReturnType lcd_8bit_send_string_pos (const chr_lcd_8bit_t *lcd ,uint8 row ,u
 Std_ReturnType lcd_8bit_send_custom_char(const chr_lcd_8bit_t *lcd ,uint8 row ,uint8 column ,
                                          const uint8 _chr[],uint8 mem_pos);
 
-Std_ReturnType convert_byte_to_string(uint8 value , uint8 *str);
-Std_ReturnType convert_short_to_string(uint16 value , uint8 *str);
-Std_ReturnType convert_long_to_string(uint32 value , uint8 *str);
+Std_ReturnType convert_uint8_to_string(uint8 value , uint8 *str);
+Std_ReturnType convert_uint16_to_string(uint16 value , uint8 *str);
+Std_ReturnType convert_uint32_to_string(uint32 value , uint8 *str);
 # 18 "ECU_Layer/ecu_layer_init.h" 2
 
 
@@ -5076,10 +5140,9 @@ Std_ReturnType convert_long_to_string(uint32 value , uint8 *str);
 
 
 
-extern led_t led1;
-extern led_t led2;
-extern led_t led3;
-extern led_t led4;
+extern chr_lcd_4bit_t lcd1;
+extern dc_motor_t dc_motor_1;
+extern dc_motor_t dc_motor_2;
 
 
 void ecu_layer_initialize(void);
@@ -5112,107 +5175,31 @@ chr_lcd_4bit_t lcd1 ={
   .lcd_data[3].direction=OUTPUT,
   .lcd_data[3].logic=LOW
 };
-chr_lcd_8bit_t lcd_2 ={
-  .lcd_rs.port=PORTC_INDEX,
-  .lcd_rs.pin=PIN6,
-  .lcd_rs.direction=OUTPUT,
-  .lcd_rs.logic=LOW,
-  .lcd_en.port=PORTC_INDEX,
-  .lcd_en.pin=PIN7,
-  .lcd_en.direction=OUTPUT,
-  .lcd_en.logic=LOW,
-  .lcd_data[0].port=PORTD_INDEX,
-  .lcd_data[0].pin=PIN0,
-  .lcd_data[0].direction=OUTPUT,
-  .lcd_data[0].logic=LOW,
-  .lcd_data[1].port=PORTD_INDEX,
-  .lcd_data[1].pin=PIN1,
-  .lcd_data[1].direction=OUTPUT,
-  .lcd_data[1].logic=LOW,
-  .lcd_data[2].port=PORTD_INDEX,
-  .lcd_data[2].pin=PIN2,
-  .lcd_data[2].direction=OUTPUT,
-  .lcd_data[2].logic=LOW,
-  .lcd_data[3].port=PORTD_INDEX,
-  .lcd_data[3].pin=PIN3,
-  .lcd_data[3].direction=OUTPUT,
-  .lcd_data[3].logic=LOW,
-  .lcd_data[4].port=PORTD_INDEX,
-  .lcd_data[4].pin=PIN4,
-  .lcd_data[4].direction=OUTPUT,
-  .lcd_data[4].logic=LOW,
-  .lcd_data[5].port=PORTD_INDEX,
-  .lcd_data[5].pin=PIN5,
-  .lcd_data[5].direction=OUTPUT,
-  .lcd_data[5].logic=LOW,
-  .lcd_data[6].port=PORTD_INDEX,
-  .lcd_data[6].pin=PIN6,
-  .lcd_data[6].direction=OUTPUT,
-  .lcd_data[6].logic=LOW,
-  .lcd_data[7].port=PORTD_INDEX,
-  .lcd_data[7].pin=PIN7,
-  .lcd_data[7].direction=OUTPUT,
-  .lcd_data[7].logic=LOW
-};
-keypad_t keypad1={
-    .keypad_row_pins[0].pin=PIN0,
-    .keypad_row_pins[0].port=PORTC_INDEX,
-    .keypad_row_pins[0].direction=OUTPUT,
-    .keypad_row_pins[0].logic=LOW,
-    .keypad_row_pins[1].pin=PIN1,
-    .keypad_row_pins[1].port=PORTC_INDEX,
-    .keypad_row_pins[1].direction=OUTPUT,
-    .keypad_row_pins[1].logic=LOW,
-    .keypad_row_pins[2].pin=PIN2,
-    .keypad_row_pins[2].port=PORTC_INDEX,
-    .keypad_row_pins[2].direction=OUTPUT,
-    .keypad_row_pins[2].logic=LOW,
-    .keypad_row_pins[3].pin=PIN3,
-    .keypad_row_pins[3].port=PORTC_INDEX,
-    .keypad_row_pins[3].direction=OUTPUT,
-    .keypad_row_pins[3].logic=LOW,
-    .keypad_columns_pins[0].pin=PIN4,
-    .keypad_columns_pins[0].port=PORTC_INDEX,
-    .keypad_columns_pins[0].direction=INPUT,
-    .keypad_columns_pins[0].logic=LOW,
-    .keypad_columns_pins[1].pin=PIN5,
-    .keypad_columns_pins[1].port=PORTC_INDEX,
-    .keypad_columns_pins[1].direction=INPUT,
-    .keypad_columns_pins[1].logic=LOW,
-    .keypad_columns_pins[2].pin=PIN6,
-    .keypad_columns_pins[2].port=PORTC_INDEX,
-    .keypad_columns_pins[2].direction=INPUT,
-    .keypad_columns_pins[2].logic=LOW,
-    .keypad_columns_pins[3].pin=PIN7,
-    .keypad_columns_pins[3].port=PORTC_INDEX,
-    .keypad_columns_pins[3].direction=INPUT,
-    .keypad_columns_pins[3].logic=LOW
+dc_motor_t dc_motor_1 = {
+    .dc_motor_pin[0].port = PORTD_INDEX,
+    .dc_motor_pin[0].pin = PIN0,
+    .dc_motor_pin[0].logic = 0x00U,
+    .dc_motor_pin[0].direction = OUTPUT,
+    .dc_motor_pin[1].port = PORTD_INDEX,
+    .dc_motor_pin[1].pin = PIN1,
+    .dc_motor_pin[1].logic = 0x00U,
+    .dc_motor_pin[1].direction = OUTPUT
 };
 
-led_t led1 = {
-    .port_name=PORTD_INDEX,
-    .pin=PIN0,
-    .led_status=LOW
+dc_motor_t dc_motor_2 = {
+    .dc_motor_pin[0].port = PORTD_INDEX,
+    .dc_motor_pin[0].pin = PIN2,
+    .dc_motor_pin[0].logic = 0x00U,
+    .dc_motor_pin[0].direction = OUTPUT,
+    .dc_motor_pin[1].port = PORTD_INDEX,
+    .dc_motor_pin[1].pin = PIN3,
+    .dc_motor_pin[1].logic = 0x00U,
+    .dc_motor_pin[1].direction = OUTPUT
 };
-led_t led2 = {
-    .port_name=PORTD_INDEX,
-    .pin=PIN1,
-    .led_status=LOW
-};
-led_t led3 = {
-    .port_name=PORTD_INDEX,
-    .pin=PIN2,
-    .led_status=LOW
-};
-led_t led4 = {
-    .port_name=PORTD_INDEX,
-    .pin=PIN3,
-    .led_status=LOW
-};
+# 149 "ECU_Layer/ecu_layer_init.c"
 void ecu_layer_initialize(void){
      Std_ReturnType ret=(Std_ReturnType)0x00;
-     led_initialize(&led1);
-     led_initialize(&led2);
-     led_initialize(&led3);
-     led_initialize(&led4);
+     ret = lcd_4bit_initialize(&lcd1);
+     ret &= dc_motor_initialize(&dc_motor_1);
+     ret &= dc_motor_initialize(&dc_motor_2);
 }
