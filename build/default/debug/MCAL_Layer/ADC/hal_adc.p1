@@ -1,16 +1,21 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[v F3290 `(v ~T0 @X0 0 tf ]
+[v F3291 `(v ~T0 @X0 0 tf ]
+[v F3257 `(v ~T0 @X0 0 tf ]
 "23 MCAL_Layer/ADC/hal_adc.c
 [; ;MCAL_Layer/ADC/hal_adc.c: 23: Std_ReturnType ADC_Init(const adc_conf_t *_adc){
-[c E3218 0 1 2 3 4 5 6 7 .. ]
-[n E3218 . ADC_0_TAD ADC_2_TAD ADC_4_TAD ADC_6_TAD ADC_8_TAD ADC_12_TAD ADC_16_TAD ADC_20_TAD  ]
-[c E3228 0 1 2 3 4 5 6 .. ]
-[n E3228 . ADC_CONVERSION_CLOCK_FOSC_DIV_2 ADC_CONVERSION_CLOCK_FOSC_DIV_8 ADC_CONVERSION_CLOCK_FOSC_DIV_32 ADC_CONVERSION_CLOCK_FOSC_DIV_FRC ADC_CONVERSION_CLOCK_FOSC_DIV_4 ADC_CONVERSION_CLOCK_FOSC_DIV_16 ADC_CONVERSION_CLOCK_FOSC_DIV_64  ]
-[c E3203 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
-[n E3203 . ADC_CHANNEL_AN0 ADC_CHANNEL_AN1 ADC_CHANNEL_AN2 ADC_CHANNEL_AN3 ADC_CHANNEL_AN4 ADC_CHANNEL_AN5 ADC_CHANNEL_AN6 ADC_CHANNEL_AN7 ADC_CHANNEL_AN8 ADC_CHANNEL_AN9 ADC_CHANNEL_AN10 ADC_CHANNEL_AN11 ADC_CHANNEL_AN12  ]
+[c E3213 0 1 .. ]
+[n E3213 . INTERRUPT_LOW_PRIORITY INTERRUPT_HIGH_PRIORITY  ]
+[c E3236 0 1 2 3 4 5 6 7 .. ]
+[n E3236 . ADC_0_TAD ADC_2_TAD ADC_4_TAD ADC_6_TAD ADC_8_TAD ADC_12_TAD ADC_16_TAD ADC_20_TAD  ]
+[c E3246 0 1 2 3 4 5 6 .. ]
+[n E3246 . ADC_CONVERSION_CLOCK_FOSC_DIV_2 ADC_CONVERSION_CLOCK_FOSC_DIV_8 ADC_CONVERSION_CLOCK_FOSC_DIV_32 ADC_CONVERSION_CLOCK_FOSC_DIV_FRC ADC_CONVERSION_CLOCK_FOSC_DIV_4 ADC_CONVERSION_CLOCK_FOSC_DIV_16 ADC_CONVERSION_CLOCK_FOSC_DIV_64  ]
+[c E3221 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
+[n E3221 . ADC_CHANNEL_AN0 ADC_CHANNEL_AN1 ADC_CHANNEL_AN2 ADC_CHANNEL_AN3 ADC_CHANNEL_AN4 ADC_CHANNEL_AN5 ADC_CHANNEL_AN6 ADC_CHANNEL_AN7 ADC_CHANNEL_AN8 ADC_CHANNEL_AN9 ADC_CHANNEL_AN10 ADC_CHANNEL_AN11 ADC_CHANNEL_AN12  ]
 "157 MCAL_Layer/ADC/../Interrupt/../ADC/hal_adc.h
 [; ;MCAL_Layer/ADC/../Interrupt/../ADC/hal_adc.h: 157: typedef struct {
-[s S296 `E3218 1 `E3228 1 `E3203 1 :1 `uc 1 :1 `uc 1 :6 `uc 1 ]
-[n S296 . acquisition_time conversion_clock adc_channel voltage_reference result_format . ]
+[s S299 `*F3257 1 `E3213 1 `E3236 1 `E3246 1 `E3221 1 :1 `uc 1 :1 `uc 1 :6 `uc 1 ]
+[n S299 . ADC_InterruptHandler priority acquisition_time conversion_clock adc_channel voltage_reference result_format . ]
 "272 MCAL_Layer/ADC/../Interrupt/../my_pic18f4620.h
 [s S287 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S287 . ADON GO_DONE CHS0 CHS1 CHS2 CHS3 . . ]
@@ -29,18 +34,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 "313
 [u S292 `S293 1 `S294 1 ]
 [n S292 . . . ]
-[v F3269 `(v ~T0 @X0 1 tf1`E3203 ]
+[v F3293 `(v ~T0 @X0 1 tf1`E3221 ]
 "8 MCAL_Layer/ADC/hal_adc.c
 [; ;MCAL_Layer/ADC/hal_adc.c: 8: static __attribute__((inline)) void adc_input_channel_port_configure(adc_channel_select_t channel);
-[v _adc_input_channel_port_configure `TF3269 ~T0 @X0 0 s ]
-[v F3272 `(v ~T0 @X0 1 tf1`*CS296 ]
-"9
+[v _adc_input_channel_port_configure `TF3293 ~T0 @X0 0 s ]
+"179 MCAL_Layer/ADC/../Interrupt/../my_pic18f4620.h
+[s S280 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S280 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"150
+[s S278 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S278 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"235
+[s S284 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S284 . BOR POR PD TO RI . SBOREN IPEN ]
+"207
+[s S282 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S282 . TMR1IP TMR2IP CCP1IP SSPIP TXIP RCIP ADIP PSPIP ]
+"102
+[s S274 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S274 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE GIE ]
+"112
+[s S275 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S275 . . GIEL GIEH ]
+"101
+[u S273 `S274 1 `S275 1 ]
+[n S273 . . . ]
+[v F3296 `(v ~T0 @X0 1 tf1`*CS299 ]
+"9 MCAL_Layer/ADC/hal_adc.c
 [; ;MCAL_Layer/ADC/hal_adc.c: 9: static __attribute__((inline)) void select_result_format(const adc_conf_t *_adc);
-[v _select_result_format `TF3272 ~T0 @X0 0 s ]
-[v F3275 `(v ~T0 @X0 1 tf1`*CS296 ]
+[v _select_result_format `TF3296 ~T0 @X0 0 s ]
+[v F3299 `(v ~T0 @X0 1 tf1`*CS299 ]
 "10
 [; ;MCAL_Layer/ADC/hal_adc.c: 10: static __attribute__((inline)) void configure_voltage_reference(const adc_conf_t *_adc);
-[v _configure_voltage_reference `TF3275 ~T0 @X0 0 s ]
+[v _configure_voltage_reference `TF3299 ~T0 @X0 0 s ]
 "4662 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 4662: extern volatile unsigned char ADRESH __attribute__((address(0xFC4)));
 [v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
@@ -467,12 +493,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"23 MCAL_Layer/ADC/hal_adc.c
+"6 MCAL_Layer/ADC/hal_adc.c
+[; ;MCAL_Layer/ADC/hal_adc.c: 6: InterruptHandler ADC_InterruptHandler = ((void*)0);
+[v _ADC_InterruptHandler `*F3290 ~T0 @X0 1 e ]
+[i _ADC_InterruptHandler
+-> -> -> 0 `i `*v `*F3291
+]
+"23
 [; ;MCAL_Layer/ADC/hal_adc.c: 23: Std_ReturnType ADC_Init(const adc_conf_t *_adc){
-[v _ADC_Init `(uc ~T0 @X0 1 ef1`*CS296 ]
+[v _ADC_Init `(uc ~T0 @X0 1 ef1`*CS299 ]
 {
 [e :U _ADC_Init ]
-[v __adc `*CS296 ~T0 @X0 1 r1 ]
+[v __adc `*CS299 ~T0 @X0 1 r1 ]
 [f ]
 "24
 [; ;MCAL_Layer/ADC/hal_adc.c: 24:       Std_ReturnType ret=(Std_ReturnType)0x01;
@@ -480,7 +512,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _ret -> -> 1 `i `uc ]
 "25
 [; ;MCAL_Layer/ADC/hal_adc.c: 25:     if(_adc==((void*)0)){
-[e $ ! == __adc -> -> -> 0 `i `*v `*CS296 298  ]
+[e $ ! == __adc -> -> -> 0 `i `*v `*CS299 301  ]
 {
 "26
 [; ;MCAL_Layer/ADC/hal_adc.c: 26:         ret=(Std_ReturnType)0x00;
@@ -488,566 +520,620 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27
 [; ;MCAL_Layer/ADC/hal_adc.c: 27:     }
 }
-[e $U 299  ]
+[e $U 302  ]
 "28
 [; ;MCAL_Layer/ADC/hal_adc.c: 28:     else{
-[e :U 298 ]
+[e :U 301 ]
 {
 "30
 [; ;MCAL_Layer/ADC/hal_adc.c: 30:         ((*((volatile ADCON0_t *)(0xFC2))).ADON=0);
 [e = . . *U -> -> 4034 `i `*VS286 0 0 -> -> 0 `i `uc ]
 "32
 [; ;MCAL_Layer/ADC/hal_adc.c: 32:         (*((volatile ADCON2_t *)(0xFC0))).ACQT = _adc->acquisition_time;
-[e = . . *U -> -> 4032 `i `*VS292 1 1 -> . *U __adc 0 `uc ]
+[e = . . *U -> -> 4032 `i `*VS292 1 1 -> . *U __adc 2 `uc ]
 "34
 [; ;MCAL_Layer/ADC/hal_adc.c: 34:         (*((volatile ADCON2_t *)(0xFC0))).ADCS = _adc->conversion_clock;
-[e = . . *U -> -> 4032 `i `*VS292 1 0 -> . *U __adc 1 `uc ]
+[e = . . *U -> -> 4032 `i `*VS292 1 0 -> . *U __adc 3 `uc ]
 "36
 [; ;MCAL_Layer/ADC/hal_adc.c: 36:         (*((volatile ADCON0_t *)(0xFC2))).CHS =_adc->adc_channel;
-[e = . . *U -> -> 4034 `i `*VS286 1 1 -> . *U __adc 2 `uc ]
+[e = . . *U -> -> 4034 `i `*VS286 1 1 -> . *U __adc 4 `uc ]
 "37
 [; ;MCAL_Layer/ADC/hal_adc.c: 37:         adc_input_channel_port_configure(_adc->adc_channel);
-[e ( _adc_input_channel_port_configure (1 . *U __adc 2 ]
-"60
-[; ;MCAL_Layer/ADC/hal_adc.c: 60:         select_result_format(_adc);
-[e ( _select_result_format (1 __adc ]
+[e ( _adc_input_channel_port_configure (1 . *U __adc 4 ]
+"40
+[; ;MCAL_Layer/ADC/hal_adc.c: 40:             ADC_InterruptHandler = _adc->ADC_InterruptHandler;
+[e = _ADC_InterruptHandler . *U __adc 0 ]
+"45
+[; ;MCAL_Layer/ADC/hal_adc.c: 45:             ((*((volatile PIE1_t *)(0xF9D))).ADIE=1);
+[e = . *U -> -> 3997 `i `*VS280 6 -> -> 1 `i `uc ]
+"46
+[; ;MCAL_Layer/ADC/hal_adc.c: 46:             ((*((volatile PIR1_t *)(0xF9E))).ADIF=0);
+[e = . *U -> -> 3998 `i `*VS278 6 -> -> 0 `i `uc ]
+"48
+[; ;MCAL_Layer/ADC/hal_adc.c: 48:                 ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
+[e = . *U -> -> 4048 `i `*VS284 7 -> -> 1 `i `uc ]
+"49
+[; ;MCAL_Layer/ADC/hal_adc.c: 49:                 if(INTERRUPT_HIGH_PRIORITY == _adc->priority){
+[e $ ! == -> . `E3213 1 `ui -> . *U __adc 1 `ui 303  ]
+{
+"50
+[; ;MCAL_Layer/ADC/hal_adc.c: 50:                     ((*((volatile IPR1_t *)(0xF9F))).ADIP=1);
+[e = . *U -> -> 3999 `i `*VS282 6 -> -> 1 `i `uc ]
+"51
+[; ;MCAL_Layer/ADC/hal_adc.c: 51:                     ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
+[e = . . *U -> -> 4082 `i `*VS273 1 2 -> -> 1 `i `uc ]
+"52
+[; ;MCAL_Layer/ADC/hal_adc.c: 52:                 }
+}
+[e $U 304  ]
+"53
+[; ;MCAL_Layer/ADC/hal_adc.c: 53:                 else if (INTERRUPT_LOW_PRIORITY == _adc->priority){
+[e :U 303 ]
+[e $ ! == -> . `E3213 0 `ui -> . *U __adc 1 `ui 305  ]
+{
+"54
+[; ;MCAL_Layer/ADC/hal_adc.c: 54:                     ((*((volatile IPR1_t *)(0xF9F))).ADIP=0);
+[e = . *U -> -> 3999 `i `*VS282 6 -> -> 0 `i `uc ]
+"55
+[; ;MCAL_Layer/ADC/hal_adc.c: 55:                     ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
+[e = . . *U -> -> 4082 `i `*VS273 1 2 -> -> 1 `i `uc ]
+"56
+[; ;MCAL_Layer/ADC/hal_adc.c: 56:                     ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1);
+[e = . . *U -> -> 4082 `i `*VS273 1 1 -> -> 1 `i `uc ]
+"57
+[; ;MCAL_Layer/ADC/hal_adc.c: 57:                 }
+}
+[e $U 306  ]
+"58
+[; ;MCAL_Layer/ADC/hal_adc.c: 58:                 else { }
+[e :U 305 ]
+{
+}
+[e :U 306 ]
+[e :U 304 ]
 "62
-[; ;MCAL_Layer/ADC/hal_adc.c: 62:         configure_voltage_reference(_adc);
-[e ( _configure_voltage_reference (1 __adc ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 62:         select_result_format(_adc);
+[e ( _select_result_format (1 __adc ]
 "64
-[; ;MCAL_Layer/ADC/hal_adc.c: 64:         ((*((volatile ADCON0_t *)(0xFC2))).ADON=1);
-[e = . . *U -> -> 4034 `i `*VS286 0 0 -> -> 1 `i `uc ]
-"65
-[; ;MCAL_Layer/ADC/hal_adc.c: 65:         }
-}
-[e :U 299 ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 64:         configure_voltage_reference(_adc);
+[e ( _configure_voltage_reference (1 __adc ]
 "66
-[; ;MCAL_Layer/ADC/hal_adc.c: 66:     return ret;
-[e ) _ret ]
-[e $UE 297  ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 66:         ((*((volatile ADCON0_t *)(0xFC2))).ADON=1);
+[e = . . *U -> -> 4034 `i `*VS286 0 0 -> -> 1 `i `uc ]
 "67
-[; ;MCAL_Layer/ADC/hal_adc.c: 67: }
-[e :UE 297 ]
-}
-"75
-[; ;MCAL_Layer/ADC/hal_adc.c: 75: Std_ReturnType ADC_DeInit(const adc_conf_t *_adc){
-[v _ADC_DeInit `(uc ~T0 @X0 1 ef1`*CS296 ]
-{
-[e :U _ADC_DeInit ]
-[v __adc `*CS296 ~T0 @X0 1 r1 ]
-[f ]
-"76
-[; ;MCAL_Layer/ADC/hal_adc.c: 76:     Std_ReturnType ret=(Std_ReturnType)0x01;
-[v _ret `uc ~T0 @X0 1 a ]
-[e = _ret -> -> 1 `i `uc ]
-"77
-[; ;MCAL_Layer/ADC/hal_adc.c: 77:     if(_adc==((void*)0)){
-[e $ ! == __adc -> -> -> 0 `i `*v `*CS296 301  ]
-{
-"78
-[; ;MCAL_Layer/ADC/hal_adc.c: 78:         ret=(Std_ReturnType)0x00;
-[e = _ret -> -> 0 `i `uc ]
-"79
-[; ;MCAL_Layer/ADC/hal_adc.c: 79:     }
-}
-[e $U 302  ]
-"80
-[; ;MCAL_Layer/ADC/hal_adc.c: 80:     else{
-[e :U 301 ]
-{
-"82
-[; ;MCAL_Layer/ADC/hal_adc.c: 82:         ((*((volatile ADCON0_t *)(0xFC2))).ADON=0);
-[e = . . *U -> -> 4034 `i `*VS286 0 0 -> -> 0 `i `uc ]
-"87
-[; ;MCAL_Layer/ADC/hal_adc.c: 87:         }
+[; ;MCAL_Layer/ADC/hal_adc.c: 67:         }
 }
 [e :U 302 ]
-"88
-[; ;MCAL_Layer/ADC/hal_adc.c: 88:     return ret;
+"68
+[; ;MCAL_Layer/ADC/hal_adc.c: 68:     return ret;
 [e ) _ret ]
 [e $UE 300  ]
-"89
-[; ;MCAL_Layer/ADC/hal_adc.c: 89: }
+"69
+[; ;MCAL_Layer/ADC/hal_adc.c: 69: }
 [e :UE 300 ]
 }
-"100
-[; ;MCAL_Layer/ADC/hal_adc.c: 100: Std_ReturnType ADC_SelectChannel(const adc_conf_t *_adc, adc_channel_select_t channel){
-[v _ADC_SelectChannel `(uc ~T0 @X0 1 ef2`*CS296`E3203 ]
+"77
+[; ;MCAL_Layer/ADC/hal_adc.c: 77: Std_ReturnType ADC_DeInit(const adc_conf_t *_adc){
+[v _ADC_DeInit `(uc ~T0 @X0 1 ef1`*CS299 ]
+{
+[e :U _ADC_DeInit ]
+[v __adc `*CS299 ~T0 @X0 1 r1 ]
+[f ]
+"78
+[; ;MCAL_Layer/ADC/hal_adc.c: 78:     Std_ReturnType ret=(Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"79
+[; ;MCAL_Layer/ADC/hal_adc.c: 79:     if(_adc==((void*)0)){
+[e $ ! == __adc -> -> -> 0 `i `*v `*CS299 308  ]
+{
+"80
+[; ;MCAL_Layer/ADC/hal_adc.c: 80:         ret=(Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"81
+[; ;MCAL_Layer/ADC/hal_adc.c: 81:     }
+}
+[e $U 309  ]
+"82
+[; ;MCAL_Layer/ADC/hal_adc.c: 82:     else{
+[e :U 308 ]
+{
+"84
+[; ;MCAL_Layer/ADC/hal_adc.c: 84:         ((*((volatile ADCON0_t *)(0xFC2))).ADON=0);
+[e = . . *U -> -> 4034 `i `*VS286 0 0 -> -> 0 `i `uc ]
+"87
+[; ;MCAL_Layer/ADC/hal_adc.c: 87:             ((*((volatile PIE1_t *)(0xF9D))).ADIE=0);
+[e = . *U -> -> 3997 `i `*VS280 6 -> -> 0 `i `uc ]
+"89
+[; ;MCAL_Layer/ADC/hal_adc.c: 89:         }
+}
+[e :U 309 ]
+"90
+[; ;MCAL_Layer/ADC/hal_adc.c: 90:     return ret;
+[e ) _ret ]
+[e $UE 307  ]
+"91
+[; ;MCAL_Layer/ADC/hal_adc.c: 91: }
+[e :UE 307 ]
+}
+"102
+[; ;MCAL_Layer/ADC/hal_adc.c: 102: Std_ReturnType ADC_SelectChannel(const adc_conf_t *_adc, adc_channel_select_t channel){
+[v _ADC_SelectChannel `(uc ~T0 @X0 1 ef2`*CS299`E3221 ]
 {
 [e :U _ADC_SelectChannel ]
-[v __adc `*CS296 ~T0 @X0 1 r1 ]
-[v _channel `E3203 ~T0 @X0 1 r2 ]
+[v __adc `*CS299 ~T0 @X0 1 r1 ]
+[v _channel `E3221 ~T0 @X0 1 r2 ]
 [f ]
-"101
-[; ;MCAL_Layer/ADC/hal_adc.c: 101:      Std_ReturnType ret=(Std_ReturnType)0x01;
+"103
+[; ;MCAL_Layer/ADC/hal_adc.c: 103:      Std_ReturnType ret=(Std_ReturnType)0x01;
 [v _ret `uc ~T0 @X0 1 a ]
 [e = _ret -> -> 1 `i `uc ]
-"102
-[; ;MCAL_Layer/ADC/hal_adc.c: 102:     if(_adc==((void*)0)){
-[e $ ! == __adc -> -> -> 0 `i `*v `*CS296 304  ]
-{
-"103
-[; ;MCAL_Layer/ADC/hal_adc.c: 103:         ret=(Std_ReturnType)0x00;
-[e = _ret -> -> 0 `i `uc ]
 "104
-[; ;MCAL_Layer/ADC/hal_adc.c: 104:     }
-}
-[e $U 305  ]
-"105
-[; ;MCAL_Layer/ADC/hal_adc.c: 105:     else{
-[e :U 304 ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 104:     if(_adc==((void*)0)){
+[e $ ! == __adc -> -> -> 0 `i `*v `*CS299 311  ]
 {
+"105
+[; ;MCAL_Layer/ADC/hal_adc.c: 105:         ret=(Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
 "106
-[; ;MCAL_Layer/ADC/hal_adc.c: 106:          (*((volatile ADCON0_t *)(0xFC2))).CHS =channel;
-[e = . . *U -> -> 4034 `i `*VS286 1 1 -> _channel `uc ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 106:     }
+}
+[e $U 312  ]
 "107
-[; ;MCAL_Layer/ADC/hal_adc.c: 107:         adc_input_channel_port_configure(channel);
-[e ( _adc_input_channel_port_configure (1 _channel ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 107:     else{
+[e :U 311 ]
+{
 "108
-[; ;MCAL_Layer/ADC/hal_adc.c: 108:         }
-}
-[e :U 305 ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 108:          (*((volatile ADCON0_t *)(0xFC2))).CHS =channel;
+[e = . . *U -> -> 4034 `i `*VS286 1 1 -> _channel `uc ]
 "109
-[; ;MCAL_Layer/ADC/hal_adc.c: 109:     return ret;
-[e ) _ret ]
-[e $UE 303  ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 109:         adc_input_channel_port_configure(channel);
+[e ( _adc_input_channel_port_configure (1 _channel ]
 "110
-[; ;MCAL_Layer/ADC/hal_adc.c: 110: }
-[e :UE 303 ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 110:         }
 }
-"120
-[; ;MCAL_Layer/ADC/hal_adc.c: 120: Std_ReturnType ADC_StartConversion(const adc_conf_t *_adc){
-[v _ADC_StartConversion `(uc ~T0 @X0 1 ef1`*CS296 ]
+[e :U 312 ]
+"111
+[; ;MCAL_Layer/ADC/hal_adc.c: 111:     return ret;
+[e ) _ret ]
+[e $UE 310  ]
+"112
+[; ;MCAL_Layer/ADC/hal_adc.c: 112: }
+[e :UE 310 ]
+}
+"122
+[; ;MCAL_Layer/ADC/hal_adc.c: 122: Std_ReturnType ADC_StartConversion(const adc_conf_t *_adc){
+[v _ADC_StartConversion `(uc ~T0 @X0 1 ef1`*CS299 ]
 {
 [e :U _ADC_StartConversion ]
-[v __adc `*CS296 ~T0 @X0 1 r1 ]
+[v __adc `*CS299 ~T0 @X0 1 r1 ]
 [f ]
-"121
-[; ;MCAL_Layer/ADC/hal_adc.c: 121:     Std_ReturnType ret=(Std_ReturnType)0x01;
+"123
+[; ;MCAL_Layer/ADC/hal_adc.c: 123:     Std_ReturnType ret=(Std_ReturnType)0x01;
 [v _ret `uc ~T0 @X0 1 a ]
 [e = _ret -> -> 1 `i `uc ]
-"122
-[; ;MCAL_Layer/ADC/hal_adc.c: 122:     if(_adc==((void*)0)){
-[e $ ! == __adc -> -> -> 0 `i `*v `*CS296 307  ]
-{
-"123
-[; ;MCAL_Layer/ADC/hal_adc.c: 123:         ret=(Std_ReturnType)0x00;
-[e = _ret -> -> 0 `i `uc ]
 "124
-[; ;MCAL_Layer/ADC/hal_adc.c: 124:     }
-}
-[e $U 308  ]
-"125
-[; ;MCAL_Layer/ADC/hal_adc.c: 125:     else{
-[e :U 307 ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 124:     if(_adc==((void*)0)){
+[e $ ! == __adc -> -> -> 0 `i `*v `*CS299 314  ]
 {
+"125
+[; ;MCAL_Layer/ADC/hal_adc.c: 125:         ret=(Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
 "126
-[; ;MCAL_Layer/ADC/hal_adc.c: 126:         ((*((volatile ADCON0_t *)(0xFC2))).GO_DONE=1);
-[e = . . *U -> -> 4034 `i `*VS286 0 1 -> -> 1 `i `uc ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 126:     }
+}
+[e $U 315  ]
 "127
-[; ;MCAL_Layer/ADC/hal_adc.c: 127:         }
-}
-[e :U 308 ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 127:     else{
+[e :U 314 ]
+{
 "128
-[; ;MCAL_Layer/ADC/hal_adc.c: 128:     return ret;
-[e ) _ret ]
-[e $UE 306  ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 128:         ((*((volatile ADCON0_t *)(0xFC2))).GO_DONE=1);
+[e = . . *U -> -> 4034 `i `*VS286 0 1 -> -> 1 `i `uc ]
 "129
-[; ;MCAL_Layer/ADC/hal_adc.c: 129: }
-[e :UE 306 ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 129:         }
 }
-"144
-[; ;MCAL_Layer/ADC/hal_adc.c: 144: Std_ReturnType ADC_IsConversionDone(const adc_conf_t *_adc, uint8 *conversion_status){
-[v _ADC_IsConversionDone `(uc ~T0 @X0 1 ef2`*CS296`*uc ]
+[e :U 315 ]
+"130
+[; ;MCAL_Layer/ADC/hal_adc.c: 130:     return ret;
+[e ) _ret ]
+[e $UE 313  ]
+"131
+[; ;MCAL_Layer/ADC/hal_adc.c: 131: }
+[e :UE 313 ]
+}
+"146
+[; ;MCAL_Layer/ADC/hal_adc.c: 146: Std_ReturnType ADC_IsConversionDone(const adc_conf_t *_adc, uint8 *conversion_status){
+[v _ADC_IsConversionDone `(uc ~T0 @X0 1 ef2`*CS299`*uc ]
 {
 [e :U _ADC_IsConversionDone ]
-[v __adc `*CS296 ~T0 @X0 1 r1 ]
+[v __adc `*CS299 ~T0 @X0 1 r1 ]
 [v _conversion_status `*uc ~T0 @X0 1 r2 ]
 [f ]
-"145
-[; ;MCAL_Layer/ADC/hal_adc.c: 145:      Std_ReturnType ret=(Std_ReturnType)0x01;
+"147
+[; ;MCAL_Layer/ADC/hal_adc.c: 147:      Std_ReturnType ret=(Std_ReturnType)0x01;
 [v _ret `uc ~T0 @X0 1 a ]
 [e = _ret -> -> 1 `i `uc ]
-"146
-[; ;MCAL_Layer/ADC/hal_adc.c: 146:      if((_adc==((void*)0))||(conversion_status==((void*)0))){
-[e $ ! || == __adc -> -> -> 0 `i `*v `*CS296 == _conversion_status -> -> -> 0 `i `*v `*uc 310  ]
-{
-"147
-[; ;MCAL_Layer/ADC/hal_adc.c: 147:         ret=(Std_ReturnType)0x00;
-[e = _ret -> -> 0 `i `uc ]
 "148
-[; ;MCAL_Layer/ADC/hal_adc.c: 148:     }
-}
-[e $U 311  ]
-"149
-[; ;MCAL_Layer/ADC/hal_adc.c: 149:     else{
-[e :U 310 ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 148:      if((_adc==((void*)0))||(conversion_status==((void*)0))){
+[e $ ! || == __adc -> -> -> 0 `i `*v `*CS299 == _conversion_status -> -> -> 0 `i `*v `*uc 317  ]
 {
+"149
+[; ;MCAL_Layer/ADC/hal_adc.c: 149:         ret=(Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
 "150
-[; ;MCAL_Layer/ADC/hal_adc.c: 150:         *conversion_status = !(((*((volatile ADCON0_t *)(0xFC2))).GO_DONE));
-[e = *U _conversion_status -> -> ! != -> . . *U -> -> 4034 `i `*VS286 0 1 `i -> 0 `i `i `uc ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 150:     }
+}
+[e $U 318  ]
 "151
-[; ;MCAL_Layer/ADC/hal_adc.c: 151:         }
-}
-[e :U 311 ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 151:     else{
+[e :U 317 ]
+{
 "152
-[; ;MCAL_Layer/ADC/hal_adc.c: 152:     return ret;
-[e ) _ret ]
-[e $UE 309  ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 152:         *conversion_status = !(((*((volatile ADCON0_t *)(0xFC2))).GO_DONE));
+[e = *U _conversion_status -> -> ! != -> . . *U -> -> 4034 `i `*VS286 0 1 `i -> 0 `i `i `uc ]
 "153
-[; ;MCAL_Layer/ADC/hal_adc.c: 153: }
-[e :UE 309 ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 153:         }
 }
-"166
-[; ;MCAL_Layer/ADC/hal_adc.c: 166: Std_ReturnType ADC_GetConversionResult(const adc_conf_t *_adc, adc_result_t *conversion_result){
-[v _ADC_GetConversionResult `(uc ~T0 @X0 1 ef2`*CS296`*ui ]
+[e :U 318 ]
+"154
+[; ;MCAL_Layer/ADC/hal_adc.c: 154:     return ret;
+[e ) _ret ]
+[e $UE 316  ]
+"155
+[; ;MCAL_Layer/ADC/hal_adc.c: 155: }
+[e :UE 316 ]
+}
+"168
+[; ;MCAL_Layer/ADC/hal_adc.c: 168: Std_ReturnType ADC_GetConversionResult(const adc_conf_t *_adc, adc_result_t *conversion_result){
+[v _ADC_GetConversionResult `(uc ~T0 @X0 1 ef2`*CS299`*ui ]
 {
 [e :U _ADC_GetConversionResult ]
-[v __adc `*CS296 ~T0 @X0 1 r1 ]
+[v __adc `*CS299 ~T0 @X0 1 r1 ]
 [v _conversion_result `*ui ~T0 @X0 1 r2 ]
 [f ]
-"167
-[; ;MCAL_Layer/ADC/hal_adc.c: 167:     Std_ReturnType ret=(Std_ReturnType)0x01;
-[v _ret `uc ~T0 @X0 1 a ]
-[e = _ret -> -> 1 `i `uc ]
-"168
-[; ;MCAL_Layer/ADC/hal_adc.c: 168:      if((_adc==((void*)0))||(conversion_result==((void*)0))){
-[e $ ! || == __adc -> -> -> 0 `i `*v `*CS296 == _conversion_result -> -> -> 0 `i `*v `*ui 313  ]
-{
 "169
-[; ;MCAL_Layer/ADC/hal_adc.c: 169:         ret=(Std_ReturnType)0x00;
-[e = _ret -> -> 0 `i `uc ]
-"170
-[; ;MCAL_Layer/ADC/hal_adc.c: 170:     }
-}
-[e $U 314  ]
-"171
-[; ;MCAL_Layer/ADC/hal_adc.c: 171:     else{
-[e :U 313 ]
-{
-"172
-[; ;MCAL_Layer/ADC/hal_adc.c: 172:         switch (_adc->result_format){
-[e $U 316  ]
-{
-"173
-[; ;MCAL_Layer/ADC/hal_adc.c: 173:             case 0X00U : *conversion_result=(adc_result_t)(((ADRESH<<8) +ADRESL)>>6);break;
-[e :U 317 ]
-[e = *U _conversion_result -> >> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i -> 6 `i `ui ]
-[e $U 315  ]
-"174
-[; ;MCAL_Layer/ADC/hal_adc.c: 174:             case 0X01U : *conversion_result=(adc_result_t)((ADRESH<<8) +ADRESL);break;
-[e :U 318 ]
-[e = *U _conversion_result -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
-[e $U 315  ]
-"175
-[; ;MCAL_Layer/ADC/hal_adc.c: 175:             default: *conversion_result=(adc_result_t)((ADRESH<<8) +ADRESL);break;
-[e :U 319 ]
-[e = *U _conversion_result -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
-[e $U 315  ]
-"176
-[; ;MCAL_Layer/ADC/hal_adc.c: 176:     }
-}
-[e $U 315  ]
-[e :U 316 ]
-[e [\ -> . *U __adc 4 `i , $ -> -> 0 `ui `i 317
- , $ -> -> 1 `ui `i 318
- 319 ]
-[e :U 315 ]
-"177
-[; ;MCAL_Layer/ADC/hal_adc.c: 177:         }
-}
-[e :U 314 ]
-"178
-[; ;MCAL_Layer/ADC/hal_adc.c: 178:     return ret;
-[e ) _ret ]
-[e $UE 312  ]
-"179
-[; ;MCAL_Layer/ADC/hal_adc.c: 179: }
-[e :UE 312 ]
-}
-"192
-[; ;MCAL_Layer/ADC/hal_adc.c: 192: Std_ReturnType ADC_GetConversion_Blocking(const adc_conf_t *_adc, adc_channel_select_t channel ,adc_result_t *conversion_result ){
-[v _ADC_GetConversion_Blocking `(uc ~T0 @X0 1 ef3`*CS296`E3203`*ui ]
-{
-[e :U _ADC_GetConversion_Blocking ]
-[v __adc `*CS296 ~T0 @X0 1 r1 ]
-[v _channel `E3203 ~T0 @X0 1 r2 ]
-[v _conversion_result `*ui ~T0 @X0 1 r3 ]
-[f ]
-"193
-[; ;MCAL_Layer/ADC/hal_adc.c: 193:     Std_ReturnType ret=(Std_ReturnType)0x01;
+[; ;MCAL_Layer/ADC/hal_adc.c: 169:     Std_ReturnType ret=(Std_ReturnType)0x01;
 [v _ret `uc ~T0 @X0 1 a ]
 [e = _ret -> -> 1 `i `uc ]
-"194
-[; ;MCAL_Layer/ADC/hal_adc.c: 194:      if((_adc==((void*)0))||(conversion_result==((void*)0))){
-[e $ ! || == __adc -> -> -> 0 `i `*v `*CS296 == _conversion_result -> -> -> 0 `i `*v `*ui 321  ]
+"170
+[; ;MCAL_Layer/ADC/hal_adc.c: 170:      if((_adc==((void*)0))||(conversion_result==((void*)0))){
+[e $ ! || == __adc -> -> -> 0 `i `*v `*CS299 == _conversion_result -> -> -> 0 `i `*v `*ui 320  ]
 {
-"195
-[; ;MCAL_Layer/ADC/hal_adc.c: 195:         ret=(Std_ReturnType)0x00;
+"171
+[; ;MCAL_Layer/ADC/hal_adc.c: 171:         ret=(Std_ReturnType)0x00;
 [e = _ret -> -> 0 `i `uc ]
-"196
-[; ;MCAL_Layer/ADC/hal_adc.c: 196:     }
+"172
+[; ;MCAL_Layer/ADC/hal_adc.c: 172:     }
+}
+[e $U 321  ]
+"173
+[; ;MCAL_Layer/ADC/hal_adc.c: 173:     else{
+[e :U 320 ]
+{
+"174
+[; ;MCAL_Layer/ADC/hal_adc.c: 174:         switch (_adc->result_format){
+[e $U 323  ]
+{
+"175
+[; ;MCAL_Layer/ADC/hal_adc.c: 175:             case 0X00U : *conversion_result=(adc_result_t)(((ADRESH<<8) +ADRESL)>>6);break;
+[e :U 324 ]
+[e = *U _conversion_result -> >> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i -> 6 `i `ui ]
+[e $U 322  ]
+"176
+[; ;MCAL_Layer/ADC/hal_adc.c: 176:             case 0X01U : *conversion_result=(adc_result_t)((ADRESH<<8) +ADRESL);break;
+[e :U 325 ]
+[e = *U _conversion_result -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
+[e $U 322  ]
+"177
+[; ;MCAL_Layer/ADC/hal_adc.c: 177:             default: *conversion_result=(adc_result_t)((ADRESH<<8) +ADRESL);break;
+[e :U 326 ]
+[e = *U _conversion_result -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
+[e $U 322  ]
+"178
+[; ;MCAL_Layer/ADC/hal_adc.c: 178:     }
 }
 [e $U 322  ]
-"197
-[; ;MCAL_Layer/ADC/hal_adc.c: 197:     else{
-[e :U 321 ]
-{
-"199
-[; ;MCAL_Layer/ADC/hal_adc.c: 199:          ret = ADC_SelectChannel(_adc ,channel);
-[e = _ret ( _ADC_SelectChannel (2 , __adc _channel ]
-"201
-[; ;MCAL_Layer/ADC/hal_adc.c: 201:          ret&= ADC_StartConversion(_adc);
-[e =& _ret -> ( _ADC_StartConversion (1 __adc `uc ]
-"203
-[; ;MCAL_Layer/ADC/hal_adc.c: 203:          while((*((volatile ADCON0_t *)(0xFC2))).GO_DONE);
-[e $U 323  ]
-[e :U 324 ]
 [e :U 323 ]
-[e $ != -> . . *U -> -> 4034 `i `*VS286 0 1 `i -> 0 `i 324  ]
-[e :U 325 ]
-"205
-[; ;MCAL_Layer/ADC/hal_adc.c: 205:          ret&= ADC_GetConversionResult(_adc,conversion_result);
-[e =& _ret -> ( _ADC_GetConversionResult (2 , __adc _conversion_result `uc ]
-"206
-[; ;MCAL_Layer/ADC/hal_adc.c: 206:         }
-}
+[e [\ -> . *U __adc 6 `i , $ -> -> 0 `ui `i 324
+ , $ -> -> 1 `ui `i 325
+ 326 ]
 [e :U 322 ]
-"207
-[; ;MCAL_Layer/ADC/hal_adc.c: 207:     return ret;
-[e ) _ret ]
-[e $UE 320  ]
-"208
-[; ;MCAL_Layer/ADC/hal_adc.c: 208: }
-[e :UE 320 ]
+"179
+[; ;MCAL_Layer/ADC/hal_adc.c: 179:         }
 }
-"220
-[; ;MCAL_Layer/ADC/hal_adc.c: 220: Std_ReturnType ADC_StartConversion_Interrupt(const adc_conf_t *_adc, adc_channel_select_t channel){
-[v _ADC_StartConversion_Interrupt `(uc ~T0 @X0 1 ef2`*CS296`E3203 ]
+[e :U 321 ]
+"180
+[; ;MCAL_Layer/ADC/hal_adc.c: 180:     return ret;
+[e ) _ret ]
+[e $UE 319  ]
+"181
+[; ;MCAL_Layer/ADC/hal_adc.c: 181: }
+[e :UE 319 ]
+}
+"194
+[; ;MCAL_Layer/ADC/hal_adc.c: 194: Std_ReturnType ADC_GetConversion_Blocking(const adc_conf_t *_adc, adc_channel_select_t channel ,adc_result_t *conversion_result ){
+[v _ADC_GetConversion_Blocking `(uc ~T0 @X0 1 ef3`*CS299`E3221`*ui ]
 {
-[e :U _ADC_StartConversion_Interrupt ]
-[v __adc `*CS296 ~T0 @X0 1 r1 ]
-[v _channel `E3203 ~T0 @X0 1 r2 ]
+[e :U _ADC_GetConversion_Blocking ]
+[v __adc `*CS299 ~T0 @X0 1 r1 ]
+[v _channel `E3221 ~T0 @X0 1 r2 ]
+[v _conversion_result `*ui ~T0 @X0 1 r3 ]
 [f ]
-"221
-[; ;MCAL_Layer/ADC/hal_adc.c: 221:     Std_ReturnType ret=(Std_ReturnType)0x01;
+"195
+[; ;MCAL_Layer/ADC/hal_adc.c: 195:     Std_ReturnType ret=(Std_ReturnType)0x01;
 [v _ret `uc ~T0 @X0 1 a ]
 [e = _ret -> -> 1 `i `uc ]
-"222
-[; ;MCAL_Layer/ADC/hal_adc.c: 222:      if(_adc==((void*)0)){
-[e $ ! == __adc -> -> -> 0 `i `*v `*CS296 327  ]
+"196
+[; ;MCAL_Layer/ADC/hal_adc.c: 196:      if((_adc==((void*)0))||(conversion_result==((void*)0))){
+[e $ ! || == __adc -> -> -> 0 `i `*v `*CS299 == _conversion_result -> -> -> 0 `i `*v `*ui 328  ]
 {
-"223
-[; ;MCAL_Layer/ADC/hal_adc.c: 223:         ret=(Std_ReturnType)0x00;
+"197
+[; ;MCAL_Layer/ADC/hal_adc.c: 197:         ret=(Std_ReturnType)0x00;
 [e = _ret -> -> 0 `i `uc ]
-"224
-[; ;MCAL_Layer/ADC/hal_adc.c: 224:     }
+"198
+[; ;MCAL_Layer/ADC/hal_adc.c: 198:     }
 }
-[e $U 328  ]
-"225
-[; ;MCAL_Layer/ADC/hal_adc.c: 225:     else{
-[e :U 327 ]
-{
-"227
-[; ;MCAL_Layer/ADC/hal_adc.c: 227:          ret = ADC_SelectChannel(_adc ,channel);
-[e = _ret ( _ADC_SelectChannel (2 , __adc _channel ]
-"229
-[; ;MCAL_Layer/ADC/hal_adc.c: 229:          ret&= ADC_StartConversion(_adc);
-[e =& _ret -> ( _ADC_StartConversion (1 __adc `uc ]
-"230
-[; ;MCAL_Layer/ADC/hal_adc.c: 230:         }
-}
+[e $U 329  ]
+"199
+[; ;MCAL_Layer/ADC/hal_adc.c: 199:     else{
 [e :U 328 ]
-"231
-[; ;MCAL_Layer/ADC/hal_adc.c: 231:     return ret;
-[e ) _ret ]
-[e $UE 326  ]
-"232
-[; ;MCAL_Layer/ADC/hal_adc.c: 232: }
-[e :UE 326 ]
-}
-[v F3308 `(v ~T0 @X0 1 tf1`E3203 ]
-"233
-[; ;MCAL_Layer/ADC/hal_adc.c: 233: static __attribute__((inline)) void adc_input_channel_port_configure(adc_channel_select_t channel){
-[v _adc_input_channel_port_configure `TF3308 ~T0 @X0 1 s ]
 {
-[e :U _adc_input_channel_port_configure ]
-[v _channel `E3203 ~T0 @X0 1 r1 ]
-[f ]
-"234
-[; ;MCAL_Layer/ADC/hal_adc.c: 234:       switch(channel){
-[e $U 331  ]
-{
-"235
-[; ;MCAL_Layer/ADC/hal_adc.c: 235:           case ADC_CHANNEL_AN0: ((*((volatile uint8*)(0xF92)))|=((uint8)0x01<<0));break;
-[e :U 332 ]
-[e =| *U -> -> 3986 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 0 `i `uc ]
-[e $U 330  ]
-"236
-[; ;MCAL_Layer/ADC/hal_adc.c: 236:           case ADC_CHANNEL_AN1: ((*((volatile uint8*)(0xF92)))|=((uint8)0x01<<1));break;
-[e :U 333 ]
-[e =| *U -> -> 3986 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 1 `i `uc ]
-[e $U 330  ]
-"237
-[; ;MCAL_Layer/ADC/hal_adc.c: 237:           case ADC_CHANNEL_AN2: ((*((volatile uint8*)(0xF92)))|=((uint8)0x01<<2));break;
-[e :U 334 ]
-[e =| *U -> -> 3986 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 2 `i `uc ]
-[e $U 330  ]
-"238
-[; ;MCAL_Layer/ADC/hal_adc.c: 238:           case ADC_CHANNEL_AN3: ((*((volatile uint8*)(0xF92)))|=((uint8)0x01<<3));break;
-[e :U 335 ]
-[e =| *U -> -> 3986 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 3 `i `uc ]
-[e $U 330  ]
-"239
-[; ;MCAL_Layer/ADC/hal_adc.c: 239:           case ADC_CHANNEL_AN4: ((*((volatile uint8*)(0xF92)))|=((uint8)0x01<<5));break;
-[e :U 336 ]
-[e =| *U -> -> 3986 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 5 `i `uc ]
-[e $U 330  ]
-"240
-[; ;MCAL_Layer/ADC/hal_adc.c: 240:           case ADC_CHANNEL_AN5: ((*((volatile uint8*)(0xF96)))|=((uint8)0x01<<0));break;
-[e :U 337 ]
-[e =| *U -> -> 3990 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 0 `i `uc ]
-[e $U 330  ]
-"241
-[; ;MCAL_Layer/ADC/hal_adc.c: 241:           case ADC_CHANNEL_AN6: ((*((volatile uint8*)(0xF96)))|=((uint8)0x01<<1));break;
-[e :U 338 ]
-[e =| *U -> -> 3990 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 1 `i `uc ]
-[e $U 330  ]
-"242
-[; ;MCAL_Layer/ADC/hal_adc.c: 242:           case ADC_CHANNEL_AN7: ((*((volatile uint8*)(0xF96)))|=((uint8)0x01<<2));break;
-[e :U 339 ]
-[e =| *U -> -> 3990 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 2 `i `uc ]
-[e $U 330  ]
-"243
-[; ;MCAL_Layer/ADC/hal_adc.c: 243:           case ADC_CHANNEL_AN8: ((*((volatile uint8*)(0xF93)))|=((uint8)0x01<<2));break;
-[e :U 340 ]
-[e =| *U -> -> 3987 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 2 `i `uc ]
-[e $U 330  ]
-"244
-[; ;MCAL_Layer/ADC/hal_adc.c: 244:           case ADC_CHANNEL_AN9: ((*((volatile uint8*)(0xF93)))|=((uint8)0x01<<3));break;
-[e :U 341 ]
-[e =| *U -> -> 3987 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 3 `i `uc ]
-[e $U 330  ]
-"245
-[; ;MCAL_Layer/ADC/hal_adc.c: 245:           case ADC_CHANNEL_AN10: ((*((volatile uint8*)(0xF93)))|=((uint8)0x01<<1));break;
-[e :U 342 ]
-[e =| *U -> -> 3987 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 1 `i `uc ]
-[e $U 330  ]
-"246
-[; ;MCAL_Layer/ADC/hal_adc.c: 246:           case ADC_CHANNEL_AN11: ((*((volatile uint8*)(0xF93)))|=((uint8)0x01<<4));break;
-[e :U 343 ]
-[e =| *U -> -> 3987 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 4 `i `uc ]
-[e $U 330  ]
-"247
-[; ;MCAL_Layer/ADC/hal_adc.c: 247:           case ADC_CHANNEL_AN12: ((*((volatile uint8*)(0xF93)))|=((uint8)0x01<<0));break;
-[e :U 344 ]
-[e =| *U -> -> 3987 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 0 `i `uc ]
-[e $U 330  ]
-"248
-[; ;MCAL_Layer/ADC/hal_adc.c: 248:           default: break;
-[e :U 345 ]
-[e $U 330  ]
-"249
-[; ;MCAL_Layer/ADC/hal_adc.c: 249:       }
-}
+"201
+[; ;MCAL_Layer/ADC/hal_adc.c: 201:          ret = ADC_SelectChannel(_adc ,channel);
+[e = _ret ( _ADC_SelectChannel (2 , __adc _channel ]
+"203
+[; ;MCAL_Layer/ADC/hal_adc.c: 203:          ret&= ADC_StartConversion(_adc);
+[e =& _ret -> ( _ADC_StartConversion (1 __adc `uc ]
+"205
+[; ;MCAL_Layer/ADC/hal_adc.c: 205:          while((*((volatile ADCON0_t *)(0xFC2))).GO_DONE);
 [e $U 330  ]
 [e :U 331 ]
-[e [\ -> _channel `ui , $ -> . `E3203 0 `ui 332
- , $ -> . `E3203 1 `ui 333
- , $ -> . `E3203 2 `ui 334
- , $ -> . `E3203 3 `ui 335
- , $ -> . `E3203 4 `ui 336
- , $ -> . `E3203 5 `ui 337
- , $ -> . `E3203 6 `ui 338
- , $ -> . `E3203 7 `ui 339
- , $ -> . `E3203 8 `ui 340
- , $ -> . `E3203 9 `ui 341
- , $ -> . `E3203 10 `ui 342
- , $ -> . `E3203 11 `ui 343
- , $ -> . `E3203 12 `ui 344
- 345 ]
 [e :U 330 ]
-"250
-[; ;MCAL_Layer/ADC/hal_adc.c: 250: }
-[e :UE 329 ]
+[e $ != -> . . *U -> -> 4034 `i `*VS286 0 1 `i -> 0 `i 331  ]
+[e :U 332 ]
+"207
+[; ;MCAL_Layer/ADC/hal_adc.c: 207:          ret&= ADC_GetConversionResult(_adc,conversion_result);
+[e =& _ret -> ( _ADC_GetConversionResult (2 , __adc _conversion_result `uc ]
+"208
+[; ;MCAL_Layer/ADC/hal_adc.c: 208:         }
 }
-[v F3311 `(v ~T0 @X0 1 tf1`*CS296 ]
+[e :U 329 ]
+"209
+[; ;MCAL_Layer/ADC/hal_adc.c: 209:     return ret;
+[e ) _ret ]
+[e $UE 327  ]
+"210
+[; ;MCAL_Layer/ADC/hal_adc.c: 210: }
+[e :UE 327 ]
+}
+"222
+[; ;MCAL_Layer/ADC/hal_adc.c: 222: Std_ReturnType ADC_StartConversion_Interrupt(const adc_conf_t *_adc, adc_channel_select_t channel){
+[v _ADC_StartConversion_Interrupt `(uc ~T0 @X0 1 ef2`*CS299`E3221 ]
+{
+[e :U _ADC_StartConversion_Interrupt ]
+[v __adc `*CS299 ~T0 @X0 1 r1 ]
+[v _channel `E3221 ~T0 @X0 1 r2 ]
+[f ]
+"223
+[; ;MCAL_Layer/ADC/hal_adc.c: 223:     Std_ReturnType ret=(Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"224
+[; ;MCAL_Layer/ADC/hal_adc.c: 224:      if(_adc==((void*)0)){
+[e $ ! == __adc -> -> -> 0 `i `*v `*CS299 334  ]
+{
+"225
+[; ;MCAL_Layer/ADC/hal_adc.c: 225:         ret=(Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"226
+[; ;MCAL_Layer/ADC/hal_adc.c: 226:     }
+}
+[e $U 335  ]
+"227
+[; ;MCAL_Layer/ADC/hal_adc.c: 227:     else{
+[e :U 334 ]
+{
+"229
+[; ;MCAL_Layer/ADC/hal_adc.c: 229:          ret = ADC_SelectChannel(_adc ,channel);
+[e = _ret ( _ADC_SelectChannel (2 , __adc _channel ]
+"231
+[; ;MCAL_Layer/ADC/hal_adc.c: 231:          ret&= ADC_StartConversion(_adc);
+[e =& _ret -> ( _ADC_StartConversion (1 __adc `uc ]
+"232
+[; ;MCAL_Layer/ADC/hal_adc.c: 232:         }
+}
+[e :U 335 ]
+"233
+[; ;MCAL_Layer/ADC/hal_adc.c: 233:     return ret;
+[e ) _ret ]
+[e $UE 333  ]
+"234
+[; ;MCAL_Layer/ADC/hal_adc.c: 234: }
+[e :UE 333 ]
+}
+[v F3335 `(v ~T0 @X0 1 tf1`E3221 ]
+"235
+[; ;MCAL_Layer/ADC/hal_adc.c: 235: static __attribute__((inline)) void adc_input_channel_port_configure(adc_channel_select_t channel){
+[v _adc_input_channel_port_configure `TF3335 ~T0 @X0 1 s ]
+{
+[e :U _adc_input_channel_port_configure ]
+[v _channel `E3221 ~T0 @X0 1 r1 ]
+[f ]
+"236
+[; ;MCAL_Layer/ADC/hal_adc.c: 236:       switch(channel){
+[e $U 338  ]
+{
+"237
+[; ;MCAL_Layer/ADC/hal_adc.c: 237:           case ADC_CHANNEL_AN0: ((*((volatile uint8*)(0xF92)))|=((uint8)0x01<<0));break;
+[e :U 339 ]
+[e =| *U -> -> 3986 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 0 `i `uc ]
+[e $U 337  ]
+"238
+[; ;MCAL_Layer/ADC/hal_adc.c: 238:           case ADC_CHANNEL_AN1: ((*((volatile uint8*)(0xF92)))|=((uint8)0x01<<1));break;
+[e :U 340 ]
+[e =| *U -> -> 3986 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 1 `i `uc ]
+[e $U 337  ]
+"239
+[; ;MCAL_Layer/ADC/hal_adc.c: 239:           case ADC_CHANNEL_AN2: ((*((volatile uint8*)(0xF92)))|=((uint8)0x01<<2));break;
+[e :U 341 ]
+[e =| *U -> -> 3986 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 2 `i `uc ]
+[e $U 337  ]
+"240
+[; ;MCAL_Layer/ADC/hal_adc.c: 240:           case ADC_CHANNEL_AN3: ((*((volatile uint8*)(0xF92)))|=((uint8)0x01<<3));break;
+[e :U 342 ]
+[e =| *U -> -> 3986 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 3 `i `uc ]
+[e $U 337  ]
+"241
+[; ;MCAL_Layer/ADC/hal_adc.c: 241:           case ADC_CHANNEL_AN4: ((*((volatile uint8*)(0xF92)))|=((uint8)0x01<<5));break;
+[e :U 343 ]
+[e =| *U -> -> 3986 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 5 `i `uc ]
+[e $U 337  ]
+"242
+[; ;MCAL_Layer/ADC/hal_adc.c: 242:           case ADC_CHANNEL_AN5: ((*((volatile uint8*)(0xF96)))|=((uint8)0x01<<0));break;
+[e :U 344 ]
+[e =| *U -> -> 3990 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 0 `i `uc ]
+[e $U 337  ]
+"243
+[; ;MCAL_Layer/ADC/hal_adc.c: 243:           case ADC_CHANNEL_AN6: ((*((volatile uint8*)(0xF96)))|=((uint8)0x01<<1));break;
+[e :U 345 ]
+[e =| *U -> -> 3990 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 1 `i `uc ]
+[e $U 337  ]
+"244
+[; ;MCAL_Layer/ADC/hal_adc.c: 244:           case ADC_CHANNEL_AN7: ((*((volatile uint8*)(0xF96)))|=((uint8)0x01<<2));break;
+[e :U 346 ]
+[e =| *U -> -> 3990 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 2 `i `uc ]
+[e $U 337  ]
+"245
+[; ;MCAL_Layer/ADC/hal_adc.c: 245:           case ADC_CHANNEL_AN8: ((*((volatile uint8*)(0xF93)))|=((uint8)0x01<<2));break;
+[e :U 347 ]
+[e =| *U -> -> 3987 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 2 `i `uc ]
+[e $U 337  ]
+"246
+[; ;MCAL_Layer/ADC/hal_adc.c: 246:           case ADC_CHANNEL_AN9: ((*((volatile uint8*)(0xF93)))|=((uint8)0x01<<3));break;
+[e :U 348 ]
+[e =| *U -> -> 3987 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 3 `i `uc ]
+[e $U 337  ]
+"247
+[; ;MCAL_Layer/ADC/hal_adc.c: 247:           case ADC_CHANNEL_AN10: ((*((volatile uint8*)(0xF93)))|=((uint8)0x01<<1));break;
+[e :U 349 ]
+[e =| *U -> -> 3987 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 1 `i `uc ]
+[e $U 337  ]
+"248
+[; ;MCAL_Layer/ADC/hal_adc.c: 248:           case ADC_CHANNEL_AN11: ((*((volatile uint8*)(0xF93)))|=((uint8)0x01<<4));break;
+[e :U 350 ]
+[e =| *U -> -> 3987 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 4 `i `uc ]
+[e $U 337  ]
+"249
+[; ;MCAL_Layer/ADC/hal_adc.c: 249:           case ADC_CHANNEL_AN12: ((*((volatile uint8*)(0xF93)))|=((uint8)0x01<<0));break;
+[e :U 351 ]
+[e =| *U -> -> 3987 `i `*Vuc -> << -> -> -> 1 `i `uc `i -> 0 `i `uc ]
+[e $U 337  ]
+"250
+[; ;MCAL_Layer/ADC/hal_adc.c: 250:           default: break;
+[e :U 352 ]
+[e $U 337  ]
 "251
-[; ;MCAL_Layer/ADC/hal_adc.c: 251: static __attribute__((inline)) void select_result_format(const adc_conf_t *_adc){
-[v _select_result_format `TF3311 ~T0 @X0 1 s ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 251:       }
+}
+[e $U 337  ]
+[e :U 338 ]
+[e [\ -> _channel `ui , $ -> . `E3221 0 `ui 339
+ , $ -> . `E3221 1 `ui 340
+ , $ -> . `E3221 2 `ui 341
+ , $ -> . `E3221 3 `ui 342
+ , $ -> . `E3221 4 `ui 343
+ , $ -> . `E3221 5 `ui 344
+ , $ -> . `E3221 6 `ui 345
+ , $ -> . `E3221 7 `ui 346
+ , $ -> . `E3221 8 `ui 347
+ , $ -> . `E3221 9 `ui 348
+ , $ -> . `E3221 10 `ui 349
+ , $ -> . `E3221 11 `ui 350
+ , $ -> . `E3221 12 `ui 351
+ 352 ]
+[e :U 337 ]
+"252
+[; ;MCAL_Layer/ADC/hal_adc.c: 252: }
+[e :UE 336 ]
+}
+[v F3338 `(v ~T0 @X0 1 tf1`*CS299 ]
+"253
+[; ;MCAL_Layer/ADC/hal_adc.c: 253: static __attribute__((inline)) void select_result_format(const adc_conf_t *_adc){
+[v _select_result_format `TF3338 ~T0 @X0 1 s ]
 {
 [e :U _select_result_format ]
-[v __adc `*CS296 ~T0 @X0 1 r1 ]
+[v __adc `*CS299 ~T0 @X0 1 r1 ]
 [f ]
-"252
-[; ;MCAL_Layer/ADC/hal_adc.c: 252:     switch (_adc->result_format){
-[e $U 348  ]
-{
-"253
-[; ;MCAL_Layer/ADC/hal_adc.c: 253:         case 0X00U : ((*((volatile ADCON2_t *)(0xFC0))).ADFM = 0);break;
-[e :U 349 ]
-[e = . . *U -> -> 4032 `i `*VS292 0 7 -> -> 0 `i `uc ]
-[e $U 347  ]
 "254
-[; ;MCAL_Layer/ADC/hal_adc.c: 254:         case 0X01U : ((*((volatile ADCON2_t *)(0xFC0))).ADFM = 1);break;
-[e :U 350 ]
-[e = . . *U -> -> 4032 `i `*VS292 0 7 -> -> 1 `i `uc ]
-[e $U 347  ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 254:     switch (_adc->result_format){
+[e $U 355  ]
+{
 "255
-[; ;MCAL_Layer/ADC/hal_adc.c: 255:         default: ((*((volatile ADCON2_t *)(0xFC0))).ADFM = 1);break;
-[e :U 351 ]
-[e = . . *U -> -> 4032 `i `*VS292 0 7 -> -> 1 `i `uc ]
-[e $U 347  ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 255:         case 0X00U : ((*((volatile ADCON2_t *)(0xFC0))).ADFM = 0);break;
+[e :U 356 ]
+[e = . . *U -> -> 4032 `i `*VS292 0 7 -> -> 0 `i `uc ]
+[e $U 354  ]
 "256
-[; ;MCAL_Layer/ADC/hal_adc.c: 256:     }
-}
-[e $U 347  ]
-[e :U 348 ]
-[e [\ -> . *U __adc 4 `i , $ -> -> 0 `ui `i 349
- , $ -> -> 1 `ui `i 350
- 351 ]
-[e :U 347 ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 256:         case 0X01U : ((*((volatile ADCON2_t *)(0xFC0))).ADFM = 1);break;
+[e :U 357 ]
+[e = . . *U -> -> 4032 `i `*VS292 0 7 -> -> 1 `i `uc ]
+[e $U 354  ]
 "257
-[; ;MCAL_Layer/ADC/hal_adc.c: 257: }
-[e :UE 346 ]
-}
-[v F3314 `(v ~T0 @X0 1 tf1`*CS296 ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 257:         default: ((*((volatile ADCON2_t *)(0xFC0))).ADFM = 1);break;
+[e :U 358 ]
+[e = . . *U -> -> 4032 `i `*VS292 0 7 -> -> 1 `i `uc ]
+[e $U 354  ]
 "258
-[; ;MCAL_Layer/ADC/hal_adc.c: 258: static __attribute__((inline)) void configure_voltage_reference(const adc_conf_t *_adc){
-[v _configure_voltage_reference `TF3314 ~T0 @X0 1 s ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 258:     }
+}
+[e $U 354  ]
+[e :U 355 ]
+[e [\ -> . *U __adc 6 `i , $ -> -> 0 `ui `i 356
+ , $ -> -> 1 `ui `i 357
+ 358 ]
+[e :U 354 ]
+"259
+[; ;MCAL_Layer/ADC/hal_adc.c: 259: }
+[e :UE 353 ]
+}
+[v F3341 `(v ~T0 @X0 1 tf1`*CS299 ]
+"260
+[; ;MCAL_Layer/ADC/hal_adc.c: 260: static __attribute__((inline)) void configure_voltage_reference(const adc_conf_t *_adc){
+[v _configure_voltage_reference `TF3341 ~T0 @X0 1 s ]
 {
 [e :U _configure_voltage_reference ]
-[v __adc `*CS296 ~T0 @X0 1 r1 ]
+[v __adc `*CS299 ~T0 @X0 1 r1 ]
 [f ]
-"259
-[; ;MCAL_Layer/ADC/hal_adc.c: 259:     switch (_adc->voltage_reference){
-[e $U 354  ]
-{
-"260
-[; ;MCAL_Layer/ADC/hal_adc.c: 260:         case 0X01U : ((*((volatile ADCON1_t *)(0xFC1))).VCFG=3);break;
-[e :U 355 ]
-[e = . . *U -> -> 4033 `i `*VS289 1 1 -> -> 3 `i `uc ]
-[e $U 353  ]
 "261
-[; ;MCAL_Layer/ADC/hal_adc.c: 261:         case 0X00U: ((*((volatile ADCON1_t *)(0xFC1))).VCFG=0);break;
-[e :U 356 ]
-[e = . . *U -> -> 4033 `i `*VS289 1 1 -> -> 0 `i `uc ]
-[e $U 353  ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 261:     switch (_adc->voltage_reference){
+[e $U 361  ]
+{
 "262
-[; ;MCAL_Layer/ADC/hal_adc.c: 262:         default: ((*((volatile ADCON1_t *)(0xFC1))).VCFG=0);break;
-[e :U 357 ]
-[e = . . *U -> -> 4033 `i `*VS289 1 1 -> -> 0 `i `uc ]
-[e $U 353  ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 262:         case 0X01U : ((*((volatile ADCON1_t *)(0xFC1))).VCFG=3);break;
+[e :U 362 ]
+[e = . . *U -> -> 4033 `i `*VS289 1 1 -> -> 3 `i `uc ]
+[e $U 360  ]
 "263
-[; ;MCAL_Layer/ADC/hal_adc.c: 263:     }
-}
-[e $U 353  ]
-[e :U 354 ]
-[e [\ -> . *U __adc 3 `i , $ -> -> 1 `ui `i 355
- , $ -> -> 0 `ui `i 356
- 357 ]
-[e :U 353 ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 263:         case 0X00U: ((*((volatile ADCON1_t *)(0xFC1))).VCFG=0);break;
+[e :U 363 ]
+[e = . . *U -> -> 4033 `i `*VS289 1 1 -> -> 0 `i `uc ]
+[e $U 360  ]
 "264
-[; ;MCAL_Layer/ADC/hal_adc.c: 264: }
-[e :UE 352 ]
+[; ;MCAL_Layer/ADC/hal_adc.c: 264:         default: ((*((volatile ADCON1_t *)(0xFC1))).VCFG=0);break;
+[e :U 364 ]
+[e = . . *U -> -> 4033 `i `*VS289 1 1 -> -> 0 `i `uc ]
+[e $U 360  ]
+"265
+[; ;MCAL_Layer/ADC/hal_adc.c: 265:     }
+}
+[e $U 360  ]
+[e :U 361 ]
+[e [\ -> . *U __adc 5 `i , $ -> -> 1 `ui `i 362
+ , $ -> -> 0 `ui `i 363
+ 364 ]
+[e :U 360 ]
+"266
+[; ;MCAL_Layer/ADC/hal_adc.c: 266: }
+[e :UE 359 ]
 }

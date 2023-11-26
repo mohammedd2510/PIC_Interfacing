@@ -149,6 +149,6 @@ led_t led4 = {
 void ecu_layer_initialize(void){
      Std_ReturnType ret=E_NOT_OK;
      ret = lcd_4bit_initialize(&lcd1);
-     ret &= dc_motor_initialize(&dc_motor_1);
-     ret &= dc_motor_initialize(&dc_motor_2);
+     //ret &= dc_motor_initialize(&dc_motor_1);
+     //ret &= dc_motor_initialize(&dc_motor_2);
 }

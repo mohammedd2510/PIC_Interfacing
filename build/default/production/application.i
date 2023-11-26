@@ -4933,6 +4933,29 @@ typedef union {
    uint8 :1;
 };
 }ADCON2_t;
+
+
+
+
+
+
+
+typedef union {
+  struct {
+   uint8 T0PS0 :1;
+   uint8 T0PS1 :1;
+   uint8 T0PS2 :1;
+   uint8 PSA :1;
+   uint8 T0SE :1;
+   uint8 T0CS :1;
+   uint8 T08BIT :1;
+   uint8 TMR0ON :1;
+};
+  struct {
+   uint8 T0PS :3;
+   uint8 :5;
+};
+}T0CON_t;
 # 13 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
 # 1 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
@@ -5239,7 +5262,7 @@ typedef struct {
 
         void(*ADC_InterruptHandler)(void);
 
-
+        interrupt_priority_cfg priority;
 
 
     adc_acquisition_time_t acquisition_time;
@@ -5279,6 +5302,7 @@ void RB5_ISR(void);
 void RB6_ISR(void);
 void RB7_ISR(void);
 void ADC_ISR (void);
+void TMR0_ISR (void);
 # 15 "./application.h" 2
 # 26 "./application.h"
 adc_conf_t adc_1;

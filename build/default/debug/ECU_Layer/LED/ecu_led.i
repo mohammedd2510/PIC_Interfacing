@@ -4919,6 +4919,29 @@ typedef union {
    uint8 :1;
 };
 }ADCON2_t;
+
+
+
+
+
+
+
+typedef union {
+  struct {
+   uint8 T0PS0 :1;
+   uint8 T0PS1 :1;
+   uint8 T0PS2 :1;
+   uint8 PSA :1;
+   uint8 T0SE :1;
+   uint8 T0CS :1;
+   uint8 T08BIT :1;
+   uint8 TMR0ON :1;
+};
+  struct {
+   uint8 T0PS :3;
+   uint8 :5;
+};
+}T0CON_t;
 # 13 "ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
 # 1 "ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1

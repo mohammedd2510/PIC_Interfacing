@@ -6,45 +6,16 @@
  */
 
 #include "application.h"
+#include "MCAL_Layer/Timer/hal_timer0.h"
 
-uint16 lm35_res_1, lm35_res_2, lm35_res_1_Celsius_mv = 0, lm35_res_2_Celsius_mv = 0;
-uint8 lm35_res_1_txt[7], lm35_res_2_txt[7];
-uint8 ADC_Flag=0;
 Std_ReturnType ret=E_NOT_OK;
+uint16 tmr0_Read=0;
 int main() 
 {
     application_initialize();
-    ret = lcd_4bit_send_string_pos(&lcd1,1,6,"LM35 Test");
-    __delay_ms(1400);
-    ret&= lcd_4bit_send_command(&lcd1,_LCD_CLEAR);
-    ret &= lcd_4bit_send_string_pos(&lcd1,1,1," Temp1 : ");
-    ret &= lcd_4bit_send_string_pos(&lcd1,2,1," Temp2 : ");
     while(1)
     {
-        if (ADC_Flag == 0){
-          ret &= ADC_StartConversion_Interrupt(&adc_1,ADC_CHANNEL_AN0);   
-        }
-       if (ADC_Flag == 1){
-            ret &= ADC_StartConversion_Interrupt(&adc_1,ADC_CHANNEL_AN1);
-       }
-       lm35_res_1_Celsius_mv = (lm35_res_1 *4.88f)/10;
-       lm35_res_2_Celsius_mv = (lm35_res_2 *4.88f)/10;
-       ret&=convert_uint16_to_string(lm35_res_1_Celsius_mv , lm35_res_1_txt);
-       ret&=convert_uint16_to_string(lm35_res_2_Celsius_mv , lm35_res_2_txt);
-       ret &= lcd_4bit_send_string_pos(&lcd1,1,10,lm35_res_1_txt);
-       ret &= lcd_4bit_send_string_pos(&lcd1,2,10,lm35_res_2_txt);
-       if(lm35_res_1_Celsius_mv > 20){
-           ret&= dc_motor_move_right(&dc_motor_1);
-       }
-       else {
-            ret&= dc_motor_stop(&dc_motor_1);
-       }
-       if(lm35_res_2_Celsius_mv > 25){
-           ret&= dc_motor_move_left(&dc_motor_2);
-       }
-       else {
-            ret&= dc_motor_stop(&dc_motor_2);
-       }
+        Timer0_Read_Value(&tmr0_timer , &tmr0_Read);
        
     }
     return (EXIT_SUCCESS);
@@ -52,23 +23,17 @@ int main()
 void application_initialize(void){
     Std_ReturnType ret=E_NOT_OK;
     ecu_layer_initialize();
-    ret=ADC_Init(&adc_1);
+    ret= Timer0_Init(&tmr0_timer) ;
 }
-adc_conf_t adc_1 = {
-    .ADC_InterruptHandler=ADC_ISR_HANDLER,
-    .acquisition_time = ADC_12_TAD,
-    .adc_channel = ADC_CHANNEL_AN0,
-    .conversion_clock = ADC_CONVERSION_CLOCK_FOSC_DIV_16,
-    .result_format = ADC_RESULT_RIGHT,
-    .voltage_reference = ADC_VOLTAGE_REFERENCE_DISABLED
+timer0_t tmr0_timer = {
+    .TMR0_InterruptHandler = TMR0_ISR_HANDLER,
+    .priority = INTERRUPT_PRIORITY_HIGH,
+    .prescaler_enable = TIMER0_PRESCALER_DISABLE_CFG,
+    .timer0_register_size = TIMER0_16BIT_REGISTER_MODE,
+    .timer0_mode = TIMER0_COUNTER_MODE,
+    .timer0_preload_value =0,
+    .timer0_counter_edge = TIMER0_RISING_EDGE_CFG
 };
-void ADC_ISR_HANDLER(void){
-       if (ADC_Flag == 1){
-           ADC_Flag = 0;
-           ADC_GetConversionResult(&adc_1,&lm35_res_2);
-       }
-       else if (ADC_Flag == 0){    
-           ADC_Flag=1;
-           ADC_GetConversionResult(&adc_1,&lm35_res_1);
-       }
+void TMR0_ISR_HANDLER(void){
+    lcd_4bit_send_string(&lcd1 ,"m");
 }

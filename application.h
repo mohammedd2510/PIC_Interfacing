@@ -10,9 +10,8 @@
 
 #include"ECU_Layer/ecu_layer_init.h"
 
-#include "MCAL_Layer/ADC/hal_adc.h"
+#include "MCAL_Layer/Timer/hal_timer0.h"
 
-#include "MCAL_Layer/Interrupt/mcal_interrupt_manager.h"
 /* Section : Includes */
 
 
@@ -23,11 +22,11 @@
 
 
 /* Section : Data Types Declaration */
-adc_conf_t adc_1;
+timer0_t tmr0_timer;
 
 /* Section : Functions Declaration */
 void application_initialize(void);
-void ADC_ISR_HANDLER(void);
+void TMR0_ISR_HANDLER(void);
 
 #endif	/* APPLICATION_H */
 

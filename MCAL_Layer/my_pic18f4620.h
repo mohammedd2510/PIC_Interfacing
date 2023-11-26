@@ -333,6 +333,30 @@ typedef union {
 #define ADCON2 (*((volatile uint8 *)(0xFC0)))
 
 /********************************************/
+/* Timers Registers*/
+
+typedef union {
+  struct {  
+   uint8 T0PS0   :1;
+   uint8 T0PS1 :1;
+   uint8 T0PS2 :1;
+   uint8 PSA   :1;
+   uint8 T0SE :1;
+   uint8 T0CS :1;
+   uint8 T08BIT :1;
+   uint8 TMR0ON :1; 
+};
+  struct {
+   uint8 T0PS  :3;
+   uint8       :5;  
+};
+}T0CON_t;
+
+#define T0CON_bits (*((volatile T0CON_t *)(0xFD5)))
+#define T0CON (*((volatile uint8 *)(0xFD5)))
+#define TMR0L (*((volatile uint8 *)(0xFD6)))
+#define TMROH (*((volatile uint8 *)(0xFD7)))
+
 
 
 /***************************************/

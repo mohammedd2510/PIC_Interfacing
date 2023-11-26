@@ -23,9 +23,10 @@ ECU_Layer/button/ecu_button.h  \
 ECU_Layer/button/ecu_button_cfg.h  \
 ECU_Layer/Chr_LCD/ecu_chr_lcd.h  \
 ECU_Layer/Chr_LCD/ecu_chr_lcd_cfg.h  \
-MCAL_Layer/ADC/hal_adc.h  \
-MCAL_Layer/ADC/hal_adc_cfg.h  \
-MCAL_Layer/ADC/../Interrupt/mcal_internal_interrupt.h  \
-MCAL_Layer/ADC/../Interrupt/mcal_interrupt_config.h  \
-MCAL_Layer/ADC/../Interrupt/mcal_interrupt_gen_cfg.h  \
-MCAL_Layer/ADC/../Interrupt/../ADC/hal_adc.h 
+MCAL_Layer/Timer/hal_timer0.h  \
+MCAL_Layer/Timer/../Interrupt/mcal_internal_interrupt.h  \
+MCAL_Layer/Timer/../Interrupt/mcal_interrupt_config.h  \
+MCAL_Layer/Timer/../Interrupt/mcal_interrupt_gen_cfg.h  \
+MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc.h  \
+MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc_cfg.h  \
+MCAL_Layer/Timer/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h 

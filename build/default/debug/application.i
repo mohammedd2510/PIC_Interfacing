@@ -4933,6 +4933,29 @@ typedef union {
    uint8 :1;
 };
 }ADCON2_t;
+
+
+
+
+
+
+
+typedef union {
+  struct {
+   uint8 T0PS0 :1;
+   uint8 T0PS1 :1;
+   uint8 T0PS2 :1;
+   uint8 PSA :1;
+   uint8 T0SE :1;
+   uint8 T0CS :1;
+   uint8 T08BIT :1;
+   uint8 TMR0ON :1;
+};
+  struct {
+   uint8 T0PS :3;
+   uint8 :5;
+};
+}T0CON_t;
 # 13 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
 # 1 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
@@ -5158,33 +5181,41 @@ void ecu_layer_initialize(void);
 # 11 "./application.h" 2
 
 
-# 1 "./MCAL_Layer/ADC/hal_adc.h" 1
-# 12 "./MCAL_Layer/ADC/hal_adc.h"
-# 1 "./MCAL_Layer/ADC/hal_adc_cfg.h" 1
-# 12 "./MCAL_Layer/ADC/hal_adc.h" 2
-
-
-
-
-# 1 "./MCAL_Layer/ADC/../Interrupt/mcal_internal_interrupt.h" 1
-# 13 "./MCAL_Layer/ADC/../Interrupt/mcal_internal_interrupt.h"
-# 1 "./MCAL_Layer/ADC/../Interrupt/mcal_interrupt_config.h" 1
-# 14 "./MCAL_Layer/ADC/../Interrupt/mcal_interrupt_config.h"
-# 1 "./MCAL_Layer/ADC/../Interrupt/mcal_interrupt_gen_cfg.h" 1
-# 14 "./MCAL_Layer/ADC/../Interrupt/mcal_interrupt_config.h" 2
-# 59 "./MCAL_Layer/ADC/../Interrupt/mcal_interrupt_config.h"
+# 1 "./MCAL_Layer/Timer/hal_timer0.h" 1
+# 13 "./MCAL_Layer/Timer/hal_timer0.h"
+# 1 "./MCAL_Layer/Timer/../Interrupt/mcal_internal_interrupt.h" 1
+# 13 "./MCAL_Layer/Timer/../Interrupt/mcal_internal_interrupt.h"
+# 1 "./MCAL_Layer/Timer/../Interrupt/mcal_interrupt_config.h" 1
+# 14 "./MCAL_Layer/Timer/../Interrupt/mcal_interrupt_config.h"
+# 1 "./MCAL_Layer/Timer/../Interrupt/mcal_interrupt_gen_cfg.h" 1
+# 14 "./MCAL_Layer/Timer/../Interrupt/mcal_interrupt_config.h" 2
+# 59 "./MCAL_Layer/Timer/../Interrupt/mcal_interrupt_config.h"
 typedef enum {
     INTERRUPT_LOW_PRIORITY = 0 ,
     INTERRUPT_HIGH_PRIORITY
 }interrupt_priority_cfg;
 
 typedef void (*InterruptHandler)(void);
-# 13 "./MCAL_Layer/ADC/../Interrupt/mcal_internal_interrupt.h" 2
+# 13 "./MCAL_Layer/Timer/../Interrupt/mcal_internal_interrupt.h" 2
 
-# 1 "./MCAL_Layer/ADC/../Interrupt/../ADC/hal_adc.h" 1
-# 14 "./MCAL_Layer/ADC/../Interrupt/mcal_internal_interrupt.h" 2
-# 16 "./MCAL_Layer/ADC/../Interrupt/../ADC/hal_adc.h" 2
-# 107 "./MCAL_Layer/ADC/../Interrupt/../ADC/hal_adc.h"
+# 1 "./MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc.h" 1
+# 12 "./MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc.h"
+# 1 "./MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc_cfg.h" 1
+# 12 "./MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc.h" 2
+
+
+
+
+# 1 "./MCAL_Layer/Timer/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 1
+# 16 "./MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc.h" 2
+# 100 "./MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc.h"
+extern InterruptHandler ADC_InterruptHandler;
+
+
+
+
+
+
 typedef enum {
     ADC_CHANNEL_AN0 = 0,
     ADC_CHANNEL_AN1,
@@ -5200,7 +5231,7 @@ typedef enum {
     ADC_CHANNEL_AN11,
     ADC_CHANNEL_AN12,
 }adc_channel_select_t;
-# 130 "./MCAL_Layer/ADC/../Interrupt/../ADC/hal_adc.h"
+# 130 "./MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc.h"
 typedef enum {
     ADC_0_TAD = 0,
     ADC_2_TAD,
@@ -5230,9 +5261,9 @@ typedef enum {
 
 typedef struct {
 
+        void(*ADC_InterruptHandler)(void);
 
-
-
+        interrupt_priority_cfg priority;
 
 
     adc_acquisition_time_t acquisition_time;
@@ -5254,46 +5285,62 @@ Std_ReturnType ADC_IsConversionDone(const adc_conf_t *_adc, uint8 *conversion_st
 Std_ReturnType ADC_GetConversionResult(const adc_conf_t *_adc, adc_result_t *conversion_result);
 Std_ReturnType ADC_GetConversion_Blocking(const adc_conf_t *_adc, adc_channel_select_t channel ,adc_result_t *conversion_result );
 Std_ReturnType ADC_StartConversion_Interrupt(const adc_conf_t *_adc, adc_channel_select_t channel);
+# 14 "./MCAL_Layer/Timer/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
+# 13 "./MCAL_Layer/Timer/hal_timer0.h" 2
+# 48 "./MCAL_Layer/Timer/hal_timer0.h"
+extern InterruptHandler TMR0_InterruptHandler;
+
+typedef enum {
+    TIMER0_PRESCALER_DIV_BY_2 = 0,
+    TIMER0_PRESCALER_DIV_BY_4,
+    TIMER0_PRESCALER_DIV_BY_8,
+    TIMER0_PRESCALER_DIV_BY_16,
+    TIMER0_PRESCALER_DIV_BY_32,
+    TIMER0_PRESCALER_DIV_BY_64,
+    TIMER0_PRESCALER_DIV_BY_128,
+    TIMER0_PRESCALER_DIV_BY_256
+}timer0_prescaler_select_t;
+
+typedef struct{
+
+        void(*TMR0_InterruptHandler)(void);
+
+        interrupt_priority_cfg priority;
+
+
+    uint16 timer0_preload_value;
+    timer0_prescaler_select_t prescaler_value;
+    uint8 prescaler_enable :1;
+    uint8 timer0_counter_edge :1;
+    uint8 timer0_mode :1;
+    uint8 timer0_register_size :1;
+    uint8 :4;
+}timer0_t;
+
+
+Std_ReturnType Timer0_Init(const timer0_t *_timer);
+Std_ReturnType Timer0_DeInit(const timer0_t *_timer);
+Std_ReturnType Timer0_Write_Value(const timer0_t *_timer , uint16 _value);
+Std_ReturnType Timer0_Read_Value(const timer0_t *_timer , uint16 *_value);
 # 13 "./application.h" 2
-# 26 "./application.h"
+# 25 "./application.h"
+timer0_t tmr0_timer;
+
+
 void application_initialize(void);
+void TMR0_ISR_HANDLER(void);
 # 8 "application.c" 2
 
 
 
-adc_conf_t adc_1;
-uint16 lm35_res_1, lm35_res_2, lm35_res_1_Celsius_mv = 0, lm35_res_2_Celsius_mv = 0;
-uint8 lm35_res_1_txt[7], lm35_res_2_txt[7];
 Std_ReturnType ret=(Std_ReturnType)0x00;
+uint16 tmr0_Read=0;
 int main()
 {
-    ret = lcd_4bit_send_string_pos(&lcd1,1,7," LM35 Test");
-    _delay((unsigned long)((1400)*(4000000/4000.0)));
-    ret&= lcd_4bit_send_command(&lcd1,0X01);
-    ret &= lcd_4bit_send_string_pos(&lcd1,1,1," Temp1 : ");
-    ret &= lcd_4bit_send_string_pos(&lcd1,2,1," Temp2 : ");
+    application_initialize();
     while(1)
     {
-       ret &= ADC_GetConversion_Blocking(&adc_1,ADC_CHANNEL_AN0 , &lm35_res_1);
-       ret &= ADC_GetConversion_Blocking(&adc_1,ADC_CHANNEL_AN1 , &lm35_res_2);
-       lm35_res_1_Celsius_mv = (lm35_res_1 *4.88f)/10;
-       lm35_res_2_Celsius_mv = (lm35_res_2 *4.88f)/10;
-       ret&=convert_uint16_to_string(lm35_res_1_Celsius_mv , lm35_res_1_txt);
-       ret&=convert_uint16_to_string(lm35_res_2_Celsius_mv , lm35_res_2_txt);
-       ret &= lcd_4bit_send_string_pos(&lcd1,1,10,lm35_res_1_txt);
-       ret &= lcd_4bit_send_string_pos(&lcd1,2,10,lm35_res_2_txt);
-       if(lm35_res_1_Celsius_mv > 20){
-           ret&= dc_motor_move_right(&dc_motor_1);
-       }
-       else {
-            ret&= dc_motor_stop(&dc_motor_1);
-       }
-       if(lm35_res_2_Celsius_mv > 25){
-           ret&= dc_motor_move_left(&dc_motor_2);
-       }
-       else {
-            ret&= dc_motor_stop(&dc_motor_2);
-       }
+        Timer0_Read_Value(&tmr0_timer , &tmr0_Read);
 
     }
     return (0);
@@ -5301,12 +5348,17 @@ int main()
 void application_initialize(void){
     Std_ReturnType ret=(Std_ReturnType)0x00;
     ecu_layer_initialize();
-    ADC_Init(&adc_1);
+    ret= Timer0_Init(&tmr0_timer) ;
 }
-adc_conf_t adc_1 = {
-    .acquisition_time = ADC_12_TAD,
-    .adc_channel = ADC_CHANNEL_AN0,
-    .conversion_clock = ADC_CONVERSION_CLOCK_FOSC_DIV_16,
-    .result_format = 0X01U,
-    .voltage_reference = 0X00U
+timer0_t tmr0_timer = {
+    .TMR0_InterruptHandler = TMR0_ISR_HANDLER,
+    .priority = 1,
+    .prescaler_enable = 0,
+    .timer0_register_size = 0,
+    .timer0_mode = 0,
+    .timer0_preload_value =0,
+    .timer0_counter_edge = 1
 };
+void TMR0_ISR_HANDLER(void){
+    lcd_4bit_send_string(&lcd1 ,"m");
+}
