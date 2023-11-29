@@ -4946,6 +4946,24 @@ typedef union {
    uint8 :5;
 };
 }T0CON_t;
+# 362 "MCAL_Layer/ADC/../GPIO/../my_pic18f4620.h"
+typedef union {
+  struct {
+   uint8 TMR1ON :1;
+   uint8 TMR1CS :1;
+   uint8 T1SYNC :1;
+   uint8 T1OSCEN :1;
+   uint8 T1CKPS0 :1;
+   uint8 T1CKPS1 :1;
+   uint8 T1RUN :1;
+   uint8 RD16 :1;
+};
+  struct {
+   uint8 :4;
+   uint8 TICKPS :2;
+   uint8 :2;
+};
+}T1CON_t;
 # 13 "MCAL_Layer/ADC/../GPIO/hal_gpio.h" 2
 
 # 1 "MCAL_Layer/ADC/../GPIO/hal_gpio_cfg.h" 1

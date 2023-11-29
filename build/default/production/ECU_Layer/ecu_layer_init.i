@@ -4947,6 +4947,24 @@ typedef union {
    uint8 :5;
 };
 }T0CON_t;
+# 362 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
+typedef union {
+  struct {
+   uint8 TMR1ON :1;
+   uint8 TMR1CS :1;
+   uint8 T1SYNC :1;
+   uint8 T1OSCEN :1;
+   uint8 T1CKPS0 :1;
+   uint8 T1CKPS1 :1;
+   uint8 T1RUN :1;
+   uint8 RD16 :1;
+};
+  struct {
+   uint8 :4;
+   uint8 TICKPS :2;
+   uint8 :2;
+};
+}T1CON_t;
 # 13 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
 # 1 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
@@ -5164,65 +5182,47 @@ Std_ReturnType convert_uint32_to_string(uint32 value , uint8 *str);
 
 
 extern chr_lcd_4bit_t lcd1;
-extern dc_motor_t dc_motor_1;
-extern dc_motor_t dc_motor_2;
-
+extern led_t led1;
 
 void ecu_layer_initialize(void);
 # 1 "ECU_Layer/ecu_layer_init.c" 2
 
 
 chr_lcd_4bit_t lcd1 ={
-  .lcd_rs.port=PORTC_INDEX,
+  .lcd_rs.port=PORTD_INDEX,
   .lcd_rs.pin=PIN0,
   .lcd_rs.direction=OUTPUT,
   .lcd_rs.logic=LOW,
-  .lcd_en.port=PORTC_INDEX,
+  .lcd_en.port=PORTD_INDEX,
   .lcd_en.pin=PIN1,
   .lcd_en.direction=OUTPUT,
   .lcd_en.logic=LOW,
-  .lcd_data[0].port=PORTC_INDEX,
+  .lcd_data[0].port=PORTD_INDEX,
   .lcd_data[0].pin=PIN2,
   .lcd_data[0].direction=OUTPUT,
   .lcd_data[0].logic=LOW,
-  .lcd_data[1].port=PORTC_INDEX,
+  .lcd_data[1].port=PORTD_INDEX,
   .lcd_data[1].pin=PIN3,
   .lcd_data[1].direction=OUTPUT,
   .lcd_data[1].logic=LOW,
-  .lcd_data[2].port=PORTC_INDEX,
+  .lcd_data[2].port=PORTD_INDEX,
   .lcd_data[2].pin=PIN4,
   .lcd_data[2].direction=OUTPUT,
   .lcd_data[2].logic=LOW,
-  .lcd_data[3].port=PORTC_INDEX,
+  .lcd_data[3].port=PORTD_INDEX,
   .lcd_data[3].pin=PIN5,
   .lcd_data[3].direction=OUTPUT,
   .lcd_data[3].logic=LOW
 };
-dc_motor_t dc_motor_1 = {
-    .dc_motor_pin[0].port = PORTD_INDEX,
-    .dc_motor_pin[0].pin = PIN0,
-    .dc_motor_pin[0].logic = 0x00U,
-    .dc_motor_pin[0].direction = OUTPUT,
-    .dc_motor_pin[1].port = PORTD_INDEX,
-    .dc_motor_pin[1].pin = PIN1,
-    .dc_motor_pin[1].logic = 0x00U,
-    .dc_motor_pin[1].direction = OUTPUT
+# 130 "ECU_Layer/ecu_layer_init.c"
+led_t led1 = {
+    .port_name=PORTB_INDEX,
+    .pin=PIN7,
+    .led_status=LOW
 };
-
-dc_motor_t dc_motor_2 = {
-    .dc_motor_pin[0].port = PORTD_INDEX,
-    .dc_motor_pin[0].pin = PIN2,
-    .dc_motor_pin[0].logic = 0x00U,
-    .dc_motor_pin[0].direction = OUTPUT,
-    .dc_motor_pin[1].port = PORTD_INDEX,
-    .dc_motor_pin[1].pin = PIN3,
-    .dc_motor_pin[1].logic = 0x00U,
-    .dc_motor_pin[1].direction = OUTPUT
-};
-# 149 "ECU_Layer/ecu_layer_init.c"
+# 154 "ECU_Layer/ecu_layer_init.c"
 void ecu_layer_initialize(void){
      Std_ReturnType ret=(Std_ReturnType)0x00;
      ret = lcd_4bit_initialize(&lcd1);
-     ret &= dc_motor_initialize(&dc_motor_1);
-     ret &= dc_motor_initialize(&dc_motor_2);
+     ret&= led_initialize(&led1);
 }

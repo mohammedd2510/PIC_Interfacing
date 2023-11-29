@@ -4945,6 +4945,24 @@ typedef union {
    uint8 :5;
 };
 }T0CON_t;
+# 362 "ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
+typedef union {
+  struct {
+   uint8 TMR1ON :1;
+   uint8 TMR1CS :1;
+   uint8 T1SYNC :1;
+   uint8 T1OSCEN :1;
+   uint8 T1CKPS0 :1;
+   uint8 T1CKPS1 :1;
+   uint8 T1RUN :1;
+   uint8 RD16 :1;
+};
+  struct {
+   uint8 :4;
+   uint8 TICKPS :2;
+   uint8 :2;
+};
+}T1CON_t;
 # 13 "ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
 # 1 "ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
@@ -5059,7 +5077,7 @@ Std_ReturnType keypad_get_value(const keypad_t * keypad_obj , uint8 * value){
                    ret=gpio_pin_write_logic(&(keypad_obj->keypad_row_pins[l_counter]),LOW);
                }
              ret=gpio_pin_write_logic(&(keypad_obj->keypad_row_pins[l_rows_counter]),HIGH);
-             _delay((unsigned long)((10)*(4000000/4000.0)));
+             _delay((unsigned long)((10)*(8000000/4000.0)));
         for(l_columns_counter=0;l_columns_counter<4;l_columns_counter++){
             ret=gpio_pin_read_logic(&(keypad_obj->keypad_columns_pins[l_columns_counter]),&column_logic);
             if(column_logic==HIGH){*value=btn_values[l_rows_counter][l_columns_counter];}

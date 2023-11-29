@@ -6,16 +6,23 @@
  */
 
 #include "application.h"
-#include "MCAL_Layer/Timer/hal_timer0.h"
+
+
 
 Std_ReturnType ret=E_NOT_OK;
-uint16 tmr0_Read=0;
+void Timer1_Timer_Init(void);
+void Timer1_Counter_Init(void);
+timer1_t timer_obj;
+timer1_t counter_obj;
+uint8 Counter_Val =ZERO_INIT;
 int main() 
 {
     application_initialize();
     while(1)
     {
-        Timer0_Read_Value(&tmr0_timer , &tmr0_Read);
+        Timer1_Read_Value(&counter_obj,&Counter_Val);
+        lcd_4bit_send_string_pos(&lcd1,1,1,"Counter =  ");
+        lcd_4bit_send_char_data_pos(&lcd1,1,11,(Counter_Val+0x30));
        
     }
     return (EXIT_SUCCESS);
@@ -23,17 +30,29 @@ int main()
 void application_initialize(void){
     Std_ReturnType ret=E_NOT_OK;
     ecu_layer_initialize();
-    ret= Timer0_Init(&tmr0_timer) ;
+  //  Timer1_Timer_Init();
+    Timer1_Counter_Init();
+   
 }
-timer0_t tmr0_timer = {
-    .TMR0_InterruptHandler = TMR0_ISR_HANDLER,
-    .priority = INTERRUPT_PRIORITY_HIGH,
-    .prescaler_enable = TIMER0_PRESCALER_DISABLE_CFG,
-    .timer0_register_size = TIMER0_16BIT_REGISTER_MODE,
-    .timer0_mode = TIMER0_COUNTER_MODE,
-    .timer0_preload_value =0,
-    .timer0_counter_edge = TIMER0_RISING_EDGE_CFG
-};
-void TMR0_ISR_HANDLER(void){
-    lcd_4bit_send_string(&lcd1 ,"m");
+
+void TMR1_ISR_HANDLER(void){
+    led_toggle(&led1);
+}
+void Timer1_Timer_Init(void){
+    timer_obj.TMR1_InterruptHandler = TMR1_ISR_HANDLER;
+    timer_obj.priority = INTERRUPT_PRIORITY_HIGH;
+    timer_obj.prescaler_value = TIMER1_PRESCALER_DIV_BY_8;
+    timer_obj.timer1_mode = TIMER1_TIMER_MODE;
+    timer_obj.timer1_osc_cfg = TIMER1_OSCILLATOR_DISABLE;
+    timer_obj.timer1_preload_value =15536;
+    ret=Timer1_Init(&timer_obj);
+}
+void Timer1_Counter_Init(void){
+    counter_obj.TMR1_InterruptHandler = NULL;
+    counter_obj.prescaler_value = TIMER1_PRESCALER_DIV_BY_1;
+    counter_obj.priority = INTERRUPT_PRIORITY_HIGH;
+    counter_obj.timer1_mode = TIMER1_COUNTER_MODE;
+    counter_obj.timer1_preload_value = 0;
+    counter_obj.timer1_counter_mode = TIMER1_SYNC_COUNTER_MODE;
+    ret = Timer1_Init(&counter_obj);
 }

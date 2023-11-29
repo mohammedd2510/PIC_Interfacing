@@ -1,28 +1,31 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "60 ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/hal_gpio.h
-[s S298 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S298 . port pin direction logic ]
+[s S301 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S301 . port pin direction logic ]
 "53 ECU_Layer/Chr_LCD/ecu_chr_lcd.h
 [; ;ECU_Layer/Chr_LCD/ecu_chr_lcd.h: 53: typedef struct {
-[s S305 `S298 1 `S298 1 `S298 -> 4 `i ]
-[n S305 . lcd_rs lcd_en lcd_data ]
+[s S308 `S301 1 `S301 1 `S301 -> 4 `i ]
+[n S308 . lcd_rs lcd_en lcd_data ]
 "3 ECU_Layer/ecu_layer_init.c
 [; ;ECU_Layer/ecu_layer_init.c: 3: chr_lcd_4bit_t lcd1 ={
-[c E3171 0 1 2 3 4 .. ]
-[n E3171 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
-[c E3161 0 1 2 3 4 5 6 7 .. ]
-[n E3161 . PIN0 PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7  ]
-[c E3157 0 1 .. ]
-[n E3157 . OUTPUT INPUT  ]
-[c E3153 0 1 .. ]
-[n E3153 . LOW HIGH  ]
-"26 ECU_Layer/DC_Motor/ecu_dc_motor.h
-[; ;ECU_Layer/DC_Motor/ecu_dc_motor.h: 26: typedef struct {
-[s S300 `S298 -> 2 `i ]
-[n S300 . dc_motor_pin ]
+[c E3188 0 1 2 3 4 .. ]
+[n E3188 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
+[c E3178 0 1 2 3 4 5 6 7 .. ]
+[n E3178 . PIN0 PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7  ]
+[c E3174 0 1 .. ]
+[n E3174 . OUTPUT INPUT  ]
+[c E3170 0 1 .. ]
+[n E3170 . LOW HIGH  ]
+"27 ECU_Layer/LED/ecu_led.h
+[; ;ECU_Layer/LED/ecu_led.h: 27: typedef struct{
+[s S305 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S305 . port_name pin led_status ]
 "65 ECU_Layer/Chr_LCD/ecu_chr_lcd.h
 [; ;ECU_Layer/Chr_LCD/ecu_chr_lcd.h: 65: Std_ReturnType lcd_4bit_initialize (const chr_lcd_4bit_t *lcd);
-[v _lcd_4bit_initialize `(uc ~T0 @X0 0 ef1`*CS305 ]
+[v _lcd_4bit_initialize `(uc ~T0 @X0 0 ef1`*CS308 ]
+"34 ECU_Layer/LED/ecu_led.h
+[; ;ECU_Layer/LED/ecu_led.h: 34: Std_ReturnType led_initialize(const led_t *led);
+[v _led_initialize `(uc ~T0 @X0 0 ef1`*CS305 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -436,115 +439,84 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "3 ECU_Layer/ecu_layer_init.c
 [; ;ECU_Layer/ecu_layer_init.c: 3: chr_lcd_4bit_t lcd1 ={
-[v _lcd1 `S305 ~T0 @X0 1 e ]
+[v _lcd1 `S308 ~T0 @X0 1 e ]
 [i _lcd1
 :U ..
 :U ..
 :U ..
 :U ..
--> . `E3171 2 `uc
--> . `E3161 0 `uc
--> . `E3157 0 `uc
--> . `E3153 0 `uc
+-> . `E3188 3 `uc
+-> . `E3178 0 `uc
+-> . `E3174 0 `uc
+-> . `E3170 0 `uc
 ..
 ..
 :U ..
 :U ..
--> . `E3171 2 `uc
--> . `E3161 1 `uc
--> . `E3157 0 `uc
--> . `E3153 0 `uc
+-> . `E3188 3 `uc
+-> . `E3178 1 `uc
+-> . `E3174 0 `uc
+-> . `E3170 0 `uc
 ..
 ..
 :U ..
 :U ..
--> . `E3171 2 `uc
--> . `E3161 2 `uc
--> . `E3157 0 `uc
--> . `E3153 0 `uc
+-> . `E3188 3 `uc
+-> . `E3178 2 `uc
+-> . `E3174 0 `uc
+-> . `E3170 0 `uc
 ..
 :U ..
--> . `E3171 2 `uc
--> . `E3161 3 `uc
--> . `E3157 0 `uc
--> . `E3153 0 `uc
+-> . `E3188 3 `uc
+-> . `E3178 3 `uc
+-> . `E3174 0 `uc
+-> . `E3170 0 `uc
 ..
 :U ..
--> . `E3171 2 `uc
--> . `E3161 4 `uc
--> . `E3157 0 `uc
--> . `E3153 0 `uc
+-> . `E3188 3 `uc
+-> . `E3178 4 `uc
+-> . `E3174 0 `uc
+-> . `E3170 0 `uc
 ..
 :U ..
--> . `E3171 2 `uc
--> . `E3161 5 `uc
--> . `E3157 0 `uc
--> . `E3153 0 `uc
+-> . `E3188 3 `uc
+-> . `E3178 5 `uc
+-> . `E3174 0 `uc
+-> . `E3170 0 `uc
 ..
 ..
 ..
 ..
 ]
-"29
-[; ;ECU_Layer/ecu_layer_init.c: 29: dc_motor_t dc_motor_1 = {
-[v _dc_motor_1 `S300 ~T0 @X0 1 e ]
-[i _dc_motor_1
+"130
+[; ;ECU_Layer/ecu_layer_init.c: 130: led_t led1 = {
+[v _led1 `S305 ~T0 @X0 1 e ]
+[i _led1
 :U ..
 :U ..
-:U ..
-:U ..
--> . `E3171 3 `uc
--> . `E3161 0 `uc
--> . `E3157 0 `uc
--> -> 0 `ui `uc
-..
-:U ..
--> . `E3171 3 `uc
--> . `E3161 1 `uc
--> . `E3157 0 `uc
--> -> 0 `ui `uc
-..
-..
+-> . `E3188 1 `uc
+-> . `E3178 7 `uc
+-> . `E3170 0 `uc
 ..
 ..
 ]
-"40
-[; ;ECU_Layer/ecu_layer_init.c: 40: dc_motor_t dc_motor_2 = {
-[v _dc_motor_2 `S300 ~T0 @X0 1 e ]
-[i _dc_motor_2
-:U ..
-:U ..
-:U ..
-:U ..
--> . `E3171 3 `uc
--> . `E3161 2 `uc
--> . `E3157 0 `uc
--> -> 0 `ui `uc
-..
-:U ..
--> . `E3171 3 `uc
--> . `E3161 3 `uc
--> . `E3157 0 `uc
--> -> 0 `ui `uc
-..
-..
-..
-..
-]
-"149
-[; ;ECU_Layer/ecu_layer_init.c: 149: void ecu_layer_initialize(void){
+"154
+[; ;ECU_Layer/ecu_layer_init.c: 154: void ecu_layer_initialize(void){
 [v _ecu_layer_initialize `(v ~T0 @X0 1 ef ]
 {
 [e :U _ecu_layer_initialize ]
 [f ]
-"150
-[; ;ECU_Layer/ecu_layer_init.c: 150:      Std_ReturnType ret=(Std_ReturnType)0x00;
+"155
+[; ;ECU_Layer/ecu_layer_init.c: 155:      Std_ReturnType ret=(Std_ReturnType)0x00;
 [v _ret `uc ~T0 @X0 1 a ]
 [e = _ret -> -> 0 `i `uc ]
-"151
-[; ;ECU_Layer/ecu_layer_init.c: 151:      ret = lcd_4bit_initialize(&lcd1);
-[e = _ret ( _lcd_4bit_initialize (1 -> &U _lcd1 `*CS305 ]
-"154
-[; ;ECU_Layer/ecu_layer_init.c: 154: }
-[e :UE 307 ]
+"156
+[; ;ECU_Layer/ecu_layer_init.c: 156:      ret = lcd_4bit_initialize(&lcd1);
+[e = _ret ( _lcd_4bit_initialize (1 -> &U _lcd1 `*CS308 ]
+"157
+[; ;ECU_Layer/ecu_layer_init.c: 157:      ret&= led_initialize(&led1);
+[e =& _ret -> ( _led_initialize (1 -> &U _led1 `*CS305 `uc ]
+"158
+[; ;ECU_Layer/ecu_layer_init.c: 158: }
+[e :UE 310 ]
 }

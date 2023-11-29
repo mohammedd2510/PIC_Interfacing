@@ -10,7 +10,7 @@
 
 #include"ECU_Layer/ecu_layer_init.h"
 
-#include "MCAL_Layer/Timer/hal_timer0.h"
+#include "MCAL_Layer/Timer1/hal_timer1.h"
 
 /* Section : Includes */
 
@@ -22,7 +22,7 @@
 
 
 /* Section : Data Types Declaration */
-timer0_t tmr0_timer;
+
 
 /* Section : Functions Declaration */
 void application_initialize(void);

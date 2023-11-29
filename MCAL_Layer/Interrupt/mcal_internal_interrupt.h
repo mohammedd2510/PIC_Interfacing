@@ -33,20 +33,35 @@
 #endif
 
 #if (TIMER0_INTERRUPT_FEATURE_ENABLE == INTERRUPT_FEATURE_ENABLE)
-    /* This routing clears the interrupt enable for the ADC Module */
+    /* This routing clears the interrupt enable for the Timer0 Module */
     #define TIMER0_InterruptDisable() (INTCON_bits.TMR0IE=0)
-    /* This routing sets the interrupt enable for the ADC Module */
+    /* This routing sets the interrupt enable for the Timer0 Module */
     #define TIMER0_InterruptEnable() (INTCON_bits.TMR0IE=1)
-    /* This routing clears the interrupt flag for the ADC Module */
+    /* This routing clears the interrupt flag for the Timer0 Module */
     #define TIMER0_InterruptFlagClear() (INTCON_bits.TMR0IF=0)
     #if INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_ENABLE 
-        /* This routing sets the ADC MODULE interrupt priority to be High priority */
+        /* This routing sets the Timer0 Module interrupt priority to be High priority */
         #define TIMER0_HighPrioritySet() (INTCON2_bits.TMR0IP=1)
-        /* This routing sets the ADC MODULE interrupt priority to be Low priority */
+        /* This routing sets the Timer0 Module interrupt priority to be Low priority */
         #define TIMER0_LowPrioritySet() (INTCON2_bits.TMR0IP=0)
     #endif
 #endif
 
+
+#if (TIMER1_INTERRUPT_FEATURE_ENABLE == INTERRUPT_FEATURE_ENABLE)
+    /* This routing clears the interrupt enable for the Timer1 Module */
+    #define TIMER1_InterruptDisable() (PIE1_bits.TMR1IE=0)
+    /* This routing sets the interrupt enable for the Timer1 Module */
+    #define TIMER1_InterruptEnable() (PIE1_bits.TMR1IE=1)
+    /* This routing clears the interrupt flag for the Timer1 Module */
+    #define TIMER1_InterruptFlagClear() (PIR1_bits.TMR1IF=0)
+    #if INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_ENABLE 
+        /* This routing sets the Timer1 Module interrupt priority to be High priority */
+        #define TIMER1_HighPrioritySet() (IPR1_bits.TMR1IP=1)
+        /* This routing sets the Timer1 Module interrupt priority to be Low priority */
+        #define TIMER1_LowPrioritySet() (IPR1_bits.TMR1IP=0)
+    #endif
+#endif
 
 /* Section : Data Types Declaration */
 

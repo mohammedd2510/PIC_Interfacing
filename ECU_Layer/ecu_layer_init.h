@@ -24,9 +24,7 @@
 
 /* Section : Data Types Declaration */
 extern chr_lcd_4bit_t lcd1; 
-extern dc_motor_t dc_motor_1;
-extern dc_motor_t dc_motor_2;
-
+extern led_t led1;
 /* Section : Functions Declaration */
 void ecu_layer_initialize(void);
 #endif	/* ECU_LAYER_INIT_H */
