@@ -4974,6 +4974,25 @@ typedef union {
    uint8 :2;
 };
 }T1CON_t;
+# 387 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
+typedef union {
+  struct {
+   uint8 T2CKPS0 :1;
+   uint8 T2CKPS1 :1;
+   uint8 TMR2ON :1;
+   uint8 T2OUTPS0 :1;
+   uint8 T2OUTPS1 :1;
+   uint8 T2OUTPS2 :1;
+   uint8 T2OUTPS3 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 T2CKPS :2;
+   uint8 :1;
+   uint8 T2OUTPS :4;
+   uint8 :1;
+};
+}T2CON_t;
 # 13 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
 # 1 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
@@ -5198,7 +5217,7 @@ void ecu_layer_initialize(void);
 
 
 # 1 "./MCAL_Layer/Timer1/hal_timer1.h" 1
-# 13 "./MCAL_Layer/Timer1/hal_timer1.h"
+# 12 "./MCAL_Layer/Timer1/hal_timer1.h"
 # 1 "./MCAL_Layer/Timer1/../Interrupt/mcal_internal_interrupt.h" 1
 # 13 "./MCAL_Layer/Timer1/../Interrupt/mcal_internal_interrupt.h"
 # 1 "./MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_config.h" 1
@@ -5302,8 +5321,8 @@ Std_ReturnType ADC_GetConversionResult(const adc_conf_t *_adc, adc_result_t *con
 Std_ReturnType ADC_GetConversion_Blocking(const adc_conf_t *_adc, adc_channel_select_t channel ,adc_result_t *conversion_result );
 Std_ReturnType ADC_StartConversion_Interrupt(const adc_conf_t *_adc, adc_channel_select_t channel);
 # 14 "./MCAL_Layer/Timer1/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
-# 13 "./MCAL_Layer/Timer1/hal_timer1.h" 2
-# 66 "./MCAL_Layer/Timer1/hal_timer1.h"
+# 12 "./MCAL_Layer/Timer1/hal_timer1.h" 2
+# 65 "./MCAL_Layer/Timer1/hal_timer1.h"
 typedef struct
 {
 
@@ -5327,6 +5346,29 @@ Std_ReturnType Timer1_DeInit(const timer1_t *_timer);
 Std_ReturnType Timer1_Write_Value(const timer1_t *_timer , uint16 _value);
 Std_ReturnType Timer1_Read_Value(const timer1_t *_timer , uint16 *_value);
 # 13 "./application.h" 2
+
+# 1 "./MCAL_Layer/Timer2/hal_timer2.h" 1
+# 55 "./MCAL_Layer/Timer2/hal_timer2.h"
+typedef struct
+{
+
+        void(*TMR2_InterruptHandler)(void);
+
+        interrupt_priority_cfg priority;
+
+
+    uint8 timer2_preload_value;
+    uint8 prescaler_value :2;
+    uint8 postscaler_value :4;
+    uint8 timer2_reserved :2;
+}timer2_t;
+
+
+Std_ReturnType Timer2_Init(const timer2_t *_timer);
+Std_ReturnType Timer2_DeInit(const timer2_t *_timer);
+Std_ReturnType Timer2_Write_Value(const timer2_t *_timer , uint8 _value);
+Std_ReturnType Timer2_Read_Value(const timer2_t *_timer , uint8 *_value);
+# 14 "./application.h" 2
 # 28 "./application.h"
 void application_initialize(void);
 void TMR0_ISR_HANDLER(void);
@@ -5336,9 +5378,9 @@ void TMR0_ISR_HANDLER(void);
 
 
 Std_ReturnType ret=(Std_ReturnType)0x00;
-void Timer1_Timer_Init(void);
+void Timer2_30ms_Init(void);
 void Timer1_Counter_Init(void);
-timer1_t timer_obj;
+timer2_t timer_obj;
 timer1_t counter_obj;
 uint8 Counter_Val =0;
 int main()
@@ -5346,9 +5388,7 @@ int main()
     application_initialize();
     while(1)
     {
-        Timer1_Read_Value(&counter_obj,&Counter_Val);
-        lcd_4bit_send_string_pos(&lcd1,1,1,"Counter =  ");
-        lcd_4bit_send_char_data_pos(&lcd1,1,11,(Counter_Val+0x30));
+
 
     }
     return (0);
@@ -5356,22 +5396,21 @@ int main()
 void application_initialize(void){
     Std_ReturnType ret=(Std_ReturnType)0x00;
     ecu_layer_initialize();
+   Timer2_30ms_Init();
 
-    Timer1_Counter_Init();
 
 }
 
-void TMR1_ISR_HANDLER(void){
+void TMR2_ISR_HANDLER(void){
     led_toggle(&led1);
 }
-void Timer1_Timer_Init(void){
-    timer_obj.TMR1_InterruptHandler = TMR1_ISR_HANDLER;
+void Timer2_30ms_Init(void){
+    timer_obj.TMR2_InterruptHandler = TMR2_ISR_HANDLER;
     timer_obj.priority = 1;
-    timer_obj.prescaler_value = 3U;
-    timer_obj.timer1_mode = 0;
-    timer_obj.timer1_osc_cfg = 0;
-    timer_obj.timer1_preload_value =15536;
-    ret=Timer1_Init(&timer_obj);
+    timer_obj.prescaler_value = 2U;
+    timer_obj.postscaler_value = 15U;
+    timer_obj.timer2_preload_value =250;
+    ret=Timer2_Init(&timer_obj);
 }
 void Timer1_Counter_Init(void){
     counter_obj.TMR1_InterruptHandler = ((void*)0);

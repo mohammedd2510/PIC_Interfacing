@@ -4957,6 +4957,25 @@ typedef union {
    uint8 :2;
 };
 }T1CON_t;
+# 387 "MCAL_Layer/Interrupt/../my_pic18f4620.h"
+typedef union {
+  struct {
+   uint8 T2CKPS0 :1;
+   uint8 T2CKPS1 :1;
+   uint8 TMR2ON :1;
+   uint8 T2OUTPS0 :1;
+   uint8 T2OUTPS1 :1;
+   uint8 T2OUTPS2 :1;
+   uint8 T2OUTPS3 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 T2CKPS :2;
+   uint8 :1;
+   uint8 T2OUTPS :4;
+   uint8 :1;
+};
+}T2CON_t;
 # 13 "MCAL_Layer/Interrupt/mcal_interrupt_config.h" 2
 
 # 1 "MCAL_Layer/Interrupt/mcal_interrupt_gen_cfg.h" 1
@@ -5045,6 +5064,8 @@ void RB7_ISR(void);
 void ADC_ISR (void);
 void TMR0_ISR (void);
 void TMR1_ISR (void);
+void TMR2_ISR (void);
+void TMR3_ISR (void);
 # 1 "MCAL_Layer/Interrupt/mcal_interrupt_manager.c" 2
 
 
@@ -5093,6 +5114,14 @@ void __attribute__((picinterrupt(("")))) InterruptManagerHigh(void){
         TMR1_ISR();
     }
     else { }
+    if((1 == (*((volatile IPR1_t *)(0xF9F))).TMR2IP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).TMR2IF)){
+        TMR2_ISR();
+    }
+    else { }
+    if((1 == (*((volatile IPR2_t *)(0xFA2))).TMR3IP)&&(1 == (*((volatile PIR2_t *)(0xFA1))).TMR3IF)){
+        TMR3_ISR();
+    }
+    else { }
 }
 void __attribute__((picinterrupt(("low_priority")))) InterruptManagerLow(void){
       if((0 == (*((volatile INTCON3_t *)(0xFF0))).INT1IP)&&(1 == (*((volatile INTCON3_t *)(0xFF0))).INT1IF)){
@@ -5133,6 +5162,14 @@ void __attribute__((picinterrupt(("low_priority")))) InterruptManagerLow(void){
     else { }
     if((0 == (*((volatile IPR1_t *)(0xF9F))).TMR1IP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).TMR1IF)){
         TMR1_ISR();
+    }
+    else { }
+      if((0 == (*((volatile IPR1_t *)(0xF9F))).TMR2IP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).TMR2IF)){
+        TMR2_ISR();
+    }
+    else { }
+     if((0 == (*((volatile IPR2_t *)(0xFA2))).TMR3IP)&&(1 == (*((volatile PIR2_t *)(0xFA1))).TMR3IF)){
+        TMR3_ISR();
     }
     else { }
 }

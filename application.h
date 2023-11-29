@@ -11,7 +11,7 @@
 #include"ECU_Layer/ecu_layer_init.h"
 
 #include "MCAL_Layer/Timer1/hal_timer1.h"
-
+#include"MCAL_Layer/Timer2/hal_timer2.h"
 /* Section : Includes */
 
 

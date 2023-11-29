@@ -4955,6 +4955,25 @@ typedef union {
    uint8 :2;
 };
 }T1CON_t;
+# 387 "MCAL_Layer/EEPROM/../../MCAL_Layer/my_pic18f4620.h"
+typedef union {
+  struct {
+   uint8 T2CKPS0 :1;
+   uint8 T2CKPS1 :1;
+   uint8 TMR2ON :1;
+   uint8 T2OUTPS0 :1;
+   uint8 T2OUTPS1 :1;
+   uint8 T2OUTPS2 :1;
+   uint8 T2OUTPS3 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 T2CKPS :2;
+   uint8 :1;
+   uint8 T2OUTPS :4;
+   uint8 :1;
+};
+}T2CON_t;
 # 13 "MCAL_Layer/EEPROM/hal_eeprom.h" 2
 
 # 1 "MCAL_Layer/EEPROM/../Interrupt/mcal_interrupt_config.h" 1

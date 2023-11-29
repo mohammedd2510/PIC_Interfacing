@@ -47,8 +47,6 @@ Std_ReturnType Timer1_Init(const timer1_t *_timer)
             }
     #endif 
 #endif        
-            TIMER1_RW_REG_16BIT_MODE_ENABLE();
-           // TIMER1_OSC_HW_ENABLE();
         TIMER1_MODULE_ENABLE();
     }
     return ret;

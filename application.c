@@ -10,9 +10,9 @@
 
 
 Std_ReturnType ret=E_NOT_OK;
-void Timer1_Timer_Init(void);
+void Timer2_30ms_Init(void);
 void Timer1_Counter_Init(void);
-timer1_t timer_obj;
+timer2_t timer_obj;
 timer1_t counter_obj;
 uint8 Counter_Val =ZERO_INIT;
 int main() 
@@ -20,9 +20,7 @@ int main()
     application_initialize();
     while(1)
     {
-        Timer1_Read_Value(&counter_obj,&Counter_Val);
-        lcd_4bit_send_string_pos(&lcd1,1,1,"Counter =  ");
-        lcd_4bit_send_char_data_pos(&lcd1,1,11,(Counter_Val+0x30));
+        
        
     }
     return (EXIT_SUCCESS);
@@ -30,22 +28,21 @@ int main()
 void application_initialize(void){
     Std_ReturnType ret=E_NOT_OK;
     ecu_layer_initialize();
-  //  Timer1_Timer_Init();
-    Timer1_Counter_Init();
+   Timer2_30ms_Init();
+ 
    
 }
 
-void TMR1_ISR_HANDLER(void){
+void TMR2_ISR_HANDLER(void){
     led_toggle(&led1);
 }
-void Timer1_Timer_Init(void){
-    timer_obj.TMR1_InterruptHandler = TMR1_ISR_HANDLER;
+void Timer2_30ms_Init(void){
+    timer_obj.TMR2_InterruptHandler = TMR2_ISR_HANDLER;
     timer_obj.priority = INTERRUPT_PRIORITY_HIGH;
-    timer_obj.prescaler_value = TIMER1_PRESCALER_DIV_BY_8;
-    timer_obj.timer1_mode = TIMER1_TIMER_MODE;
-    timer_obj.timer1_osc_cfg = TIMER1_OSCILLATOR_DISABLE;
-    timer_obj.timer1_preload_value =15536;
-    ret=Timer1_Init(&timer_obj);
+    timer_obj.prescaler_value = TIMER2_PRESCALER_DIV_BY_16;
+    timer_obj.postscaler_value = TIMER2_POSTSCALER_DIV_BY_15;
+    timer_obj.timer2_preload_value =250;
+    ret=Timer2_Init(&timer_obj);
 }
 void Timer1_Counter_Init(void){
     counter_obj.TMR1_InterruptHandler = NULL;

@@ -63,6 +63,35 @@
     #endif
 #endif
 
+#if (TIMER2_INTERRUPT_FEATURE_ENABLE == INTERRUPT_FEATURE_ENABLE)
+    /* This routing clears the interrupt enable for the Timer2 Module */
+    #define TIMER2_InterruptDisable() (PIE1_bits.TMR2IE=0)
+    /* This routing sets the interrupt enable for the Timer2 Module */
+    #define TIMER2_InterruptEnable() (PIE1_bits.TMR2IE=1)
+    /* This routing clears the interrupt flag for the Timer2 Module */
+    #define TIMER2_InterruptFlagClear() (PIR1_bits.TMR2IF=0)
+    #if INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_ENABLE 
+        /* This routing sets the Timer2 Module interrupt priority to be High priority */
+        #define TIMER2_HighPrioritySet() (IPR1_bits.TMR2IP=1)
+        /* This routing sets the Timer2 Module interrupt priority to be Low priority */
+        #define TIMER2_LowPrioritySet() (IPR1_bits.TMR2IP=0)
+    #endif
+#endif
+
+#if (TIMER3_INTERRUPT_FEATURE_ENABLE == INTERRUPT_FEATURE_ENABLE)
+    /* This routing clears the interrupt enable for the Timer3 Module */
+    #define TIMER3_InterruptDisable() (PIE2_bits.TMR3IE=0)
+    /* This routing sets the interrupt enable for the Timer3 Module */
+    #define TIMER3_InterruptEnable() (PIE2_bits.TMR3IE=1)
+    /* This routing clears the interrupt flag for the Timer3 Module */
+    #define TIMER3_InterruptFlagClear() (PIR2_bits.TMR3IF=0)
+    #if INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_ENABLE 
+        /* This routing sets the Timer3 Module interrupt priority to be High priority */
+        #define TIMER3_HighPrioritySet() (IPR2_bits.TMR3IP=1)
+        /* This routing sets the Timer3 Module interrupt priority to be Low priority */
+        #define TIMER3_LowPrioritySet() (IPR2_bits.TMR3IP=0)
+    #endif
+#endif
 /* Section : Data Types Declaration */
 
 

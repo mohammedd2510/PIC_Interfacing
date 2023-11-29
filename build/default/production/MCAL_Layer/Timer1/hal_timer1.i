@@ -9,12 +9,14 @@
 # 1 "MCAL_Layer/Timer1/hal_timer1.c" 2
 # 1 "MCAL_Layer/Timer1/hal_timer1.h" 1
 # 12 "MCAL_Layer/Timer1/hal_timer1.h"
-# 1 "MCAL_Layer/Timer1/../GPIO/hal_gpio.h" 1
-# 11 "MCAL_Layer/Timer1/../GPIO/hal_gpio.h"
-# 1 "MCAL_Layer/Timer1/../GPIO/../mcal_std_types.h" 1
-# 12 "MCAL_Layer/Timer1/../GPIO/../mcal_std_types.h"
-# 1 "MCAL_Layer/Timer1/../GPIO/../std_libraries.h" 1
-# 11 "MCAL_Layer/Timer1/../GPIO/../std_libraries.h"
+# 1 "MCAL_Layer/Timer1/../Interrupt/mcal_internal_interrupt.h" 1
+# 13 "MCAL_Layer/Timer1/../Interrupt/mcal_internal_interrupt.h"
+# 1 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_config.h" 1
+# 12 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_config.h"
+# 1 "MCAL_Layer/Timer1/../Interrupt/../mcal_std_types.h" 1
+# 12 "MCAL_Layer/Timer1/../Interrupt/../mcal_std_types.h"
+# 1 "MCAL_Layer/Timer1/../Interrupt/../std_libraries.h" 1
+# 11 "MCAL_Layer/Timer1/../Interrupt/../std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
 
 
@@ -179,7 +181,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 11 "MCAL_Layer/Timer1/../GPIO/../std_libraries.h" 2
+# 11 "MCAL_Layer/Timer1/../Interrupt/../std_libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
@@ -243,7 +245,7 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 12 "MCAL_Layer/Timer1/../GPIO/../std_libraries.h" 2
+# 12 "MCAL_Layer/Timer1/../Interrupt/../std_libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 3
@@ -302,11 +304,11 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 13 "MCAL_Layer/Timer1/../GPIO/../std_libraries.h" 2
-# 12 "MCAL_Layer/Timer1/../GPIO/../mcal_std_types.h" 2
+# 13 "MCAL_Layer/Timer1/../Interrupt/../std_libraries.h" 2
+# 12 "MCAL_Layer/Timer1/../Interrupt/../mcal_std_types.h" 2
 
-# 1 "MCAL_Layer/Timer1/../GPIO/../compiler.h" 1
-# 11 "MCAL_Layer/Timer1/../GPIO/../compiler.h"
+# 1 "MCAL_Layer/Timer1/../Interrupt/../compiler.h" 1
+# 11 "MCAL_Layer/Timer1/../Interrupt/../compiler.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4681,8 +4683,8 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 2 3
-# 11 "MCAL_Layer/Timer1/../GPIO/../compiler.h" 2
-# 13 "MCAL_Layer/Timer1/../GPIO/../mcal_std_types.h" 2
+# 11 "MCAL_Layer/Timer1/../Interrupt/../compiler.h" 2
+# 13 "MCAL_Layer/Timer1/../Interrupt/../mcal_std_types.h" 2
 
 
 typedef unsigned char uint8;
@@ -4693,13 +4695,10 @@ typedef signed int sint16;
 typedef signed long sint32;
 
 typedef uint8 Std_ReturnType;
-# 11 "MCAL_Layer/Timer1/../GPIO/hal_gpio.h" 2
+# 12 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_config.h" 2
 
-# 1 "MCAL_Layer/Timer1/../GPIO/../device_config.h" 1
-# 12 "MCAL_Layer/Timer1/../GPIO/hal_gpio.h" 2
-
-# 1 "MCAL_Layer/Timer1/../GPIO/../my_pic18f4620.h" 1
-# 101 "MCAL_Layer/Timer1/../GPIO/../my_pic18f4620.h"
+# 1 "MCAL_Layer/Timer1/../Interrupt/../my_pic18f4620.h" 1
+# 101 "MCAL_Layer/Timer1/../Interrupt/../my_pic18f4620.h"
 typedef union {
   struct {
    uint8 RBIF :1;
@@ -4844,7 +4843,7 @@ typedef struct {
   uint8 SBOREN :1;
   uint8 IPEN :1;
 }RCON_t;
-# 257 "MCAL_Layer/Timer1/../GPIO/../my_pic18f4620.h"
+# 257 "MCAL_Layer/Timer1/../Interrupt/../my_pic18f4620.h"
 typedef struct {
   uint8 RD :1;
   uint8 WR :1;
@@ -4942,7 +4941,7 @@ typedef union {
    uint8 :5;
 };
 }T0CON_t;
-# 362 "MCAL_Layer/Timer1/../GPIO/../my_pic18f4620.h"
+# 362 "MCAL_Layer/Timer1/../Interrupt/../my_pic18f4620.h"
 typedef union {
   struct {
    uint8 TMR1ON :1;
@@ -4960,11 +4959,39 @@ typedef union {
    uint8 :2;
 };
 }T1CON_t;
-# 13 "MCAL_Layer/Timer1/../GPIO/hal_gpio.h" 2
+# 387 "MCAL_Layer/Timer1/../Interrupt/../my_pic18f4620.h"
+typedef union {
+  struct {
+   uint8 T2CKPS0 :1;
+   uint8 T2CKPS1 :1;
+   uint8 TMR2ON :1;
+   uint8 T2OUTPS0 :1;
+   uint8 T2OUTPS1 :1;
+   uint8 T2OUTPS2 :1;
+   uint8 T2OUTPS3 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 T2CKPS :2;
+   uint8 :1;
+   uint8 T2OUTPS :4;
+   uint8 :1;
+};
+}T2CON_t;
+# 13 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_config.h" 2
 
-# 1 "MCAL_Layer/Timer1/../GPIO/hal_gpio_cfg.h" 1
-# 14 "MCAL_Layer/Timer1/../GPIO/hal_gpio.h" 2
-# 31 "MCAL_Layer/Timer1/../GPIO/hal_gpio.h"
+# 1 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_gen_cfg.h" 1
+# 14 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_config.h" 2
+
+# 1 "MCAL_Layer/Timer1/../Interrupt/../GPIO/hal_gpio.h" 1
+# 12 "MCAL_Layer/Timer1/../Interrupt/../GPIO/hal_gpio.h"
+# 1 "MCAL_Layer/Timer1/../Interrupt/../GPIO/../device_config.h" 1
+# 12 "MCAL_Layer/Timer1/../Interrupt/../GPIO/hal_gpio.h" 2
+
+
+# 1 "MCAL_Layer/Timer1/../Interrupt/../GPIO/hal_gpio_cfg.h" 1
+# 14 "MCAL_Layer/Timer1/../Interrupt/../GPIO/hal_gpio.h" 2
+# 31 "MCAL_Layer/Timer1/../Interrupt/../GPIO/hal_gpio.h"
 typedef enum{
     LOW=0,
     HIGH
@@ -5014,14 +5041,7 @@ Std_ReturnType gpio_port_get_direction_status(port_index_t port, uint8* directio
 Std_ReturnType gpio_port_write_logic(port_index_t port, uint8 logic);
 Std_ReturnType gpio_port_read_logic(port_index_t port, uint8* logic);
 Std_ReturnType gpio_port_toggle_logic(port_index_t port);
-# 12 "MCAL_Layer/Timer1/hal_timer1.h" 2
-
-# 1 "MCAL_Layer/Timer1/../Interrupt/mcal_internal_interrupt.h" 1
-# 13 "MCAL_Layer/Timer1/../Interrupt/mcal_internal_interrupt.h"
-# 1 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_config.h" 1
-# 14 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_config.h"
-# 1 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_gen_cfg.h" 1
-# 14 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_config.h" 2
+# 15 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_config.h" 2
 # 59 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_config.h"
 typedef enum {
     INTERRUPT_LOW_PRIORITY = 0 ,
@@ -5119,8 +5139,8 @@ Std_ReturnType ADC_GetConversionResult(const adc_conf_t *_adc, adc_result_t *con
 Std_ReturnType ADC_GetConversion_Blocking(const adc_conf_t *_adc, adc_channel_select_t channel ,adc_result_t *conversion_result );
 Std_ReturnType ADC_StartConversion_Interrupt(const adc_conf_t *_adc, adc_channel_select_t channel);
 # 14 "MCAL_Layer/Timer1/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
-# 13 "MCAL_Layer/Timer1/hal_timer1.h" 2
-# 66 "MCAL_Layer/Timer1/hal_timer1.h"
+# 12 "MCAL_Layer/Timer1/hal_timer1.h" 2
+# 65 "MCAL_Layer/Timer1/hal_timer1.h"
 typedef struct
 {
 
@@ -5192,8 +5212,6 @@ Std_ReturnType Timer1_Init(const timer1_t *_timer)
              ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1);
             }
 
-
-            ((*((volatile T1CON_t *)(0xFCD))).RD16= 1);
 
         ((*((volatile T1CON_t *)(0xFCD))).TMR1ON = 1);
     }

@@ -9,7 +9,6 @@
 #define	HAL_TIMER1_H
 
 /* Section : Includes */
-#include "../GPIO/hal_gpio.h"
 #include "../Interrupt/mcal_internal_interrupt.h"
 #include "../mcal_std_types.h"
 #include "../my_pic18f4620.h"

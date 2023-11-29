@@ -357,7 +357,7 @@ typedef union {
 #define TMR0L (*((volatile uint8 *)(0xFD6)))
 #define TMROH (*((volatile uint8 *)(0xFD7)))
 
-/* Timer0 Registers*/
+/* Timer1 Registers*/
 
 typedef union {
   struct {  
@@ -381,6 +381,31 @@ typedef union {
 #define T1CON (*((volatile uint8 *)(0xFCD)))
 #define TMR1L (*((volatile uint8 *)(0xFCE)))
 #define TMR1H (*((volatile uint8 *)(0xFCF)))
+
+/* Timer2 Registers*/
+
+typedef union {
+  struct {  
+   uint8 T2CKPS0   :1; 
+   uint8 T2CKPS1   :1;
+   uint8 TMR2ON    :1;
+   uint8 T2OUTPS0  :1;
+   uint8 T2OUTPS1  :1;
+   uint8 T2OUTPS2  :1;
+   uint8 T2OUTPS3  :1;
+   uint8           :1;
+};
+  struct {
+   uint8 T2CKPS  :2;
+   uint8         :1;
+   uint8 T2OUTPS :4;
+   uint8         :1;    
+};
+}T2CON_t;
+
+#define T2CON_bits (*((volatile T2CON_t *)(0xFCA)))
+#define T2CON (*((volatile uint8 *)(0xFCA)))
+#define TMR2 (*((volatile uint8 *)(0xFCC)))
 
 /***************************************/
 #endif	/* MY_PIC18F4620_H */

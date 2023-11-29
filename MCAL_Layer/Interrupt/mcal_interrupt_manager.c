@@ -45,6 +45,14 @@ void __interrupt() InterruptManagerHigh(void){
         TMR1_ISR();
     }
     else {/*Nothing*/}
+    if((INTERRUPT_PRIORITY_HIGH == IPR1_bits.TMR2IP)&&(INTERRUPT_OCCUR == PIR1_bits.TMR2IF)){
+        TMR2_ISR();
+    }
+    else {/*Nothing*/}
+    if((INTERRUPT_PRIORITY_HIGH == IPR2_bits.TMR3IP)&&(INTERRUPT_OCCUR == PIR2_bits.TMR3IF)){
+        TMR3_ISR();
+    }
+    else {/*Nothing*/}
 }
 void __interrupt(low_priority) InterruptManagerLow(void){
       if((INTERRUPT_PRIORITY_LOW == INTCON3_bits.INT1IP)&&(INTERRUPT_OCCUR == INTCON3_bits.INT1IF)){
@@ -87,6 +95,14 @@ void __interrupt(low_priority) InterruptManagerLow(void){
         TMR1_ISR();
     }
     else {/*Nothing*/}
+      if((INTERRUPT_PRIORITY_LOW == IPR1_bits.TMR2IP)&&(INTERRUPT_OCCUR == PIR1_bits.TMR2IF)){
+        TMR2_ISR();
+    }
+    else {/*Nothing*/}
+     if((INTERRUPT_PRIORITY_LOW == IPR2_bits.TMR3IP)&&(INTERRUPT_OCCUR == PIR2_bits.TMR3IF)){
+        TMR3_ISR();
+    }
+    else {/*Nothing*/} 
 }
 #else
 void __interrupt() InterruptManager(void){
@@ -132,6 +148,14 @@ void __interrupt() InterruptManager(void){
     else {/*Nothing*/}
     if((INTERRUPT_ENABLE == PIE1_bits.TMR1IE)&&(INTERRUPT_OCCUR ==PIR1_bits.TMR1IF)){
         TMR1_ISR();
+    }
+    else {/*Nothing*/}
+    if((INTERRUPT_ENABLE == PIE1_bits.TMR2IE)&&(INTERRUPT_OCCUR ==PIR1_bits.TMR2IF)){
+        TMR2_ISR();
+    }
+    else {/*Nothing*/}
+    if((INTERRUPT_ENABLE == PIE2_bits.TMR3IE)&&(INTERRUPT_OCCUR ==PIR2_bits.TMR3IF)){
+        TMR3_ISR();
     }
     else {/*Nothing*/}
 }

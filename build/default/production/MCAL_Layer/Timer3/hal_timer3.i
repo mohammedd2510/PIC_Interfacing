@@ -1,4 +1,4 @@
-# 1 "ECU_Layer/Chr_LCD/ecu_chr_lcd.c"
+# 1 "MCAL_Layer/Timer3/hal_timer3.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,18 +6,17 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "ECU_Layer/Chr_LCD/ecu_chr_lcd.c" 2
-# 1 "ECU_Layer/Chr_LCD/ecu_chr_lcd.h" 1
-# 12 "ECU_Layer/Chr_LCD/ecu_chr_lcd.h"
-# 1 "ECU_Layer/Chr_LCD/ecu_chr_lcd_cfg.h" 1
-# 12 "ECU_Layer/Chr_LCD/ecu_chr_lcd.h" 2
-
-# 1 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/hal_gpio.h" 1
-# 11 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/hal_gpio.h"
-# 1 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/../mcal_std_types.h" 1
-# 12 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/../mcal_std_types.h"
-# 1 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/../std_libraries.h" 1
-# 11 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/../std_libraries.h"
+# 1 "MCAL_Layer/Timer3/hal_timer3.c" 2
+# 1 "MCAL_Layer/Timer3/hal_timer3.h" 1
+# 12 "MCAL_Layer/Timer3/hal_timer3.h"
+# 1 "MCAL_Layer/Timer3/../Interrupt/mcal_internal_interrupt.h" 1
+# 13 "MCAL_Layer/Timer3/../Interrupt/mcal_internal_interrupt.h"
+# 1 "MCAL_Layer/Timer3/../Interrupt/mcal_interrupt_config.h" 1
+# 12 "MCAL_Layer/Timer3/../Interrupt/mcal_interrupt_config.h"
+# 1 "MCAL_Layer/Timer3/../Interrupt/../mcal_std_types.h" 1
+# 12 "MCAL_Layer/Timer3/../Interrupt/../mcal_std_types.h"
+# 1 "MCAL_Layer/Timer3/../Interrupt/../std_libraries.h" 1
+# 11 "MCAL_Layer/Timer3/../Interrupt/../std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
 
 
@@ -182,7 +181,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 11 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+# 11 "MCAL_Layer/Timer3/../Interrupt/../std_libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
@@ -246,7 +245,7 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 12 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+# 12 "MCAL_Layer/Timer3/../Interrupt/../std_libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 3
@@ -305,11 +304,11 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 13 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/../std_libraries.h" 2
-# 12 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
+# 13 "MCAL_Layer/Timer3/../Interrupt/../std_libraries.h" 2
+# 12 "MCAL_Layer/Timer3/../Interrupt/../mcal_std_types.h" 2
 
-# 1 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/../compiler.h" 1
-# 11 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/../compiler.h"
+# 1 "MCAL_Layer/Timer3/../Interrupt/../compiler.h" 1
+# 11 "MCAL_Layer/Timer3/../Interrupt/../compiler.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4684,8 +4683,8 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 2 3
-# 11 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/../compiler.h" 2
-# 13 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
+# 11 "MCAL_Layer/Timer3/../Interrupt/../compiler.h" 2
+# 13 "MCAL_Layer/Timer3/../Interrupt/../mcal_std_types.h" 2
 
 
 typedef unsigned char uint8;
@@ -4696,13 +4695,10 @@ typedef signed int sint16;
 typedef signed long sint32;
 
 typedef uint8 Std_ReturnType;
-# 11 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 12 "MCAL_Layer/Timer3/../Interrupt/mcal_interrupt_config.h" 2
 
-# 1 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/../device_config.h" 1
-# 12 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/hal_gpio.h" 2
-
-# 1 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/../my_pic18f4620.h" 1
-# 101 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
+# 1 "MCAL_Layer/Timer3/../Interrupt/../my_pic18f4620.h" 1
+# 101 "MCAL_Layer/Timer3/../Interrupt/../my_pic18f4620.h"
 typedef union {
   struct {
    uint8 RBIF :1;
@@ -4847,7 +4843,7 @@ typedef struct {
   uint8 SBOREN :1;
   uint8 IPEN :1;
 }RCON_t;
-# 257 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
+# 257 "MCAL_Layer/Timer3/../Interrupt/../my_pic18f4620.h"
 typedef struct {
   uint8 RD :1;
   uint8 WR :1;
@@ -4945,7 +4941,7 @@ typedef union {
    uint8 :5;
 };
 }T0CON_t;
-# 362 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
+# 362 "MCAL_Layer/Timer3/../Interrupt/../my_pic18f4620.h"
 typedef union {
   struct {
    uint8 TMR1ON :1;
@@ -4963,7 +4959,7 @@ typedef union {
    uint8 :2;
 };
 }T1CON_t;
-# 387 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
+# 387 "MCAL_Layer/Timer3/../Interrupt/../my_pic18f4620.h"
 typedef union {
   struct {
    uint8 T2CKPS0 :1;
@@ -4982,11 +4978,20 @@ typedef union {
    uint8 :1;
 };
 }T2CON_t;
-# 13 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 13 "MCAL_Layer/Timer3/../Interrupt/mcal_interrupt_config.h" 2
 
-# 1 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
-# 14 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/hal_gpio.h" 2
-# 31 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/hal_gpio.h"
+# 1 "MCAL_Layer/Timer3/../Interrupt/mcal_interrupt_gen_cfg.h" 1
+# 14 "MCAL_Layer/Timer3/../Interrupt/mcal_interrupt_config.h" 2
+
+# 1 "MCAL_Layer/Timer3/../Interrupt/../GPIO/hal_gpio.h" 1
+# 12 "MCAL_Layer/Timer3/../Interrupt/../GPIO/hal_gpio.h"
+# 1 "MCAL_Layer/Timer3/../Interrupt/../GPIO/../device_config.h" 1
+# 12 "MCAL_Layer/Timer3/../Interrupt/../GPIO/hal_gpio.h" 2
+
+
+# 1 "MCAL_Layer/Timer3/../Interrupt/../GPIO/hal_gpio_cfg.h" 1
+# 14 "MCAL_Layer/Timer3/../Interrupt/../GPIO/hal_gpio.h" 2
+# 31 "MCAL_Layer/Timer3/../Interrupt/../GPIO/hal_gpio.h"
 typedef enum{
     LOW=0,
     HIGH
@@ -5036,462 +5041,108 @@ Std_ReturnType gpio_port_get_direction_status(port_index_t port, uint8* directio
 Std_ReturnType gpio_port_write_logic(port_index_t port, uint8 logic);
 Std_ReturnType gpio_port_read_logic(port_index_t port, uint8* logic);
 Std_ReturnType gpio_port_toggle_logic(port_index_t port);
-# 13 "ECU_Layer/Chr_LCD/ecu_chr_lcd.h" 2
-# 53 "ECU_Layer/Chr_LCD/ecu_chr_lcd.h"
-typedef struct {
-    pin_config_t lcd_rs;
-    pin_config_t lcd_en;
-    pin_config_t lcd_data[4];
-}chr_lcd_4bit_t;
+# 15 "MCAL_Layer/Timer3/../Interrupt/mcal_interrupt_config.h" 2
+# 59 "MCAL_Layer/Timer3/../Interrupt/mcal_interrupt_config.h"
+typedef enum {
+    INTERRUPT_LOW_PRIORITY = 0 ,
+    INTERRUPT_HIGH_PRIORITY
+}interrupt_priority_cfg;
+
+typedef void (*InterruptHandler)(void);
+# 13 "MCAL_Layer/Timer3/../Interrupt/mcal_internal_interrupt.h" 2
+
+# 1 "MCAL_Layer/Timer3/../Interrupt/../ADC/hal_adc.h" 1
+# 12 "MCAL_Layer/Timer3/../Interrupt/../ADC/hal_adc.h"
+# 1 "MCAL_Layer/Timer3/../Interrupt/../ADC/hal_adc_cfg.h" 1
+# 12 "MCAL_Layer/Timer3/../Interrupt/../ADC/hal_adc.h" 2
+
+
+
+
+# 1 "MCAL_Layer/Timer3/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 1
+# 16 "MCAL_Layer/Timer3/../Interrupt/../ADC/hal_adc.h" 2
+# 100 "MCAL_Layer/Timer3/../Interrupt/../ADC/hal_adc.h"
+extern InterruptHandler ADC_InterruptHandler;
+
+
+
+
+
+
+typedef enum {
+    ADC_CHANNEL_AN0 = 0,
+    ADC_CHANNEL_AN1,
+    ADC_CHANNEL_AN2,
+    ADC_CHANNEL_AN3,
+    ADC_CHANNEL_AN4,
+    ADC_CHANNEL_AN5,
+    ADC_CHANNEL_AN6,
+    ADC_CHANNEL_AN7,
+    ADC_CHANNEL_AN8,
+    ADC_CHANNEL_AN9,
+    ADC_CHANNEL_AN10,
+    ADC_CHANNEL_AN11,
+    ADC_CHANNEL_AN12,
+}adc_channel_select_t;
+# 130 "MCAL_Layer/Timer3/../Interrupt/../ADC/hal_adc.h"
+typedef enum {
+    ADC_0_TAD = 0,
+    ADC_2_TAD,
+    ADC_4_TAD,
+    ADC_6_TAD,
+    ADC_8_TAD,
+    ADC_12_TAD,
+    ADC_16_TAD,
+    ADC_20_TAD
+}adc_acquisition_time_t;
+
+
+
+
+
+
+
+typedef enum {
+    ADC_CONVERSION_CLOCK_FOSC_DIV_2 = 0,
+    ADC_CONVERSION_CLOCK_FOSC_DIV_8,
+    ADC_CONVERSION_CLOCK_FOSC_DIV_32,
+    ADC_CONVERSION_CLOCK_FOSC_DIV_FRC,
+    ADC_CONVERSION_CLOCK_FOSC_DIV_4,
+    ADC_CONVERSION_CLOCK_FOSC_DIV_16,
+    ADC_CONVERSION_CLOCK_FOSC_DIV_64
+}adc_conversion_clock_t;
 
 typedef struct {
-    pin_config_t lcd_rs;
-    pin_config_t lcd_en;
-    pin_config_t lcd_data[8];
-}chr_lcd_8bit_t;
 
-Std_ReturnType lcd_4bit_initialize (const chr_lcd_4bit_t *lcd);
-Std_ReturnType lcd_4bit_send_command (const chr_lcd_4bit_t *lcd, uint8 command);
-Std_ReturnType lcd_4bit_send_char_data (const chr_lcd_4bit_t *lcd, uint8 data);
-Std_ReturnType lcd_4bit_send_char_data_pos (const chr_lcd_4bit_t *lcd ,uint8 row ,uint8 column , uint8 data);
-Std_ReturnType lcd_4bit_send_string (const chr_lcd_4bit_t *lcd, uint8 *str);
-Std_ReturnType lcd_4bit_send_string_pos (const chr_lcd_4bit_t *lcd ,uint8 row ,uint8 column , uint8 *str);
-Std_ReturnType lcd_4bit_send_custom_char(const chr_lcd_4bit_t *lcd ,uint8 row ,uint8 column ,
-                                         const uint8 _chr[],uint8 mem_pos);
+        void(*ADC_InterruptHandler)(void);
 
+        interrupt_priority_cfg priority;
 
-Std_ReturnType lcd_8bit_initialize (const chr_lcd_8bit_t *lcd);
-Std_ReturnType lcd_8bit_send_command (const chr_lcd_8bit_t *lcd, uint8 command);
-Std_ReturnType lcd_8bit_send_char_data (const chr_lcd_8bit_t *lcd, uint8 data);
-Std_ReturnType lcd_8bit_send_char_data_pos (const chr_lcd_8bit_t *lcd ,uint8 row ,uint8 column , uint8 data);
-Std_ReturnType lcd_8bit_send_string (const chr_lcd_8bit_t *lcd, uint8 *str);
-Std_ReturnType lcd_8bit_send_string_pos (const chr_lcd_8bit_t *lcd ,uint8 row ,uint8 column , uint8 *str);
-Std_ReturnType lcd_8bit_send_custom_char(const chr_lcd_8bit_t *lcd ,uint8 row ,uint8 column ,
-                                         const uint8 _chr[],uint8 mem_pos);
 
-Std_ReturnType convert_uint8_to_string(uint8 value , uint8 *str);
-Std_ReturnType convert_uint16_to_string(uint16 value , uint8 *str);
-Std_ReturnType convert_uint32_to_string(uint32 value , uint8 *str);
-# 1 "ECU_Layer/Chr_LCD/ecu_chr_lcd.c" 2
+    adc_acquisition_time_t acquisition_time;
+    adc_conversion_clock_t conversion_clock;
+    adc_channel_select_t adc_channel;
+    uint8 voltage_reference : 1;
+    uint8 result_format : 1;
+    uint8 :6;
+}adc_conf_t;
 
+typedef uint16 adc_result_t;
 
-static Std_ReturnType lcd_send_4bits(const chr_lcd_4bit_t *lcd, uint8 _data_command );
-static Std_ReturnType lcd_4bit_send_enable_signal(const chr_lcd_4bit_t *lcd);
-static Std_ReturnType lcd_8bit_send_enable_signal(const chr_lcd_8bit_t *lcd);
-static Std_ReturnType lcd_8bit_set_cursor(const chr_lcd_8bit_t *lcd , uint8 row , uint8 column);
-static Std_ReturnType lcd_4bit_set_cursor(const chr_lcd_4bit_t *lcd , uint8 row , uint8 column);
 
+Std_ReturnType ADC_Init(const adc_conf_t *_adc);
+Std_ReturnType ADC_DeInit(const adc_conf_t *_adc);
+Std_ReturnType ADC_SelectChannel(const adc_conf_t *_adc, adc_channel_select_t channel);
+Std_ReturnType ADC_StartConversion(const adc_conf_t *_adc);
+Std_ReturnType ADC_IsConversionDone(const adc_conf_t *_adc, uint8 *conversion_status);
+Std_ReturnType ADC_GetConversionResult(const adc_conf_t *_adc, adc_result_t *conversion_result);
+Std_ReturnType ADC_GetConversion_Blocking(const adc_conf_t *_adc, adc_channel_select_t channel ,adc_result_t *conversion_result );
+Std_ReturnType ADC_StartConversion_Interrupt(const adc_conf_t *_adc, adc_channel_select_t channel);
+# 14 "MCAL_Layer/Timer3/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
+# 12 "MCAL_Layer/Timer3/hal_timer3.h" 2
+# 1 "MCAL_Layer/Timer3/hal_timer3.c" 2
+# 17 "MCAL_Layer/Timer3/hal_timer3.c"
+void TMR3_ISR (void)
+{
 
-
-
-
-Std_ReturnType lcd_4bit_initialize (const chr_lcd_4bit_t *lcd){
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-     uint8 l_data_pins_counter=0;
-    if(lcd==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        ret=gpio_pin_initialize(&(lcd->lcd_rs));
-        ret=gpio_pin_initialize(&(lcd->lcd_en));
-        for(l_data_pins_counter=0;l_data_pins_counter<4;l_data_pins_counter++){
-             ret=gpio_pin_initialize(&(lcd->lcd_data[l_data_pins_counter]));
-        }
-
-        ret=lcd_4bit_send_command(lcd,0x33);
-        _delay((unsigned long)((150)*(8000000/4000000.0)));
-        ret=lcd_4bit_send_command(lcd,0x32);
-        ret=lcd_4bit_send_command(lcd,0X28);
-        ret=lcd_4bit_send_command(lcd,0X01);
-        ret=lcd_4bit_send_command(lcd,0X06);
-        ret=lcd_4bit_send_command(lcd,0X0C);
-
-        }
-    return ret;
-}
-
-
-
-
-
-
-Std_ReturnType lcd_4bit_send_command (const chr_lcd_4bit_t *lcd, uint8 command){
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-    if(lcd==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        ret=gpio_pin_write_logic(&(lcd->lcd_rs),LOW);
-        ret=lcd_send_4bits(lcd, command >> 4);
-        ret=lcd_4bit_send_enable_signal(lcd);
-        ret=lcd_send_4bits(lcd, command);
-        ret=lcd_4bit_send_enable_signal(lcd);
-        }
-    return ret;
-}
-
-
-
-
-
-
-Std_ReturnType lcd_4bit_send_char_data (const chr_lcd_4bit_t *lcd, uint8 data){
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-    if(lcd==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-       ret=gpio_pin_write_logic(&(lcd->lcd_rs),HIGH);
-        ret=lcd_send_4bits(lcd, data >> 4);
-        ret=lcd_4bit_send_enable_signal(lcd);
-        ret=lcd_send_4bits(lcd, data);
-        ret=lcd_4bit_send_enable_signal(lcd);
-        }
-    return ret;
-}
-# 85 "ECU_Layer/Chr_LCD/ecu_chr_lcd.c"
-Std_ReturnType lcd_4bit_send_char_data_pos (const chr_lcd_4bit_t *lcd ,uint8 row ,uint8 column , uint8 data){
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-    if(lcd==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        lcd_4bit_set_cursor(lcd,row,column);
-        lcd_4bit_send_char_data(lcd,data);
-        }
-    return ret;
-}
-
-
-
-
-
-
-Std_ReturnType lcd_4bit_send_string (const chr_lcd_4bit_t *lcd, uint8 *str){
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-    if(lcd==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        while(*str){
-            ret=lcd_4bit_send_char_data(lcd,*str++);
-        }
-        }
-    return ret;
-}
-# 122 "ECU_Layer/Chr_LCD/ecu_chr_lcd.c"
-Std_ReturnType lcd_4bit_send_string_pos (const chr_lcd_4bit_t *lcd ,uint8 row ,uint8 column , uint8 *str){
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-    if(lcd==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-       lcd_4bit_set_cursor(lcd,row,column);
-        while(*str){
-            ret=lcd_4bit_send_char_data(lcd,*str++);
-        }
-        }
-    return ret;
-}
-# 144 "ECU_Layer/Chr_LCD/ecu_chr_lcd.c"
-Std_ReturnType lcd_4bit_send_custom_char(const chr_lcd_4bit_t *lcd ,uint8 row ,uint8 column ,
-                                         const uint8 _chr[],uint8 mem_pos){
-     Std_ReturnType ret=(Std_ReturnType)0x01;
-    uint8 lcd_counter=0;
-    if(lcd==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        ret=lcd_4bit_send_command(lcd,(0X40 +(8*mem_pos)));
-        for(lcd_counter=0;lcd_counter<8;lcd_counter++){
-           ret= lcd_4bit_send_char_data(lcd,_chr[lcd_counter]);
-        }
-        ret=lcd_4bit_send_char_data_pos(lcd,row,column,mem_pos);
-        }
-    return ret;
-
-}
-
-
-
-
-
-
-Std_ReturnType lcd_8bit_initialize (const chr_lcd_8bit_t *lcd){
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-     uint8 l_data_pins_counter=0;
-    if(lcd==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        ret=gpio_pin_initialize(&(lcd->lcd_rs));
-        ret=gpio_pin_initialize(&(lcd->lcd_en));
-        for(l_data_pins_counter=0;l_data_pins_counter<8;l_data_pins_counter++){
-             ret=gpio_pin_initialize(&(lcd->lcd_data[l_data_pins_counter]));
-        }
-        _delay((unsigned long)((20)*(8000000/4000.0)));
-        ret=lcd_8bit_send_command(lcd,0X38);
-        _delay((unsigned long)((5)*(8000000/4000.0)));
-        ret=lcd_8bit_send_command(lcd,0X38);
-        _delay((unsigned long)((150)*(8000000/4000000.0)));
-        ret=lcd_8bit_send_command(lcd,0X38);
-        ret=lcd_8bit_send_command(lcd,0X38);
-        ret=lcd_8bit_send_command(lcd,0X01);
-        ret=lcd_8bit_send_command(lcd,0X06);
-        ret=lcd_8bit_send_command(lcd,0X0C);
-
-
-        }
-    return ret;
-}
-
-
-
-
-
-
-Std_ReturnType lcd_8bit_send_command (const chr_lcd_8bit_t *lcd, uint8 command){
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-     uint8 l_pins_counter=0;
-    if(lcd==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        ret=gpio_pin_write_logic(&(lcd->lcd_rs),LOW);
-        for(l_pins_counter=0;l_pins_counter<8;l_pins_counter++){
-         ret=gpio_pin_write_logic(&(lcd->lcd_data[l_pins_counter]),( command >> l_pins_counter ) & (uint8)0x01);
-        }
-        lcd_8bit_send_enable_signal(lcd);
-
-        }
-    return ret;
-}
-
-
-
-
-
-
-Std_ReturnType lcd_8bit_send_char_data (const chr_lcd_8bit_t *lcd, uint8 data){
-     Std_ReturnType ret=(Std_ReturnType)0x01;
-     uint8 l_pins_counter=0;
-    if(lcd==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        ret=gpio_pin_write_logic(&(lcd->lcd_rs),HIGH);
-        for(l_pins_counter=0;l_pins_counter<8;l_pins_counter++){
-         ret=gpio_pin_write_logic(&(lcd->lcd_data[l_pins_counter]),( data >> l_pins_counter ) & (uint8)0x01);
-        }
-        lcd_8bit_send_enable_signal(lcd);
-        }
-    return ret;
-}
-# 245 "ECU_Layer/Chr_LCD/ecu_chr_lcd.c"
-Std_ReturnType lcd_8bit_send_char_data_pos (const chr_lcd_8bit_t *lcd ,uint8 row ,uint8 column , uint8 data){
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-    if(lcd==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        lcd_8bit_set_cursor(lcd,row,column);
-        lcd_8bit_send_char_data(lcd,data);
-        }
-    return ret;
-}
-
-
-
-
-
-
-Std_ReturnType lcd_8bit_send_string (const chr_lcd_8bit_t *lcd, uint8 *str){
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-    if(lcd==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        while(*str){
-            ret=lcd_8bit_send_char_data(lcd,*str++);
-        }
-        }
-    return ret;
-}
-# 282 "ECU_Layer/Chr_LCD/ecu_chr_lcd.c"
-Std_ReturnType lcd_8bit_send_string_pos (const chr_lcd_8bit_t *lcd ,uint8 row ,uint8 column , uint8 *str){
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-    if(lcd==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        lcd_8bit_set_cursor(lcd,row,column);
-        while(*str){
-            ret=lcd_8bit_send_char_data(lcd,*str++);
-        }
-        }
-    return ret;
-}
-# 304 "ECU_Layer/Chr_LCD/ecu_chr_lcd.c"
-Std_ReturnType lcd_8bit_send_custom_char(const chr_lcd_8bit_t *lcd ,uint8 row ,uint8 column ,
-                                         const uint8 _chr[],uint8 mem_pos){
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-    uint8 lcd_counter=0;
-    if(lcd==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        ret=lcd_8bit_send_command(lcd,(0X40 +(8*mem_pos)));
-        for(lcd_counter=0;lcd_counter<8;lcd_counter++){
-           ret= lcd_8bit_send_char_data(lcd,_chr[lcd_counter]);
-        }
-        ret=lcd_8bit_send_char_data_pos(lcd,row,column,mem_pos);
-        }
-    return ret;
-
-}
-
-
-
-
-
-Std_ReturnType convert_uint8_to_string(uint8 value , uint8 *str){
-   Std_ReturnType ret=(Std_ReturnType)0x01;
-   uint8 Temp_str[4]={0};
-   uint8 cnt =0;
-    if(str==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        memset(str,' ',4);
-        sprintf(Temp_str,"%i",value);
-        while (Temp_str[cnt] != '\0'){
-            str[cnt] = Temp_str [cnt];
-            cnt++;
-        }
-        str[3] = '\0';
-        }
-    return ret;
-}
-
-
-
-
-
-Std_ReturnType convert_uint16_to_string(uint16 value , uint8 *str){
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-   uint8 Temp_str[6]={0};
-   uint8 cnt =0;
-    if(str==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        memset(str,' ',6);
-        sprintf(Temp_str,"%i",value);
-        while (Temp_str[cnt] != '\0'){
-            str[cnt] = Temp_str [cnt];
-            cnt++;
-        }
-        str[5] = '\0';
-        }
-    return ret;
-}
-
-
-
-
-
-Std_ReturnType convert_uint32_to_string(uint32 value , uint8 *str){
-   Std_ReturnType ret=(Std_ReturnType)0x01;
-   uint8 Temp_str[11]={0};
-   uint8 cnt =0;
-    if(str==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        memset(str,' ',11);
-        sprintf(Temp_str,"%i",value);
-        while (Temp_str[cnt] != '\0'){
-            str[cnt] = Temp_str [cnt];
-            cnt++;
-        }
-        str[10] = '\0';
-        }
-    return ret;
-}
-
-
-
-
-
-
-static Std_ReturnType lcd_send_4bits(const chr_lcd_4bit_t *lcd, uint8 _data_command ){
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-    if(lcd==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        ret=gpio_pin_write_logic(&(lcd->lcd_data[0]),( _data_command >> 0 ) & (uint8)0x01);
-        ret=gpio_pin_write_logic(&(lcd->lcd_data[1]),( _data_command >> 1 ) & (uint8)0x01);
-        ret=gpio_pin_write_logic(&(lcd->lcd_data[2]),( _data_command >> 2 ) & (uint8)0x01);
-        ret=gpio_pin_write_logic(&(lcd->lcd_data[3]),( _data_command >> 3 ) & (uint8)0x01);
-        }
-    return ret;
-}
-static Std_ReturnType lcd_4bit_send_enable_signal(const chr_lcd_4bit_t *lcd){
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-    if(lcd==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        ret=gpio_pin_write_logic(&(lcd->lcd_en),HIGH);
-        _delay((unsigned long)((5)*(8000000/4000000.0)));
-        ret=gpio_pin_write_logic(&(lcd->lcd_en),LOW);
-        }
-    return ret;
-}
-static Std_ReturnType lcd_8bit_send_enable_signal(const chr_lcd_8bit_t *lcd){
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-    if(lcd==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        ret=gpio_pin_write_logic(&(lcd->lcd_en),HIGH);
-        _delay((unsigned long)((5)*(8000000/4000000.0)));
-        ret=gpio_pin_write_logic(&(lcd->lcd_en),LOW);
-        }
-    return ret;
-}
-static Std_ReturnType lcd_8bit_set_cursor(const chr_lcd_8bit_t *lcd , uint8 row , uint8 column){
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-    if(lcd==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        column--;
-        switch (row){
-            case 1 : ret=lcd_8bit_send_command(lcd,0x80+column);break;
-            case 2 : ret=lcd_8bit_send_command(lcd,0xC0+column);break;
-            case 3 : ret=lcd_8bit_send_command(lcd,0x94+column);break;
-            case 4 : ret=lcd_8bit_send_command(lcd,0xD4+column);break;
-            default: ret=(Std_ReturnType)0x00;break;
-        }
-        }
-    return ret;
-}
-static Std_ReturnType lcd_4bit_set_cursor(const chr_lcd_4bit_t *lcd , uint8 row , uint8 column){
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-    if(lcd==((void*)0)){
-        ret=(Std_ReturnType)0x00;
-    }
-    else{
-        column--;
-        switch (row){
-            case 1 : ret=lcd_4bit_send_command(lcd,0x80+column);break;
-            case 2 : ret=lcd_4bit_send_command(lcd,0xC0+column);break;
-            case 3 : ret=lcd_4bit_send_command(lcd,0x94+column);break;
-            case 4 : ret=lcd_4bit_send_command(lcd,0xD4+column);break;
-            default: ret=(Std_ReturnType)0x00;break;
-        }
-        }
-    return ret;
 }
