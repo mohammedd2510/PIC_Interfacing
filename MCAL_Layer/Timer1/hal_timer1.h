@@ -52,7 +52,7 @@
 #define TIMER1_OSC_HW_DISABLE() (T1CON_bits.T1OSCEN = 0)
 
 /* Timer1 Input Clock Pre-Scaler */
-#define TIMER1_PRESCALER_SELECT(_PRESCALER_)  (T1CON_bits.TICKPS = _PRESCALER_)
+#define TIMER1_PRESCALER_SELECT(_PRESCALER_)  (T1CON_bits.T1CKPS = _PRESCALER_)
 
 /* Timer1 System Clock Status */
 #define TIMER1_SYSTEM_CLK_STATUS()  (T1CON_bits.T1RUN)

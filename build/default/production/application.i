@@ -4970,7 +4970,7 @@ typedef union {
 };
   struct {
    uint8 :4;
-   uint8 TICKPS :2;
+   uint8 T1CKPS :2;
    uint8 :2;
 };
 }T1CON_t;
@@ -4993,6 +4993,30 @@ typedef union {
    uint8 :1;
 };
 }T2CON_t;
+
+
+
+
+
+
+
+typedef union {
+  struct {
+   uint8 TMR3ON :1;
+   uint8 TMR3CS :1;
+   uint8 T3SYNC :1;
+   uint8 T3CCP1 :1;
+   uint8 T3CKPS0 :1;
+   uint8 T3CKPS1 :1;
+   uint8 T3CCP2 :1;
+   uint8 RD16 :1;
+};
+  struct {
+   uint8 :4;
+   uint8 T3CKPS :2;
+   uint8 :2;
+};
+}T3CON_t;
 # 13 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
 # 1 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
@@ -5369,7 +5393,32 @@ Std_ReturnType Timer2_DeInit(const timer2_t *_timer);
 Std_ReturnType Timer2_Write_Value(const timer2_t *_timer , uint8 _value);
 Std_ReturnType Timer2_Read_Value(const timer2_t *_timer , uint8 *_value);
 # 14 "./application.h" 2
-# 28 "./application.h"
+
+# 1 "./MCAL_Layer/Timer3/hal_timer3.h" 1
+# 54 "./MCAL_Layer/Timer3/hal_timer3.h"
+typedef struct
+{
+
+        void(*TMR3_InterruptHandler)(void);
+
+        interrupt_priority_cfg priority;
+
+
+    uint16 timer3_preload_value;
+    uint8 prescaler_value :2;
+    uint8 timer3_mode :1;
+    uint8 timer3_counter_mode :1;
+    uint8 timer3_reg_wr_mode :1;
+    uint8 timer3_reserved :3;
+}timer3_t;
+
+
+Std_ReturnType Timer3_Init(const timer3_t *_timer);
+Std_ReturnType Timer3_DeInit(const timer3_t *_timer);
+Std_ReturnType Timer3_Write_Value(const timer3_t *_timer , uint16 _value);
+Std_ReturnType Timer3_Read_Value(const timer3_t *_timer , uint16 *_value);
+# 15 "./application.h" 2
+# 29 "./application.h"
 void application_initialize(void);
 void TMR0_ISR_HANDLER(void);
 # 8 "application.c" 2
@@ -5378,17 +5427,19 @@ void TMR0_ISR_HANDLER(void);
 
 
 Std_ReturnType ret=(Std_ReturnType)0x00;
-void Timer2_30ms_Init(void);
-void Timer1_Counter_Init(void);
-timer2_t timer_obj;
-timer1_t counter_obj;
+void Timer3_Timer_Init(void);
+void Timer3_Counter_Init(void);
+timer3_t timer_obj;
+timer3_t counter_obj;
 uint8 Counter_Val =0;
 int main()
 {
     application_initialize();
     while(1)
     {
-
+        Timer3_Read_Value(&counter_obj,&Counter_Val);
+        lcd_4bit_send_string_pos(&lcd1,1,1,"Counter =  ");
+        lcd_4bit_send_char_data_pos(&lcd1,1,11,(Counter_Val+0x30));
 
     }
     return (0);
@@ -5396,28 +5447,28 @@ int main()
 void application_initialize(void){
     Std_ReturnType ret=(Std_ReturnType)0x00;
     ecu_layer_initialize();
-   Timer2_30ms_Init();
 
+    Timer3_Counter_Init();
 
 }
 
-void TMR2_ISR_HANDLER(void){
+void TMR3_ISR_HANDLER(void){
     led_toggle(&led1);
 }
-void Timer2_30ms_Init(void){
-    timer_obj.TMR2_InterruptHandler = TMR2_ISR_HANDLER;
+void Timer3_Timer_Init(void){
+    timer_obj.TMR3_InterruptHandler = TMR3_ISR_HANDLER;
+    timer_obj.timer3_mode = 0;
     timer_obj.priority = 1;
-    timer_obj.prescaler_value = 2U;
-    timer_obj.postscaler_value = 15U;
-    timer_obj.timer2_preload_value =250;
-    ret=Timer2_Init(&timer_obj);
+    timer_obj.prescaler_value = 3U;
+    timer_obj.timer3_preload_value =28036;
+    ret=Timer3_Init(&timer_obj);
 }
-void Timer1_Counter_Init(void){
-    counter_obj.TMR1_InterruptHandler = ((void*)0);
+void Timer3_Counter_Init(void){
+    counter_obj.TMR3_InterruptHandler = ((void*)0);
     counter_obj.prescaler_value = 0U;
     counter_obj.priority = 1;
-    counter_obj.timer1_mode = 1;
-    counter_obj.timer1_preload_value = 0;
-    counter_obj.timer1_counter_mode = 0;
-    ret = Timer1_Init(&counter_obj);
+    counter_obj.timer3_mode = 1;
+    counter_obj.timer3_preload_value = 0;
+    counter_obj.timer3_counter_mode = 0;
+    ret = Timer3_Init(&counter_obj);
 }

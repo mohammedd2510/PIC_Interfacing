@@ -4955,7 +4955,7 @@ typedef union {
 };
   struct {
    uint8 :4;
-   uint8 TICKPS :2;
+   uint8 T1CKPS :2;
    uint8 :2;
 };
 }T1CON_t;
@@ -4978,6 +4978,30 @@ typedef union {
    uint8 :1;
 };
 }T2CON_t;
+
+
+
+
+
+
+
+typedef union {
+  struct {
+   uint8 TMR3ON :1;
+   uint8 TMR3CS :1;
+   uint8 T3SYNC :1;
+   uint8 T3CCP1 :1;
+   uint8 T3CKPS0 :1;
+   uint8 T3CKPS1 :1;
+   uint8 T3CCP2 :1;
+   uint8 RD16 :1;
+};
+  struct {
+   uint8 :4;
+   uint8 T3CKPS :2;
+   uint8 :2;
+};
+}T3CON_t;
 # 13 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_config.h" 2
 
 # 1 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_gen_cfg.h" 1
@@ -5184,7 +5208,7 @@ Std_ReturnType Timer1_Init(const timer1_t *_timer)
     else
     {
         ((*((volatile T1CON_t *)(0xFCD))).TMR1ON = 0);
-        ((*((volatile T1CON_t *)(0xFCD))).TICKPS = _timer->prescaler_value);
+        ((*((volatile T1CON_t *)(0xFCD))).T1CKPS = _timer->prescaler_value);
         Timer1_Mode_Select(_timer);
         (*((volatile uint8 *)(0xFCF))) = (_timer->timer1_preload_value) >> 8 ;
         (*((volatile uint8 *)(0xFCE))) = (uint8)(_timer->timer1_preload_value);

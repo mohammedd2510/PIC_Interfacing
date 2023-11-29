@@ -372,7 +372,7 @@ typedef union {
 };
   struct {
    uint8         :4;
-   uint8 TICKPS  :2;
+   uint8 T1CKPS  :2;
    uint8         :2;
 };
 }T1CON_t;
@@ -407,6 +407,30 @@ typedef union {
 #define T2CON (*((volatile uint8 *)(0xFCA)))
 #define TMR2 (*((volatile uint8 *)(0xFCC)))
 
+/* Timer3 Registers*/
+
+typedef union {
+  struct {  
+   uint8 TMR3ON  :1; 
+   uint8 TMR3CS  :1;
+   uint8 T3SYNC  :1;
+   uint8 T3CCP1 :1;
+   uint8 T3CKPS0 :1;
+   uint8 T3CKPS1 :1;
+   uint8 T3CCP2   :1;
+   uint8 RD16    :1;
+};
+  struct {
+   uint8         :4;
+   uint8 T3CKPS  :2;
+   uint8         :2;
+};
+}T3CON_t;
+
+#define T3CON_bits (*((volatile T3CON_t *)(0xFB1)))
+#define T3CON (*((volatile uint8 *)(0xFB1)))
+#define TMR3L (*((volatile uint8 *)(0xFB2)))
+#define TMR3H (*((volatile uint8 *)(0xFB3)))
 /***************************************/
 #endif	/* MY_PIC18F4620_H */
 

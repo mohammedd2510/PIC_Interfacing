@@ -10,17 +10,19 @@
 
 
 Std_ReturnType ret=E_NOT_OK;
-void Timer2_30ms_Init(void);
-void Timer1_Counter_Init(void);
-timer2_t timer_obj;
-timer1_t counter_obj;
+void Timer3_Timer_Init(void);
+void Timer3_Counter_Init(void);
+timer3_t timer_obj;
+timer3_t counter_obj;
 uint8 Counter_Val =ZERO_INIT;
 int main() 
 {
     application_initialize();
     while(1)
     {
-        
+        Timer3_Read_Value(&counter_obj,&Counter_Val);
+        lcd_4bit_send_string_pos(&lcd1,1,1,"Counter =  ");
+        lcd_4bit_send_char_data_pos(&lcd1,1,11,(Counter_Val+0x30));
        
     }
     return (EXIT_SUCCESS);
@@ -28,28 +30,28 @@ int main()
 void application_initialize(void){
     Std_ReturnType ret=E_NOT_OK;
     ecu_layer_initialize();
-   Timer2_30ms_Init();
- 
+    //Timer3_Timer_Init();
+    Timer3_Counter_Init();
    
 }
 
-void TMR2_ISR_HANDLER(void){
+void TMR3_ISR_HANDLER(void){
     led_toggle(&led1);
 }
-void Timer2_30ms_Init(void){
-    timer_obj.TMR2_InterruptHandler = TMR2_ISR_HANDLER;
+void Timer3_Timer_Init(void){
+    timer_obj.TMR3_InterruptHandler = TMR3_ISR_HANDLER;
+    timer_obj.timer3_mode = TIMER3_TIMER_MODE;
     timer_obj.priority = INTERRUPT_PRIORITY_HIGH;
-    timer_obj.prescaler_value = TIMER2_PRESCALER_DIV_BY_16;
-    timer_obj.postscaler_value = TIMER2_POSTSCALER_DIV_BY_15;
-    timer_obj.timer2_preload_value =250;
-    ret=Timer2_Init(&timer_obj);
+    timer_obj.prescaler_value = TIMER3_PRESCALER_DIV_BY_8;
+    timer_obj.timer3_preload_value =28036;
+    ret=Timer3_Init(&timer_obj);
 }
-void Timer1_Counter_Init(void){
-    counter_obj.TMR1_InterruptHandler = NULL;
-    counter_obj.prescaler_value = TIMER1_PRESCALER_DIV_BY_1;
+void Timer3_Counter_Init(void){
+    counter_obj.TMR3_InterruptHandler = NULL;
+    counter_obj.prescaler_value = TIMER3_PRESCALER_DIV_BY_1;
     counter_obj.priority = INTERRUPT_PRIORITY_HIGH;
-    counter_obj.timer1_mode = TIMER1_COUNTER_MODE;
-    counter_obj.timer1_preload_value = 0;
-    counter_obj.timer1_counter_mode = TIMER1_SYNC_COUNTER_MODE;
-    ret = Timer1_Init(&counter_obj);
+    counter_obj.timer3_mode = TIMER3_COUNTER_MODE;
+    counter_obj.timer3_preload_value = 0;
+    counter_obj.timer3_counter_mode = TIMER3_SYNC_COUNTER_MODE;
+    ret = Timer3_Init(&counter_obj);
 }

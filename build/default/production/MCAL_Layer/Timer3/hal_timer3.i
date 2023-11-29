@@ -4955,7 +4955,7 @@ typedef union {
 };
   struct {
    uint8 :4;
-   uint8 TICKPS :2;
+   uint8 T1CKPS :2;
    uint8 :2;
 };
 }T1CON_t;
@@ -4978,6 +4978,30 @@ typedef union {
    uint8 :1;
 };
 }T2CON_t;
+
+
+
+
+
+
+
+typedef union {
+  struct {
+   uint8 TMR3ON :1;
+   uint8 TMR3CS :1;
+   uint8 T3SYNC :1;
+   uint8 T3CCP1 :1;
+   uint8 T3CKPS0 :1;
+   uint8 T3CKPS1 :1;
+   uint8 T3CCP2 :1;
+   uint8 RD16 :1;
+};
+  struct {
+   uint8 :4;
+   uint8 T3CKPS :2;
+   uint8 :2;
+};
+}T3CON_t;
 # 13 "MCAL_Layer/Timer3/../Interrupt/mcal_interrupt_config.h" 2
 
 # 1 "MCAL_Layer/Timer3/../Interrupt/mcal_interrupt_gen_cfg.h" 1
@@ -5140,9 +5164,174 @@ Std_ReturnType ADC_GetConversion_Blocking(const adc_conf_t *_adc, adc_channel_se
 Std_ReturnType ADC_StartConversion_Interrupt(const adc_conf_t *_adc, adc_channel_select_t channel);
 # 14 "MCAL_Layer/Timer3/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
 # 12 "MCAL_Layer/Timer3/hal_timer3.h" 2
-# 1 "MCAL_Layer/Timer3/hal_timer3.c" 2
-# 17 "MCAL_Layer/Timer3/hal_timer3.c"
-void TMR3_ISR (void)
+# 54 "MCAL_Layer/Timer3/hal_timer3.h"
+typedef struct
 {
 
+        void(*TMR3_InterruptHandler)(void);
+
+        interrupt_priority_cfg priority;
+
+
+    uint16 timer3_preload_value;
+    uint8 prescaler_value :2;
+    uint8 timer3_mode :1;
+    uint8 timer3_counter_mode :1;
+    uint8 timer3_reg_wr_mode :1;
+    uint8 timer3_reserved :3;
+}timer3_t;
+
+
+Std_ReturnType Timer3_Init(const timer3_t *_timer);
+Std_ReturnType Timer3_DeInit(const timer3_t *_timer);
+Std_ReturnType Timer3_Write_Value(const timer3_t *_timer , uint16 _value);
+Std_ReturnType Timer3_Read_Value(const timer3_t *_timer , uint16 *_value);
+# 1 "MCAL_Layer/Timer3/hal_timer3.c" 2
+
+
+InterruptHandler TMR3_InterruptHandler = ((void*)0);
+
+static uint16 timer3_preload;
+static __attribute__((inline)) void Timer3_Mode_Select(const timer3_t *_timer);
+
+
+
+
+
+Std_ReturnType Timer3_Init(const timer3_t *_timer)
+{
+     Std_ReturnType ret=(Std_ReturnType)0x01;
+    if(_timer==((void*)0)){
+        ret=(Std_ReturnType)0x00;
+    }
+    else
+    {
+        ((*((volatile T3CON_t *)(0xFB1))).TMR3ON = 0);
+        ((*((volatile T3CON_t *)(0xFB1))).T3CKPS = _timer->prescaler_value);
+        Timer3_Mode_Select(_timer);
+        (*((volatile uint8 *)(0xFB3))) = (_timer->timer3_preload_value) >> 8 ;
+        (*((volatile uint8 *)(0xFB2))) = (uint8)(_timer->timer3_preload_value);
+        timer3_preload = _timer->timer3_preload_value;
+
+
+        ((*((volatile PIE2_t *)(0xFA0))).TMR3IE=1);
+        ((*((volatile PIR2_t *)(0xFA1))).TMR3IF=0);
+        TMR3_InterruptHandler = _timer->TMR3_InterruptHandler;
+
+
+
+
+
+
+            ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
+            if(_timer->priority == INTERRUPT_HIGH_PRIORITY){
+                ((*((volatile IPR2_t *)(0xFA2))).TMR3IP=1);
+                ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
+            }
+            else if(_timer->priority == INTERRUPT_LOW_PRIORITY)
+            {
+             ((*((volatile IPR2_t *)(0xFA2))).TMR3IP=0);
+             ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
+             ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1);
+            }
+
+
+        ((*((volatile T3CON_t *)(0xFB1))).TMR3ON = 1);
+    }
+    return ret;
+}
+
+
+
+
+
+Std_ReturnType Timer3_DeInit(const timer3_t *_timer)
+{
+    Std_ReturnType ret=(Std_ReturnType)0x01;
+    if(_timer==((void*)0)){
+        ret=(Std_ReturnType)0x00;
+    }
+    else
+    {
+
+        ((*((volatile PIE2_t *)(0xFA0))).TMR3IE=0);
+
+        ((*((volatile T3CON_t *)(0xFB1))).TMR3ON = 0);
+    }
+    return ret;
+}
+
+
+
+
+
+
+Std_ReturnType Timer3_Write_Value(const timer3_t *_timer , uint16 _value)
+{
+    Std_ReturnType ret=(Std_ReturnType)0x01;
+    if(_timer==((void*)0)){
+        ret=(Std_ReturnType)0x00;
+    }
+    else
+    {
+        (*((volatile uint8 *)(0xFB3))) = (_value)>>8;
+        (*((volatile uint8 *)(0xFB2))) = (uint8)(_value);
+    }
+    return ret;
+}
+
+
+
+
+
+
+Std_ReturnType Timer3_Read_Value(const timer3_t *_timer , uint16 *_value)
+{
+    Std_ReturnType ret=(Std_ReturnType)0x01;
+    uint8 tmr3_L = 0 , tmr3_H = 0 ;
+    if((_timer==((void*)0))||(_value == ((void*)0))){
+        ret=(Std_ReturnType)0x00;
+    }
+    else
+    {
+        tmr3_L = (*((volatile uint8 *)(0xFB2)));
+        tmr3_H = (*((volatile uint8 *)(0xFB3)));
+        *_value = (uint16)((tmr3_H << 8) | tmr3_L );
+    }
+    return ret;
+}
+
+
+
+
+
+static __attribute__((inline)) void Timer3_Mode_Select(const timer3_t *_timer){
+   if (0 == _timer->timer3_mode){
+        ((*((volatile T3CON_t *)(0xFB1))).TMR3CS = 0);
+    }
+    else if (1 == _timer->timer3_mode){
+        ((*((volatile T3CON_t *)(0xFB1))).TMR3CS = 1);
+            if (0 == _timer->timer3_counter_mode)
+            {
+               ((*((volatile T3CON_t *)(0xFB1))).T3SYNC = 0);
+            }
+            else if (1 == _timer->timer3_counter_mode)
+            {
+               ((*((volatile T3CON_t *)(0xFB1))).T3SYNC = 1);
+            }
+            else { }
+    }
+    else { }
+}
+
+
+void TMR3_ISR (void)
+{
+    (*((volatile uint8 *)(0xFB3))) = (timer3_preload)>>8;
+    (*((volatile uint8 *)(0xFB2))) = (uint8)(timer3_preload);
+    ((*((volatile PIR2_t *)(0xFA1))).TMR3IF=0);
+      if(TMR3_InterruptHandler){
+       TMR3_InterruptHandler();
+    }
+     else{ }
 }

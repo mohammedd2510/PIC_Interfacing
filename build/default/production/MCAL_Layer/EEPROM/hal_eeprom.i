@@ -4951,7 +4951,7 @@ typedef union {
 };
   struct {
    uint8 :4;
-   uint8 TICKPS :2;
+   uint8 T1CKPS :2;
    uint8 :2;
 };
 }T1CON_t;
@@ -4974,6 +4974,30 @@ typedef union {
    uint8 :1;
 };
 }T2CON_t;
+
+
+
+
+
+
+
+typedef union {
+  struct {
+   uint8 TMR3ON :1;
+   uint8 TMR3CS :1;
+   uint8 T3SYNC :1;
+   uint8 T3CCP1 :1;
+   uint8 T3CKPS0 :1;
+   uint8 T3CKPS1 :1;
+   uint8 T3CCP2 :1;
+   uint8 RD16 :1;
+};
+  struct {
+   uint8 :4;
+   uint8 T3CKPS :2;
+   uint8 :2;
+};
+}T3CON_t;
 # 13 "MCAL_Layer/EEPROM/hal_eeprom.h" 2
 
 # 1 "MCAL_Layer/EEPROM/../Interrupt/mcal_interrupt_config.h" 1
