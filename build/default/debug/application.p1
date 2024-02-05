@@ -1,44 +1,40 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F3459 `(v ~T0 @X0 0 tf ]
-"25 ./application.h
-[; ;./application.h: 25: timer0_t tmr0_timer;
-[c E3369 0 1 .. ]
-[n E3369 . INTERRUPT_LOW_PRIORITY INTERRUPT_HIGH_PRIORITY  ]
-[c E3447 0 1 2 3 4 5 6 7 .. ]
-[n E3447 . TIMER0_PRESCALER_DIV_BY_2 TIMER0_PRESCALER_DIV_BY_4 TIMER0_PRESCALER_DIV_BY_8 TIMER0_PRESCALER_DIV_BY_16 TIMER0_PRESCALER_DIV_BY_32 TIMER0_PRESCALER_DIV_BY_64 TIMER0_PRESCALER_DIV_BY_128 TIMER0_PRESCALER_DIV_BY_256  ]
-"61 ./MCAL_Layer/Timer/hal_timer0.h
-[; ;./MCAL_Layer/Timer/hal_timer0.h: 61: typedef struct{
-[s S308 `*F3459 1 `E3369 1 `ui 1 `E3447 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]
-[n S308 . TMR0_InterruptHandler priority timer0_preload_value prescaler_value prescaler_enable timer0_counter_edge timer0_mode timer0_register_size . ]
 [p mainexit ]
-"28 ./application.h
-[; ;./application.h: 28: void application_initialize(void);
-[v _application_initialize `(v ~T0 @X0 0 ef ]
-"81 ./MCAL_Layer/Timer/hal_timer0.h
-[; ;./MCAL_Layer/Timer/hal_timer0.h: 81: Std_ReturnType Timer0_Read_Value(const timer0_t *_timer , uint16 *_value);
-[v _Timer0_Read_Value `(uc ~T0 @X0 0 ef2`*CS308`*ui ]
-"31 ./ECU_Layer/ecu_layer_init.h
-[; ;./ECU_Layer/ecu_layer_init.h: 31: void ecu_layer_initialize(void);
+"41 ./MCAL_Layer/mcal_layer_init.h
+[; ;./MCAL_Layer/mcal_layer_init.h: 41: void mcal_layer_initialize(void);
+[v _mcal_layer_initialize `(v ~T0 @X0 0 ef ]
+"29 ./ECU_Layer/ecu_layer_init.h
+[; ;./ECU_Layer/ecu_layer_init.h: 29: void ecu_layer_initialize(void);
 [v _ecu_layer_initialize `(v ~T0 @X0 0 ef ]
-"78 ./MCAL_Layer/Timer/hal_timer0.h
-[; ;./MCAL_Layer/Timer/hal_timer0.h: 78: Std_ReturnType Timer0_Init(const timer0_t *_timer);
-[v _Timer0_Init `(uc ~T0 @X0 0 ef1`*CS308 ]
-"29 ./application.h
-[; ;./application.h: 29: void TMR0_ISR_HANDLER(void);
-[v _TMR0_ISR_HANDLER `(v ~T0 @X0 0 ef ]
-"60 ./MCAL_Layer/Timer/../Interrupt/../ADC/../GPIO/hal_gpio.h
-[s S298 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S298 . port pin direction logic ]
+[v F680 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\builtins.h
+[v __delay `JF680 ~T0 @X0 0 e ]
+[p i __delay ]
+"84 ./ECU_Layer/Chr_LCD/ecu_chr_lcd.h
+[; ;./ECU_Layer/Chr_LCD/ecu_chr_lcd.h: 84: Std_ReturnType convert_uint8_to_string(uint8 value , uint8 *str);
+[v _convert_uint8_to_string `(uc ~T0 @X0 0 ef2`uc`*uc ]
+"60 ./ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/hal_gpio.h
+[s S316 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S316 . port pin direction logic ]
 "53 ./ECU_Layer/Chr_LCD/ecu_chr_lcd.h
 [; ;./ECU_Layer/Chr_LCD/ecu_chr_lcd.h: 53: typedef struct {
-[s S305 `S298 1 `S298 1 `S298 -> 4 `i ]
-[n S305 . lcd_rs lcd_en lcd_data ]
-"69
-[; ;./ECU_Layer/Chr_LCD/ecu_chr_lcd.h: 69: Std_ReturnType lcd_4bit_send_string (const chr_lcd_4bit_t *lcd, uint8 *str);
-[v _lcd_4bit_send_string `(uc ~T0 @X0 0 ef2`*CS305`*uc ]
+[s S329 `S316 1 `S316 1 `S316 -> 4 `i ]
+[n S329 . lcd_rs lcd_en lcd_data ]
+"66
+[; ;./ECU_Layer/Chr_LCD/ecu_chr_lcd.h: 66: Std_ReturnType lcd_4bit_send_command (const chr_lcd_4bit_t *lcd, uint8 command);
+[v _lcd_4bit_send_command `(uc ~T0 @X0 0 ef2`*CS329`uc ]
 "26 ./ECU_Layer/ecu_layer_init.h
 [; ;./ECU_Layer/ecu_layer_init.h: 26: extern chr_lcd_4bit_t lcd1;
-[v _lcd1 `S305 ~T0 @X0 0 e ]
+[v _lcd1 `S329 ~T0 @X0 0 e ]
+"69 ./ECU_Layer/Chr_LCD/ecu_chr_lcd.h
+[; ;./ECU_Layer/Chr_LCD/ecu_chr_lcd.h: 69: Std_ReturnType lcd_4bit_send_string (const chr_lcd_4bit_t *lcd, uint8 *str);
+[v _lcd_4bit_send_string `(uc ~T0 @X0 0 ef2`*CS329`*uc ]
+"121 ./MCAL_Layer/USART/hal_usart.h
+[; ;./MCAL_Layer/USART/hal_usart.h: 121: Std_ReturnType EUSART_ASYNC_ReadByteNonBlocking(uint8 *data);
+[v _EUSART_ASYNC_ReadByteNonBlocking `(uc ~T0 @X0 0 ef1`*uc ]
+"67 ./ECU_Layer/Chr_LCD/ecu_chr_lcd.h
+[; ;./ECU_Layer/Chr_LCD/ecu_chr_lcd.h: 67: Std_ReturnType lcd_4bit_send_char_data (const chr_lcd_4bit_t *lcd, uint8 data);
+[v _lcd_4bit_send_char_data `(uc ~T0 @X0 0 ef2`*CS329`uc ]
 "54 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -450,104 +446,108 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"25 ./application.h
-[; ;./application.h: 25: timer0_t tmr0_timer;
-[v _tmr0_timer `S308 ~T0 @X0 1 e ]
-"11 application.c
-[; ;application.c: 11: Std_ReturnType ret=(Std_ReturnType)0x00;
-[v _ret `uc ~T0 @X0 1 e ]
-[i _ret
+"12 application.c
+[; ;application.c: 12: volatile uint8 counter =0;
+[v _counter `Vuc ~T0 @X0 1 e ]
+[i _counter
 -> -> 0 `i `uc
 ]
-"12
-[; ;application.c: 12: uint16 tmr0_Read=0;
-[v _tmr0_Read `ui ~T0 @X0 1 e ]
-[i _tmr0_Read
--> -> 0 `i `ui
+"13
+[; ;application.c: 13: volatile uint8 Recieved_char =0;
+[v _Recieved_char `Vuc ~T0 @X0 1 e ]
+[i _Recieved_char
+-> -> 0 `i `uc
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"13
-[; ;application.c: 13: int main()
-[v _main `(i ~T0 @X0 1 ef ]
 "14
-[; ;application.c: 14: {
+[; ;application.c: 14: int main()
+[v _main `(i ~T0 @X0 1 ef ]
+"15
+[; ;application.c: 15: {
 {
 [e :U _main ]
 [f ]
-"15
-[; ;application.c: 15:     application_initialize();
-[e ( _application_initialize ..  ]
 "16
-[; ;application.c: 16:     while(1)
-[e :U 311 ]
+[; ;application.c: 16:     mcal_layer_initialize();
+[e ( _mcal_layer_initialize ..  ]
 "17
-[; ;application.c: 17:     {
-{
-"18
-[; ;application.c: 18:         Timer0_Read_Value(&tmr0_timer , &tmr0_Read);
-[e ( _Timer0_Read_Value (2 , -> &U _tmr0_timer `*CS308 &U _tmr0_Read ]
-"20
-[; ;application.c: 20:     }
-}
-[e :U 310 ]
-[e $U 311  ]
-[e :U 312 ]
-"21
-[; ;application.c: 21:     return (0);
-[e ) -> 0 `i ]
-[e $UE 309  ]
-"22
-[; ;application.c: 22: }
-[e :UE 309 ]
-}
-"23
-[; ;application.c: 23: void application_initialize(void){
-[v _application_initialize `(v ~T0 @X0 1 ef ]
-{
-[e :U _application_initialize ]
-[f ]
-"24
-[; ;application.c: 24:     Std_ReturnType ret=(Std_ReturnType)0x00;
-[v _ret `uc ~T0 @X0 1 a ]
-[e = _ret -> -> 0 `i `uc ]
-"25
-[; ;application.c: 25:     ecu_layer_initialize();
+[; ;application.c: 17:     ecu_layer_initialize();
 [e ( _ecu_layer_initialize ..  ]
-"26
-[; ;application.c: 26:     ret= Timer0_Init(&tmr0_timer) ;
-[e = _ret ( _Timer0_Init (1 -> &U _tmr0_timer `*CS308 ]
-"27
-[; ;application.c: 27: }
-[e :UE 313 ]
+"18
+[; ;application.c: 18:     while(1)
+[e :U 333 ]
+"19
+[; ;application.c: 19:     {
+{
+"22
+[; ;application.c: 22:         _delay((unsigned long)((1500)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"23
+[; ;application.c: 23:     }
+}
+[e :U 332 ]
+[e $U 333  ]
+[e :U 334 ]
+"24
+[; ;application.c: 24:         return (0);
+[e ) -> 0 `i ]
+[e $UE 331  ]
+"25
+[; ;application.c: 25: }
+[e :UE 331 ]
 }
 "28
-[; ;application.c: 28: timer0_t tmr0_timer = {
-[v _tmr0_timer `S308 ~T0 @X0 1 e ]
-[i _tmr0_timer
+[; ;application.c: 28: void USART_TX_INT(void)
+[v _USART_TX_INT `(v ~T0 @X0 1 ef ]
+"29
+[; ;application.c: 29: {
+{
+[e :U _USART_TX_INT ]
+[f ]
+[v F3631 `uc ~T0 @X0 -> 4 `i s ]
+[i F3631
 :U ..
-:U ..
-&U _TMR0_ISR_HANDLER
--> -> 1 `i `E3369
--> -> 0 `i `ui
--> -> 0 `i `E3447
+"30
+[; ;application.c: 30:     uint8 counter_Str[4]={0};
 -> -> 0 `i `uc
--> -> 1 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
-..
 ..
 ]
+[v _counter_Str `uc ~T0 @X0 -> 4 `i a ]
+[e = _counter_Str F3631 ]
+"31
+[; ;application.c: 31:     counter++;
+[e ++ _counter -> -> 1 `i `Vuc ]
+"32
+[; ;application.c: 32:     convert_uint8_to_string(counter,counter_Str);
+[e ( _convert_uint8_to_string (2 , _counter &U _counter_Str ]
+"33
+[; ;application.c: 33:     lcd_4bit_send_command(&lcd1,0X01);
+[e ( _lcd_4bit_send_command (2 , -> &U _lcd1 `*CS329 -> -> 1 `i `uc ]
+"34
+[; ;application.c: 34:     lcd_4bit_send_string(&lcd1,counter_Str);
+[e ( _lcd_4bit_send_string (2 , -> &U _lcd1 `*CS329 &U _counter_Str ]
+"35
+[; ;application.c: 35: }
+[e :UE 335 ]
+}
+"36
+[; ;application.c: 36: void USART_RX_INT(void)
+[v _USART_RX_INT `(v ~T0 @X0 1 ef ]
 "37
-[; ;application.c: 37: void TMR0_ISR_HANDLER(void){
-[v _TMR0_ISR_HANDLER `(v ~T0 @X0 1 ef ]
+[; ;application.c: 37: {
 {
-[e :U _TMR0_ISR_HANDLER ]
+[e :U _USART_RX_INT ]
 [f ]
 "38
-[; ;application.c: 38:     lcd_4bit_send_string(&lcd1 ,"m");
-[e ( _lcd_4bit_send_string (2 , -> &U _lcd1 `*CS305 :s 1C ]
+[; ;application.c: 38:   EUSART_ASYNC_ReadByteNonBlocking(&Recieved_char);
+[e ( _EUSART_ASYNC_ReadByteNonBlocking (1 -> &U _Recieved_char `*uc ]
 "39
-[; ;application.c: 39: }
-[e :UE 314 ]
+[; ;application.c: 39:   lcd_4bit_send_command(&lcd1,0X01);
+[e ( _lcd_4bit_send_command (2 , -> &U _lcd1 `*CS329 -> -> 1 `i `uc ]
+"40
+[; ;application.c: 40:   lcd_4bit_send_char_data(&lcd1,Recieved_char);
+[e ( _lcd_4bit_send_char_data (2 , -> &U _lcd1 `*CS329 _Recieved_char ]
+"42
+[; ;application.c: 42: }
+[e :UE 336 ]
 }
-[a 1C 109 0 ]

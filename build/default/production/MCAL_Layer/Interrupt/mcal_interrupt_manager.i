@@ -5000,6 +5000,95 @@ typedef union {
    uint8 :2;
 };
 }T3CON_t;
+
+
+
+
+
+
+
+typedef union {
+  struct {
+   uint8 CCP1M0 :1;
+   uint8 CCP1M1 :1;
+   uint8 CCP1M2 :1;
+   uint8 CCP1M3 :1;
+   uint8 DC1B0 :1;
+   uint8 DC1B1 :1;
+   uint8 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 CCP1M :4;
+   uint8 DC1B :2;
+   uint8 :2;
+};
+}CCP1CON_t;
+
+
+
+
+
+
+typedef union {
+  struct {
+   uint8 CCP2M0 :1;
+   uint8 CCP2M1 :1;
+   uint8 CCP2M2 :1;
+   uint8 CCP2M3 :1;
+   uint8 DC2B0 :1;
+   uint8 DC2B1 :1;
+   uint8 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 CCP2M :4;
+   uint8 DC2B :2;
+   uint8 :2;
+};
+}CCP2CON_t;
+# 485 "MCAL_Layer/Interrupt/../my_pic18f4620.h"
+typedef struct
+{
+   uint8 TX9D :1;
+   uint8 TRMT :1;
+   uint8 BRGH :1;
+   uint8 SENDB :1;
+   uint8 SYNC :1;
+   uint8 TXEN :1;
+   uint8 TX9 :1;
+   uint8 CSRC :1;
+}TXSTA_t;
+
+
+
+
+typedef struct
+{
+   uint8 RX9D :1;
+   uint8 OERR :1;
+   uint8 FERR :1;
+   uint8 ADDEN :1;
+   uint8 CREN :1;
+   uint8 SREN :1;
+   uint8 RX9 :1;
+   uint8 SPEN :1;
+}RCSTA_t;
+
+
+
+
+typedef struct
+{
+   uint8 ABDEN :1;
+   uint8 :1;
+   uint8 FERR :1;
+   uint8 BRG16 :1;
+   uint8 TXCKP :1;
+   uint8 RXDTP :1;
+   uint8 RCIDL :1;
+   uint8 ABDOVF :1;
+}BAUDCON_t;
 # 13 "MCAL_Layer/Interrupt/mcal_interrupt_config.h" 2
 
 # 1 "MCAL_Layer/Interrupt/mcal_interrupt_gen_cfg.h" 1
@@ -5090,6 +5179,10 @@ void TMR0_ISR (void);
 void TMR1_ISR (void);
 void TMR2_ISR (void);
 void TMR3_ISR (void);
+void CCP1_ISR(void);
+void CCP2_ISR(void);
+void EUSART_TX_ISR(void);
+void EUSART_RX_ISR(void);
 # 1 "MCAL_Layer/Interrupt/mcal_interrupt_manager.c" 2
 
 
@@ -5146,6 +5239,22 @@ void __attribute__((picinterrupt(("")))) InterruptManagerHigh(void){
         TMR3_ISR();
     }
     else { }
+    if((1 == (*((volatile IPR1_t *)(0xF9F))).CCP1IP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).CCP1IF)){
+        CCP1_ISR();
+    }
+    else { }
+      if((1 == (*((volatile IPR2_t *)(0xFA2))).CCP2IP)&&(1 == (*((volatile PIR2_t *)(0xFA1))).CCP2IF)){
+        CCP2_ISR();
+    }
+    else { }
+    if((1 == (*((volatile IPR1_t *)(0xF9F))).TXIP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).TXIF)){
+        EUSART_TX_ISR();
+    }
+    else { }
+    if((1 == (*((volatile IPR1_t *)(0xF9F))).RCIP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).RCIF)){
+        EUSART_RX_ISR();
+    }
+    else { }
 }
 void __attribute__((picinterrupt(("low_priority")))) InterruptManagerLow(void){
       if((0 == (*((volatile INTCON3_t *)(0xFF0))).INT1IP)&&(1 == (*((volatile INTCON3_t *)(0xFF0))).INT1IF)){
@@ -5194,6 +5303,22 @@ void __attribute__((picinterrupt(("low_priority")))) InterruptManagerLow(void){
     else { }
      if((0 == (*((volatile IPR2_t *)(0xFA2))).TMR3IP)&&(1 == (*((volatile PIR2_t *)(0xFA1))).TMR3IF)){
         TMR3_ISR();
+    }
+    else { }
+      if((0 == (*((volatile IPR1_t *)(0xF9F))).CCP1IP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).CCP1IF)){
+        CCP1_ISR();
+    }
+    else { }
+      if((0 == (*((volatile IPR2_t *)(0xFA2))).CCP2IP)&&(1 == (*((volatile PIR2_t *)(0xFA1))).CCP2IF)){
+        CCP2_ISR();
+    }
+    else { }
+    if((0 == (*((volatile IPR1_t *)(0xF9F))).TXIP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).TXIF)){
+        EUSART_TX_ISR();
+    }
+    else { }
+    if((0 == (*((volatile IPR1_t *)(0xF9F))).RCIP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).RCIF)){
+        EUSART_RX_ISR();
     }
     else { }
 }

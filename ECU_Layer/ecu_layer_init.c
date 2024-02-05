@@ -154,5 +154,4 @@ led_t led4 = {
 void ecu_layer_initialize(void){
      Std_ReturnType ret=E_NOT_OK;
      ret = lcd_4bit_initialize(&lcd1);
-     ret&= led_initialize(&led1);
 }

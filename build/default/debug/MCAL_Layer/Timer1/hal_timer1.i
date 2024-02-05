@@ -1,4 +1,4 @@
-# 1 "MCAL_Layer/Timer/hal_timer0.c"
+# 1 "MCAL_Layer/Timer1/hal_timer1.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,15 +6,17 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "MCAL_Layer/Timer/hal_timer0.c" 2
-# 1 "MCAL_Layer/Timer/hal_timer0.h" 1
-# 12 "MCAL_Layer/Timer/hal_timer0.h"
-# 1 "MCAL_Layer/Timer/../GPIO/hal_gpio.h" 1
-# 11 "MCAL_Layer/Timer/../GPIO/hal_gpio.h"
-# 1 "MCAL_Layer/Timer/../GPIO/../mcal_std_types.h" 1
-# 12 "MCAL_Layer/Timer/../GPIO/../mcal_std_types.h"
-# 1 "MCAL_Layer/Timer/../GPIO/../std_libraries.h" 1
-# 11 "MCAL_Layer/Timer/../GPIO/../std_libraries.h"
+# 1 "MCAL_Layer/Timer1/hal_timer1.c" 2
+# 1 "MCAL_Layer/Timer1/hal_timer1.h" 1
+# 12 "MCAL_Layer/Timer1/hal_timer1.h"
+# 1 "MCAL_Layer/Timer1/../Interrupt/mcal_internal_interrupt.h" 1
+# 13 "MCAL_Layer/Timer1/../Interrupt/mcal_internal_interrupt.h"
+# 1 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_config.h" 1
+# 12 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_config.h"
+# 1 "MCAL_Layer/Timer1/../Interrupt/../mcal_std_types.h" 1
+# 12 "MCAL_Layer/Timer1/../Interrupt/../mcal_std_types.h"
+# 1 "MCAL_Layer/Timer1/../Interrupt/../std_libraries.h" 1
+# 11 "MCAL_Layer/Timer1/../Interrupt/../std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
 
 
@@ -179,7 +181,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 11 "MCAL_Layer/Timer/../GPIO/../std_libraries.h" 2
+# 11 "MCAL_Layer/Timer1/../Interrupt/../std_libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
@@ -243,7 +245,7 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 12 "MCAL_Layer/Timer/../GPIO/../std_libraries.h" 2
+# 12 "MCAL_Layer/Timer1/../Interrupt/../std_libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 3
@@ -302,11 +304,11 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 13 "MCAL_Layer/Timer/../GPIO/../std_libraries.h" 2
-# 12 "MCAL_Layer/Timer/../GPIO/../mcal_std_types.h" 2
+# 13 "MCAL_Layer/Timer1/../Interrupt/../std_libraries.h" 2
+# 12 "MCAL_Layer/Timer1/../Interrupt/../mcal_std_types.h" 2
 
-# 1 "MCAL_Layer/Timer/../GPIO/../compiler.h" 1
-# 11 "MCAL_Layer/Timer/../GPIO/../compiler.h"
+# 1 "MCAL_Layer/Timer1/../Interrupt/../compiler.h" 1
+# 11 "MCAL_Layer/Timer1/../Interrupt/../compiler.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4681,8 +4683,8 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 2 3
-# 11 "MCAL_Layer/Timer/../GPIO/../compiler.h" 2
-# 13 "MCAL_Layer/Timer/../GPIO/../mcal_std_types.h" 2
+# 11 "MCAL_Layer/Timer1/../Interrupt/../compiler.h" 2
+# 13 "MCAL_Layer/Timer1/../Interrupt/../mcal_std_types.h" 2
 
 
 typedef unsigned char uint8;
@@ -4693,13 +4695,10 @@ typedef signed int sint16;
 typedef signed long sint32;
 
 typedef uint8 Std_ReturnType;
-# 11 "MCAL_Layer/Timer/../GPIO/hal_gpio.h" 2
+# 12 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_config.h" 2
 
-# 1 "MCAL_Layer/Timer/../GPIO/../device_config.h" 1
-# 12 "MCAL_Layer/Timer/../GPIO/hal_gpio.h" 2
-
-# 1 "MCAL_Layer/Timer/../GPIO/../my_pic18f4620.h" 1
-# 101 "MCAL_Layer/Timer/../GPIO/../my_pic18f4620.h"
+# 1 "MCAL_Layer/Timer1/../Interrupt/../my_pic18f4620.h" 1
+# 101 "MCAL_Layer/Timer1/../Interrupt/../my_pic18f4620.h"
 typedef union {
   struct {
    uint8 RBIF :1;
@@ -4844,7 +4843,7 @@ typedef struct {
   uint8 SBOREN :1;
   uint8 IPEN :1;
 }RCON_t;
-# 257 "MCAL_Layer/Timer/../GPIO/../my_pic18f4620.h"
+# 257 "MCAL_Layer/Timer1/../Interrupt/../my_pic18f4620.h"
 typedef struct {
   uint8 RD :1;
   uint8 WR :1;
@@ -4942,11 +4941,170 @@ typedef union {
    uint8 :5;
 };
 }T0CON_t;
-# 13 "MCAL_Layer/Timer/../GPIO/hal_gpio.h" 2
+# 362 "MCAL_Layer/Timer1/../Interrupt/../my_pic18f4620.h"
+typedef union {
+  struct {
+   uint8 TMR1ON :1;
+   uint8 TMR1CS :1;
+   uint8 T1SYNC :1;
+   uint8 T1OSCEN :1;
+   uint8 T1CKPS0 :1;
+   uint8 T1CKPS1 :1;
+   uint8 T1RUN :1;
+   uint8 RD16 :1;
+};
+  struct {
+   uint8 :4;
+   uint8 T1CKPS :2;
+   uint8 :2;
+};
+}T1CON_t;
+# 387 "MCAL_Layer/Timer1/../Interrupt/../my_pic18f4620.h"
+typedef union {
+  struct {
+   uint8 T2CKPS0 :1;
+   uint8 T2CKPS1 :1;
+   uint8 TMR2ON :1;
+   uint8 T2OUTPS0 :1;
+   uint8 T2OUTPS1 :1;
+   uint8 T2OUTPS2 :1;
+   uint8 T2OUTPS3 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 T2CKPS :2;
+   uint8 :1;
+   uint8 T2OUTPS :4;
+   uint8 :1;
+};
+}T2CON_t;
 
-# 1 "MCAL_Layer/Timer/../GPIO/hal_gpio_cfg.h" 1
-# 14 "MCAL_Layer/Timer/../GPIO/hal_gpio.h" 2
-# 31 "MCAL_Layer/Timer/../GPIO/hal_gpio.h"
+
+
+
+
+
+
+typedef union {
+  struct {
+   uint8 TMR3ON :1;
+   uint8 TMR3CS :1;
+   uint8 T3SYNC :1;
+   uint8 T3CCP1 :1;
+   uint8 T3CKPS0 :1;
+   uint8 T3CKPS1 :1;
+   uint8 T3CCP2 :1;
+   uint8 RD16 :1;
+};
+  struct {
+   uint8 :4;
+   uint8 T3CKPS :2;
+   uint8 :2;
+};
+}T3CON_t;
+
+
+
+
+
+
+
+typedef union {
+  struct {
+   uint8 CCP1M0 :1;
+   uint8 CCP1M1 :1;
+   uint8 CCP1M2 :1;
+   uint8 CCP1M3 :1;
+   uint8 DC1B0 :1;
+   uint8 DC1B1 :1;
+   uint8 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 CCP1M :4;
+   uint8 DC1B :2;
+   uint8 :2;
+};
+}CCP1CON_t;
+
+
+
+
+
+
+typedef union {
+  struct {
+   uint8 CCP2M0 :1;
+   uint8 CCP2M1 :1;
+   uint8 CCP2M2 :1;
+   uint8 CCP2M3 :1;
+   uint8 DC2B0 :1;
+   uint8 DC2B1 :1;
+   uint8 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 CCP2M :4;
+   uint8 DC2B :2;
+   uint8 :2;
+};
+}CCP2CON_t;
+# 485 "MCAL_Layer/Timer1/../Interrupt/../my_pic18f4620.h"
+typedef struct
+{
+   uint8 TX9D :1;
+   uint8 TRMT :1;
+   uint8 BRGH :1;
+   uint8 SENDB :1;
+   uint8 SYNC :1;
+   uint8 TXEN :1;
+   uint8 TX9 :1;
+   uint8 CSRC :1;
+}TXSTA_t;
+
+
+
+
+typedef struct
+{
+   uint8 RX9D :1;
+   uint8 OERR :1;
+   uint8 FERR :1;
+   uint8 ADDEN :1;
+   uint8 CREN :1;
+   uint8 SREN :1;
+   uint8 RX9 :1;
+   uint8 SPEN :1;
+}RCSTA_t;
+
+
+
+
+typedef struct
+{
+   uint8 ABDEN :1;
+   uint8 :1;
+   uint8 FERR :1;
+   uint8 BRG16 :1;
+   uint8 TXCKP :1;
+   uint8 RXDTP :1;
+   uint8 RCIDL :1;
+   uint8 ABDOVF :1;
+}BAUDCON_t;
+# 13 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_config.h" 2
+
+# 1 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_gen_cfg.h" 1
+# 14 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_config.h" 2
+
+# 1 "MCAL_Layer/Timer1/../Interrupt/../GPIO/hal_gpio.h" 1
+# 12 "MCAL_Layer/Timer1/../Interrupt/../GPIO/hal_gpio.h"
+# 1 "MCAL_Layer/Timer1/../Interrupt/../GPIO/../device_config.h" 1
+# 12 "MCAL_Layer/Timer1/../Interrupt/../GPIO/hal_gpio.h" 2
+
+
+# 1 "MCAL_Layer/Timer1/../Interrupt/../GPIO/hal_gpio_cfg.h" 1
+# 14 "MCAL_Layer/Timer1/../Interrupt/../GPIO/hal_gpio.h" 2
+# 31 "MCAL_Layer/Timer1/../Interrupt/../GPIO/hal_gpio.h"
 typedef enum{
     LOW=0,
     HIGH
@@ -4996,34 +5154,27 @@ Std_ReturnType gpio_port_get_direction_status(port_index_t port, uint8* directio
 Std_ReturnType gpio_port_write_logic(port_index_t port, uint8 logic);
 Std_ReturnType gpio_port_read_logic(port_index_t port, uint8* logic);
 Std_ReturnType gpio_port_toggle_logic(port_index_t port);
-# 12 "MCAL_Layer/Timer/hal_timer0.h" 2
-
-# 1 "MCAL_Layer/Timer/../Interrupt/mcal_internal_interrupt.h" 1
-# 13 "MCAL_Layer/Timer/../Interrupt/mcal_internal_interrupt.h"
-# 1 "MCAL_Layer/Timer/../Interrupt/mcal_interrupt_config.h" 1
-# 14 "MCAL_Layer/Timer/../Interrupt/mcal_interrupt_config.h"
-# 1 "MCAL_Layer/Timer/../Interrupt/mcal_interrupt_gen_cfg.h" 1
-# 14 "MCAL_Layer/Timer/../Interrupt/mcal_interrupt_config.h" 2
-# 59 "MCAL_Layer/Timer/../Interrupt/mcal_interrupt_config.h"
+# 15 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_config.h" 2
+# 59 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_config.h"
 typedef enum {
     INTERRUPT_LOW_PRIORITY = 0 ,
     INTERRUPT_HIGH_PRIORITY
 }interrupt_priority_cfg;
 
 typedef void (*InterruptHandler)(void);
-# 13 "MCAL_Layer/Timer/../Interrupt/mcal_internal_interrupt.h" 2
+# 13 "MCAL_Layer/Timer1/../Interrupt/mcal_internal_interrupt.h" 2
 
-# 1 "MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc.h" 1
-# 12 "MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc.h"
-# 1 "MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc_cfg.h" 1
-# 12 "MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc.h" 2
-
-
+# 1 "MCAL_Layer/Timer1/../Interrupt/../ADC/hal_adc.h" 1
+# 12 "MCAL_Layer/Timer1/../Interrupt/../ADC/hal_adc.h"
+# 1 "MCAL_Layer/Timer1/../Interrupt/../ADC/hal_adc_cfg.h" 1
+# 12 "MCAL_Layer/Timer1/../Interrupt/../ADC/hal_adc.h" 2
 
 
-# 1 "MCAL_Layer/Timer/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 1
-# 16 "MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc.h" 2
-# 100 "MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc.h"
+
+
+# 1 "MCAL_Layer/Timer1/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 1
+# 16 "MCAL_Layer/Timer1/../Interrupt/../ADC/hal_adc.h" 2
+# 100 "MCAL_Layer/Timer1/../Interrupt/../ADC/hal_adc.h"
 extern InterruptHandler ADC_InterruptHandler;
 
 
@@ -5046,7 +5197,7 @@ typedef enum {
     ADC_CHANNEL_AN11,
     ADC_CHANNEL_AN12,
 }adc_channel_select_t;
-# 130 "MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc.h"
+# 130 "MCAL_Layer/Timer1/../Interrupt/../ADC/hal_adc.h"
 typedef enum {
     ADC_0_TAD = 0,
     ADC_2_TAD,
@@ -5100,115 +5251,83 @@ Std_ReturnType ADC_IsConversionDone(const adc_conf_t *_adc, uint8 *conversion_st
 Std_ReturnType ADC_GetConversionResult(const adc_conf_t *_adc, adc_result_t *conversion_result);
 Std_ReturnType ADC_GetConversion_Blocking(const adc_conf_t *_adc, adc_channel_select_t channel ,adc_result_t *conversion_result );
 Std_ReturnType ADC_StartConversion_Interrupt(const adc_conf_t *_adc, adc_channel_select_t channel);
-# 14 "MCAL_Layer/Timer/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
-# 13 "MCAL_Layer/Timer/hal_timer0.h" 2
-# 48 "MCAL_Layer/Timer/hal_timer0.h"
-extern InterruptHandler TMR0_InterruptHandler;
+# 14 "MCAL_Layer/Timer1/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
+# 12 "MCAL_Layer/Timer1/hal_timer1.h" 2
+# 65 "MCAL_Layer/Timer1/hal_timer1.h"
+typedef struct
+{
 
-typedef enum {
-    TIMER0_PRESCALER_DIV_BY_2 = 0,
-    TIMER0_PRESCALER_DIV_BY_4,
-    TIMER0_PRESCALER_DIV_BY_8,
-    TIMER0_PRESCALER_DIV_BY_16,
-    TIMER0_PRESCALER_DIV_BY_32,
-    TIMER0_PRESCALER_DIV_BY_64,
-    TIMER0_PRESCALER_DIV_BY_128,
-    TIMER0_PRESCALER_DIV_BY_256
-}timer0_prescaler_select_t;
-
-typedef struct{
-
-        void(*TMR0_InterruptHandler)(void);
+        void(*TMR1_InterruptHandler)(void);
 
         interrupt_priority_cfg priority;
 
 
-    uint16 timer0_preload_value;
-    timer0_prescaler_select_t prescaler_value;
-    uint8 prescaler_enable :1;
-    uint8 timer0_counter_edge :1;
-    uint8 timer0_mode :1;
-    uint8 timer0_register_size :1;
-    uint8 :4;
-}timer0_t;
+    uint16 timer1_preload_value;
+    uint8 prescaler_value :2;
+    uint8 timer1_mode :1;
+    uint8 timer1_counter_mode :1;
+    uint8 timer1_osc_cfg :1;
+    uint8 timer1_reg_wr_mode :1;
+    uint8 timer1_reserved :2;
+}timer1_t;
 
 
-Std_ReturnType Timer0_Init(const timer0_t *_timer);
-Std_ReturnType Timer0_DeInit(const timer0_t *_timer);
-Std_ReturnType Timer0_Write_Value(const timer0_t *_timer , uint16 _value);
-Std_ReturnType Timer0_Read_Value(const timer0_t *_timer , uint16 *_value);
-# 1 "MCAL_Layer/Timer/hal_timer0.c" 2
+Std_ReturnType Timer1_Init(const timer1_t *_timer);
+Std_ReturnType Timer1_DeInit(const timer1_t *_timer);
+Std_ReturnType Timer1_Write_Value(const timer1_t *_timer , uint16 _value);
+Std_ReturnType Timer1_Read_Value(const timer1_t *_timer , uint16 *_value);
+# 1 "MCAL_Layer/Timer1/hal_timer1.c" 2
 
 
+InterruptHandler TMR1_InterruptHandler = ((void*)0);
 
-InterruptHandler TMR0_InterruptHandler = ((void*)0);
-
-static uint16 timer0_preload;
-static __attribute__((inline)) void Timer0_Prescaler_Config(const timer0_t *_timer);
-static __attribute__((inline)) void Timer0_Mode_Select(const timer0_t *_timer);
-static __attribute__((inline)) void Timer0_Register_Size_Config(const timer0_t *_timer);
+static uint16 timer1_preload;
+static __attribute__((inline)) void Timer1_Mode_Select(const timer1_t *_timer);
 
 
 
 
 
-Std_ReturnType Timer0_Init(const timer0_t *_timer){
+Std_ReturnType Timer1_Init(const timer1_t *_timer)
+{
     Std_ReturnType ret=(Std_ReturnType)0x01;
     if(_timer==((void*)0)){
         ret=(Std_ReturnType)0x00;
     }
-    else{
-        ((*((volatile T0CON_t *)(0xFD5))).TMR0ON = 0);
-
-            TMR0_InterruptHandler = _timer->TMR0_InterruptHandler;
-
-
-
-
-            ((*((volatile INTCON_t *)(0xFF2))).TMR0IE=1);
-            ((*((volatile INTCON_t *)(0xFF2))).TMR0IF=0);
-
-                ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
-                if(INTERRUPT_HIGH_PRIORITY == _timer->priority){
-                    ((*((volatile INTCON2_t *)(0xFF1))).TMR0IP=1);
-                    ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-                }
-                else if (INTERRUPT_LOW_PRIORITY == _timer->priority){
-                    ((*((volatile INTCON2_t *)(0xFF1))).TMR0IP=0);
-                    ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-                    ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1);
-                }
-                else { }
+    else
+    {
+        ((*((volatile T1CON_t *)(0xFCD))).TMR1ON = 0);
+        ((*((volatile T1CON_t *)(0xFCD))).T1CKPS = _timer->prescaler_value);
+        Timer1_Mode_Select(_timer);
+        (*((volatile uint8 *)(0xFCF))) = (_timer->timer1_preload_value) >> 8 ;
+        (*((volatile uint8 *)(0xFCE))) = (uint8)(_timer->timer1_preload_value);
+        timer1_preload = _timer->timer1_preload_value;
 
 
-        Timer0_Prescaler_Config(_timer);
-        Timer0_Mode_Select(_timer);
-        Timer0_Register_Size_Config(_timer);
-        timer0_preload = (_timer->timer0_preload_value);
-        TMR0H = (_timer->timer0_preload_value)>>8;
-        (*((volatile uint8 *)(0xFD6))) = (uint8)(_timer->timer0_preload_value);
-        ((*((volatile T0CON_t *)(0xFD5))).TMR0ON = 1);
-        }
-    return ret;
-
-}
+        ((*((volatile PIE1_t *)(0xF9D))).TMR1IE=1);
+        ((*((volatile PIR1_t *)(0xF9E))).TMR1IF=0);
+        TMR1_InterruptHandler = _timer->TMR1_InterruptHandler;
 
 
 
 
 
-Std_ReturnType Timer0_DeInit(const timer0_t *_timer){
-Std_ReturnType ret=(Std_ReturnType)0x01;
-    if(_timer==((void*)0)){
-        ret=(Std_ReturnType)0x00;
+
+            ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
+            if(_timer->priority == INTERRUPT_HIGH_PRIORITY){
+                ((*((volatile IPR1_t *)(0xF9F))).TMR1IP=1);
+                ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
+            }
+            else if(_timer->priority == INTERRUPT_LOW_PRIORITY)
+            {
+             ((*((volatile IPR1_t *)(0xF9F))).TMR1IP=0);
+             ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
+             ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1);
+            }
+
+
+        ((*((volatile T1CON_t *)(0xFCD))).TMR1ON = 1);
     }
-    else{
-        ((*((volatile T0CON_t *)(0xFD5))).TMR0ON = 0);
-
-            ((*((volatile INTCON_t *)(0xFF2))).TMR0IE=0);
-            ((*((volatile INTCON_t *)(0xFF2))).TMR0IF=0);
-
-        }
     return ret;
 }
 
@@ -5216,16 +5335,19 @@ Std_ReturnType ret=(Std_ReturnType)0x01;
 
 
 
-
-Std_ReturnType Timer0_Write_Value(const timer0_t *_timer , uint16 _value){
+Std_ReturnType Timer1_DeInit(const timer1_t *_timer)
+{
     Std_ReturnType ret=(Std_ReturnType)0x01;
     if(_timer==((void*)0)){
         ret=(Std_ReturnType)0x00;
     }
-    else{
-        TMR0H = (_value)>>8;
-        (*((volatile uint8 *)(0xFD6))) = (uint8)(_value);
-        }
+    else
+    {
+
+        ((*((volatile PIE1_t *)(0xF9D))).TMR1IE=0);
+
+        ((*((volatile T1CON_t *)(0xFCD))).TMR1ON = 0);
+    }
     return ret;
 }
 
@@ -5234,65 +5356,68 @@ Std_ReturnType Timer0_Write_Value(const timer0_t *_timer , uint16 _value){
 
 
 
-Std_ReturnType Timer0_Read_Value(const timer0_t *_timer , uint16 *_value){
+Std_ReturnType Timer1_Write_Value(const timer1_t *_timer , uint16 _value)
+{
     Std_ReturnType ret=(Std_ReturnType)0x01;
-    uint8 l_tmr0l = 0 , l_tmr0h = 0 ;
+    if(_timer==((void*)0)){
+        ret=(Std_ReturnType)0x00;
+    }
+    else
+    {
+        (*((volatile uint8 *)(0xFCF))) = (_value)>>8;
+        (*((volatile uint8 *)(0xFCE))) = (uint8)(_value);
+    }
+    return ret;
+}
+
+
+
+
+
+
+Std_ReturnType Timer1_Read_Value(const timer1_t *_timer , uint16 *_value)
+{
+    Std_ReturnType ret=(Std_ReturnType)0x01;
+    uint8 tmr1_L = 0 , tmr1_H = 0 ;
     if((_timer==((void*)0))||(_value == ((void*)0))){
         ret=(Std_ReturnType)0x00;
     }
-    else{
-        l_tmr0l = (*((volatile uint8 *)(0xFD6)));
-        l_tmr0h = TMR0H;
-       *_value = (uint16)((l_tmr0h << 8)+l_tmr0l);
-        }
+    else
+    {
+        tmr1_L = (*((volatile uint8 *)(0xFCE)));
+        tmr1_H = (*((volatile uint8 *)(0xFCF)));
+        *_value = (uint16)((tmr1_H << 8) | tmr1_L );
+    }
     return ret;
 }
-void TMR0_ISR(void){
-
-    TMR0H = (timer0_preload)>>8;
-    (*((volatile uint8 *)(0xFD6))) = (uint8)(timer0_preload);
-    ((*((volatile INTCON_t *)(0xFF2))).TMR0IF=0);
-      if(TMR0_InterruptHandler){
-       TMR0_InterruptHandler();
+void TMR1_ISR(void){
+    (*((volatile uint8 *)(0xFCF))) = (timer1_preload)>>8;
+    (*((volatile uint8 *)(0xFCE))) = (uint8)(timer1_preload);
+    ((*((volatile PIR1_t *)(0xF9E))).TMR1IF=0);
+      if(TMR1_InterruptHandler){
+       TMR1_InterruptHandler();
     }
      else{ }
-
 }
 
-static __attribute__((inline)) void Timer0_Prescaler_Config(const timer0_t *_timer){
-    if (1 == _timer->prescaler_enable){
-        ((*((volatile T0CON_t *)(0xFD5))).PSA = 0);
-        (*((volatile T0CON_t *)(0xFD5))).T0PS = _timer->prescaler_value;
+
+
+
+static __attribute__((inline)) void Timer1_Mode_Select(const timer1_t *_timer){
+   if (0 == _timer->timer1_mode){
+        ((*((volatile T1CON_t *)(0xFCD))).TMR1CS = 0);
     }
-    else if (0 == _timer->prescaler_enable){
-        ((*((volatile T0CON_t *)(0xFD5))).PSA = 1);
-    }
-    else { }
-}
-static __attribute__((inline)) void Timer0_Mode_Select(const timer0_t *_timer){
-    if (1 == _timer->timer0_mode){
-        ((*((volatile T0CON_t *)(0xFD5))).T0CS = 0);
-    }
-    else if (0 == _timer->timer0_mode){
-        ((*((volatile T0CON_t *)(0xFD5))).T0CS = 1);
-            if (1 == _timer->timer0_counter_edge)
+    else if (1 == _timer->timer1_mode){
+        ((*((volatile T1CON_t *)(0xFCD))).TMR1CS = 1);
+            if (0 == _timer->timer1_counter_mode)
             {
-               ((*((volatile T0CON_t *)(0xFD5))).T0SE = 0);
+               ((*((volatile T1CON_t *)(0xFCD))).T1SYNC = 0);
             }
-            else if (0 == _timer->timer0_counter_edge)
+            else if (1 == _timer->timer1_counter_mode)
             {
-                ((*((volatile T0CON_t *)(0xFD5))).T0SE = 1);
+               ((*((volatile T1CON_t *)(0xFCD))).T1SYNC = 1);
             }
             else { }
-    }
-    else { }
-}
-static __attribute__((inline)) void Timer0_Register_Size_Config(const timer0_t *_timer){
-    if (1 == _timer->timer0_register_size){
-        ((*((volatile T0CON_t *)(0xFD5))).T08BIT = 1);
-    }
-    else if (0 == _timer->timer0_register_size){
-        ((*((volatile T0CON_t *)(0xFD5))).T08BIT = 0);
     }
     else { }
 }

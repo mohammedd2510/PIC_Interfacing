@@ -23,7 +23,12 @@
             </formatting>
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>ccp</word>
             <word>config</word>
+            <word>Defintions</word>
+            <word>Freq</word>
+            <word>obj</word>
+            <word>prescaler</word>
             <word>t</word>
         </spellchecker-wordlist>
     </configuration>

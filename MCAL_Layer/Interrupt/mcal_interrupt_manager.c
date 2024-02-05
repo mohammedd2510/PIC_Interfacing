@@ -53,6 +53,22 @@ void __interrupt() InterruptManagerHigh(void){
         TMR3_ISR();
     }
     else {/*Nothing*/}
+    if((INTERRUPT_PRIORITY_HIGH == IPR1_bits.CCP1IP)&&(INTERRUPT_OCCUR == PIR1_bits.CCP1IF)){
+        CCP1_ISR();
+    }
+    else {/*Nothing*/}
+      if((INTERRUPT_PRIORITY_HIGH == IPR2_bits.CCP2IP)&&(INTERRUPT_OCCUR == PIR2_bits.CCP2IF)){
+        CCP2_ISR();
+    }
+    else {/*Nothing*/}
+    if((INTERRUPT_PRIORITY_HIGH == IPR1_bits.TXIP)&&(INTERRUPT_OCCUR == PIR1_bits.TXIF)){
+        EUSART_TX_ISR();
+    }
+    else {/*Nothing*/}
+    if((INTERRUPT_PRIORITY_HIGH == IPR1_bits.RCIP)&&(INTERRUPT_OCCUR == PIR1_bits.RCIF)){
+        EUSART_RX_ISR();
+    }
+    else {/*Nothing*/}
 }
 void __interrupt(low_priority) InterruptManagerLow(void){
       if((INTERRUPT_PRIORITY_LOW == INTCON3_bits.INT1IP)&&(INTERRUPT_OCCUR == INTCON3_bits.INT1IF)){
@@ -103,6 +119,22 @@ void __interrupt(low_priority) InterruptManagerLow(void){
         TMR3_ISR();
     }
     else {/*Nothing*/} 
+      if((INTERRUPT_PRIORITY_LOW == IPR1_bits.CCP1IP)&&(INTERRUPT_OCCUR == PIR1_bits.CCP1IF)){
+        CCP1_ISR();
+    }
+    else {/*Nothing*/}
+      if((INTERRUPT_PRIORITY_LOW == IPR2_bits.CCP2IP)&&(INTERRUPT_OCCUR == PIR2_bits.CCP2IF)){
+        CCP2_ISR();
+    }
+    else {/*Nothing*/}
+    if((INTERRUPT_PRIORITY_LOW == IPR1_bits.TXIP)&&(INTERRUPT_OCCUR == PIR1_bits.TXIF)){
+        EUSART_TX_ISR();
+    }
+    else {/*Nothing*/}
+    if((INTERRUPT_PRIORITY_LOW == IPR1_bits.RCIP)&&(INTERRUPT_OCCUR == PIR1_bits.RCIF)){
+        EUSART_RX_ISR();
+    }
+    else {/*Nothing*/}  
 }
 #else
 void __interrupt() InterruptManager(void){
@@ -158,5 +190,21 @@ void __interrupt() InterruptManager(void){
         TMR3_ISR();
     }
     else {/*Nothing*/}
+    if((INTERRUPT_ENABLE == PIE1_bits.CCP1IE)&&(INTERRUPT_OCCUR ==PIR1_bits.CCP1IF)){
+        CCP1_ISR();
+    }
+    else {/*Nothing*/}
+    if((INTERRUPT_ENABLE == PIE2_bits.CCP2IE)&&(INTERRUPT_OCCUR ==PIR2_bits.CCP2IF)){
+        CCP2_ISR();
+    }
+    else {/*Nothing*/}
+    if((INTERRUPT_ENABLE == PIE1_bits.TXIE)&&(INTERRUPT_OCCUR == PIR1_bits.TXIF)){
+        EUSART_TX_ISR();
+    }
+    else {/*Nothing*/}
+    if((INTERRUPT_ENABLE == PIE1_bits.RCIE)&&(INTERRUPT_OCCUR == PIR1_bits.RCIF)){
+        EUSART_RX_ISR();
+    }
+    else {/*Nothing*/}  
 }
 #endif

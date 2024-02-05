@@ -4959,10 +4959,142 @@ typedef union {
 };
   struct {
    uint8 :4;
-   uint8 TICKPS :2;
+   uint8 T1CKPS :2;
    uint8 :2;
 };
 }T1CON_t;
+# 387 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
+typedef union {
+  struct {
+   uint8 T2CKPS0 :1;
+   uint8 T2CKPS1 :1;
+   uint8 TMR2ON :1;
+   uint8 T2OUTPS0 :1;
+   uint8 T2OUTPS1 :1;
+   uint8 T2OUTPS2 :1;
+   uint8 T2OUTPS3 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 T2CKPS :2;
+   uint8 :1;
+   uint8 T2OUTPS :4;
+   uint8 :1;
+};
+}T2CON_t;
+
+
+
+
+
+
+
+typedef union {
+  struct {
+   uint8 TMR3ON :1;
+   uint8 TMR3CS :1;
+   uint8 T3SYNC :1;
+   uint8 T3CCP1 :1;
+   uint8 T3CKPS0 :1;
+   uint8 T3CKPS1 :1;
+   uint8 T3CCP2 :1;
+   uint8 RD16 :1;
+};
+  struct {
+   uint8 :4;
+   uint8 T3CKPS :2;
+   uint8 :2;
+};
+}T3CON_t;
+
+
+
+
+
+
+
+typedef union {
+  struct {
+   uint8 CCP1M0 :1;
+   uint8 CCP1M1 :1;
+   uint8 CCP1M2 :1;
+   uint8 CCP1M3 :1;
+   uint8 DC1B0 :1;
+   uint8 DC1B1 :1;
+   uint8 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 CCP1M :4;
+   uint8 DC1B :2;
+   uint8 :2;
+};
+}CCP1CON_t;
+
+
+
+
+
+
+typedef union {
+  struct {
+   uint8 CCP2M0 :1;
+   uint8 CCP2M1 :1;
+   uint8 CCP2M2 :1;
+   uint8 CCP2M3 :1;
+   uint8 DC2B0 :1;
+   uint8 DC2B1 :1;
+   uint8 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 CCP2M :4;
+   uint8 DC2B :2;
+   uint8 :2;
+};
+}CCP2CON_t;
+# 485 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
+typedef struct
+{
+   uint8 TX9D :1;
+   uint8 TRMT :1;
+   uint8 BRGH :1;
+   uint8 SENDB :1;
+   uint8 SYNC :1;
+   uint8 TXEN :1;
+   uint8 TX9 :1;
+   uint8 CSRC :1;
+}TXSTA_t;
+
+
+
+
+typedef struct
+{
+   uint8 RX9D :1;
+   uint8 OERR :1;
+   uint8 FERR :1;
+   uint8 ADDEN :1;
+   uint8 CREN :1;
+   uint8 SREN :1;
+   uint8 RX9 :1;
+   uint8 SPEN :1;
+}RCSTA_t;
+
+
+
+
+typedef struct
+{
+   uint8 ABDEN :1;
+   uint8 :1;
+   uint8 FERR :1;
+   uint8 BRG16 :1;
+   uint8 TXCKP :1;
+   uint8 RXDTP :1;
+   uint8 RCIDL :1;
+   uint8 ABDOVF :1;
+}BAUDCON_t;
 # 13 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
 # 1 "ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
@@ -5067,7 +5199,7 @@ static Std_ReturnType lcd_4bit_set_cursor(const chr_lcd_4bit_t *lcd , uint8 row 
 
 
 Std_ReturnType lcd_4bit_initialize (const chr_lcd_4bit_t *lcd){
-    Std_ReturnType ret=(Std_ReturnType)0x01;
+     Std_ReturnType ret=(Std_ReturnType)0x01;
      uint8 l_data_pins_counter=0;
     if(lcd==((void*)0)){
         ret=(Std_ReturnType)0x00;
@@ -5080,16 +5212,16 @@ Std_ReturnType lcd_4bit_initialize (const chr_lcd_4bit_t *lcd){
         }
 
         ret=lcd_4bit_send_command(lcd,0x33);
-        _delay((unsigned long)((150)*(8000000/4000000.0)));
+        _delay((unsigned long)((150)*(4000000UL/4000000.0)));
         ret=lcd_4bit_send_command(lcd,0x32);
         ret=lcd_4bit_send_command(lcd,0X28);
         ret=lcd_4bit_send_command(lcd,0X01);
         ret=lcd_4bit_send_command(lcd,0X06);
         ret=lcd_4bit_send_command(lcd,0X0C);
-
         }
     return ret;
 }
+
 
 
 
@@ -5210,11 +5342,11 @@ Std_ReturnType lcd_8bit_initialize (const chr_lcd_8bit_t *lcd){
         for(l_data_pins_counter=0;l_data_pins_counter<8;l_data_pins_counter++){
              ret=gpio_pin_initialize(&(lcd->lcd_data[l_data_pins_counter]));
         }
-        _delay((unsigned long)((20)*(8000000/4000.0)));
+        _delay((unsigned long)((20)*(4000000UL/4000.0)));
         ret=lcd_8bit_send_command(lcd,0X38);
-        _delay((unsigned long)((5)*(8000000/4000.0)));
+        _delay((unsigned long)((5)*(4000000UL/4000.0)));
         ret=lcd_8bit_send_command(lcd,0X38);
-        _delay((unsigned long)((150)*(8000000/4000000.0)));
+        _delay((unsigned long)((150)*(4000000UL/4000000.0)));
         ret=lcd_8bit_send_command(lcd,0X38);
         ret=lcd_8bit_send_command(lcd,0X38);
         ret=lcd_8bit_send_command(lcd,0X01);
@@ -5343,7 +5475,7 @@ Std_ReturnType convert_uint8_to_string(uint8 value , uint8 *str){
         ret=(Std_ReturnType)0x00;
     }
     else{
-        memset(str,' ',4);
+        memset(str,'\0',4);
         sprintf(Temp_str,"%i",value);
         while (Temp_str[cnt] != '\0'){
             str[cnt] = Temp_str [cnt];
@@ -5389,7 +5521,7 @@ Std_ReturnType convert_uint32_to_string(uint32 value , uint8 *str){
         ret=(Std_ReturnType)0x00;
     }
     else{
-        memset(str,' ',11);
+        memset(str,'\0',11);
         sprintf(Temp_str,"%i",value);
         while (Temp_str[cnt] != '\0'){
             str[cnt] = Temp_str [cnt];
@@ -5425,7 +5557,7 @@ static Std_ReturnType lcd_4bit_send_enable_signal(const chr_lcd_4bit_t *lcd){
     }
     else{
         ret=gpio_pin_write_logic(&(lcd->lcd_en),HIGH);
-        _delay((unsigned long)((5)*(8000000/4000000.0)));
+        _delay((unsigned long)((5)*(4000000UL/4000000.0)));
         ret=gpio_pin_write_logic(&(lcd->lcd_en),LOW);
         }
     return ret;
@@ -5437,7 +5569,7 @@ static Std_ReturnType lcd_8bit_send_enable_signal(const chr_lcd_8bit_t *lcd){
     }
     else{
         ret=gpio_pin_write_logic(&(lcd->lcd_en),HIGH);
-        _delay((unsigned long)((5)*(8000000/4000000.0)));
+        _delay((unsigned long)((5)*(4000000UL/4000000.0)));
         ret=gpio_pin_write_logic(&(lcd->lcd_en),LOW);
         }
     return ret;

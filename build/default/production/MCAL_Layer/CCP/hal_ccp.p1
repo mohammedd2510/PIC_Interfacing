@@ -1,0 +1,2124 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F3461 `(v ~T0 @X0 0 tf ]
+[v F3462 `(v ~T0 @X0 0 tf ]
+[v F3466 `(v ~T0 @X0 0 tf ]
+[v F3467 `(v ~T0 @X0 0 tf ]
+"26 MCAL_Layer/CCP/hal_ccp.c
+[; ;MCAL_Layer/CCP/hal_ccp.c: 26: Std_ReturnType CCP_Init(const ccp_t * _ccp_obj){
+[c E3414 0 1 2 .. ]
+[n E3414 . CCP1_CCP2_TIMER1 CCP1_TIMER1_CCP2_TIMER3 CCP1_CCP2_TIMER3  ]
+[c E3410 0 1 .. ]
+[n E3410 . CCP1_INST CCP2_INST  ]
+[c E3405 0 1 2 .. ]
+[n E3405 . CCP_CAPTURE_MODE_SELECTED CCP_COMPARE_MODE_SELECTED CCP_PWM_MODE_SELECTED  ]
+"60 MCAL_Layer/CCP/../Interrupt/../ADC/../GPIO/hal_gpio.h
+[s S316 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S316 . port pin direction logic ]
+[v F3435 `(v ~T0 @X0 0 tf ]
+"26 MCAL_Layer/CCP/hal_ccp.c
+[; ;MCAL_Layer/CCP/hal_ccp.c: 26: Std_ReturnType CCP_Init(const ccp_t * _ccp_obj){
+[c E3329 0 1 .. ]
+[n E3329 . INTERRUPT_LOW_PRIORITY INTERRUPT_HIGH_PRIORITY  ]
+"100 MCAL_Layer/CCP/hal_ccp.h
+[; ;MCAL_Layer/CCP/hal_ccp.h: 100: typedef struct {
+[s S321 `E3414 1 `E3410 1 `E3405 1 `uc 1 `S316 1 `*F3435 1 `E3329 1 ]
+[n S321 . ccp_capt_comp_timer ccp_inst ccp_mode ccp_mode_variant ccp_pin CCP_Interrupt_Handler priority ]
+"437 MCAL_Layer/CCP/../my_pic18f4620.h
+[s S308 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S308 . CCP1M0 CCP1M1 CCP1M2 CCP1M3 DC1B0 DC1B1 . . ]
+"447
+[s S309 :4 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S309 . CCP1M DC1B . ]
+"436
+[u S307 `S308 1 `S309 1 ]
+[n S307 . . . ]
+"460
+[s S311 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S311 . CCP2M0 CCP2M1 CCP2M2 CCP2M3 DC2B0 DC2B1 . . ]
+"470
+[s S312 :4 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S312 . CCP2M DC2B . ]
+"459
+[u S310 `S311 1 `S312 1 ]
+[n S310 . . . ]
+"3 MCAL_Layer/CCP/hal_ccp.c
+[; ;MCAL_Layer/CCP/hal_ccp.c: 3: static Std_ReturnType CCP_Capture_Mode_Init(const ccp_t * _ccp_obj );
+[v _CCP_Capture_Mode_Init `(uc ~T0 @X0 0 sf1`*CS321 ]
+"6
+[; ;MCAL_Layer/CCP/hal_ccp.c: 6: static Std_ReturnType CCP_Compare_Mode_Init(const ccp_t * _ccp_obj );
+[v _CCP_Compare_Mode_Init `(uc ~T0 @X0 0 sf1`*CS321 ]
+"68 MCAL_Layer/CCP/../Interrupt/../ADC/../GPIO/hal_gpio.h
+[v _gpio_pin_initialize `(uc ~T0 @X0 0 ef1`*CS316 ]
+"20 MCAL_Layer/CCP/hal_ccp.c
+[; ;MCAL_Layer/CCP/hal_ccp.c: 20: static Std_ReturnType CCP_Interrupt_Init(const ccp_t * _ccp_obj );
+[v _CCP_Interrupt_Init `(uc ~T0 @X0 0 sf1`*CS321 ]
+"179 MCAL_Layer/CCP/../my_pic18f4620.h
+[s S280 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S280 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"193
+[s S281 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S281 . CCP2IE TMR3IE HLVDIE BCLIE EEIE . CMIE OSCFIE ]
+"150
+[s S278 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S278 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"164
+[s S279 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S279 . CCP2IF TMR3IF HLVDIF BCLIF EEIF . CMIF OSCFIF ]
+"91 MCAL_Layer/CCP/hal_ccp.h
+[; ;MCAL_Layer/CCP/hal_ccp.h: 91:     struct {
+[s S319 `uc 1 `uc 1 ]
+[n S319 . ccpr_low ccpr_high ]
+"95
+[; ;MCAL_Layer/CCP/hal_ccp.h: 95:     struct {
+[s S320 `ui 1 ]
+[n S320 . ccpr_16Bit ]
+"90
+[; ;MCAL_Layer/CCP/hal_ccp.h: 90: typedef union{
+[u S318 `S319 1 `S320 1 ]
+[n S318 . . . ]
+"24 MCAL_Layer/CCP/hal_ccp.c
+[; ;MCAL_Layer/CCP/hal_ccp.c: 24: static Std_ReturnType CCP_Capture_Compare_Timer_Config(const ccp_t * _ccp_obj);
+[v _CCP_Capture_Compare_Timer_Config `(uc ~T0 @X0 0 sf1`*CS321 ]
+"413 MCAL_Layer/CCP/../my_pic18f4620.h
+[s S305 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S305 . TMR3ON TMR3CS T3SYNC T3CCP1 T3CKPS0 T3CKPS1 T3CCP2 RD16 ]
+"423
+[s S306 :4 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S306 . . T3CKPS . ]
+"412
+[u S304 `S305 1 `S306 1 ]
+[n S304 . . . ]
+"235
+[s S284 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S284 . BOR POR PD TO RI . SBOREN IPEN ]
+"207
+[s S282 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S282 . TMR1IP TMR2IP CCP1IP SSPIP TXIP RCIP ADIP PSPIP ]
+"102
+[s S274 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S274 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE GIE ]
+"112
+[s S275 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S275 . . GIEL GIEH ]
+"101
+[u S273 `S274 1 `S275 1 ]
+[n S273 . . . ]
+"221
+[s S283 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S283 . CCP2IP TMR3IP HLVDIP BCLIP EEIP . CMIP OSCFIP ]
+[v F3525 `(v ~T0 @X0 0 tf ]
+[v F3527 `(v ~T0 @X0 0 tf ]
+"54 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
+[; <" PORTA equ 0F80h ;# ">
+"191
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 191: __asm("PORTB equ 0F81h");
+[; <" PORTB equ 0F81h ;# ">
+"362
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 362: __asm("PORTC equ 0F82h");
+[; <" PORTC equ 0F82h ;# ">
+"537
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 537: __asm("PORTD equ 0F83h");
+[; <" PORTD equ 0F83h ;# ">
+"679
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 679: __asm("PORTE equ 0F84h");
+[; <" PORTE equ 0F84h ;# ">
+"882
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 882: __asm("LATA equ 0F89h");
+[; <" LATA equ 0F89h ;# ">
+"994
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 994: __asm("LATB equ 0F8Ah");
+[; <" LATB equ 0F8Ah ;# ">
+"1106
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 1106: __asm("LATC equ 0F8Bh");
+[; <" LATC equ 0F8Bh ;# ">
+"1218
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 1218: __asm("LATD equ 0F8Ch");
+[; <" LATD equ 0F8Ch ;# ">
+"1330
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 1330: __asm("LATE equ 0F8Dh");
+[; <" LATE equ 0F8Dh ;# ">
+"1382
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 1382: __asm("TRISA equ 0F92h");
+[; <" TRISA equ 0F92h ;# ">
+"1387
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 1387: __asm("DDRA equ 0F92h");
+[; <" DDRA equ 0F92h ;# ">
+"1604
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 1604: __asm("TRISB equ 0F93h");
+[; <" TRISB equ 0F93h ;# ">
+"1609
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 1609: __asm("DDRB equ 0F93h");
+[; <" DDRB equ 0F93h ;# ">
+"1826
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 1826: __asm("TRISC equ 0F94h");
+[; <" TRISC equ 0F94h ;# ">
+"1831
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 1831: __asm("DDRC equ 0F94h");
+[; <" DDRC equ 0F94h ;# ">
+"2048
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 2048: __asm("TRISD equ 0F95h");
+[; <" TRISD equ 0F95h ;# ">
+"2053
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 2053: __asm("DDRD equ 0F95h");
+[; <" DDRD equ 0F95h ;# ">
+"2270
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 2270: __asm("TRISE equ 0F96h");
+[; <" TRISE equ 0F96h ;# ">
+"2275
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 2275: __asm("DDRE equ 0F96h");
+[; <" DDRE equ 0F96h ;# ">
+"2434
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 2434: __asm("OSCTUNE equ 0F9Bh");
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"2499
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 2499: __asm("PIE1 equ 0F9Dh");
+[; <" PIE1 equ 0F9Dh ;# ">
+"2576
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 2576: __asm("PIR1 equ 0F9Eh");
+[; <" PIR1 equ 0F9Eh ;# ">
+"2653
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 2653: __asm("IPR1 equ 0F9Fh");
+[; <" IPR1 equ 0F9Fh ;# ">
+"2730
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 2730: __asm("PIE2 equ 0FA0h");
+[; <" PIE2 equ 0FA0h ;# ">
+"2796
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 2796: __asm("PIR2 equ 0FA1h");
+[; <" PIR2 equ 0FA1h ;# ">
+"2862
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 2862: __asm("IPR2 equ 0FA2h");
+[; <" IPR2 equ 0FA2h ;# ">
+"2928
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 2928: __asm("EECON1 equ 0FA6h");
+[; <" EECON1 equ 0FA6h ;# ">
+"2994
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 2994: __asm("EECON2 equ 0FA7h");
+[; <" EECON2 equ 0FA7h ;# ">
+"3001
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3001: __asm("EEDATA equ 0FA8h");
+[; <" EEDATA equ 0FA8h ;# ">
+"3008
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3008: __asm("EEADR equ 0FA9h");
+[; <" EEADR equ 0FA9h ;# ">
+"3015
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3015: __asm("EEADRH equ 0FAAh");
+[; <" EEADRH equ 0FAAh ;# ">
+"3022
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3022: __asm("RCSTA equ 0FABh");
+[; <" RCSTA equ 0FABh ;# ">
+"3027
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3027: __asm("RCSTA1 equ 0FABh");
+[; <" RCSTA1 equ 0FABh ;# ">
+"3232
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3232: __asm("TXSTA equ 0FACh");
+[; <" TXSTA equ 0FACh ;# ">
+"3237
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3237: __asm("TXSTA1 equ 0FACh");
+[; <" TXSTA1 equ 0FACh ;# ">
+"3488
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3488: __asm("TXREG equ 0FADh");
+[; <" TXREG equ 0FADh ;# ">
+"3493
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3493: __asm("TXREG1 equ 0FADh");
+[; <" TXREG1 equ 0FADh ;# ">
+"3500
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3500: __asm("RCREG equ 0FAEh");
+[; <" RCREG equ 0FAEh ;# ">
+"3505
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3505: __asm("RCREG1 equ 0FAEh");
+[; <" RCREG1 equ 0FAEh ;# ">
+"3512
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3512: __asm("SPBRG equ 0FAFh");
+[; <" SPBRG equ 0FAFh ;# ">
+"3517
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3517: __asm("SPBRG1 equ 0FAFh");
+[; <" SPBRG1 equ 0FAFh ;# ">
+"3524
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3524: __asm("SPBRGH equ 0FB0h");
+[; <" SPBRGH equ 0FB0h ;# ">
+"3531
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3531: __asm("T3CON equ 0FB1h");
+[; <" T3CON equ 0FB1h ;# ">
+"3643
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3643: __asm("TMR3 equ 0FB2h");
+[; <" TMR3 equ 0FB2h ;# ">
+"3650
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3650: __asm("TMR3L equ 0FB2h");
+[; <" TMR3L equ 0FB2h ;# ">
+"3657
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3657: __asm("TMR3H equ 0FB3h");
+[; <" TMR3H equ 0FB3h ;# ">
+"3664
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3664: __asm("CMCON equ 0FB4h");
+[; <" CMCON equ 0FB4h ;# ">
+"3754
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3754: __asm("CVRCON equ 0FB5h");
+[; <" CVRCON equ 0FB5h ;# ">
+"3833
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3833: __asm("ECCP1AS equ 0FB6h");
+[; <" ECCP1AS equ 0FB6h ;# ">
+"3915
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3915: __asm("PWM1CON equ 0FB7h");
+[; <" PWM1CON equ 0FB7h ;# ">
+"3985
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3985: __asm("BAUDCON equ 0FB8h");
+[; <" BAUDCON equ 0FB8h ;# ">
+"3990
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 3990: __asm("BAUDCTL equ 0FB8h");
+[; <" BAUDCTL equ 0FB8h ;# ">
+"4157
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 4157: __asm("CCP2CON equ 0FBAh");
+[; <" CCP2CON equ 0FBAh ;# ">
+"4236
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 4236: __asm("CCPR2 equ 0FBBh");
+[; <" CCPR2 equ 0FBBh ;# ">
+"4243
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 4243: __asm("CCPR2L equ 0FBBh");
+[; <" CCPR2L equ 0FBBh ;# ">
+"4250
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 4250: __asm("CCPR2H equ 0FBCh");
+[; <" CCPR2H equ 0FBCh ;# ">
+"4257
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 4257: __asm("CCP1CON equ 0FBDh");
+[; <" CCP1CON equ 0FBDh ;# ">
+"4354
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 4354: __asm("CCPR1 equ 0FBEh");
+[; <" CCPR1 equ 0FBEh ;# ">
+"4361
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 4361: __asm("CCPR1L equ 0FBEh");
+[; <" CCPR1L equ 0FBEh ;# ">
+"4368
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 4368: __asm("CCPR1H equ 0FBFh");
+[; <" CCPR1H equ 0FBFh ;# ">
+"4375
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 4375: __asm("ADCON2 equ 0FC0h");
+[; <" ADCON2 equ 0FC0h ;# ">
+"4446
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 4446: __asm("ADCON1 equ 0FC1h");
+[; <" ADCON1 equ 0FC1h ;# ">
+"4531
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 4531: __asm("ADCON0 equ 0FC2h");
+[; <" ADCON0 equ 0FC2h ;# ">
+"4650
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 4650: __asm("ADRES equ 0FC3h");
+[; <" ADRES equ 0FC3h ;# ">
+"4657
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 4657: __asm("ADRESL equ 0FC3h");
+[; <" ADRESL equ 0FC3h ;# ">
+"4664
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 4664: __asm("ADRESH equ 0FC4h");
+[; <" ADRESH equ 0FC4h ;# ">
+"4671
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 4671: __asm("SSPCON2 equ 0FC5h");
+[; <" SSPCON2 equ 0FC5h ;# ">
+"4733
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 4733: __asm("SSPCON1 equ 0FC6h");
+[; <" SSPCON1 equ 0FC6h ;# ">
+"4803
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 4803: __asm("SSPSTAT equ 0FC7h");
+[; <" SSPSTAT equ 0FC7h ;# ">
+"5024
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5024: __asm("SSPADD equ 0FC8h");
+[; <" SSPADD equ 0FC8h ;# ">
+"5031
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5031: __asm("SSPBUF equ 0FC9h");
+[; <" SSPBUF equ 0FC9h ;# ">
+"5038
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5038: __asm("T2CON equ 0FCAh");
+[; <" T2CON equ 0FCAh ;# ">
+"5109
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5109: __asm("PR2 equ 0FCBh");
+[; <" PR2 equ 0FCBh ;# ">
+"5114
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5114: __asm("MEMCON equ 0FCBh");
+[; <" MEMCON equ 0FCBh ;# ">
+"5219
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5219: __asm("TMR2 equ 0FCCh");
+[; <" TMR2 equ 0FCCh ;# ">
+"5226
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5226: __asm("T1CON equ 0FCDh");
+[; <" T1CON equ 0FCDh ;# ">
+"5329
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5329: __asm("TMR1 equ 0FCEh");
+[; <" TMR1 equ 0FCEh ;# ">
+"5336
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5336: __asm("TMR1L equ 0FCEh");
+[; <" TMR1L equ 0FCEh ;# ">
+"5343
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5343: __asm("TMR1H equ 0FCFh");
+[; <" TMR1H equ 0FCFh ;# ">
+"5350
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5350: __asm("RCON equ 0FD0h");
+[; <" RCON equ 0FD0h ;# ">
+"5483
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5483: __asm("WDTCON equ 0FD1h");
+[; <" WDTCON equ 0FD1h ;# ">
+"5511
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5511: __asm("HLVDCON equ 0FD2h");
+[; <" HLVDCON equ 0FD2h ;# ">
+"5516
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5516: __asm("LVDCON equ 0FD2h");
+[; <" LVDCON equ 0FD2h ;# ">
+"5781
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5781: __asm("OSCCON equ 0FD3h");
+[; <" OSCCON equ 0FD3h ;# ">
+"5858
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5858: __asm("T0CON equ 0FD5h");
+[; <" T0CON equ 0FD5h ;# ">
+"5935
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5935: __asm("TMR0 equ 0FD6h");
+[; <" TMR0 equ 0FD6h ;# ">
+"5942
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5942: __asm("TMR0L equ 0FD6h");
+[; <" TMR0L equ 0FD6h ;# ">
+"5949
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5949: __asm("TMR0H equ 0FD7h");
+[; <" TMR0H equ 0FD7h ;# ">
+"5956
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5956: __asm("STATUS equ 0FD8h");
+[; <" STATUS equ 0FD8h ;# ">
+"6027
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6027: __asm("FSR2 equ 0FD9h");
+[; <" FSR2 equ 0FD9h ;# ">
+"6034
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6034: __asm("FSR2L equ 0FD9h");
+[; <" FSR2L equ 0FD9h ;# ">
+"6041
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6041: __asm("FSR2H equ 0FDAh");
+[; <" FSR2H equ 0FDAh ;# ">
+"6048
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6048: __asm("PLUSW2 equ 0FDBh");
+[; <" PLUSW2 equ 0FDBh ;# ">
+"6055
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6055: __asm("PREINC2 equ 0FDCh");
+[; <" PREINC2 equ 0FDCh ;# ">
+"6062
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6062: __asm("POSTDEC2 equ 0FDDh");
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"6069
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6069: __asm("POSTINC2 equ 0FDEh");
+[; <" POSTINC2 equ 0FDEh ;# ">
+"6076
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6076: __asm("INDF2 equ 0FDFh");
+[; <" INDF2 equ 0FDFh ;# ">
+"6083
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6083: __asm("BSR equ 0FE0h");
+[; <" BSR equ 0FE0h ;# ">
+"6090
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6090: __asm("FSR1 equ 0FE1h");
+[; <" FSR1 equ 0FE1h ;# ">
+"6097
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6097: __asm("FSR1L equ 0FE1h");
+[; <" FSR1L equ 0FE1h ;# ">
+"6104
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6104: __asm("FSR1H equ 0FE2h");
+[; <" FSR1H equ 0FE2h ;# ">
+"6111
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6111: __asm("PLUSW1 equ 0FE3h");
+[; <" PLUSW1 equ 0FE3h ;# ">
+"6118
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6118: __asm("PREINC1 equ 0FE4h");
+[; <" PREINC1 equ 0FE4h ;# ">
+"6125
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6125: __asm("POSTDEC1 equ 0FE5h");
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"6132
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6132: __asm("POSTINC1 equ 0FE6h");
+[; <" POSTINC1 equ 0FE6h ;# ">
+"6139
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6139: __asm("INDF1 equ 0FE7h");
+[; <" INDF1 equ 0FE7h ;# ">
+"6146
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6146: __asm("WREG equ 0FE8h");
+[; <" WREG equ 0FE8h ;# ">
+"6158
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6158: __asm("FSR0 equ 0FE9h");
+[; <" FSR0 equ 0FE9h ;# ">
+"6165
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6165: __asm("FSR0L equ 0FE9h");
+[; <" FSR0L equ 0FE9h ;# ">
+"6172
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6172: __asm("FSR0H equ 0FEAh");
+[; <" FSR0H equ 0FEAh ;# ">
+"6179
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6179: __asm("PLUSW0 equ 0FEBh");
+[; <" PLUSW0 equ 0FEBh ;# ">
+"6186
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6186: __asm("PREINC0 equ 0FECh");
+[; <" PREINC0 equ 0FECh ;# ">
+"6193
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6193: __asm("POSTDEC0 equ 0FEDh");
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"6200
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6200: __asm("POSTINC0 equ 0FEEh");
+[; <" POSTINC0 equ 0FEEh ;# ">
+"6207
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6207: __asm("INDF0 equ 0FEFh");
+[; <" INDF0 equ 0FEFh ;# ">
+"6214
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6214: __asm("INTCON3 equ 0FF0h");
+[; <" INTCON3 equ 0FF0h ;# ">
+"6306
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6306: __asm("INTCON2 equ 0FF1h");
+[; <" INTCON2 equ 0FF1h ;# ">
+"6376
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6376: __asm("INTCON equ 0FF2h");
+[; <" INTCON equ 0FF2h ;# ">
+"6493
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6493: __asm("PROD equ 0FF3h");
+[; <" PROD equ 0FF3h ;# ">
+"6500
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6500: __asm("PRODL equ 0FF3h");
+[; <" PRODL equ 0FF3h ;# ">
+"6507
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6507: __asm("PRODH equ 0FF4h");
+[; <" PRODH equ 0FF4h ;# ">
+"6514
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6514: __asm("TABLAT equ 0FF5h");
+[; <" TABLAT equ 0FF5h ;# ">
+"6523
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6523: __asm("TBLPTR equ 0FF6h");
+[; <" TBLPTR equ 0FF6h ;# ">
+"6530
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6530: __asm("TBLPTRL equ 0FF6h");
+[; <" TBLPTRL equ 0FF6h ;# ">
+"6537
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6537: __asm("TBLPTRH equ 0FF7h");
+[; <" TBLPTRH equ 0FF7h ;# ">
+"6544
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6544: __asm("TBLPTRU equ 0FF8h");
+[; <" TBLPTRU equ 0FF8h ;# ">
+"6553
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6553: __asm("PCLAT equ 0FF9h");
+[; <" PCLAT equ 0FF9h ;# ">
+"6560
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6560: __asm("PC equ 0FF9h");
+[; <" PC equ 0FF9h ;# ">
+"6567
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6567: __asm("PCL equ 0FF9h");
+[; <" PCL equ 0FF9h ;# ">
+"6574
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6574: __asm("PCLATH equ 0FFAh");
+[; <" PCLATH equ 0FFAh ;# ">
+"6581
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6581: __asm("PCLATU equ 0FFBh");
+[; <" PCLATU equ 0FFBh ;# ">
+"6588
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6588: __asm("STKPTR equ 0FFCh");
+[; <" STKPTR equ 0FFCh ;# ">
+"6694
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6694: __asm("TOS equ 0FFDh");
+[; <" TOS equ 0FFDh ;# ">
+"6701
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6701: __asm("TOSL equ 0FFDh");
+[; <" TOSL equ 0FFDh ;# ">
+"6708
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6708: __asm("TOSH equ 0FFEh");
+[; <" TOSH equ 0FFEh ;# ">
+"6715
+[; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
+[; <" TOSU equ 0FFFh ;# ">
+"13 MCAL_Layer/CCP/hal_ccp.c
+[; ;MCAL_Layer/CCP/hal_ccp.c: 13: InterruptHandler CCP1_InterruptHandler = ((void*)0);
+[v _CCP1_InterruptHandler `*F3461 ~T0 @X0 1 e ]
+[i _CCP1_InterruptHandler
+-> -> -> 0 `i `*v `*F3462
+]
+"17
+[; ;MCAL_Layer/CCP/hal_ccp.c: 17: InterruptHandler CCP2_InterruptHandler = ((void*)0);
+[v _CCP2_InterruptHandler `*F3466 ~T0 @X0 1 e ]
+[i _CCP2_InterruptHandler
+-> -> -> 0 `i `*v `*F3467
+]
+"26
+[; ;MCAL_Layer/CCP/hal_ccp.c: 26: Std_ReturnType CCP_Init(const ccp_t * _ccp_obj){
+[v _CCP_Init `(uc ~T0 @X0 1 ef1`*CS321 ]
+{
+[e :U _CCP_Init ]
+[v __ccp_obj `*CS321 ~T0 @X0 1 r1 ]
+[f ]
+"27
+[; ;MCAL_Layer/CCP/hal_ccp.c: 27:     Std_ReturnType ret=(Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"28
+[; ;MCAL_Layer/CCP/hal_ccp.c: 28:     if(_ccp_obj==((void*)0))
+[e $ ! == __ccp_obj -> -> -> 0 `i `*v `*CS321 323  ]
+"29
+[; ;MCAL_Layer/CCP/hal_ccp.c: 29:     {
+{
+"30
+[; ;MCAL_Layer/CCP/hal_ccp.c: 30:         ret=(Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"31
+[; ;MCAL_Layer/CCP/hal_ccp.c: 31:     }
+}
+[e $U 324  ]
+"32
+[; ;MCAL_Layer/CCP/hal_ccp.c: 32:     else
+[e :U 323 ]
+"33
+[; ;MCAL_Layer/CCP/hal_ccp.c: 33:     {
+{
+"35
+[; ;MCAL_Layer/CCP/hal_ccp.c: 35:         if (_ccp_obj->ccp_inst == CCP1_INST){
+[e $ ! == -> . *U __ccp_obj 1 `ui -> . `E3410 0 `ui 325  ]
+{
+"36
+[; ;MCAL_Layer/CCP/hal_ccp.c: 36:             ((*((volatile CCP1CON_t *)(0xFBD))).CCP1M = ((uint8)0x00));
+[e = . . *U -> -> 4029 `i `*VS307 1 0 -> -> 0 `i `uc ]
+"37
+[; ;MCAL_Layer/CCP/hal_ccp.c: 37:         }
+}
+[e $U 326  ]
+"38
+[; ;MCAL_Layer/CCP/hal_ccp.c: 38:         else if (_ccp_obj->ccp_inst == CCP2_INST){
+[e :U 325 ]
+[e $ ! == -> . *U __ccp_obj 1 `ui -> . `E3410 1 `ui 327  ]
+{
+"39
+[; ;MCAL_Layer/CCP/hal_ccp.c: 39:             ((*((volatile CCP2CON_t *)(0xFBA))).CCP2M = ((uint8)0x00));
+[e = . . *U -> -> 4026 `i `*VS310 1 0 -> -> 0 `i `uc ]
+"40
+[; ;MCAL_Layer/CCP/hal_ccp.c: 40:         }
+}
+[e $U 328  ]
+"41
+[; ;MCAL_Layer/CCP/hal_ccp.c: 41:         else {ret = (Std_ReturnType)0x00;}
+[e :U 327 ]
+{
+[e = _ret -> -> 0 `i `uc ]
+}
+[e :U 328 ]
+[e :U 326 ]
+"43
+[; ;MCAL_Layer/CCP/hal_ccp.c: 43:         switch(_ccp_obj->ccp_mode)
+[e $U 330  ]
+"44
+[; ;MCAL_Layer/CCP/hal_ccp.c: 44:         {
+{
+"46
+[; ;MCAL_Layer/CCP/hal_ccp.c: 46:             case CCP_CAPTURE_MODE_SELECTED:
+[e :U 331 ]
+"48
+[; ;MCAL_Layer/CCP/hal_ccp.c: 48:                 ret &= CCP_Capture_Mode_Init(_ccp_obj);
+[e =& _ret -> ( _CCP_Capture_Mode_Init (1 __ccp_obj `uc ]
+"49
+[; ;MCAL_Layer/CCP/hal_ccp.c: 49:                 break;
+[e $U 329  ]
+"52
+[; ;MCAL_Layer/CCP/hal_ccp.c: 52:             case CCP_COMPARE_MODE_SELECTED:
+[e :U 332 ]
+"54
+[; ;MCAL_Layer/CCP/hal_ccp.c: 54:                 ret &= CCP_Compare_Mode_Init(_ccp_obj);
+[e =& _ret -> ( _CCP_Compare_Mode_Init (1 __ccp_obj `uc ]
+"55
+[; ;MCAL_Layer/CCP/hal_ccp.c: 55:                 break;
+[e $U 329  ]
+"63
+[; ;MCAL_Layer/CCP/hal_ccp.c: 63:             default: ret=(Std_ReturnType)0x00;
+[e :U 333 ]
+[e = _ret -> -> 0 `i `uc ]
+"64
+[; ;MCAL_Layer/CCP/hal_ccp.c: 64:         }
+}
+[e $U 329  ]
+[e :U 330 ]
+[e [\ -> . *U __ccp_obj 2 `ui , $ -> . `E3405 0 `ui 331
+ , $ -> . `E3405 1 `ui 332
+ 333 ]
+[e :U 329 ]
+"66
+[; ;MCAL_Layer/CCP/hal_ccp.c: 66:         ret &= gpio_pin_initialize(&(_ccp_obj->ccp_pin));
+[e =& _ret -> ( _gpio_pin_initialize (1 &U . *U __ccp_obj 4 `uc ]
+"69
+[; ;MCAL_Layer/CCP/hal_ccp.c: 69:        ret&= CCP_Interrupt_Init(_ccp_obj);
+[e =& _ret -> ( _CCP_Interrupt_Init (1 __ccp_obj `uc ]
+"71
+[; ;MCAL_Layer/CCP/hal_ccp.c: 71:     }
+}
+[e :U 324 ]
+"72
+[; ;MCAL_Layer/CCP/hal_ccp.c: 72:     return ret;
+[e ) _ret ]
+[e $UE 322  ]
+"73
+[; ;MCAL_Layer/CCP/hal_ccp.c: 73: }
+[e :UE 322 ]
+}
+"74
+[; ;MCAL_Layer/CCP/hal_ccp.c: 74: Std_ReturnType CCP_DeInit(const ccp_t * _ccp_obj)
+[v _CCP_DeInit `(uc ~T0 @X0 1 ef1`*CS321 ]
+"75
+[; ;MCAL_Layer/CCP/hal_ccp.c: 75: {
+{
+[e :U _CCP_DeInit ]
+"74
+[; ;MCAL_Layer/CCP/hal_ccp.c: 74: Std_ReturnType CCP_DeInit(const ccp_t * _ccp_obj)
+[v __ccp_obj `*CS321 ~T0 @X0 1 r1 ]
+"75
+[; ;MCAL_Layer/CCP/hal_ccp.c: 75: {
+[f ]
+"76
+[; ;MCAL_Layer/CCP/hal_ccp.c: 76:     Std_ReturnType ret=(Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"77
+[; ;MCAL_Layer/CCP/hal_ccp.c: 77:     if(_ccp_obj==((void*)0))
+[e $ ! == __ccp_obj -> -> -> 0 `i `*v `*CS321 335  ]
+"78
+[; ;MCAL_Layer/CCP/hal_ccp.c: 78:     {
+{
+"79
+[; ;MCAL_Layer/CCP/hal_ccp.c: 79:         ret=(Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"80
+[; ;MCAL_Layer/CCP/hal_ccp.c: 80:     }
+}
+[e $U 336  ]
+"81
+[; ;MCAL_Layer/CCP/hal_ccp.c: 81:     else
+[e :U 335 ]
+"82
+[; ;MCAL_Layer/CCP/hal_ccp.c: 82:     {
+{
+"84
+[; ;MCAL_Layer/CCP/hal_ccp.c: 84:         if (_ccp_obj->ccp_inst == CCP1_INST){
+[e $ ! == -> . *U __ccp_obj 1 `ui -> . `E3410 0 `ui 337  ]
+{
+"85
+[; ;MCAL_Layer/CCP/hal_ccp.c: 85:             ((*((volatile CCP1CON_t *)(0xFBD))).CCP1M = ((uint8)0x00));
+[e = . . *U -> -> 4029 `i `*VS307 1 0 -> -> 0 `i `uc ]
+"87
+[; ;MCAL_Layer/CCP/hal_ccp.c: 87:             ((*((volatile PIE1_t *)(0xF9D))).CCP1IE=0);
+[e = . *U -> -> 3997 `i `*VS280 2 -> -> 0 `i `uc ]
+"89
+[; ;MCAL_Layer/CCP/hal_ccp.c: 89:         }
+}
+[e $U 338  ]
+"90
+[; ;MCAL_Layer/CCP/hal_ccp.c: 90:         else if (_ccp_obj->ccp_inst == CCP2_INST)
+[e :U 337 ]
+[e $ ! == -> . *U __ccp_obj 1 `ui -> . `E3410 1 `ui 339  ]
+"91
+[; ;MCAL_Layer/CCP/hal_ccp.c: 91:         {
+{
+"92
+[; ;MCAL_Layer/CCP/hal_ccp.c: 92:             ((*((volatile CCP2CON_t *)(0xFBA))).CCP2M = ((uint8)0x00));
+[e = . . *U -> -> 4026 `i `*VS310 1 0 -> -> 0 `i `uc ]
+"94
+[; ;MCAL_Layer/CCP/hal_ccp.c: 94:             ((*((volatile PIE2_t *)(0xFA0))).CCP2IE=0);
+[e = . *U -> -> 4000 `i `*VS281 0 -> -> 0 `i `uc ]
+"96
+[; ;MCAL_Layer/CCP/hal_ccp.c: 96:         }
+}
+[e $U 340  ]
+"97
+[; ;MCAL_Layer/CCP/hal_ccp.c: 97:         else {ret = (Std_ReturnType)0x00;}
+[e :U 339 ]
+{
+[e = _ret -> -> 0 `i `uc ]
+}
+[e :U 340 ]
+[e :U 338 ]
+"99
+[; ;MCAL_Layer/CCP/hal_ccp.c: 99:     }
+}
+[e :U 336 ]
+"100
+[; ;MCAL_Layer/CCP/hal_ccp.c: 100:     return ret;
+[e ) _ret ]
+[e $UE 334  ]
+"101
+[; ;MCAL_Layer/CCP/hal_ccp.c: 101: }
+[e :UE 334 ]
+}
+"104
+[; ;MCAL_Layer/CCP/hal_ccp.c: 104: Std_ReturnType CCP_IsCapturedDataReady (const ccp_t * _ccp_obj, uint8 * _capture_status){
+[v _CCP_IsCapturedDataReady `(uc ~T0 @X0 1 ef2`*CS321`*uc ]
+{
+[e :U _CCP_IsCapturedDataReady ]
+[v __ccp_obj `*CS321 ~T0 @X0 1 r1 ]
+[v __capture_status `*uc ~T0 @X0 1 r2 ]
+[f ]
+"105
+[; ;MCAL_Layer/CCP/hal_ccp.c: 105:     Std_ReturnType ret=(Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"106
+[; ;MCAL_Layer/CCP/hal_ccp.c: 106:     if( (_capture_status==((void*)0)) || (_ccp_obj == ((void*)0)) )
+[e $ ! || == __capture_status -> -> -> 0 `i `*v `*uc == __ccp_obj -> -> -> 0 `i `*v `*CS321 342  ]
+"107
+[; ;MCAL_Layer/CCP/hal_ccp.c: 107:     {
+{
+"108
+[; ;MCAL_Layer/CCP/hal_ccp.c: 108:         ret=(Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"109
+[; ;MCAL_Layer/CCP/hal_ccp.c: 109:     }
+}
+[e $U 343  ]
+"110
+[; ;MCAL_Layer/CCP/hal_ccp.c: 110:     else
+[e :U 342 ]
+"111
+[; ;MCAL_Layer/CCP/hal_ccp.c: 111:     {
+{
+"112
+[; ;MCAL_Layer/CCP/hal_ccp.c: 112:         if (_ccp_obj->ccp_inst == CCP1_INST)
+[e $ ! == -> . *U __ccp_obj 1 `ui -> . `E3410 0 `ui 344  ]
+"113
+[; ;MCAL_Layer/CCP/hal_ccp.c: 113:         {
+{
+"114
+[; ;MCAL_Layer/CCP/hal_ccp.c: 114:             if (0x01 == (*((volatile PIR1_t *)(0xF9E))).CCP1IF)
+[e $ ! == -> 1 `i -> . *U -> -> 3998 `i `*VS278 2 `i 345  ]
+"115
+[; ;MCAL_Layer/CCP/hal_ccp.c: 115:             {
+{
+"116
+[; ;MCAL_Layer/CCP/hal_ccp.c: 116:                 *_capture_status =0x01;
+[e = *U __capture_status -> -> 1 `i `uc ]
+"117
+[; ;MCAL_Layer/CCP/hal_ccp.c: 117:                 ((*((volatile PIR1_t *)(0xF9E))).CCP1IF=0);
+[e = . *U -> -> 3998 `i `*VS278 2 -> -> 0 `i `uc ]
+"118
+[; ;MCAL_Layer/CCP/hal_ccp.c: 118:             }
+}
+[e $U 346  ]
+"119
+[; ;MCAL_Layer/CCP/hal_ccp.c: 119:             else if (0x00 == (*((volatile PIR1_t *)(0xF9E))).CCP1IF)
+[e :U 345 ]
+[e $ ! == -> 0 `i -> . *U -> -> 3998 `i `*VS278 2 `i 347  ]
+"120
+[; ;MCAL_Layer/CCP/hal_ccp.c: 120:             {
+{
+"121
+[; ;MCAL_Layer/CCP/hal_ccp.c: 121:                 *_capture_status =0x00;
+[e = *U __capture_status -> -> 0 `i `uc ]
+"122
+[; ;MCAL_Layer/CCP/hal_ccp.c: 122:             }
+}
+[e $U 348  ]
+"123
+[; ;MCAL_Layer/CCP/hal_ccp.c: 123:             else { ret = (Std_ReturnType)0x00;}
+[e :U 347 ]
+{
+[e = _ret -> -> 0 `i `uc ]
+}
+[e :U 348 ]
+[e :U 346 ]
+"124
+[; ;MCAL_Layer/CCP/hal_ccp.c: 124:         }
+}
+[e $U 349  ]
+"125
+[; ;MCAL_Layer/CCP/hal_ccp.c: 125:         else if (_ccp_obj->ccp_inst == CCP2_INST)
+[e :U 344 ]
+[e $ ! == -> . *U __ccp_obj 1 `ui -> . `E3410 1 `ui 350  ]
+"126
+[; ;MCAL_Layer/CCP/hal_ccp.c: 126:         {
+{
+"127
+[; ;MCAL_Layer/CCP/hal_ccp.c: 127:             if (0x01 == (*((volatile PIR2_t *)(0xFA1))).CCP2IF)
+[e $ ! == -> 1 `i -> . *U -> -> 4001 `i `*VS279 0 `i 351  ]
+"128
+[; ;MCAL_Layer/CCP/hal_ccp.c: 128:             {
+{
+"129
+[; ;MCAL_Layer/CCP/hal_ccp.c: 129:                 *_capture_status =0x01;
+[e = *U __capture_status -> -> 1 `i `uc ]
+"130
+[; ;MCAL_Layer/CCP/hal_ccp.c: 130:                 ((*((volatile PIR2_t *)(0xFA1))).CCP2IF=0);
+[e = . *U -> -> 4001 `i `*VS279 0 -> -> 0 `i `uc ]
+"131
+[; ;MCAL_Layer/CCP/hal_ccp.c: 131:             }
+}
+[e $U 352  ]
+"132
+[; ;MCAL_Layer/CCP/hal_ccp.c: 132:             else if (0x00 == (*((volatile PIR2_t *)(0xFA1))).CCP2IF)
+[e :U 351 ]
+[e $ ! == -> 0 `i -> . *U -> -> 4001 `i `*VS279 0 `i 353  ]
+"133
+[; ;MCAL_Layer/CCP/hal_ccp.c: 133:             {
+{
+"134
+[; ;MCAL_Layer/CCP/hal_ccp.c: 134:                 *_capture_status =0x00;
+[e = *U __capture_status -> -> 0 `i `uc ]
+"135
+[; ;MCAL_Layer/CCP/hal_ccp.c: 135:             }
+}
+[e $U 354  ]
+"136
+[; ;MCAL_Layer/CCP/hal_ccp.c: 136:             else { ret = (Std_ReturnType)0x00;}
+[e :U 353 ]
+{
+[e = _ret -> -> 0 `i `uc ]
+}
+[e :U 354 ]
+[e :U 352 ]
+"137
+[; ;MCAL_Layer/CCP/hal_ccp.c: 137:         }
+}
+[e $U 355  ]
+"138
+[; ;MCAL_Layer/CCP/hal_ccp.c: 138:         else {ret = (Std_ReturnType)0x00;}
+[e :U 350 ]
+{
+[e = _ret -> -> 0 `i `uc ]
+}
+[e :U 355 ]
+[e :U 349 ]
+"139
+[; ;MCAL_Layer/CCP/hal_ccp.c: 139:     }
+}
+[e :U 343 ]
+"140
+[; ;MCAL_Layer/CCP/hal_ccp.c: 140:     return ret;
+[e ) _ret ]
+[e $UE 341  ]
+"141
+[; ;MCAL_Layer/CCP/hal_ccp.c: 141: }
+[e :UE 341 ]
+}
+"142
+[; ;MCAL_Layer/CCP/hal_ccp.c: 142: Std_ReturnType CCP_Capture_Mode_Read_Value (const ccp_t * _ccp_obj, uint32 * capture_value)
+[v _CCP_Capture_Mode_Read_Value `(uc ~T0 @X0 1 ef2`*CS321`*ul ]
+"143
+[; ;MCAL_Layer/CCP/hal_ccp.c: 143: {
+{
+[e :U _CCP_Capture_Mode_Read_Value ]
+"142
+[; ;MCAL_Layer/CCP/hal_ccp.c: 142: Std_ReturnType CCP_Capture_Mode_Read_Value (const ccp_t * _ccp_obj, uint32 * capture_value)
+[v __ccp_obj `*CS321 ~T0 @X0 1 r1 ]
+[v _capture_value `*ul ~T0 @X0 1 r2 ]
+"143
+[; ;MCAL_Layer/CCP/hal_ccp.c: 143: {
+[f ]
+"144
+[; ;MCAL_Layer/CCP/hal_ccp.c: 144:     Std_ReturnType ret=(Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+[v F3488 `S318 ~T0 @X0 1 s ]
+[i F3488
+:U 0
+:U ..
+:U ..
+:U ..
+"145
+[; ;MCAL_Layer/CCP/hal_ccp.c: 145:     CCP_REG_T capture_temp_value = {0};
+-> -> 0 `i `uc
+..
+..
+..
+..
+]
+[v _capture_temp_value `S318 ~T0 @X0 1 a ]
+[e = _capture_temp_value F3488 ]
+"146
+[; ;MCAL_Layer/CCP/hal_ccp.c: 146:     if( (capture_value==((void*)0)) || (_ccp_obj == ((void*)0)) )
+[e $ ! || == _capture_value -> -> -> 0 `i `*v `*ul == __ccp_obj -> -> -> 0 `i `*v `*CS321 357  ]
+"147
+[; ;MCAL_Layer/CCP/hal_ccp.c: 147:     {
+{
+"148
+[; ;MCAL_Layer/CCP/hal_ccp.c: 148:         ret=(Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"149
+[; ;MCAL_Layer/CCP/hal_ccp.c: 149:     }
+}
+[e $U 358  ]
+"150
+[; ;MCAL_Layer/CCP/hal_ccp.c: 150:     else
+[e :U 357 ]
+"151
+[; ;MCAL_Layer/CCP/hal_ccp.c: 151:     {
+{
+"152
+[; ;MCAL_Layer/CCP/hal_ccp.c: 152:         if (_ccp_obj->ccp_inst == CCP1_INST)
+[e $ ! == -> . *U __ccp_obj 1 `ui -> . `E3410 0 `ui 359  ]
+"153
+[; ;MCAL_Layer/CCP/hal_ccp.c: 153:         {
+{
+"154
+[; ;MCAL_Layer/CCP/hal_ccp.c: 154:            capture_temp_value.ccpr_low = (*( (volatile uint8 *)(0xFBE) ) );
+[e = . . _capture_temp_value 0 0 *U -> -> 4030 `i `*Vuc ]
+"155
+[; ;MCAL_Layer/CCP/hal_ccp.c: 155:            capture_temp_value.ccpr_high = (*( (volatile uint8 *)(0xFBF) ) );
+[e = . . _capture_temp_value 0 1 *U -> -> 4031 `i `*Vuc ]
+"156
+[; ;MCAL_Layer/CCP/hal_ccp.c: 156:         }
+}
+[e $U 360  ]
+"157
+[; ;MCAL_Layer/CCP/hal_ccp.c: 157:         else if (_ccp_obj->ccp_inst == CCP2_INST)
+[e :U 359 ]
+[e $ ! == -> . *U __ccp_obj 1 `ui -> . `E3410 1 `ui 361  ]
+"158
+[; ;MCAL_Layer/CCP/hal_ccp.c: 158:         {
+{
+"159
+[; ;MCAL_Layer/CCP/hal_ccp.c: 159:            capture_temp_value.ccpr_low = (*( (volatile uint8 *)(0xFBB) ) );
+[e = . . _capture_temp_value 0 0 *U -> -> 4027 `i `*Vuc ]
+"160
+[; ;MCAL_Layer/CCP/hal_ccp.c: 160:            capture_temp_value.ccpr_high = (*( (volatile uint8 *)(0xFBC) ) );
+[e = . . _capture_temp_value 0 1 *U -> -> 4028 `i `*Vuc ]
+"161
+[; ;MCAL_Layer/CCP/hal_ccp.c: 161:         }
+}
+[e $U 362  ]
+"162
+[; ;MCAL_Layer/CCP/hal_ccp.c: 162:         else {ret = (Std_ReturnType)0x00;}
+[e :U 361 ]
+{
+[e = _ret -> -> 0 `i `uc ]
+}
+[e :U 362 ]
+[e :U 360 ]
+"163
+[; ;MCAL_Layer/CCP/hal_ccp.c: 163:         *capture_value = capture_temp_value.ccpr_16Bit;
+[e = *U _capture_value -> . . _capture_temp_value 1 0 `ul ]
+"164
+[; ;MCAL_Layer/CCP/hal_ccp.c: 164:     }
+}
+[e :U 358 ]
+"165
+[; ;MCAL_Layer/CCP/hal_ccp.c: 165:     return ret;
+[e ) _ret ]
+[e $UE 356  ]
+"166
+[; ;MCAL_Layer/CCP/hal_ccp.c: 166: }
+[e :UE 356 ]
+}
+"176
+[; ;MCAL_Layer/CCP/hal_ccp.c: 176: Std_ReturnType CCP_IsCompareComplete (const ccp_t * _ccp_obj, uint8 * _compare_status)
+[v _CCP_IsCompareComplete `(uc ~T0 @X0 1 ef2`*CS321`*uc ]
+"177
+[; ;MCAL_Layer/CCP/hal_ccp.c: 177: {
+{
+[e :U _CCP_IsCompareComplete ]
+"176
+[; ;MCAL_Layer/CCP/hal_ccp.c: 176: Std_ReturnType CCP_IsCompareComplete (const ccp_t * _ccp_obj, uint8 * _compare_status)
+[v __ccp_obj `*CS321 ~T0 @X0 1 r1 ]
+[v __compare_status `*uc ~T0 @X0 1 r2 ]
+"177
+[; ;MCAL_Layer/CCP/hal_ccp.c: 177: {
+[f ]
+"178
+[; ;MCAL_Layer/CCP/hal_ccp.c: 178:    Std_ReturnType ret=(Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"179
+[; ;MCAL_Layer/CCP/hal_ccp.c: 179:      if( (_compare_status==((void*)0)) || (_ccp_obj == ((void*)0)) )
+[e $ ! || == __compare_status -> -> -> 0 `i `*v `*uc == __ccp_obj -> -> -> 0 `i `*v `*CS321 364  ]
+"180
+[; ;MCAL_Layer/CCP/hal_ccp.c: 180:     {
+{
+"181
+[; ;MCAL_Layer/CCP/hal_ccp.c: 181:         ret=(Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"182
+[; ;MCAL_Layer/CCP/hal_ccp.c: 182:     }
+}
+[e $U 365  ]
+"183
+[; ;MCAL_Layer/CCP/hal_ccp.c: 183:     else
+[e :U 364 ]
+"184
+[; ;MCAL_Layer/CCP/hal_ccp.c: 184:     {
+{
+"185
+[; ;MCAL_Layer/CCP/hal_ccp.c: 185:         if (_ccp_obj->ccp_inst == CCP1_INST)
+[e $ ! == -> . *U __ccp_obj 1 `ui -> . `E3410 0 `ui 366  ]
+"186
+[; ;MCAL_Layer/CCP/hal_ccp.c: 186:         {
+{
+"187
+[; ;MCAL_Layer/CCP/hal_ccp.c: 187:             if (0x01 == (*((volatile PIR1_t *)(0xF9E))).CCP1IF)
+[e $ ! == -> 1 `i -> . *U -> -> 3998 `i `*VS278 2 `i 367  ]
+"188
+[; ;MCAL_Layer/CCP/hal_ccp.c: 188:             {
+{
+"189
+[; ;MCAL_Layer/CCP/hal_ccp.c: 189:                 *_compare_status =0x01;
+[e = *U __compare_status -> -> 1 `i `uc ]
+"190
+[; ;MCAL_Layer/CCP/hal_ccp.c: 190:                 ((*((volatile PIR1_t *)(0xF9E))).CCP1IF=0);
+[e = . *U -> -> 3998 `i `*VS278 2 -> -> 0 `i `uc ]
+"191
+[; ;MCAL_Layer/CCP/hal_ccp.c: 191:             }
+}
+[e $U 368  ]
+"192
+[; ;MCAL_Layer/CCP/hal_ccp.c: 192:             else if (0x00 == (*((volatile PIR1_t *)(0xF9E))).CCP1IF)
+[e :U 367 ]
+[e $ ! == -> 0 `i -> . *U -> -> 3998 `i `*VS278 2 `i 369  ]
+"193
+[; ;MCAL_Layer/CCP/hal_ccp.c: 193:             {
+{
+"194
+[; ;MCAL_Layer/CCP/hal_ccp.c: 194:                 *_compare_status =0x00;
+[e = *U __compare_status -> -> 0 `i `uc ]
+"195
+[; ;MCAL_Layer/CCP/hal_ccp.c: 195:             }
+}
+[e $U 370  ]
+"196
+[; ;MCAL_Layer/CCP/hal_ccp.c: 196:             else { ret = (Std_ReturnType)0x00;}
+[e :U 369 ]
+{
+[e = _ret -> -> 0 `i `uc ]
+}
+[e :U 370 ]
+[e :U 368 ]
+"197
+[; ;MCAL_Layer/CCP/hal_ccp.c: 197:         }
+}
+[e $U 371  ]
+"198
+[; ;MCAL_Layer/CCP/hal_ccp.c: 198:         else if (_ccp_obj->ccp_inst == CCP2_INST)
+[e :U 366 ]
+[e $ ! == -> . *U __ccp_obj 1 `ui -> . `E3410 1 `ui 372  ]
+"199
+[; ;MCAL_Layer/CCP/hal_ccp.c: 199:         {
+{
+"200
+[; ;MCAL_Layer/CCP/hal_ccp.c: 200:            if (0x01 == (*((volatile PIR2_t *)(0xFA1))).CCP2IF)
+[e $ ! == -> 1 `i -> . *U -> -> 4001 `i `*VS279 0 `i 373  ]
+"201
+[; ;MCAL_Layer/CCP/hal_ccp.c: 201:             {
+{
+"202
+[; ;MCAL_Layer/CCP/hal_ccp.c: 202:                 *_compare_status =0x01;
+[e = *U __compare_status -> -> 1 `i `uc ]
+"203
+[; ;MCAL_Layer/CCP/hal_ccp.c: 203:                 ((*((volatile PIR1_t *)(0xF9E))).CCP1IF=0);
+[e = . *U -> -> 3998 `i `*VS278 2 -> -> 0 `i `uc ]
+"204
+[; ;MCAL_Layer/CCP/hal_ccp.c: 204:             }
+}
+[e $U 374  ]
+"205
+[; ;MCAL_Layer/CCP/hal_ccp.c: 205:             else if (0x00 == (*((volatile PIR2_t *)(0xFA1))).CCP2IF)
+[e :U 373 ]
+[e $ ! == -> 0 `i -> . *U -> -> 4001 `i `*VS279 0 `i 375  ]
+"206
+[; ;MCAL_Layer/CCP/hal_ccp.c: 206:             {
+{
+"207
+[; ;MCAL_Layer/CCP/hal_ccp.c: 207:                 *_compare_status =0x00;
+[e = *U __compare_status -> -> 0 `i `uc ]
+"208
+[; ;MCAL_Layer/CCP/hal_ccp.c: 208:             }
+}
+[e $U 376  ]
+"209
+[; ;MCAL_Layer/CCP/hal_ccp.c: 209:             else { ret = (Std_ReturnType)0x00;}
+[e :U 375 ]
+{
+[e = _ret -> -> 0 `i `uc ]
+}
+[e :U 376 ]
+[e :U 374 ]
+"210
+[; ;MCAL_Layer/CCP/hal_ccp.c: 210:         }
+}
+[e $U 377  ]
+"211
+[; ;MCAL_Layer/CCP/hal_ccp.c: 211:         else {ret = (Std_ReturnType)0x00;}
+[e :U 372 ]
+{
+[e = _ret -> -> 0 `i `uc ]
+}
+[e :U 377 ]
+[e :U 371 ]
+"212
+[; ;MCAL_Layer/CCP/hal_ccp.c: 212:     }
+}
+[e :U 365 ]
+"213
+[; ;MCAL_Layer/CCP/hal_ccp.c: 213:     return ret;
+[e ) _ret ]
+[e $UE 363  ]
+"214
+[; ;MCAL_Layer/CCP/hal_ccp.c: 214: }
+[e :UE 363 ]
+}
+"215
+[; ;MCAL_Layer/CCP/hal_ccp.c: 215: Std_ReturnType CCP_Compare_Mode_Set_Value (const ccp_t * _ccp_obj, uint16 compare_value)
+[v _CCP_Compare_Mode_Set_Value `(uc ~T0 @X0 1 ef2`*CS321`ui ]
+"216
+[; ;MCAL_Layer/CCP/hal_ccp.c: 216: {
+{
+[e :U _CCP_Compare_Mode_Set_Value ]
+"215
+[; ;MCAL_Layer/CCP/hal_ccp.c: 215: Std_ReturnType CCP_Compare_Mode_Set_Value (const ccp_t * _ccp_obj, uint16 compare_value)
+[v __ccp_obj `*CS321 ~T0 @X0 1 r1 ]
+[v _compare_value `ui ~T0 @X0 1 r2 ]
+"216
+[; ;MCAL_Layer/CCP/hal_ccp.c: 216: {
+[f ]
+"217
+[; ;MCAL_Layer/CCP/hal_ccp.c: 217:     Std_ReturnType ret=(Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+[v F3498 `S318 ~T0 @X0 1 s ]
+[i F3498
+:U 0
+:U ..
+:U ..
+:U ..
+"218
+[; ;MCAL_Layer/CCP/hal_ccp.c: 218:     CCP_REG_T compare_temp_value = {0};
+-> -> 0 `i `uc
+..
+..
+..
+..
+]
+[v _compare_temp_value `S318 ~T0 @X0 1 a ]
+[e = _compare_temp_value F3498 ]
+"219
+[; ;MCAL_Layer/CCP/hal_ccp.c: 219:     if(_ccp_obj==((void*)0))
+[e $ ! == __ccp_obj -> -> -> 0 `i `*v `*CS321 379  ]
+"220
+[; ;MCAL_Layer/CCP/hal_ccp.c: 220:     {
+{
+"221
+[; ;MCAL_Layer/CCP/hal_ccp.c: 221:         ret = (Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"222
+[; ;MCAL_Layer/CCP/hal_ccp.c: 222:     }
+}
+[e $U 380  ]
+"223
+[; ;MCAL_Layer/CCP/hal_ccp.c: 223:     else
+[e :U 379 ]
+"224
+[; ;MCAL_Layer/CCP/hal_ccp.c: 224:     {
+{
+"225
+[; ;MCAL_Layer/CCP/hal_ccp.c: 225:         compare_temp_value.ccpr_16Bit = compare_value;
+[e = . . _compare_temp_value 1 0 _compare_value ]
+"226
+[; ;MCAL_Layer/CCP/hal_ccp.c: 226:         if (_ccp_obj->ccp_inst == CCP1_INST)
+[e $ ! == -> . *U __ccp_obj 1 `ui -> . `E3410 0 `ui 381  ]
+"227
+[; ;MCAL_Layer/CCP/hal_ccp.c: 227:         {
+{
+"228
+[; ;MCAL_Layer/CCP/hal_ccp.c: 228:             (*( (volatile uint8 *)(0xFBE) ) ) =compare_temp_value.ccpr_low;
+[e = *U -> -> 4030 `i `*Vuc . . _compare_temp_value 0 0 ]
+"229
+[; ;MCAL_Layer/CCP/hal_ccp.c: 229:             (*( (volatile uint8 *)(0xFBF) ) ) =compare_temp_value.ccpr_high;
+[e = *U -> -> 4031 `i `*Vuc . . _compare_temp_value 0 1 ]
+"230
+[; ;MCAL_Layer/CCP/hal_ccp.c: 230:         }
+}
+[e $U 382  ]
+"231
+[; ;MCAL_Layer/CCP/hal_ccp.c: 231:         else if (_ccp_obj->ccp_inst == CCP2_INST)
+[e :U 381 ]
+[e $ ! == -> . *U __ccp_obj 1 `ui -> . `E3410 1 `ui 383  ]
+"232
+[; ;MCAL_Layer/CCP/hal_ccp.c: 232:         {
+{
+"233
+[; ;MCAL_Layer/CCP/hal_ccp.c: 233:             (*( (volatile uint8 *)(0xFBB) ) ) =compare_temp_value.ccpr_low;
+[e = *U -> -> 4027 `i `*Vuc . . _compare_temp_value 0 0 ]
+"234
+[; ;MCAL_Layer/CCP/hal_ccp.c: 234:             (*( (volatile uint8 *)(0xFBC) ) ) =compare_temp_value.ccpr_high;
+[e = *U -> -> 4028 `i `*Vuc . . _compare_temp_value 0 1 ]
+"235
+[; ;MCAL_Layer/CCP/hal_ccp.c: 235:         }
+}
+[e $U 384  ]
+"236
+[; ;MCAL_Layer/CCP/hal_ccp.c: 236:         else {ret = (Std_ReturnType)0x00;}
+[e :U 383 ]
+{
+[e = _ret -> -> 0 `i `uc ]
+}
+[e :U 384 ]
+[e :U 382 ]
+"237
+[; ;MCAL_Layer/CCP/hal_ccp.c: 237:     }
+}
+[e :U 380 ]
+"238
+[; ;MCAL_Layer/CCP/hal_ccp.c: 238:     return ret;
+[e ) _ret ]
+[e $UE 378  ]
+"239
+[; ;MCAL_Layer/CCP/hal_ccp.c: 239: }
+[e :UE 378 ]
+}
+"314
+[; ;MCAL_Layer/CCP/hal_ccp.c: 314: static Std_ReturnType CCP_Capture_Mode_Init(const ccp_t * _ccp_obj )
+[v _CCP_Capture_Mode_Init `(uc ~T0 @X0 1 sf1`*CS321 ]
+"315
+[; ;MCAL_Layer/CCP/hal_ccp.c: 315: {
+{
+[e :U _CCP_Capture_Mode_Init ]
+"314
+[; ;MCAL_Layer/CCP/hal_ccp.c: 314: static Std_ReturnType CCP_Capture_Mode_Init(const ccp_t * _ccp_obj )
+[v __ccp_obj `*CS321 ~T0 @X0 1 r1 ]
+"315
+[; ;MCAL_Layer/CCP/hal_ccp.c: 315: {
+[f ]
+"316
+[; ;MCAL_Layer/CCP/hal_ccp.c: 316:     Std_ReturnType ret = (Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"317
+[; ;MCAL_Layer/CCP/hal_ccp.c: 317:     if (((void*)0) == _ccp_obj)
+[e $ ! == -> -> -> 0 `i `*v `*CS321 __ccp_obj 386  ]
+"318
+[; ;MCAL_Layer/CCP/hal_ccp.c: 318:     {
+{
+"319
+[; ;MCAL_Layer/CCP/hal_ccp.c: 319:         ret = (Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"320
+[; ;MCAL_Layer/CCP/hal_ccp.c: 320:     }
+}
+[e $U 387  ]
+"321
+[; ;MCAL_Layer/CCP/hal_ccp.c: 321:     else
+[e :U 386 ]
+"322
+[; ;MCAL_Layer/CCP/hal_ccp.c: 322:     {
+{
+"323
+[; ;MCAL_Layer/CCP/hal_ccp.c: 323:         CCP_Capture_Compare_Timer_Config(_ccp_obj);
+[e ( _CCP_Capture_Compare_Timer_Config (1 __ccp_obj ]
+"324
+[; ;MCAL_Layer/CCP/hal_ccp.c: 324:         if (_ccp_obj->ccp_inst == CCP1_INST)
+[e $ ! == -> . *U __ccp_obj 1 `ui -> . `E3410 0 `ui 388  ]
+"325
+[; ;MCAL_Layer/CCP/hal_ccp.c: 325:         {
+{
+"326
+[; ;MCAL_Layer/CCP/hal_ccp.c: 326:             switch (_ccp_obj->ccp_mode_variant)
+[e $U 390  ]
+"327
+[; ;MCAL_Layer/CCP/hal_ccp.c: 327:             {
+{
+"328
+[; ;MCAL_Layer/CCP/hal_ccp.c: 328:             case ((uint8)0x04) :
+[e :U 391 ]
+"329
+[; ;MCAL_Layer/CCP/hal_ccp.c: 329:                 ((*((volatile CCP1CON_t *)(0xFBD))).CCP1M = ((uint8)0x04));
+[e = . . *U -> -> 4029 `i `*VS307 1 0 -> -> 4 `i `uc ]
+"330
+[; ;MCAL_Layer/CCP/hal_ccp.c: 330:                 break;
+[e $U 389  ]
+"331
+[; ;MCAL_Layer/CCP/hal_ccp.c: 331:             case ((uint8)0x05):
+[e :U 392 ]
+"332
+[; ;MCAL_Layer/CCP/hal_ccp.c: 332:                 ((*((volatile CCP1CON_t *)(0xFBD))).CCP1M = ((uint8)0x05));
+[e = . . *U -> -> 4029 `i `*VS307 1 0 -> -> 5 `i `uc ]
+"333
+[; ;MCAL_Layer/CCP/hal_ccp.c: 333:                 break;
+[e $U 389  ]
+"334
+[; ;MCAL_Layer/CCP/hal_ccp.c: 334:             case ((uint8)0x06):
+[e :U 393 ]
+"335
+[; ;MCAL_Layer/CCP/hal_ccp.c: 335:                 ((*((volatile CCP1CON_t *)(0xFBD))).CCP1M = ((uint8)0x06));
+[e = . . *U -> -> 4029 `i `*VS307 1 0 -> -> 6 `i `uc ]
+"336
+[; ;MCAL_Layer/CCP/hal_ccp.c: 336:                 break;
+[e $U 389  ]
+"337
+[; ;MCAL_Layer/CCP/hal_ccp.c: 337:             case ((uint8)0x07):
+[e :U 394 ]
+"338
+[; ;MCAL_Layer/CCP/hal_ccp.c: 338:                 ((*((volatile CCP1CON_t *)(0xFBD))).CCP1M = ((uint8)0x07));
+[e = . . *U -> -> 4029 `i `*VS307 1 0 -> -> 7 `i `uc ]
+"339
+[; ;MCAL_Layer/CCP/hal_ccp.c: 339:                 break;
+[e $U 389  ]
+"340
+[; ;MCAL_Layer/CCP/hal_ccp.c: 340:             default: ret = (Std_ReturnType)0x00;
+[e :U 395 ]
+[e = _ret -> -> 0 `i `uc ]
+"341
+[; ;MCAL_Layer/CCP/hal_ccp.c: 341:             }
+}
+[e $U 389  ]
+[e :U 390 ]
+[e [\ -> . *U __ccp_obj 3 `i , $ -> -> -> 4 `i `uc `i 391
+ , $ -> -> -> 5 `i `uc `i 392
+ , $ -> -> -> 6 `i `uc `i 393
+ , $ -> -> -> 7 `i `uc `i 394
+ 395 ]
+[e :U 389 ]
+"342
+[; ;MCAL_Layer/CCP/hal_ccp.c: 342:         }
+}
+[e $U 396  ]
+"343
+[; ;MCAL_Layer/CCP/hal_ccp.c: 343:         else if (_ccp_obj->ccp_inst == CCP2_INST)
+[e :U 388 ]
+[e $ ! == -> . *U __ccp_obj 1 `ui -> . `E3410 1 `ui 397  ]
+"344
+[; ;MCAL_Layer/CCP/hal_ccp.c: 344:         {
+{
+"345
+[; ;MCAL_Layer/CCP/hal_ccp.c: 345:             switch (_ccp_obj->ccp_mode_variant)
+[e $U 399  ]
+"346
+[; ;MCAL_Layer/CCP/hal_ccp.c: 346:             {
+{
+"347
+[; ;MCAL_Layer/CCP/hal_ccp.c: 347:             case ((uint8)0x04) :
+[e :U 400 ]
+"348
+[; ;MCAL_Layer/CCP/hal_ccp.c: 348:                 ((*((volatile CCP2CON_t *)(0xFBA))).CCP2M = ((uint8)0x04));
+[e = . . *U -> -> 4026 `i `*VS310 1 0 -> -> 4 `i `uc ]
+"349
+[; ;MCAL_Layer/CCP/hal_ccp.c: 349:                 break;
+[e $U 398  ]
+"350
+[; ;MCAL_Layer/CCP/hal_ccp.c: 350:             case ((uint8)0x05):
+[e :U 401 ]
+"351
+[; ;MCAL_Layer/CCP/hal_ccp.c: 351:                 ((*((volatile CCP2CON_t *)(0xFBA))).CCP2M = ((uint8)0x05));
+[e = . . *U -> -> 4026 `i `*VS310 1 0 -> -> 5 `i `uc ]
+"352
+[; ;MCAL_Layer/CCP/hal_ccp.c: 352:                 break;
+[e $U 398  ]
+"353
+[; ;MCAL_Layer/CCP/hal_ccp.c: 353:             case ((uint8)0x06):
+[e :U 402 ]
+"354
+[; ;MCAL_Layer/CCP/hal_ccp.c: 354:                 ((*((volatile CCP2CON_t *)(0xFBA))).CCP2M = ((uint8)0x06));
+[e = . . *U -> -> 4026 `i `*VS310 1 0 -> -> 6 `i `uc ]
+"355
+[; ;MCAL_Layer/CCP/hal_ccp.c: 355:                 break;
+[e $U 398  ]
+"356
+[; ;MCAL_Layer/CCP/hal_ccp.c: 356:             case ((uint8)0x07):
+[e :U 403 ]
+"357
+[; ;MCAL_Layer/CCP/hal_ccp.c: 357:                 ((*((volatile CCP2CON_t *)(0xFBA))).CCP2M = ((uint8)0x07));
+[e = . . *U -> -> 4026 `i `*VS310 1 0 -> -> 7 `i `uc ]
+"358
+[; ;MCAL_Layer/CCP/hal_ccp.c: 358:                 break;
+[e $U 398  ]
+"359
+[; ;MCAL_Layer/CCP/hal_ccp.c: 359:             default: ret = (Std_ReturnType)0x00;
+[e :U 404 ]
+[e = _ret -> -> 0 `i `uc ]
+"360
+[; ;MCAL_Layer/CCP/hal_ccp.c: 360:             }
+}
+[e $U 398  ]
+[e :U 399 ]
+[e [\ -> . *U __ccp_obj 3 `i , $ -> -> -> 4 `i `uc `i 400
+ , $ -> -> -> 5 `i `uc `i 401
+ , $ -> -> -> 6 `i `uc `i 402
+ , $ -> -> -> 7 `i `uc `i 403
+ 404 ]
+[e :U 398 ]
+"361
+[; ;MCAL_Layer/CCP/hal_ccp.c: 361:         }
+}
+[e $U 405  ]
+"362
+[; ;MCAL_Layer/CCP/hal_ccp.c: 362:         else {ret = (Std_ReturnType)0x00;}
+[e :U 397 ]
+{
+[e = _ret -> -> 0 `i `uc ]
+}
+[e :U 405 ]
+[e :U 396 ]
+"364
+[; ;MCAL_Layer/CCP/hal_ccp.c: 364:     }
+}
+[e :U 387 ]
+"365
+[; ;MCAL_Layer/CCP/hal_ccp.c: 365:     return ret;
+[e ) _ret ]
+[e $UE 385  ]
+"366
+[; ;MCAL_Layer/CCP/hal_ccp.c: 366: }
+[e :UE 385 ]
+}
+"370
+[; ;MCAL_Layer/CCP/hal_ccp.c: 370: static Std_ReturnType CCP_Compare_Mode_Init(const ccp_t * _ccp_obj )
+[v _CCP_Compare_Mode_Init `(uc ~T0 @X0 1 sf1`*CS321 ]
+"371
+[; ;MCAL_Layer/CCP/hal_ccp.c: 371: {
+{
+[e :U _CCP_Compare_Mode_Init ]
+"370
+[; ;MCAL_Layer/CCP/hal_ccp.c: 370: static Std_ReturnType CCP_Compare_Mode_Init(const ccp_t * _ccp_obj )
+[v __ccp_obj `*CS321 ~T0 @X0 1 r1 ]
+"371
+[; ;MCAL_Layer/CCP/hal_ccp.c: 371: {
+[f ]
+"372
+[; ;MCAL_Layer/CCP/hal_ccp.c: 372:     Std_ReturnType ret = (Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"373
+[; ;MCAL_Layer/CCP/hal_ccp.c: 373:     if (((void*)0) == _ccp_obj)
+[e $ ! == -> -> -> 0 `i `*v `*CS321 __ccp_obj 407  ]
+"374
+[; ;MCAL_Layer/CCP/hal_ccp.c: 374:     {
+{
+"375
+[; ;MCAL_Layer/CCP/hal_ccp.c: 375:         ret = (Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"376
+[; ;MCAL_Layer/CCP/hal_ccp.c: 376:     }
+}
+[e $U 408  ]
+"377
+[; ;MCAL_Layer/CCP/hal_ccp.c: 377:     else
+[e :U 407 ]
+"378
+[; ;MCAL_Layer/CCP/hal_ccp.c: 378:     {
+{
+"379
+[; ;MCAL_Layer/CCP/hal_ccp.c: 379:         CCP_Capture_Compare_Timer_Config(_ccp_obj);
+[e ( _CCP_Capture_Compare_Timer_Config (1 __ccp_obj ]
+"380
+[; ;MCAL_Layer/CCP/hal_ccp.c: 380:         if (_ccp_obj->ccp_inst == CCP1_INST)
+[e $ ! == -> . *U __ccp_obj 1 `ui -> . `E3410 0 `ui 409  ]
+"381
+[; ;MCAL_Layer/CCP/hal_ccp.c: 381:         {
+{
+"382
+[; ;MCAL_Layer/CCP/hal_ccp.c: 382:             switch (_ccp_obj->ccp_mode_variant)
+[e $U 411  ]
+"383
+[; ;MCAL_Layer/CCP/hal_ccp.c: 383:             {
+{
+"384
+[; ;MCAL_Layer/CCP/hal_ccp.c: 384:             case ((uint8)0x02) :
+[e :U 412 ]
+"385
+[; ;MCAL_Layer/CCP/hal_ccp.c: 385:                 ((*((volatile CCP1CON_t *)(0xFBD))).CCP1M = ((uint8)0x02));
+[e = . . *U -> -> 4029 `i `*VS307 1 0 -> -> 2 `i `uc ]
+"386
+[; ;MCAL_Layer/CCP/hal_ccp.c: 386:                 break;
+[e $U 410  ]
+"387
+[; ;MCAL_Layer/CCP/hal_ccp.c: 387:             case ((uint8)0x08):
+[e :U 413 ]
+"388
+[; ;MCAL_Layer/CCP/hal_ccp.c: 388:                 ((*((volatile CCP1CON_t *)(0xFBD))).CCP1M = ((uint8)0x08));
+[e = . . *U -> -> 4029 `i `*VS307 1 0 -> -> 8 `i `uc ]
+"389
+[; ;MCAL_Layer/CCP/hal_ccp.c: 389:                 break;
+[e $U 410  ]
+"390
+[; ;MCAL_Layer/CCP/hal_ccp.c: 390:             case ((uint8)0x09):
+[e :U 414 ]
+"391
+[; ;MCAL_Layer/CCP/hal_ccp.c: 391:                 ((*((volatile CCP1CON_t *)(0xFBD))).CCP1M = ((uint8)0x09));
+[e = . . *U -> -> 4029 `i `*VS307 1 0 -> -> 9 `i `uc ]
+"392
+[; ;MCAL_Layer/CCP/hal_ccp.c: 392:                 break;
+[e $U 410  ]
+"393
+[; ;MCAL_Layer/CCP/hal_ccp.c: 393:             case ((uint8)0x0A):
+[e :U 415 ]
+"394
+[; ;MCAL_Layer/CCP/hal_ccp.c: 394:                 ((*((volatile CCP1CON_t *)(0xFBD))).CCP1M = ((uint8)0x0A));
+[e = . . *U -> -> 4029 `i `*VS307 1 0 -> -> 10 `i `uc ]
+"395
+[; ;MCAL_Layer/CCP/hal_ccp.c: 395:                 break;
+[e $U 410  ]
+"396
+[; ;MCAL_Layer/CCP/hal_ccp.c: 396:             case ((uint8)0x0B):
+[e :U 416 ]
+"397
+[; ;MCAL_Layer/CCP/hal_ccp.c: 397:                 ((*((volatile CCP1CON_t *)(0xFBD))).CCP1M = ((uint8)0x0B));
+[e = . . *U -> -> 4029 `i `*VS307 1 0 -> -> 11 `i `uc ]
+"398
+[; ;MCAL_Layer/CCP/hal_ccp.c: 398:                 break;
+[e $U 410  ]
+"399
+[; ;MCAL_Layer/CCP/hal_ccp.c: 399:             default: ret = (Std_ReturnType)0x00;
+[e :U 417 ]
+[e = _ret -> -> 0 `i `uc ]
+"400
+[; ;MCAL_Layer/CCP/hal_ccp.c: 400:             }
+}
+[e $U 410  ]
+[e :U 411 ]
+[e [\ -> . *U __ccp_obj 3 `i , $ -> -> -> 2 `i `uc `i 412
+ , $ -> -> -> 8 `i `uc `i 413
+ , $ -> -> -> 9 `i `uc `i 414
+ , $ -> -> -> 10 `i `uc `i 415
+ , $ -> -> -> 11 `i `uc `i 416
+ 417 ]
+[e :U 410 ]
+"401
+[; ;MCAL_Layer/CCP/hal_ccp.c: 401:         }
+}
+[e $U 418  ]
+"402
+[; ;MCAL_Layer/CCP/hal_ccp.c: 402:         else if (_ccp_obj->ccp_inst == CCP2_INST)
+[e :U 409 ]
+[e $ ! == -> . *U __ccp_obj 1 `ui -> . `E3410 1 `ui 419  ]
+"403
+[; ;MCAL_Layer/CCP/hal_ccp.c: 403:         {
+{
+"404
+[; ;MCAL_Layer/CCP/hal_ccp.c: 404:             switch (_ccp_obj->ccp_mode_variant)
+[e $U 421  ]
+"405
+[; ;MCAL_Layer/CCP/hal_ccp.c: 405:             {
+{
+"406
+[; ;MCAL_Layer/CCP/hal_ccp.c: 406:             case ((uint8)0x02) :
+[e :U 422 ]
+"407
+[; ;MCAL_Layer/CCP/hal_ccp.c: 407:                 ((*((volatile CCP2CON_t *)(0xFBA))).CCP2M = ((uint8)0x02));
+[e = . . *U -> -> 4026 `i `*VS310 1 0 -> -> 2 `i `uc ]
+"408
+[; ;MCAL_Layer/CCP/hal_ccp.c: 408:                 break;
+[e $U 420  ]
+"409
+[; ;MCAL_Layer/CCP/hal_ccp.c: 409:             case ((uint8)0x08):
+[e :U 423 ]
+"410
+[; ;MCAL_Layer/CCP/hal_ccp.c: 410:                 ((*((volatile CCP2CON_t *)(0xFBA))).CCP2M = ((uint8)0x08));
+[e = . . *U -> -> 4026 `i `*VS310 1 0 -> -> 8 `i `uc ]
+"411
+[; ;MCAL_Layer/CCP/hal_ccp.c: 411:                 break;
+[e $U 420  ]
+"412
+[; ;MCAL_Layer/CCP/hal_ccp.c: 412:             case ((uint8)0x09):
+[e :U 424 ]
+"413
+[; ;MCAL_Layer/CCP/hal_ccp.c: 413:                 ((*((volatile CCP2CON_t *)(0xFBA))).CCP2M = ((uint8)0x09));
+[e = . . *U -> -> 4026 `i `*VS310 1 0 -> -> 9 `i `uc ]
+"414
+[; ;MCAL_Layer/CCP/hal_ccp.c: 414:                 break;
+[e $U 420  ]
+"415
+[; ;MCAL_Layer/CCP/hal_ccp.c: 415:             case ((uint8)0x0A):
+[e :U 425 ]
+"416
+[; ;MCAL_Layer/CCP/hal_ccp.c: 416:                 ((*((volatile CCP2CON_t *)(0xFBA))).CCP2M = ((uint8)0x0A));
+[e = . . *U -> -> 4026 `i `*VS310 1 0 -> -> 10 `i `uc ]
+"417
+[; ;MCAL_Layer/CCP/hal_ccp.c: 417:                 break;
+[e $U 420  ]
+"418
+[; ;MCAL_Layer/CCP/hal_ccp.c: 418:             case ((uint8)0x0B):
+[e :U 426 ]
+"419
+[; ;MCAL_Layer/CCP/hal_ccp.c: 419:                 ((*((volatile CCP2CON_t *)(0xFBA))).CCP2M = ((uint8)0x0B));
+[e = . . *U -> -> 4026 `i `*VS310 1 0 -> -> 11 `i `uc ]
+"420
+[; ;MCAL_Layer/CCP/hal_ccp.c: 420:                 break;
+[e $U 420  ]
+"421
+[; ;MCAL_Layer/CCP/hal_ccp.c: 421:             default: ret = (Std_ReturnType)0x00;
+[e :U 427 ]
+[e = _ret -> -> 0 `i `uc ]
+"422
+[; ;MCAL_Layer/CCP/hal_ccp.c: 422:             }
+}
+[e $U 420  ]
+[e :U 421 ]
+[e [\ -> . *U __ccp_obj 3 `i , $ -> -> -> 2 `i `uc `i 422
+ , $ -> -> -> 8 `i `uc `i 423
+ , $ -> -> -> 9 `i `uc `i 424
+ , $ -> -> -> 10 `i `uc `i 425
+ , $ -> -> -> 11 `i `uc `i 426
+ 427 ]
+[e :U 420 ]
+"423
+[; ;MCAL_Layer/CCP/hal_ccp.c: 423:         }
+}
+[e $U 428  ]
+"424
+[; ;MCAL_Layer/CCP/hal_ccp.c: 424:         else {ret = (Std_ReturnType)0x00;}
+[e :U 419 ]
+{
+[e = _ret -> -> 0 `i `uc ]
+}
+[e :U 428 ]
+[e :U 418 ]
+"425
+[; ;MCAL_Layer/CCP/hal_ccp.c: 425:     }
+}
+[e :U 408 ]
+"426
+[; ;MCAL_Layer/CCP/hal_ccp.c: 426:     return ret;
+[e ) _ret ]
+[e $UE 406  ]
+"427
+[; ;MCAL_Layer/CCP/hal_ccp.c: 427: }
+[e :UE 406 ]
+}
+"469
+[; ;MCAL_Layer/CCP/hal_ccp.c: 469: static Std_ReturnType CCP_Capture_Compare_Timer_Config(const ccp_t * _ccp_obj)
+[v _CCP_Capture_Compare_Timer_Config `(uc ~T0 @X0 1 sf1`*CS321 ]
+"470
+[; ;MCAL_Layer/CCP/hal_ccp.c: 470: {
+{
+[e :U _CCP_Capture_Compare_Timer_Config ]
+"469
+[; ;MCAL_Layer/CCP/hal_ccp.c: 469: static Std_ReturnType CCP_Capture_Compare_Timer_Config(const ccp_t * _ccp_obj)
+[v __ccp_obj `*CS321 ~T0 @X0 1 r1 ]
+"470
+[; ;MCAL_Layer/CCP/hal_ccp.c: 470: {
+[f ]
+"471
+[; ;MCAL_Layer/CCP/hal_ccp.c: 471:    Std_ReturnType ret = (Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"472
+[; ;MCAL_Layer/CCP/hal_ccp.c: 472:     if (((void*)0) == _ccp_obj)
+[e $ ! == -> -> -> 0 `i `*v `*CS321 __ccp_obj 430  ]
+"473
+[; ;MCAL_Layer/CCP/hal_ccp.c: 473:     {
+{
+"474
+[; ;MCAL_Layer/CCP/hal_ccp.c: 474:         ret = (Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"475
+[; ;MCAL_Layer/CCP/hal_ccp.c: 475:     }
+}
+[e $U 431  ]
+"476
+[; ;MCAL_Layer/CCP/hal_ccp.c: 476:     else
+[e :U 430 ]
+"477
+[; ;MCAL_Layer/CCP/hal_ccp.c: 477:     {
+{
+"478
+[; ;MCAL_Layer/CCP/hal_ccp.c: 478:         if (_ccp_obj->ccp_capt_comp_timer == CCP1_CCP2_TIMER1)
+[e $ ! == -> . *U __ccp_obj 0 `ui -> . `E3414 0 `ui 432  ]
+"479
+[; ;MCAL_Layer/CCP/hal_ccp.c: 479:         {
+{
+"480
+[; ;MCAL_Layer/CCP/hal_ccp.c: 480:             do{ (*((volatile T3CON_t *)(0xFB1))).T3CCP1 = (uint8)(CCP1_CCP2_TIMER1 & 0x01); (*((volatile T3CON_t *)(0xFB1))).T3CCP2 = (uint8)(CCP1_CCP2_TIMER1 >> 1 ); }while(0);
+[e :U 435 ]
+{
+[e = . . *U -> -> 4017 `i `*VS304 0 3 -> & -> . `E3414 0 `i -> 1 `i `uc ]
+[e = . . *U -> -> 4017 `i `*VS304 0 6 -> >> -> . `E3414 0 `i -> 1 `i `uc ]
+}
+[e :U 434 ]
+"481
+[; ;MCAL_Layer/CCP/hal_ccp.c: 481:         }
+}
+[e $U 436  ]
+"482
+[; ;MCAL_Layer/CCP/hal_ccp.c: 482:         else if (_ccp_obj->ccp_capt_comp_timer == CCP1_TIMER1_CCP2_TIMER3)
+[e :U 432 ]
+[e $ ! == -> . *U __ccp_obj 0 `ui -> . `E3414 1 `ui 437  ]
+"483
+[; ;MCAL_Layer/CCP/hal_ccp.c: 483:         {
+{
+"484
+[; ;MCAL_Layer/CCP/hal_ccp.c: 484:             do{ (*((volatile T3CON_t *)(0xFB1))).T3CCP1 = (uint8)(CCP1_TIMER1_CCP2_TIMER3 & 0x01); (*((volatile T3CON_t *)(0xFB1))).T3CCP2 = (uint8)(CCP1_TIMER1_CCP2_TIMER3 >> 1 ); }while(0);
+[e :U 440 ]
+{
+[e = . . *U -> -> 4017 `i `*VS304 0 3 -> & -> . `E3414 1 `i -> 1 `i `uc ]
+[e = . . *U -> -> 4017 `i `*VS304 0 6 -> >> -> . `E3414 1 `i -> 1 `i `uc ]
+}
+[e :U 439 ]
+"485
+[; ;MCAL_Layer/CCP/hal_ccp.c: 485:         }
+}
+[e $U 441  ]
+"486
+[; ;MCAL_Layer/CCP/hal_ccp.c: 486:         else if (_ccp_obj->ccp_capt_comp_timer == CCP1_CCP2_TIMER3)
+[e :U 437 ]
+[e $ ! == -> . *U __ccp_obj 0 `ui -> . `E3414 2 `ui 442  ]
+"487
+[; ;MCAL_Layer/CCP/hal_ccp.c: 487:         {
+{
+"488
+[; ;MCAL_Layer/CCP/hal_ccp.c: 488:             do{ (*((volatile T3CON_t *)(0xFB1))).T3CCP1 = (uint8)(CCP1_CCP2_TIMER3 & 0x01); (*((volatile T3CON_t *)(0xFB1))).T3CCP2 = (uint8)(CCP1_CCP2_TIMER3 >> 1 ); }while(0);
+[e :U 445 ]
+{
+[e = . . *U -> -> 4017 `i `*VS304 0 3 -> & -> . `E3414 2 `i -> 1 `i `uc ]
+[e = . . *U -> -> 4017 `i `*VS304 0 6 -> >> -> . `E3414 2 `i -> 1 `i `uc ]
+}
+[e :U 444 ]
+"489
+[; ;MCAL_Layer/CCP/hal_ccp.c: 489:         }
+}
+[e $U 446  ]
+"490
+[; ;MCAL_Layer/CCP/hal_ccp.c: 490:         else {ret = (Std_ReturnType)0x00;}
+[e :U 442 ]
+{
+[e = _ret -> -> 0 `i `uc ]
+}
+[e :U 446 ]
+[e :U 441 ]
+[e :U 436 ]
+"491
+[; ;MCAL_Layer/CCP/hal_ccp.c: 491:     }
+}
+[e :U 431 ]
+"492
+[; ;MCAL_Layer/CCP/hal_ccp.c: 492:    return ret;
+[e ) _ret ]
+[e $UE 429  ]
+"493
+[; ;MCAL_Layer/CCP/hal_ccp.c: 493: }
+[e :UE 429 ]
+}
+"496
+[; ;MCAL_Layer/CCP/hal_ccp.c: 496: static Std_ReturnType CCP1_Interrupt_Init(const ccp_t * _ccp_obj )
+[v _CCP1_Interrupt_Init `(uc ~T0 @X0 1 sf1`*CS321 ]
+"497
+[; ;MCAL_Layer/CCP/hal_ccp.c: 497: {
+{
+[e :U _CCP1_Interrupt_Init ]
+"496
+[; ;MCAL_Layer/CCP/hal_ccp.c: 496: static Std_ReturnType CCP1_Interrupt_Init(const ccp_t * _ccp_obj )
+[v __ccp_obj `*CS321 ~T0 @X0 1 r1 ]
+"497
+[; ;MCAL_Layer/CCP/hal_ccp.c: 497: {
+[f ]
+"498
+[; ;MCAL_Layer/CCP/hal_ccp.c: 498:     Std_ReturnType ret=(Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"499
+[; ;MCAL_Layer/CCP/hal_ccp.c: 499:     if(_ccp_obj==((void*)0))
+[e $ ! == __ccp_obj -> -> -> 0 `i `*v `*CS321 448  ]
+"500
+[; ;MCAL_Layer/CCP/hal_ccp.c: 500:     {
+{
+"501
+[; ;MCAL_Layer/CCP/hal_ccp.c: 501:         ret=(Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"502
+[; ;MCAL_Layer/CCP/hal_ccp.c: 502:     }
+}
+[e $U 449  ]
+"503
+[; ;MCAL_Layer/CCP/hal_ccp.c: 503:     else
+[e :U 448 ]
+"504
+[; ;MCAL_Layer/CCP/hal_ccp.c: 504:     {
+{
+"505
+[; ;MCAL_Layer/CCP/hal_ccp.c: 505:         ((*((volatile PIE1_t *)(0xF9D))).CCP1IE=1);
+[e = . *U -> -> 3997 `i `*VS280 2 -> -> 1 `i `uc ]
+"506
+[; ;MCAL_Layer/CCP/hal_ccp.c: 506:         ((*((volatile PIR1_t *)(0xF9E))).CCP1IF=0);
+[e = . *U -> -> 3998 `i `*VS278 2 -> -> 0 `i `uc ]
+"507
+[; ;MCAL_Layer/CCP/hal_ccp.c: 507:         CCP1_InterruptHandler = _ccp_obj->CCP_Interrupt_Handler;
+[e = _CCP1_InterruptHandler . *U __ccp_obj 5 ]
+"514
+[; ;MCAL_Layer/CCP/hal_ccp.c: 514:             ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
+[e = . *U -> -> 4048 `i `*VS284 7 -> -> 1 `i `uc ]
+"515
+[; ;MCAL_Layer/CCP/hal_ccp.c: 515:             if(_ccp_obj->priority == INTERRUPT_HIGH_PRIORITY){
+[e $ ! == -> . *U __ccp_obj 6 `ui -> . `E3329 1 `ui 450  ]
+{
+"516
+[; ;MCAL_Layer/CCP/hal_ccp.c: 516:                 ((*((volatile IPR1_t *)(0xF9F))).CCP1IP=1);
+[e = . *U -> -> 3999 `i `*VS282 2 -> -> 1 `i `uc ]
+"517
+[; ;MCAL_Layer/CCP/hal_ccp.c: 517:                 ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
+[e = . . *U -> -> 4082 `i `*VS273 1 2 -> -> 1 `i `uc ]
+"518
+[; ;MCAL_Layer/CCP/hal_ccp.c: 518:             }
+}
+[e $U 451  ]
+"519
+[; ;MCAL_Layer/CCP/hal_ccp.c: 519:             else if(_ccp_obj->priority == INTERRUPT_LOW_PRIORITY)
+[e :U 450 ]
+[e $ ! == -> . *U __ccp_obj 6 `ui -> . `E3329 0 `ui 452  ]
+"520
+[; ;MCAL_Layer/CCP/hal_ccp.c: 520:             {
+{
+"521
+[; ;MCAL_Layer/CCP/hal_ccp.c: 521:              ((*((volatile IPR1_t *)(0xF9F))).CCP1IP=0);
+[e = . *U -> -> 3999 `i `*VS282 2 -> -> 0 `i `uc ]
+"522
+[; ;MCAL_Layer/CCP/hal_ccp.c: 522:              ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
+[e = . . *U -> -> 4082 `i `*VS273 1 2 -> -> 1 `i `uc ]
+"523
+[; ;MCAL_Layer/CCP/hal_ccp.c: 523:              ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1);
+[e = . . *U -> -> 4082 `i `*VS273 1 1 -> -> 1 `i `uc ]
+"524
+[; ;MCAL_Layer/CCP/hal_ccp.c: 524:             }
+}
+[e $U 453  ]
+"525
+[; ;MCAL_Layer/CCP/hal_ccp.c: 525:             else {ret = (Std_ReturnType)0x00;}
+[e :U 452 ]
+{
+[e = _ret -> -> 0 `i `uc ]
+}
+[e :U 453 ]
+[e :U 451 ]
+"527
+[; ;MCAL_Layer/CCP/hal_ccp.c: 527:     }
+}
+[e :U 449 ]
+"528
+[; ;MCAL_Layer/CCP/hal_ccp.c: 528:     return ret;
+[e ) _ret ]
+[e $UE 447  ]
+"529
+[; ;MCAL_Layer/CCP/hal_ccp.c: 529: }
+[e :UE 447 ]
+}
+"533
+[; ;MCAL_Layer/CCP/hal_ccp.c: 533: static Std_ReturnType CCP2_Interrupt_Init(const ccp_t * _ccp_obj )
+[v _CCP2_Interrupt_Init `(uc ~T0 @X0 1 sf1`*CS321 ]
+"534
+[; ;MCAL_Layer/CCP/hal_ccp.c: 534: {
+{
+[e :U _CCP2_Interrupt_Init ]
+"533
+[; ;MCAL_Layer/CCP/hal_ccp.c: 533: static Std_ReturnType CCP2_Interrupt_Init(const ccp_t * _ccp_obj )
+[v __ccp_obj `*CS321 ~T0 @X0 1 r1 ]
+"534
+[; ;MCAL_Layer/CCP/hal_ccp.c: 534: {
+[f ]
+"535
+[; ;MCAL_Layer/CCP/hal_ccp.c: 535:     Std_ReturnType ret=(Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"536
+[; ;MCAL_Layer/CCP/hal_ccp.c: 536:     if(_ccp_obj==((void*)0))
+[e $ ! == __ccp_obj -> -> -> 0 `i `*v `*CS321 455  ]
+"537
+[; ;MCAL_Layer/CCP/hal_ccp.c: 537:     {
+{
+"538
+[; ;MCAL_Layer/CCP/hal_ccp.c: 538:         ret=(Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"539
+[; ;MCAL_Layer/CCP/hal_ccp.c: 539:     }
+}
+[e $U 456  ]
+"540
+[; ;MCAL_Layer/CCP/hal_ccp.c: 540:     else
+[e :U 455 ]
+"541
+[; ;MCAL_Layer/CCP/hal_ccp.c: 541:     {
+{
+"542
+[; ;MCAL_Layer/CCP/hal_ccp.c: 542:         ((*((volatile PIE2_t *)(0xFA0))).CCP2IE=1);
+[e = . *U -> -> 4000 `i `*VS281 0 -> -> 1 `i `uc ]
+"543
+[; ;MCAL_Layer/CCP/hal_ccp.c: 543:         ((*((volatile PIR2_t *)(0xFA1))).CCP2IF=0);
+[e = . *U -> -> 4001 `i `*VS279 0 -> -> 0 `i `uc ]
+"544
+[; ;MCAL_Layer/CCP/hal_ccp.c: 544:         CCP2_InterruptHandler = _ccp_obj->CCP_Interrupt_Handler;
+[e = _CCP2_InterruptHandler . *U __ccp_obj 5 ]
+"551
+[; ;MCAL_Layer/CCP/hal_ccp.c: 551:             ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
+[e = . *U -> -> 4048 `i `*VS284 7 -> -> 1 `i `uc ]
+"552
+[; ;MCAL_Layer/CCP/hal_ccp.c: 552:             if(_ccp_obj->priority == INTERRUPT_HIGH_PRIORITY){
+[e $ ! == -> . *U __ccp_obj 6 `ui -> . `E3329 1 `ui 457  ]
+{
+"553
+[; ;MCAL_Layer/CCP/hal_ccp.c: 553:                 ((*((volatile IPR2_t *)(0xFA2))).CCP2IP=1);
+[e = . *U -> -> 4002 `i `*VS283 0 -> -> 1 `i `uc ]
+"554
+[; ;MCAL_Layer/CCP/hal_ccp.c: 554:                 ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
+[e = . . *U -> -> 4082 `i `*VS273 1 2 -> -> 1 `i `uc ]
+"555
+[; ;MCAL_Layer/CCP/hal_ccp.c: 555:             }
+}
+[e $U 458  ]
+"556
+[; ;MCAL_Layer/CCP/hal_ccp.c: 556:             else if(_ccp_obj->priority == INTERRUPT_LOW_PRIORITY)
+[e :U 457 ]
+[e $ ! == -> . *U __ccp_obj 6 `ui -> . `E3329 0 `ui 459  ]
+"557
+[; ;MCAL_Layer/CCP/hal_ccp.c: 557:             {
+{
+"558
+[; ;MCAL_Layer/CCP/hal_ccp.c: 558:              ((*((volatile IPR2_t *)(0xFA2))).CCP2IP=0);
+[e = . *U -> -> 4002 `i `*VS283 0 -> -> 0 `i `uc ]
+"559
+[; ;MCAL_Layer/CCP/hal_ccp.c: 559:              ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
+[e = . . *U -> -> 4082 `i `*VS273 1 2 -> -> 1 `i `uc ]
+"560
+[; ;MCAL_Layer/CCP/hal_ccp.c: 560:              ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1);
+[e = . . *U -> -> 4082 `i `*VS273 1 1 -> -> 1 `i `uc ]
+"561
+[; ;MCAL_Layer/CCP/hal_ccp.c: 561:             }
+}
+[e $U 460  ]
+"562
+[; ;MCAL_Layer/CCP/hal_ccp.c: 562:             else {ret = (Std_ReturnType)0x00;}
+[e :U 459 ]
+{
+[e = _ret -> -> 0 `i `uc ]
+}
+[e :U 460 ]
+[e :U 458 ]
+"564
+[; ;MCAL_Layer/CCP/hal_ccp.c: 564:     }
+}
+[e :U 456 ]
+"565
+[; ;MCAL_Layer/CCP/hal_ccp.c: 565:     return ret;
+[e ) _ret ]
+[e $UE 454  ]
+"566
+[; ;MCAL_Layer/CCP/hal_ccp.c: 566: }
+[e :UE 454 ]
+}
+"570
+[; ;MCAL_Layer/CCP/hal_ccp.c: 570: static Std_ReturnType CCP_Interrupt_Init(const ccp_t * _ccp_obj )
+[v _CCP_Interrupt_Init `(uc ~T0 @X0 1 sf1`*CS321 ]
+"571
+[; ;MCAL_Layer/CCP/hal_ccp.c: 571: {
+{
+[e :U _CCP_Interrupt_Init ]
+"570
+[; ;MCAL_Layer/CCP/hal_ccp.c: 570: static Std_ReturnType CCP_Interrupt_Init(const ccp_t * _ccp_obj )
+[v __ccp_obj `*CS321 ~T0 @X0 1 r1 ]
+"571
+[; ;MCAL_Layer/CCP/hal_ccp.c: 571: {
+[f ]
+"572
+[; ;MCAL_Layer/CCP/hal_ccp.c: 572:     Std_ReturnType ret=(Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"573
+[; ;MCAL_Layer/CCP/hal_ccp.c: 573:     if(_ccp_obj==((void*)0))
+[e $ ! == __ccp_obj -> -> -> 0 `i `*v `*CS321 462  ]
+"574
+[; ;MCAL_Layer/CCP/hal_ccp.c: 574:     {
+{
+"575
+[; ;MCAL_Layer/CCP/hal_ccp.c: 575:         ret=(Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"576
+[; ;MCAL_Layer/CCP/hal_ccp.c: 576:     }
+}
+[e $U 463  ]
+"577
+[; ;MCAL_Layer/CCP/hal_ccp.c: 577:     else
+[e :U 462 ]
+"578
+[; ;MCAL_Layer/CCP/hal_ccp.c: 578:     {
+{
+"579
+[; ;MCAL_Layer/CCP/hal_ccp.c: 579:      switch (_ccp_obj->ccp_inst){
+[e $U 465  ]
+{
+"581
+[; ;MCAL_Layer/CCP/hal_ccp.c: 581:             case CCP1_INST:CCP1_Interrupt_Init(_ccp_obj);
+[e :U 466 ]
+[e ( _CCP1_Interrupt_Init (1 __ccp_obj ]
+"582
+[; ;MCAL_Layer/CCP/hal_ccp.c: 582:                 break;
+[e $U 464  ]
+"585
+[; ;MCAL_Layer/CCP/hal_ccp.c: 585:             case CCP2_INST:CCP2_Interrupt_Init(_ccp_obj);
+[e :U 467 ]
+[e ( _CCP2_Interrupt_Init (1 __ccp_obj ]
+"586
+[; ;MCAL_Layer/CCP/hal_ccp.c: 586:                 break;
+[e $U 464  ]
+"588
+[; ;MCAL_Layer/CCP/hal_ccp.c: 588:             default: ret = (Std_ReturnType)0x00;
+[e :U 468 ]
+[e = _ret -> -> 0 `i `uc ]
+"589
+[; ;MCAL_Layer/CCP/hal_ccp.c: 589:         }
+}
+[e $U 464  ]
+[e :U 465 ]
+[e [\ -> . *U __ccp_obj 1 `ui , $ -> . `E3410 0 `ui 466
+ , $ -> . `E3410 1 `ui 467
+ 468 ]
+[e :U 464 ]
+"590
+[; ;MCAL_Layer/CCP/hal_ccp.c: 590:     }
+}
+[e :U 463 ]
+"591
+[; ;MCAL_Layer/CCP/hal_ccp.c: 591:     return ret;
+[e ) _ret ]
+[e $UE 461  ]
+"592
+[; ;MCAL_Layer/CCP/hal_ccp.c: 592: }
+[e :UE 461 ]
+}
+"596
+[; ;MCAL_Layer/CCP/hal_ccp.c: 596: void CCP1_ISR(void)
+[v _CCP1_ISR `(v ~T0 @X0 1 ef ]
+"597
+[; ;MCAL_Layer/CCP/hal_ccp.c: 597: {
+{
+[e :U _CCP1_ISR ]
+[f ]
+"599
+[; ;MCAL_Layer/CCP/hal_ccp.c: 599:     ((*((volatile PIR1_t *)(0xF9E))).CCP1IF=0);
+[e = . *U -> -> 3998 `i `*VS278 2 -> -> 0 `i `uc ]
+"600
+[; ;MCAL_Layer/CCP/hal_ccp.c: 600:       if(CCP1_InterruptHandler){
+[e $ ! != _CCP1_InterruptHandler -> -> 0 `i `*F3525 470  ]
+{
+"601
+[; ;MCAL_Layer/CCP/hal_ccp.c: 601:        CCP1_InterruptHandler();
+[e ( *U _CCP1_InterruptHandler ..  ]
+"602
+[; ;MCAL_Layer/CCP/hal_ccp.c: 602:     }
+}
+[e $U 471  ]
+"603
+[; ;MCAL_Layer/CCP/hal_ccp.c: 603:      else{ }
+[e :U 470 ]
+{
+}
+[e :U 471 ]
+"605
+[; ;MCAL_Layer/CCP/hal_ccp.c: 605: }
+[e :UE 469 ]
+}
+"606
+[; ;MCAL_Layer/CCP/hal_ccp.c: 606: void CCP2_ISR(void)
+[v _CCP2_ISR `(v ~T0 @X0 1 ef ]
+"607
+[; ;MCAL_Layer/CCP/hal_ccp.c: 607: {
+{
+[e :U _CCP2_ISR ]
+[f ]
+"609
+[; ;MCAL_Layer/CCP/hal_ccp.c: 609:     ((*((volatile PIR2_t *)(0xFA1))).CCP2IF=0);
+[e = . *U -> -> 4001 `i `*VS279 0 -> -> 0 `i `uc ]
+"610
+[; ;MCAL_Layer/CCP/hal_ccp.c: 610:       if(CCP2_InterruptHandler){
+[e $ ! != _CCP2_InterruptHandler -> -> 0 `i `*F3527 473  ]
+{
+"611
+[; ;MCAL_Layer/CCP/hal_ccp.c: 611:        CCP2_InterruptHandler();
+[e ( *U _CCP2_InterruptHandler ..  ]
+"612
+[; ;MCAL_Layer/CCP/hal_ccp.c: 612:     }
+}
+[e $U 474  ]
+"613
+[; ;MCAL_Layer/CCP/hal_ccp.c: 613:      else{ }
+[e :U 473 ]
+{
+}
+[e :U 474 ]
+"615
+[; ;MCAL_Layer/CCP/hal_ccp.c: 615: }
+[e :UE 472 ]
+}

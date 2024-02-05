@@ -406,7 +406,7 @@ typedef union {
 #define T2CON_bits (*((volatile T2CON_t *)(0xFCA)))
 #define T2CON (*((volatile uint8 *)(0xFCA)))
 #define TMR2 (*((volatile uint8 *)(0xFCC)))
-
+#define PR2 (*((volatile uint8 *)(0xFCB)))
 /* Timer3 Registers*/
 
 typedef union {
@@ -432,5 +432,107 @@ typedef union {
 #define TMR3L (*((volatile uint8 *)(0xFB2)))
 #define TMR3H (*((volatile uint8 *)(0xFB3)))
 /***************************************/
+/* CCPx Module Registers */
+typedef union {
+  struct {  
+   uint8 CCP1M0  :1; 
+   uint8 CCP1M1  :1;
+   uint8 CCP1M2  :1;
+   uint8 CCP1M3  :1;
+   uint8 DC1B0   :1;
+   uint8 DC1B1   :1;
+   uint8         :1;
+   uint8         :1;
+};
+  struct {
+   uint8 CCP1M   :4;
+   uint8 DC1B    :2;
+   uint8         :2;
+};
+}CCP1CON_t;
+
+#define CCP1CON_bits (*((volatile CCP1CON_t *)(0xFBD)))
+#define CCP1CON (*( (volatile uint8 *)(0xFBD) ) )
+#define CCPR1L (*( (volatile uint8 *)(0xFBE) ) )
+#define CCPR1H (*( (volatile uint8 *)(0xFBF) ) )
+
+typedef union {
+  struct {  
+   uint8 CCP2M0  :1; 
+   uint8 CCP2M1  :1;
+   uint8 CCP2M2  :1;
+   uint8 CCP2M3  :1;
+   uint8 DC2B0   :1;
+   uint8 DC2B1   :1;
+   uint8         :1;
+   uint8         :1;
+};
+  struct {
+   uint8 CCP2M   :4;
+   uint8 DC2B    :2;
+   uint8         :2;
+};
+}CCP2CON_t;
+
+#define CCP2CON_bits (*((volatile CCP2CON_t *)(0xFBA)))
+#define CCP2CON (*( (volatile uint8 *)(0xFBA) ) )
+#define CCPR2L (*( (volatile uint8 *)(0xFBB) ) )
+#define CCPR2H (*( (volatile uint8 *)(0xFBC) ) )
+
+/*****************************************************/
+/* EUSART Module Registers */
+
+typedef struct 
+{  
+   uint8 TX9D   :1; 
+   uint8 TRMT   :1;
+   uint8 BRGH   :1;
+   uint8 SENDB  :1;
+   uint8 SYNC   :1;
+   uint8 TXEN   :1;
+   uint8 TX9    :1;
+   uint8 CSRC   :1;
+}TXSTA_t;
+
+#define TXSTA_bits (*((volatile TXSTA_t *)(0xFAC)))
+#define TXSTA (*( (volatile uint8 *)(0xFAC) ) )
+
+typedef struct 
+{  
+   uint8 RX9D   :1; 
+   uint8 OERR   :1;
+   uint8 FERR   :1;
+   uint8 ADDEN :1;
+   uint8 CREN  :1;
+   uint8 SREN  :1;
+   uint8 RX9    :1;
+   uint8 SPEN   :1;
+}RCSTA_t;
+
+#define RCSTA_bits (*((volatile RCSTA_t *)(0xFAB)))
+#define RCSTA (*( (volatile uint8 *)(0xFAB) ) )
+
+typedef struct 
+{  
+   uint8 ABDEN   :1; 
+   uint8         :1;
+   uint8 FERR    :1;
+   uint8 BRG16   :1;
+   uint8 TXCKP   :1;
+   uint8 RXDTP   :1;
+   uint8 RCIDL   :1;
+   uint8 ABDOVF  :1;
+}BAUDCON_t;
+
+#define BAUDCON_bits (*((volatile BAUDCON_t *)(0xFB8)))
+#define BAUDCON (*( (volatile uint8 *)(0xFB8) ) )
+
+
+#define SPBRG (*( (volatile uint8 *)(0xFAF) ) )
+#define SPBRGH (*( (volatile uint8 *)(0xFB0) ) )
+#define TXREG (*( (volatile uint8 *)(0xFAD) ) )
+#define RCREG (*( (volatile uint8 *)(0xFAE) ) )
+
+
 #endif	/* MY_PIC18F4620_H */
 

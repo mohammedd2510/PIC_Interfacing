@@ -5006,6 +5006,95 @@ typedef union {
    uint8 :2;
 };
 }T3CON_t;
+
+
+
+
+
+
+
+typedef union {
+  struct {
+   uint8 CCP1M0 :1;
+   uint8 CCP1M1 :1;
+   uint8 CCP1M2 :1;
+   uint8 CCP1M3 :1;
+   uint8 DC1B0 :1;
+   uint8 DC1B1 :1;
+   uint8 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 CCP1M :4;
+   uint8 DC1B :2;
+   uint8 :2;
+};
+}CCP1CON_t;
+
+
+
+
+
+
+typedef union {
+  struct {
+   uint8 CCP2M0 :1;
+   uint8 CCP2M1 :1;
+   uint8 CCP2M2 :1;
+   uint8 CCP2M3 :1;
+   uint8 DC2B0 :1;
+   uint8 DC2B1 :1;
+   uint8 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 CCP2M :4;
+   uint8 DC2B :2;
+   uint8 :2;
+};
+}CCP2CON_t;
+# 485 "ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
+typedef struct
+{
+   uint8 TX9D :1;
+   uint8 TRMT :1;
+   uint8 BRGH :1;
+   uint8 SENDB :1;
+   uint8 SYNC :1;
+   uint8 TXEN :1;
+   uint8 TX9 :1;
+   uint8 CSRC :1;
+}TXSTA_t;
+
+
+
+
+typedef struct
+{
+   uint8 RX9D :1;
+   uint8 OERR :1;
+   uint8 FERR :1;
+   uint8 ADDEN :1;
+   uint8 CREN :1;
+   uint8 SREN :1;
+   uint8 RX9 :1;
+   uint8 SPEN :1;
+}RCSTA_t;
+
+
+
+
+typedef struct
+{
+   uint8 ABDEN :1;
+   uint8 :1;
+   uint8 FERR :1;
+   uint8 BRG16 :1;
+   uint8 TXCKP :1;
+   uint8 RXDTP :1;
+   uint8 RCIDL :1;
+   uint8 ABDOVF :1;
+}BAUDCON_t;
 # 13 "ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
 # 1 "ECU_Layer/KeyPad/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
@@ -5120,7 +5209,7 @@ Std_ReturnType keypad_get_value(const keypad_t * keypad_obj , uint8 * value){
                    ret=gpio_pin_write_logic(&(keypad_obj->keypad_row_pins[l_counter]),LOW);
                }
              ret=gpio_pin_write_logic(&(keypad_obj->keypad_row_pins[l_rows_counter]),HIGH);
-             _delay((unsigned long)((10)*(8000000/4000.0)));
+             _delay((unsigned long)((10)*(4000000UL/4000.0)));
         for(l_columns_counter=0;l_columns_counter<4;l_columns_counter++){
             ret=gpio_pin_read_logic(&(keypad_obj->keypad_columns_pins[l_columns_counter]),&column_logic);
             if(column_logic==HIGH){*value=btn_values[l_rows_counter][l_columns_counter];}

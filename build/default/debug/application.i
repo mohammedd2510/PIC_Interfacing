@@ -15,20 +15,20 @@
 
 
 # 1 "./application.h" 1
-# 11 "./application.h"
-# 1 "./ECU_Layer/ecu_layer_init.h" 1
-# 12 "./ECU_Layer/ecu_layer_init.h"
-# 1 "./ECU_Layer/7_Segment/ecu_seven_seg.h" 1
-# 12 "./ECU_Layer/7_Segment/ecu_seven_seg.h"
-# 1 "./ECU_Layer/7_Segment/ecu_seven_seg_cfg.h" 1
-# 12 "./ECU_Layer/7_Segment/ecu_seven_seg.h" 2
+# 12 "./application.h"
+# 1 "./MCAL_Layer/mcal_layer_init.h" 1
+# 16 "./MCAL_Layer/mcal_layer_init.h"
+# 1 "./MCAL_Layer/USART/hal_usart.h" 1
+# 12 "./MCAL_Layer/USART/hal_usart.h"
+# 1 "./MCAL_Layer/USART/hal_usart_cfg.h" 1
+# 12 "./MCAL_Layer/USART/hal_usart.h" 2
 
-# 1 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 1
-# 11 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h"
-# 1 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../mcal_std_types.h" 1
-# 12 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../mcal_std_types.h"
-# 1 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../std_libraries.h" 1
-# 11 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../std_libraries.h"
+# 1 "./MCAL_Layer/USART/../GPIO/hal_gpio.h" 1
+# 11 "./MCAL_Layer/USART/../GPIO/hal_gpio.h"
+# 1 "./MCAL_Layer/USART/../GPIO/../mcal_std_types.h" 1
+# 12 "./MCAL_Layer/USART/../GPIO/../mcal_std_types.h"
+# 1 "./MCAL_Layer/std_libraries.h" 1
+# 11 "./MCAL_Layer/std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
 
 
@@ -193,7 +193,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 11 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+# 11 "./MCAL_Layer/std_libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
@@ -257,7 +257,7 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 12 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../std_libraries.h" 2
+# 12 "./MCAL_Layer/std_libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 3
@@ -316,11 +316,11 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 13 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../std_libraries.h" 2
-# 12 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
+# 13 "./MCAL_Layer/std_libraries.h" 2
+# 12 "./MCAL_Layer/USART/../GPIO/../mcal_std_types.h" 2
 
-# 1 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../compiler.h" 1
-# 11 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../compiler.h"
+# 1 "./MCAL_Layer/compiler.h" 1
+# 11 "./MCAL_Layer/compiler.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4695,8 +4695,8 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 2 3
-# 11 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../compiler.h" 2
-# 13 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../mcal_std_types.h" 2
+# 11 "./MCAL_Layer/compiler.h" 2
+# 13 "./MCAL_Layer/USART/../GPIO/../mcal_std_types.h" 2
 
 
 typedef unsigned char uint8;
@@ -4707,13 +4707,13 @@ typedef signed int sint16;
 typedef signed long sint32;
 
 typedef uint8 Std_ReturnType;
-# 11 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 11 "./MCAL_Layer/USART/../GPIO/hal_gpio.h" 2
 
-# 1 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../device_config.h" 1
-# 12 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 1 "./MCAL_Layer/USART/../GPIO/../device_config.h" 1
+# 12 "./MCAL_Layer/USART/../GPIO/hal_gpio.h" 2
 
-# 1 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../my_pic18f4620.h" 1
-# 101 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
+# 1 "./MCAL_Layer/USART/../GPIO/../my_pic18f4620.h" 1
+# 101 "./MCAL_Layer/USART/../GPIO/../my_pic18f4620.h"
 typedef union {
   struct {
    uint8 RBIF :1;
@@ -4858,7 +4858,7 @@ typedef struct {
   uint8 SBOREN :1;
   uint8 IPEN :1;
 }RCON_t;
-# 257 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
+# 257 "./MCAL_Layer/USART/../GPIO/../my_pic18f4620.h"
 typedef struct {
   uint8 RD :1;
   uint8 WR :1;
@@ -4956,11 +4956,161 @@ typedef union {
    uint8 :5;
 };
 }T0CON_t;
-# 13 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
+# 362 "./MCAL_Layer/USART/../GPIO/../my_pic18f4620.h"
+typedef union {
+  struct {
+   uint8 TMR1ON :1;
+   uint8 TMR1CS :1;
+   uint8 T1SYNC :1;
+   uint8 T1OSCEN :1;
+   uint8 T1CKPS0 :1;
+   uint8 T1CKPS1 :1;
+   uint8 T1RUN :1;
+   uint8 RD16 :1;
+};
+  struct {
+   uint8 :4;
+   uint8 T1CKPS :2;
+   uint8 :2;
+};
+}T1CON_t;
+# 387 "./MCAL_Layer/USART/../GPIO/../my_pic18f4620.h"
+typedef union {
+  struct {
+   uint8 T2CKPS0 :1;
+   uint8 T2CKPS1 :1;
+   uint8 TMR2ON :1;
+   uint8 T2OUTPS0 :1;
+   uint8 T2OUTPS1 :1;
+   uint8 T2OUTPS2 :1;
+   uint8 T2OUTPS3 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 T2CKPS :2;
+   uint8 :1;
+   uint8 T2OUTPS :4;
+   uint8 :1;
+};
+}T2CON_t;
 
-# 1 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
-# 14 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
-# 31 "./ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h"
+
+
+
+
+
+
+typedef union {
+  struct {
+   uint8 TMR3ON :1;
+   uint8 TMR3CS :1;
+   uint8 T3SYNC :1;
+   uint8 T3CCP1 :1;
+   uint8 T3CKPS0 :1;
+   uint8 T3CKPS1 :1;
+   uint8 T3CCP2 :1;
+   uint8 RD16 :1;
+};
+  struct {
+   uint8 :4;
+   uint8 T3CKPS :2;
+   uint8 :2;
+};
+}T3CON_t;
+
+
+
+
+
+
+
+typedef union {
+  struct {
+   uint8 CCP1M0 :1;
+   uint8 CCP1M1 :1;
+   uint8 CCP1M2 :1;
+   uint8 CCP1M3 :1;
+   uint8 DC1B0 :1;
+   uint8 DC1B1 :1;
+   uint8 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 CCP1M :4;
+   uint8 DC1B :2;
+   uint8 :2;
+};
+}CCP1CON_t;
+
+
+
+
+
+
+typedef union {
+  struct {
+   uint8 CCP2M0 :1;
+   uint8 CCP2M1 :1;
+   uint8 CCP2M2 :1;
+   uint8 CCP2M3 :1;
+   uint8 DC2B0 :1;
+   uint8 DC2B1 :1;
+   uint8 :1;
+   uint8 :1;
+};
+  struct {
+   uint8 CCP2M :4;
+   uint8 DC2B :2;
+   uint8 :2;
+};
+}CCP2CON_t;
+# 485 "./MCAL_Layer/USART/../GPIO/../my_pic18f4620.h"
+typedef struct
+{
+   uint8 TX9D :1;
+   uint8 TRMT :1;
+   uint8 BRGH :1;
+   uint8 SENDB :1;
+   uint8 SYNC :1;
+   uint8 TXEN :1;
+   uint8 TX9 :1;
+   uint8 CSRC :1;
+}TXSTA_t;
+
+
+
+
+typedef struct
+{
+   uint8 RX9D :1;
+   uint8 OERR :1;
+   uint8 FERR :1;
+   uint8 ADDEN :1;
+   uint8 CREN :1;
+   uint8 SREN :1;
+   uint8 RX9 :1;
+   uint8 SPEN :1;
+}RCSTA_t;
+
+
+
+
+typedef struct
+{
+   uint8 ABDEN :1;
+   uint8 :1;
+   uint8 FERR :1;
+   uint8 BRG16 :1;
+   uint8 TXCKP :1;
+   uint8 RXDTP :1;
+   uint8 RCIDL :1;
+   uint8 ABDOVF :1;
+}BAUDCON_t;
+# 13 "./MCAL_Layer/USART/../GPIO/hal_gpio.h" 2
+
+# 1 "./MCAL_Layer/USART/../GPIO/hal_gpio_cfg.h" 1
+# 14 "./MCAL_Layer/USART/../GPIO/hal_gpio.h" 2
+# 31 "./MCAL_Layer/USART/../GPIO/hal_gpio.h"
 typedef enum{
     LOW=0,
     HIGH
@@ -5010,7 +5160,185 @@ Std_ReturnType gpio_port_get_direction_status(port_index_t port, uint8* directio
 Std_ReturnType gpio_port_write_logic(port_index_t port, uint8 logic);
 Std_ReturnType gpio_port_read_logic(port_index_t port, uint8* logic);
 Std_ReturnType gpio_port_toggle_logic(port_index_t port);
-# 13 "./ECU_Layer/7_Segment/ecu_seven_seg.h" 2
+# 13 "./MCAL_Layer/USART/hal_usart.h" 2
+
+
+
+# 1 "./MCAL_Layer/USART/../Interrupt/mcal_internal_interrupt.h" 1
+# 13 "./MCAL_Layer/USART/../Interrupt/mcal_internal_interrupt.h"
+# 1 "./MCAL_Layer/USART/../Interrupt/mcal_interrupt_config.h" 1
+# 14 "./MCAL_Layer/USART/../Interrupt/mcal_interrupt_config.h"
+# 1 "./MCAL_Layer/USART/../Interrupt/mcal_interrupt_gen_cfg.h" 1
+# 14 "./MCAL_Layer/USART/../Interrupt/mcal_interrupt_config.h" 2
+# 59 "./MCAL_Layer/USART/../Interrupt/mcal_interrupt_config.h"
+typedef enum {
+    INTERRUPT_LOW_PRIORITY = 0 ,
+    INTERRUPT_HIGH_PRIORITY
+}interrupt_priority_cfg;
+
+typedef void (*InterruptHandler)(void);
+# 13 "./MCAL_Layer/USART/../Interrupt/mcal_internal_interrupt.h" 2
+
+# 1 "./MCAL_Layer/USART/../Interrupt/../ADC/hal_adc.h" 1
+# 12 "./MCAL_Layer/USART/../Interrupt/../ADC/hal_adc.h"
+# 1 "./MCAL_Layer/USART/../Interrupt/../ADC/hal_adc_cfg.h" 1
+# 12 "./MCAL_Layer/USART/../Interrupt/../ADC/hal_adc.h" 2
+
+
+
+
+# 1 "./MCAL_Layer/USART/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 1
+# 16 "./MCAL_Layer/USART/../Interrupt/../ADC/hal_adc.h" 2
+# 100 "./MCAL_Layer/USART/../Interrupt/../ADC/hal_adc.h"
+extern InterruptHandler ADC_InterruptHandler;
+
+
+
+
+
+
+typedef enum {
+    ADC_CHANNEL_AN0 = 0,
+    ADC_CHANNEL_AN1,
+    ADC_CHANNEL_AN2,
+    ADC_CHANNEL_AN3,
+    ADC_CHANNEL_AN4,
+    ADC_CHANNEL_AN5,
+    ADC_CHANNEL_AN6,
+    ADC_CHANNEL_AN7,
+    ADC_CHANNEL_AN8,
+    ADC_CHANNEL_AN9,
+    ADC_CHANNEL_AN10,
+    ADC_CHANNEL_AN11,
+    ADC_CHANNEL_AN12,
+}adc_channel_select_t;
+# 130 "./MCAL_Layer/USART/../Interrupt/../ADC/hal_adc.h"
+typedef enum {
+    ADC_0_TAD = 0,
+    ADC_2_TAD,
+    ADC_4_TAD,
+    ADC_6_TAD,
+    ADC_8_TAD,
+    ADC_12_TAD,
+    ADC_16_TAD,
+    ADC_20_TAD
+}adc_acquisition_time_t;
+
+
+
+
+
+
+
+typedef enum {
+    ADC_CONVERSION_CLOCK_FOSC_DIV_2 = 0,
+    ADC_CONVERSION_CLOCK_FOSC_DIV_8,
+    ADC_CONVERSION_CLOCK_FOSC_DIV_32,
+    ADC_CONVERSION_CLOCK_FOSC_DIV_FRC,
+    ADC_CONVERSION_CLOCK_FOSC_DIV_4,
+    ADC_CONVERSION_CLOCK_FOSC_DIV_16,
+    ADC_CONVERSION_CLOCK_FOSC_DIV_64
+}adc_conversion_clock_t;
+
+typedef struct {
+
+        void(*ADC_InterruptHandler)(void);
+
+        interrupt_priority_cfg priority;
+
+
+    adc_acquisition_time_t acquisition_time;
+    adc_conversion_clock_t conversion_clock;
+    adc_channel_select_t adc_channel;
+    uint8 voltage_reference : 1;
+    uint8 result_format : 1;
+    uint8 :6;
+}adc_conf_t;
+
+typedef uint16 adc_result_t;
+
+
+Std_ReturnType ADC_Init(const adc_conf_t *_adc);
+Std_ReturnType ADC_DeInit(const adc_conf_t *_adc);
+Std_ReturnType ADC_SelectChannel(const adc_conf_t *_adc, adc_channel_select_t channel);
+Std_ReturnType ADC_StartConversion(const adc_conf_t *_adc);
+Std_ReturnType ADC_IsConversionDone(const adc_conf_t *_adc, uint8 *conversion_status);
+Std_ReturnType ADC_GetConversionResult(const adc_conf_t *_adc, adc_result_t *conversion_result);
+Std_ReturnType ADC_GetConversion_Blocking(const adc_conf_t *_adc, adc_channel_select_t channel ,adc_result_t *conversion_result );
+Std_ReturnType ADC_StartConversion_Interrupt(const adc_conf_t *_adc, adc_channel_select_t channel);
+# 14 "./MCAL_Layer/USART/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
+# 16 "./MCAL_Layer/USART/hal_usart.h" 2
+# 65 "./MCAL_Layer/USART/hal_usart.h"
+typedef enum {
+    BAUDRATE_ASYNC_8BIT_LOW_SPEED,
+    BAUDRATE_ASYNC_8BIT_HIGH_SPEED,
+    BAUDRATE_ASYNC_16BIT_LOW_SPEED,
+    BAUDRATE_ASYNC_16BIT_HIGH_SPEED,
+    BAUDRATE_SYNC_8BIT,
+    BAUDRATE_SYNC_16BIT
+}baudrate_gen_t;
+
+typedef struct{
+    uint8 usart_tx_reserved : 5;
+    uint8 usart_tx_enable : 1;
+    uint8 usart_tx_interrupt_enable : 1;
+    uint8 usart_tx_9bit_enable : 1;
+    interrupt_priority_cfg usart_tx_int_priority;
+}usart_tx_cfg_t;
+
+typedef struct{
+    uint8 usart_rx_reserved : 5;
+    uint8 usart_rx_enable : 1;
+    uint8 usart_rx_interrupt_enable : 1;
+    uint8 usart_rx_9bit_enable : 1;
+    interrupt_priority_cfg usart_rx_int_priority ;
+}usart_rx_cfg_t;
+
+typedef union {
+    struct {
+        uint8 usart_reserved :6;
+        uint8 usart_ferr : 1;
+        uint8 usart_oerr : 1;
+    };
+    uint8 status ;
+}usart_error_status_t;
+
+typedef struct
+{
+    uint32 BaudRate ;
+    baudrate_gen_t baudrate_gen_config;
+    usart_tx_cfg_t usart_tx_cfg;
+    usart_rx_cfg_t usart_rx_cfg;
+    usart_error_status_t error_status;
+    void(*EUSART_TxDefaultInterruptHandler)(void);
+    void(*EUSART_RxDefaultInterruptHandler)(void);
+    void(*EUSART_FramingErrorHandler)(void);
+    void(*EUSART_OverrunErrorHandler)(void);
+}usart_t;
+
+
+Std_ReturnType EUSART_ASYNC_Init(const usart_t * _eusart);
+Std_ReturnType EUSART_ASYNC_DeInit(const usart_t * _eusart);
+Std_ReturnType EUSART_ASYNC_RX_Restart(void);
+Std_ReturnType EUSART_ASYNC_WriteByteBlocking(uint8 data);
+Std_ReturnType EUSART_ASYNC_WriteByteNonBlocking(uint8 data);
+Std_ReturnType EUSART_ASYNC_WriteStringBlocking(uint8* data);
+Std_ReturnType EUSART_ASYNC_WriteStringNonBlocking(uint8* data);
+Std_ReturnType EUSART_ASYNC_ReadByteBlocking(uint8 *data);
+Std_ReturnType EUSART_ASYNC_ReadByteNonBlocking(uint8 *data);
+# 16 "./MCAL_Layer/mcal_layer_init.h" 2
+# 41 "./MCAL_Layer/mcal_layer_init.h"
+void mcal_layer_initialize(void);
+void USART_TX_INT(void);
+void USART_RX_INT(void);
+# 12 "./application.h" 2
+
+# 1 "./ECU_Layer/ecu_layer_init.h" 1
+# 12 "./ECU_Layer/ecu_layer_init.h"
+# 1 "./ECU_Layer/7_Segment/ecu_seven_seg.h" 1
+# 12 "./ECU_Layer/7_Segment/ecu_seven_seg.h"
+# 1 "./ECU_Layer/7_Segment/ecu_seven_seg_cfg.h" 1
+# 12 "./ECU_Layer/7_Segment/ecu_seven_seg.h" 2
 # 26 "./ECU_Layer/7_Segment/ecu_seven_seg.h"
 typedef enum{
     SEGMENT_COMMON_ANODE,
@@ -5173,192 +5501,43 @@ Std_ReturnType convert_uint32_to_string(uint32 value , uint8 *str);
 
 
 extern chr_lcd_4bit_t lcd1;
-extern dc_motor_t dc_motor_1;
-extern dc_motor_t dc_motor_2;
-
+extern led_t led1;
 
 void ecu_layer_initialize(void);
-# 11 "./application.h" 2
-
-
-# 1 "./MCAL_Layer/Timer/hal_timer0.h" 1
-# 13 "./MCAL_Layer/Timer/hal_timer0.h"
-# 1 "./MCAL_Layer/Timer/../Interrupt/mcal_internal_interrupt.h" 1
-# 13 "./MCAL_Layer/Timer/../Interrupt/mcal_internal_interrupt.h"
-# 1 "./MCAL_Layer/Timer/../Interrupt/mcal_interrupt_config.h" 1
-# 14 "./MCAL_Layer/Timer/../Interrupt/mcal_interrupt_config.h"
-# 1 "./MCAL_Layer/Timer/../Interrupt/mcal_interrupt_gen_cfg.h" 1
-# 14 "./MCAL_Layer/Timer/../Interrupt/mcal_interrupt_config.h" 2
-# 59 "./MCAL_Layer/Timer/../Interrupt/mcal_interrupt_config.h"
-typedef enum {
-    INTERRUPT_LOW_PRIORITY = 0 ,
-    INTERRUPT_HIGH_PRIORITY
-}interrupt_priority_cfg;
-
-typedef void (*InterruptHandler)(void);
-# 13 "./MCAL_Layer/Timer/../Interrupt/mcal_internal_interrupt.h" 2
-
-# 1 "./MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc.h" 1
-# 12 "./MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc.h"
-# 1 "./MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc_cfg.h" 1
-# 12 "./MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc.h" 2
-
-
-
-
-# 1 "./MCAL_Layer/Timer/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 1
-# 16 "./MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc.h" 2
-# 100 "./MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc.h"
-extern InterruptHandler ADC_InterruptHandler;
-
-
-
-
-
-
-typedef enum {
-    ADC_CHANNEL_AN0 = 0,
-    ADC_CHANNEL_AN1,
-    ADC_CHANNEL_AN2,
-    ADC_CHANNEL_AN3,
-    ADC_CHANNEL_AN4,
-    ADC_CHANNEL_AN5,
-    ADC_CHANNEL_AN6,
-    ADC_CHANNEL_AN7,
-    ADC_CHANNEL_AN8,
-    ADC_CHANNEL_AN9,
-    ADC_CHANNEL_AN10,
-    ADC_CHANNEL_AN11,
-    ADC_CHANNEL_AN12,
-}adc_channel_select_t;
-# 130 "./MCAL_Layer/Timer/../Interrupt/../ADC/hal_adc.h"
-typedef enum {
-    ADC_0_TAD = 0,
-    ADC_2_TAD,
-    ADC_4_TAD,
-    ADC_6_TAD,
-    ADC_8_TAD,
-    ADC_12_TAD,
-    ADC_16_TAD,
-    ADC_20_TAD
-}adc_acquisition_time_t;
-
-
-
-
-
-
-
-typedef enum {
-    ADC_CONVERSION_CLOCK_FOSC_DIV_2 = 0,
-    ADC_CONVERSION_CLOCK_FOSC_DIV_8,
-    ADC_CONVERSION_CLOCK_FOSC_DIV_32,
-    ADC_CONVERSION_CLOCK_FOSC_DIV_FRC,
-    ADC_CONVERSION_CLOCK_FOSC_DIV_4,
-    ADC_CONVERSION_CLOCK_FOSC_DIV_16,
-    ADC_CONVERSION_CLOCK_FOSC_DIV_64
-}adc_conversion_clock_t;
-
-typedef struct {
-
-        void(*ADC_InterruptHandler)(void);
-
-        interrupt_priority_cfg priority;
-
-
-    adc_acquisition_time_t acquisition_time;
-    adc_conversion_clock_t conversion_clock;
-    adc_channel_select_t adc_channel;
-    uint8 voltage_reference : 1;
-    uint8 result_format : 1;
-    uint8 :6;
-}adc_conf_t;
-
-typedef uint16 adc_result_t;
-
-
-Std_ReturnType ADC_Init(const adc_conf_t *_adc);
-Std_ReturnType ADC_DeInit(const adc_conf_t *_adc);
-Std_ReturnType ADC_SelectChannel(const adc_conf_t *_adc, adc_channel_select_t channel);
-Std_ReturnType ADC_StartConversion(const adc_conf_t *_adc);
-Std_ReturnType ADC_IsConversionDone(const adc_conf_t *_adc, uint8 *conversion_status);
-Std_ReturnType ADC_GetConversionResult(const adc_conf_t *_adc, adc_result_t *conversion_result);
-Std_ReturnType ADC_GetConversion_Blocking(const adc_conf_t *_adc, adc_channel_select_t channel ,adc_result_t *conversion_result );
-Std_ReturnType ADC_StartConversion_Interrupt(const adc_conf_t *_adc, adc_channel_select_t channel);
-# 14 "./MCAL_Layer/Timer/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
-# 13 "./MCAL_Layer/Timer/hal_timer0.h" 2
-# 48 "./MCAL_Layer/Timer/hal_timer0.h"
-extern InterruptHandler TMR0_InterruptHandler;
-
-typedef enum {
-    TIMER0_PRESCALER_DIV_BY_2 = 0,
-    TIMER0_PRESCALER_DIV_BY_4,
-    TIMER0_PRESCALER_DIV_BY_8,
-    TIMER0_PRESCALER_DIV_BY_16,
-    TIMER0_PRESCALER_DIV_BY_32,
-    TIMER0_PRESCALER_DIV_BY_64,
-    TIMER0_PRESCALER_DIV_BY_128,
-    TIMER0_PRESCALER_DIV_BY_256
-}timer0_prescaler_select_t;
-
-typedef struct{
-
-        void(*TMR0_InterruptHandler)(void);
-
-        interrupt_priority_cfg priority;
-
-
-    uint16 timer0_preload_value;
-    timer0_prescaler_select_t prescaler_value;
-    uint8 prescaler_enable :1;
-    uint8 timer0_counter_edge :1;
-    uint8 timer0_mode :1;
-    uint8 timer0_register_size :1;
-    uint8 :4;
-}timer0_t;
-
-
-Std_ReturnType Timer0_Init(const timer0_t *_timer);
-Std_ReturnType Timer0_DeInit(const timer0_t *_timer);
-Std_ReturnType Timer0_Write_Value(const timer0_t *_timer , uint16 _value);
-Std_ReturnType Timer0_Read_Value(const timer0_t *_timer , uint16 *_value);
 # 13 "./application.h" 2
-# 25 "./application.h"
-timer0_t tmr0_timer;
-
-
-void application_initialize(void);
-void TMR0_ISR_HANDLER(void);
 # 8 "application.c" 2
 
 
-
-Std_ReturnType ret=(Std_ReturnType)0x00;
-uint16 tmr0_Read=0;
+void USART_TX_INT(void);
+void USART_RX_INT(void);
+volatile uint8 counter =0;
+volatile uint8 Recieved_char =0;
 int main()
 {
-    application_initialize();
+    mcal_layer_initialize();
+    ecu_layer_initialize();
     while(1)
     {
-        Timer0_Read_Value(&tmr0_timer , &tmr0_Read);
 
+
+        _delay((unsigned long)((1500)*(4000000UL/4000.0)));
     }
-    return (0);
+        return (0);
 }
-void application_initialize(void){
-    Std_ReturnType ret=(Std_ReturnType)0x00;
-    ecu_layer_initialize();
-    ret= Timer0_Init(&tmr0_timer) ;
+
+
+void USART_TX_INT(void)
+{
+    uint8 counter_Str[4]={0};
+    counter++;
+    convert_uint8_to_string(counter,counter_Str);
+    lcd_4bit_send_command(&lcd1,0X01);
+    lcd_4bit_send_string(&lcd1,counter_Str);
 }
-timer0_t tmr0_timer = {
-    .TMR0_InterruptHandler = TMR0_ISR_HANDLER,
-    .priority = 1,
-    .prescaler_enable = 0,
-    .timer0_register_size = 0,
-    .timer0_mode = 0,
-    .timer0_preload_value =0,
-    .timer0_counter_edge = 1
-};
-void TMR0_ISR_HANDLER(void){
-    lcd_4bit_send_string(&lcd1 ,"m");
+void USART_RX_INT(void)
+{
+  EUSART_ASYNC_ReadByteNonBlocking(&Recieved_char);
+  lcd_4bit_send_command(&lcd1,0X01);
+  lcd_4bit_send_char_data(&lcd1,Recieved_char);
+
 }

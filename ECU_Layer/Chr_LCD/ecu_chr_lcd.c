@@ -11,7 +11,7 @@ static Std_ReturnType lcd_4bit_set_cursor(const chr_lcd_4bit_t *lcd , uint8 row 
  * @return 
  */
 Std_ReturnType lcd_4bit_initialize (const chr_lcd_4bit_t *lcd){
-    Std_ReturnType ret=E_OK;
+     Std_ReturnType ret=E_OK;
      uint8 l_data_pins_counter=ZERO_INIT;
     if(lcd==NULL){
         ret=E_NOT_OK;
@@ -30,10 +30,10 @@ Std_ReturnType lcd_4bit_initialize (const chr_lcd_4bit_t *lcd){
         ret=lcd_4bit_send_command(lcd,_LCD_CLEAR);
         ret=lcd_4bit_send_command(lcd,_LCD_ENTRY_MODE_INC_SHIFT_OFF);
         ret=lcd_4bit_send_command(lcd,_LCD_DISPLAY_ON_UNDERLINE_OFF_CURSOR_OFF);
-        
         }
     return ret;
 }
+
 /**
  * 
  * @param lcd
@@ -331,7 +331,7 @@ Std_ReturnType convert_uint8_to_string(uint8 value , uint8 *str){
         ret=E_NOT_OK;
     }
     else{
-        memset(str,' ',4);
+        memset(str,'\0',4);
         sprintf(Temp_str,"%i",value);
         while (Temp_str[cnt] != '\0'){
             str[cnt] = Temp_str [cnt];
@@ -377,7 +377,7 @@ Std_ReturnType convert_uint32_to_string(uint32 value , uint8 *str){
         ret=E_NOT_OK;
     }
     else{
-        memset(str,' ',11);
+        memset(str,'\0',11);
         sprintf(Temp_str,"%i",value);
         while (Temp_str[cnt] != '\0'){
             str[cnt] = Temp_str [cnt];

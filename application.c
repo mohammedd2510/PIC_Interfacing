@@ -1,57 +1,42 @@
 /* 
  * File:   application.c
  * Author: Mohamed Osama
- *
- * Created on August 15, 2023, 9:03 AM
+ * Description: 
+ * Created on January 8, 2024, 1:34 PM
  */
 
 #include "application.h"
 
-
-
-Std_ReturnType ret=E_NOT_OK;
-void Timer3_Timer_Init(void);
-void Timer3_Counter_Init(void);
-timer3_t timer_obj;
-timer3_t counter_obj;
-uint8 Counter_Val =ZERO_INIT;
+void USART_TX_INT(void);
+void USART_RX_INT(void);
+volatile uint8 counter =0;
+volatile uint8 Recieved_char =0;
 int main() 
 {
-    application_initialize();
-    while(1)
-    {
-        Timer3_Read_Value(&counter_obj,&Counter_Val);
-        lcd_4bit_send_string_pos(&lcd1,1,1,"Counter =  ");
-        lcd_4bit_send_char_data_pos(&lcd1,1,11,(Counter_Val+0x30));
-       
-    }
-    return (EXIT_SUCCESS);
-}
-void application_initialize(void){
-    Std_ReturnType ret=E_NOT_OK;
+    mcal_layer_initialize();
     ecu_layer_initialize();
-    //Timer3_Timer_Init();
-    Timer3_Counter_Init();
-   
+    while(1)
+    { 
+        
+        EUSART_ASYNC_WriteByteNonBlocking('m');
+        __delay_ms(1500);        
+    }
+        return (0);
 }
 
-void TMR3_ISR_HANDLER(void){
-    led_toggle(&led1);
+
+void USART_TX_INT(void)
+{
+    uint8 counter_Str[4]={0};
+    counter++;
+    convert_uint8_to_string(counter,counter_Str);
+    lcd_4bit_send_command(&lcd1,_LCD_CLEAR);
+    lcd_4bit_send_string(&lcd1,counter_Str);
 }
-void Timer3_Timer_Init(void){
-    timer_obj.TMR3_InterruptHandler = TMR3_ISR_HANDLER;
-    timer_obj.timer3_mode = TIMER3_TIMER_MODE;
-    timer_obj.priority = INTERRUPT_PRIORITY_HIGH;
-    timer_obj.prescaler_value = TIMER3_PRESCALER_DIV_BY_8;
-    timer_obj.timer3_preload_value =28036;
-    ret=Timer3_Init(&timer_obj);
-}
-void Timer3_Counter_Init(void){
-    counter_obj.TMR3_InterruptHandler = NULL;
-    counter_obj.prescaler_value = TIMER3_PRESCALER_DIV_BY_1;
-    counter_obj.priority = INTERRUPT_PRIORITY_HIGH;
-    counter_obj.timer3_mode = TIMER3_COUNTER_MODE;
-    counter_obj.timer3_preload_value = 0;
-    counter_obj.timer3_counter_mode = TIMER3_SYNC_COUNTER_MODE;
-    ret = Timer3_Init(&counter_obj);
+void USART_RX_INT(void)
+{
+  EUSART_ASYNC_ReadByteNonBlocking(&Recieved_char);
+  lcd_4bit_send_command(&lcd1,_LCD_CLEAR);
+  lcd_4bit_send_char_data(&lcd1,Recieved_char);
+  
 }

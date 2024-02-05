@@ -8,13 +8,9 @@
 #ifndef APPLICATION_H
 #define	APPLICATION_H
 
-#include"ECU_Layer/ecu_layer_init.h"
-
-#include "MCAL_Layer/Timer1/hal_timer1.h"
-#include"MCAL_Layer/Timer2/hal_timer2.h"
-#include"MCAL_Layer/Timer3/hal_timer3.h"
 /* Section : Includes */
-
+#include"MCAL_Layer/mcal_layer_init.h"
+#include"ECU_Layer/ecu_layer_init.h"
 
 /* Section : Macros Declaration */
 
@@ -26,8 +22,7 @@
 
 
 /* Section : Functions Declaration */
-void application_initialize(void);
-void TMR0_ISR_HANDLER(void);
+
 
 #endif	/* APPLICATION_H */
 
