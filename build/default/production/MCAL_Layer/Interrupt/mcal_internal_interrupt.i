@@ -5089,6 +5089,41 @@ typedef struct
    uint8 RCIDL :1;
    uint8 ABDOVF :1;
 }BAUDCON_t;
+# 537 "MCAL_Layer/Interrupt/../my_pic18f4620.h"
+typedef struct
+{
+   uint8 BF :1;
+   uint8 UA :1;
+   uint8 RW :1;
+   uint8 S :1;
+   uint8 P :1;
+   uint8 DA :1;
+   uint8 CKE :1;
+   uint8 SMP :1;
+}SSPSTAT_t;
+
+
+
+
+typedef union
+{
+    struct
+    {
+        uint8 SSPM0 :1;
+        uint8 SSPM1 :1;
+        uint8 SSPM2 :1;
+        uint8 SSPM3 :1;
+        uint8 CKP :1;
+        uint8 SSPEN :1;
+        uint8 SSPOV :1;
+        uint8 WCOL :1;
+    };
+    struct
+    {
+        uint8 SSPM :4;
+        uint8 :4;
+    };
+}SSPCON1_t;
 # 13 "MCAL_Layer/Interrupt/mcal_interrupt_config.h" 2
 
 # 1 "MCAL_Layer/Interrupt/mcal_interrupt_gen_cfg.h" 1
@@ -5250,6 +5285,8 @@ Std_ReturnType ADC_GetConversionResult(const adc_conf_t *_adc, adc_result_t *con
 Std_ReturnType ADC_GetConversion_Blocking(const adc_conf_t *_adc, adc_channel_select_t channel ,adc_result_t *conversion_result );
 Std_ReturnType ADC_StartConversion_Interrupt(const adc_conf_t *_adc, adc_channel_select_t channel);
 # 14 "MCAL_Layer/Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
+# 151 "MCAL_Layer/Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h"
+    extern InterruptHandler SPI_InterruptHandler;
 # 1 "MCAL_Layer/Interrupt/mcal_internal_interrupt.c" 2
 
 
@@ -5261,5 +5298,13 @@ void ADC_ISR(void){
     }
      else{ }
 
+}
+void MSSP_ISR(void){
+
+    ((*((volatile PIR1_t *)(0xF9E))).SSPIF=0);
+    if(SPI_InterruptHandler)
+    {
+     SPI_InterruptHandler();
+    }
 
 }

@@ -5089,6 +5089,41 @@ typedef struct
    uint8 RCIDL :1;
    uint8 ABDOVF :1;
 }BAUDCON_t;
+# 537 "MCAL_Layer/Interrupt/../my_pic18f4620.h"
+typedef struct
+{
+   uint8 BF :1;
+   uint8 UA :1;
+   uint8 RW :1;
+   uint8 S :1;
+   uint8 P :1;
+   uint8 DA :1;
+   uint8 CKE :1;
+   uint8 SMP :1;
+}SSPSTAT_t;
+
+
+
+
+typedef union
+{
+    struct
+    {
+        uint8 SSPM0 :1;
+        uint8 SSPM1 :1;
+        uint8 SSPM2 :1;
+        uint8 SSPM3 :1;
+        uint8 CKP :1;
+        uint8 SSPEN :1;
+        uint8 SSPOV :1;
+        uint8 WCOL :1;
+    };
+    struct
+    {
+        uint8 SSPM :4;
+        uint8 :4;
+    };
+}SSPCON1_t;
 # 13 "MCAL_Layer/Interrupt/mcal_interrupt_config.h" 2
 
 # 1 "MCAL_Layer/Interrupt/mcal_interrupt_gen_cfg.h" 1
@@ -5183,6 +5218,7 @@ void CCP1_ISR(void);
 void CCP2_ISR(void);
 void EUSART_TX_ISR(void);
 void EUSART_RX_ISR(void);
+void MSSP_ISR(void);
 # 1 "MCAL_Layer/Interrupt/mcal_interrupt_manager.c" 2
 
 
@@ -5255,6 +5291,10 @@ void __attribute__((picinterrupt(("")))) InterruptManagerHigh(void){
         EUSART_RX_ISR();
     }
     else { }
+    if((1 == (*((volatile IPR1_t *)(0xF9F))).SSPIP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).SSPIF)){
+        MSSP_ISR();
+    }
+    else { }
 }
 void __attribute__((picinterrupt(("low_priority")))) InterruptManagerLow(void){
       if((0 == (*((volatile INTCON3_t *)(0xFF0))).INT1IP)&&(1 == (*((volatile INTCON3_t *)(0xFF0))).INT1IF)){
@@ -5319,6 +5359,10 @@ void __attribute__((picinterrupt(("low_priority")))) InterruptManagerLow(void){
     else { }
     if((0 == (*((volatile IPR1_t *)(0xF9F))).RCIP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).RCIF)){
         EUSART_RX_ISR();
+    }
+    else { }
+    if((0 == (*((volatile IPR1_t *)(0xF9F))).SSPIP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).SSPIF)){
+        MSSP_ISR();
     }
     else { }
 }

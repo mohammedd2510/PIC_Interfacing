@@ -533,6 +533,47 @@ typedef struct
 #define TXREG (*( (volatile uint8 *)(0xFAD) ) )
 #define RCREG (*( (volatile uint8 *)(0xFAE) ) )
 
+/* MSSP Module Registers */
+typedef struct 
+{  
+   uint8 BF    :1; 
+   uint8 UA    :1;
+   uint8 RW    :1;
+   uint8 S     :1;
+   uint8 P     :1;
+   uint8 DA    :1;
+   uint8 CKE   :1;
+   uint8 SMP   :1;
+}SSPSTAT_t;
+
+#define SSPSTAT_bits (*((volatile SSPSTAT_t *)(0xFC7)))
+#define SSPSTAT (*( (volatile uint8 *)(0xFC7) ) )
+
+typedef union
+{
+    struct
+    {
+        uint8 SSPM0    :1; 
+        uint8 SSPM1    :1;
+        uint8 SSPM2    :1;
+        uint8 SSPM3    :1;
+        uint8 CKP      :1;
+        uint8 SSPEN    :1;
+        uint8 SSPOV    :1;
+        uint8 WCOL     :1;
+    };
+    struct
+    {
+        uint8 SSPM  :4;
+        uint8       :4;
+    };
+}SSPCON1_t;
+
+#define SSPCON1_bits (*((volatile SSPCON1_t *)(0xFC6)))
+#define SSPCON1 (*( (volatile uint8 *)(0xFC6) ) )
+
+#define SSPBUF (*( (volatile uint8 *)(0xFC9) ) )
+
 
 #endif	/* MY_PIC18F4620_H */
 

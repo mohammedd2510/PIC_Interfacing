@@ -141,6 +141,7 @@ Std_ReturnType EUSART_ASYNC_ReadByteNonBlocking(uint8 *data){
         }
         else{/*Nothing*/}
     }
+return ret;    
 }
 static void EUSART_Baud_Rate_Calcualtion(const usart_t* _eusart)
 {

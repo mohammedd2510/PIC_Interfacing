@@ -1,4 +1,4 @@
-# 1 "MCAL_Layer/Timer3/hal_timer3.c"
+# 1 "MCAL_Layer/SPI/hal_spi.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,17 +6,15 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "MCAL_Layer/Timer3/hal_timer3.c" 2
-# 1 "MCAL_Layer/Timer3/hal_timer3.h" 1
-# 12 "MCAL_Layer/Timer3/hal_timer3.h"
-# 1 "MCAL_Layer/Timer3/../Interrupt/mcal_internal_interrupt.h" 1
-# 13 "MCAL_Layer/Timer3/../Interrupt/mcal_internal_interrupt.h"
-# 1 "MCAL_Layer/Timer3/../Interrupt/mcal_interrupt_config.h" 1
-# 12 "MCAL_Layer/Timer3/../Interrupt/mcal_interrupt_config.h"
-# 1 "MCAL_Layer/Timer3/../Interrupt/../mcal_std_types.h" 1
-# 12 "MCAL_Layer/Timer3/../Interrupt/../mcal_std_types.h"
-# 1 "MCAL_Layer/Timer3/../Interrupt/../std_libraries.h" 1
-# 11 "MCAL_Layer/Timer3/../Interrupt/../std_libraries.h"
+# 1 "MCAL_Layer/SPI/hal_spi.c" 2
+# 1 "MCAL_Layer/SPI/hal_spi.h" 1
+# 12 "MCAL_Layer/SPI/hal_spi.h"
+# 1 "MCAL_Layer/SPI/../GPIO/hal_gpio.h" 1
+# 11 "MCAL_Layer/SPI/../GPIO/hal_gpio.h"
+# 1 "MCAL_Layer/SPI/../GPIO/../mcal_std_types.h" 1
+# 12 "MCAL_Layer/SPI/../GPIO/../mcal_std_types.h"
+# 1 "MCAL_Layer/SPI/../GPIO/../std_libraries.h" 1
+# 11 "MCAL_Layer/SPI/../GPIO/../std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
 
 
@@ -181,7 +179,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 11 "MCAL_Layer/Timer3/../Interrupt/../std_libraries.h" 2
+# 11 "MCAL_Layer/SPI/../GPIO/../std_libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
@@ -245,7 +243,7 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 12 "MCAL_Layer/Timer3/../Interrupt/../std_libraries.h" 2
+# 12 "MCAL_Layer/SPI/../GPIO/../std_libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 3
@@ -304,11 +302,11 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 13 "MCAL_Layer/Timer3/../Interrupt/../std_libraries.h" 2
-# 12 "MCAL_Layer/Timer3/../Interrupt/../mcal_std_types.h" 2
+# 13 "MCAL_Layer/SPI/../GPIO/../std_libraries.h" 2
+# 12 "MCAL_Layer/SPI/../GPIO/../mcal_std_types.h" 2
 
-# 1 "MCAL_Layer/Timer3/../Interrupt/../compiler.h" 1
-# 11 "MCAL_Layer/Timer3/../Interrupt/../compiler.h"
+# 1 "MCAL_Layer/SPI/../GPIO/../compiler.h" 1
+# 11 "MCAL_Layer/SPI/../GPIO/../compiler.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4683,8 +4681,8 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 2 3
-# 11 "MCAL_Layer/Timer3/../Interrupt/../compiler.h" 2
-# 13 "MCAL_Layer/Timer3/../Interrupt/../mcal_std_types.h" 2
+# 11 "MCAL_Layer/SPI/../GPIO/../compiler.h" 2
+# 13 "MCAL_Layer/SPI/../GPIO/../mcal_std_types.h" 2
 
 
 typedef unsigned char uint8;
@@ -4695,10 +4693,13 @@ typedef signed int sint16;
 typedef signed long sint32;
 
 typedef uint8 Std_ReturnType;
-# 12 "MCAL_Layer/Timer3/../Interrupt/mcal_interrupt_config.h" 2
+# 11 "MCAL_Layer/SPI/../GPIO/hal_gpio.h" 2
 
-# 1 "MCAL_Layer/Timer3/../Interrupt/../my_pic18f4620.h" 1
-# 101 "MCAL_Layer/Timer3/../Interrupt/../my_pic18f4620.h"
+# 1 "MCAL_Layer/SPI/../GPIO/../device_config.h" 1
+# 12 "MCAL_Layer/SPI/../GPIO/hal_gpio.h" 2
+
+# 1 "MCAL_Layer/SPI/../GPIO/../my_pic18f4620.h" 1
+# 101 "MCAL_Layer/SPI/../GPIO/../my_pic18f4620.h"
 typedef union {
   struct {
    uint8 RBIF :1;
@@ -4843,7 +4844,7 @@ typedef struct {
   uint8 SBOREN :1;
   uint8 IPEN :1;
 }RCON_t;
-# 257 "MCAL_Layer/Timer3/../Interrupt/../my_pic18f4620.h"
+# 257 "MCAL_Layer/SPI/../GPIO/../my_pic18f4620.h"
 typedef struct {
   uint8 RD :1;
   uint8 WR :1;
@@ -4941,7 +4942,7 @@ typedef union {
    uint8 :5;
 };
 }T0CON_t;
-# 362 "MCAL_Layer/Timer3/../Interrupt/../my_pic18f4620.h"
+# 362 "MCAL_Layer/SPI/../GPIO/../my_pic18f4620.h"
 typedef union {
   struct {
    uint8 TMR1ON :1;
@@ -4959,7 +4960,7 @@ typedef union {
    uint8 :2;
 };
 }T1CON_t;
-# 387 "MCAL_Layer/Timer3/../Interrupt/../my_pic18f4620.h"
+# 387 "MCAL_Layer/SPI/../GPIO/../my_pic18f4620.h"
 typedef union {
   struct {
    uint8 T2CKPS0 :1;
@@ -5049,7 +5050,7 @@ typedef union {
    uint8 :2;
 };
 }CCP2CON_t;
-# 485 "MCAL_Layer/Timer3/../Interrupt/../my_pic18f4620.h"
+# 485 "MCAL_Layer/SPI/../GPIO/../my_pic18f4620.h"
 typedef struct
 {
    uint8 TX9D :1;
@@ -5091,20 +5092,46 @@ typedef struct
    uint8 RCIDL :1;
    uint8 ABDOVF :1;
 }BAUDCON_t;
-# 13 "MCAL_Layer/Timer3/../Interrupt/mcal_interrupt_config.h" 2
+# 537 "MCAL_Layer/SPI/../GPIO/../my_pic18f4620.h"
+typedef struct
+{
+   uint8 BF :1;
+   uint8 UA :1;
+   uint8 RW :1;
+   uint8 S :1;
+   uint8 P :1;
+   uint8 DA :1;
+   uint8 CKE :1;
+   uint8 SMP :1;
+}SSPSTAT_t;
 
-# 1 "MCAL_Layer/Timer3/../Interrupt/mcal_interrupt_gen_cfg.h" 1
-# 14 "MCAL_Layer/Timer3/../Interrupt/mcal_interrupt_config.h" 2
-
-# 1 "MCAL_Layer/Timer3/../Interrupt/../GPIO/hal_gpio.h" 1
-# 12 "MCAL_Layer/Timer3/../Interrupt/../GPIO/hal_gpio.h"
-# 1 "MCAL_Layer/Timer3/../Interrupt/../GPIO/../device_config.h" 1
-# 12 "MCAL_Layer/Timer3/../Interrupt/../GPIO/hal_gpio.h" 2
 
 
-# 1 "MCAL_Layer/Timer3/../Interrupt/../GPIO/hal_gpio_cfg.h" 1
-# 14 "MCAL_Layer/Timer3/../Interrupt/../GPIO/hal_gpio.h" 2
-# 31 "MCAL_Layer/Timer3/../Interrupt/../GPIO/hal_gpio.h"
+
+typedef union
+{
+    struct
+    {
+        uint8 SSPM0 :1;
+        uint8 SSPM1 :1;
+        uint8 SSPM2 :1;
+        uint8 SSPM3 :1;
+        uint8 CKP :1;
+        uint8 SSPEN :1;
+        uint8 SSPOV :1;
+        uint8 WCOL :1;
+    };
+    struct
+    {
+        uint8 SSPM :4;
+        uint8 :4;
+    };
+}SSPCON1_t;
+# 13 "MCAL_Layer/SPI/../GPIO/hal_gpio.h" 2
+
+# 1 "MCAL_Layer/SPI/../GPIO/hal_gpio_cfg.h" 1
+# 14 "MCAL_Layer/SPI/../GPIO/hal_gpio.h" 2
+# 31 "MCAL_Layer/SPI/../GPIO/hal_gpio.h"
 typedef enum{
     LOW=0,
     HIGH
@@ -5154,27 +5181,36 @@ Std_ReturnType gpio_port_get_direction_status(port_index_t port, uint8* directio
 Std_ReturnType gpio_port_write_logic(port_index_t port, uint8 logic);
 Std_ReturnType gpio_port_read_logic(port_index_t port, uint8* logic);
 Std_ReturnType gpio_port_toggle_logic(port_index_t port);
-# 15 "MCAL_Layer/Timer3/../Interrupt/mcal_interrupt_config.h" 2
-# 59 "MCAL_Layer/Timer3/../Interrupt/mcal_interrupt_config.h"
+# 12 "MCAL_Layer/SPI/hal_spi.h" 2
+
+
+
+# 1 "MCAL_Layer/SPI/../Interrupt/mcal_internal_interrupt.h" 1
+# 13 "MCAL_Layer/SPI/../Interrupt/mcal_internal_interrupt.h"
+# 1 "MCAL_Layer/SPI/../Interrupt/mcal_interrupt_config.h" 1
+# 14 "MCAL_Layer/SPI/../Interrupt/mcal_interrupt_config.h"
+# 1 "MCAL_Layer/SPI/../Interrupt/mcal_interrupt_gen_cfg.h" 1
+# 14 "MCAL_Layer/SPI/../Interrupt/mcal_interrupt_config.h" 2
+# 59 "MCAL_Layer/SPI/../Interrupt/mcal_interrupt_config.h"
 typedef enum {
     INTERRUPT_LOW_PRIORITY = 0 ,
     INTERRUPT_HIGH_PRIORITY
 }interrupt_priority_cfg;
 
 typedef void (*InterruptHandler)(void);
-# 13 "MCAL_Layer/Timer3/../Interrupt/mcal_internal_interrupt.h" 2
+# 13 "MCAL_Layer/SPI/../Interrupt/mcal_internal_interrupt.h" 2
 
-# 1 "MCAL_Layer/Timer3/../Interrupt/../ADC/hal_adc.h" 1
-# 12 "MCAL_Layer/Timer3/../Interrupt/../ADC/hal_adc.h"
-# 1 "MCAL_Layer/Timer3/../Interrupt/../ADC/hal_adc_cfg.h" 1
-# 12 "MCAL_Layer/Timer3/../Interrupt/../ADC/hal_adc.h" 2
-
-
+# 1 "MCAL_Layer/SPI/../Interrupt/../ADC/hal_adc.h" 1
+# 12 "MCAL_Layer/SPI/../Interrupt/../ADC/hal_adc.h"
+# 1 "MCAL_Layer/SPI/../Interrupt/../ADC/hal_adc_cfg.h" 1
+# 12 "MCAL_Layer/SPI/../Interrupt/../ADC/hal_adc.h" 2
 
 
-# 1 "MCAL_Layer/Timer3/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 1
-# 16 "MCAL_Layer/Timer3/../Interrupt/../ADC/hal_adc.h" 2
-# 100 "MCAL_Layer/Timer3/../Interrupt/../ADC/hal_adc.h"
+
+
+# 1 "MCAL_Layer/SPI/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 1
+# 16 "MCAL_Layer/SPI/../Interrupt/../ADC/hal_adc.h" 2
+# 100 "MCAL_Layer/SPI/../Interrupt/../ADC/hal_adc.h"
 extern InterruptHandler ADC_InterruptHandler;
 
 
@@ -5197,7 +5233,7 @@ typedef enum {
     ADC_CHANNEL_AN11,
     ADC_CHANNEL_AN12,
 }adc_channel_select_t;
-# 130 "MCAL_Layer/Timer3/../Interrupt/../ADC/hal_adc.h"
+# 130 "MCAL_Layer/SPI/../Interrupt/../ADC/hal_adc.h"
 typedef enum {
     ADC_0_TAD = 0,
     ADC_2_TAD,
@@ -5251,176 +5287,219 @@ Std_ReturnType ADC_IsConversionDone(const adc_conf_t *_adc, uint8 *conversion_st
 Std_ReturnType ADC_GetConversionResult(const adc_conf_t *_adc, adc_result_t *conversion_result);
 Std_ReturnType ADC_GetConversion_Blocking(const adc_conf_t *_adc, adc_channel_select_t channel ,adc_result_t *conversion_result );
 Std_ReturnType ADC_StartConversion_Interrupt(const adc_conf_t *_adc, adc_channel_select_t channel);
-# 14 "MCAL_Layer/Timer3/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
-# 12 "MCAL_Layer/Timer3/hal_timer3.h" 2
-# 54 "MCAL_Layer/Timer3/hal_timer3.h"
+# 14 "MCAL_Layer/SPI/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
+# 151 "MCAL_Layer/SPI/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h"
+    extern InterruptHandler SPI_InterruptHandler;
+# 15 "MCAL_Layer/SPI/hal_spi.h" 2
+
+# 1 "MCAL_Layer/SPI/hal_spi_cfg.h" 1
+# 16 "MCAL_Layer/SPI/hal_spi.h" 2
+# 56 "MCAL_Layer/SPI/hal_spi.h"
+typedef enum
+{
+    SPI_MASTER_MODE_CLK_FOSC_DIV_4 = 0 ,
+    SPI_MASTER_MODE_CLK_FOSC_DIV_16,
+    SPI_MASTER_MODE_CLK_FOSC_DIV_64,
+    SPI_MASTER_MODE_CLK_TMR2_OUTPUT_DIV_2 ,
+    SPI_SLAVE_MODE_SS_PIN_CONTROL_ENABLED,
+    SPI_SLAVE_MODE_SS_PIN_CONTROL_DISABLED,
+}spi_clk_mode_t;
+
 typedef struct
 {
+    uint8 spi_transmit_phase_cfg :1;
+    uint8 spi_sample_time_cfg :1;
+    uint8 spi_polarity_cfg :1;
+    uint8 spi_mode :1;
+    uint8 spi_reserved :4;
+    spi_clk_mode_t spi_clk_mode;
 
-        void(*TMR3_InterruptHandler)(void);
+    InterruptHandler SPI_InterruptHandler ;
 
-        interrupt_priority_cfg priority;
-
-
-    uint16 timer3_preload_value;
-    uint8 prescaler_value :2;
-    uint8 timer3_mode :1;
-    uint8 timer3_counter_mode :1;
-    uint8 timer3_reg_wr_mode :1;
-    uint8 timer3_reserved :3;
-}timer3_t;
+    interrupt_priority_cfg priority ;
 
 
-Std_ReturnType Timer3_Init(const timer3_t *_timer);
-Std_ReturnType Timer3_DeInit(const timer3_t *_timer);
-Std_ReturnType Timer3_Write_Value(const timer3_t *_timer , uint16 _value);
-Std_ReturnType Timer3_Read_Value(const timer3_t *_timer , uint16 *_value);
-# 1 "MCAL_Layer/Timer3/hal_timer3.c" 2
+}spi_config_t;
+
+extern uint8 SPI_Slave_Receive_Status;
 
 
-InterruptHandler TMR3_InterruptHandler = ((void*)0);
+Std_ReturnType SPI_Init(spi_config_t* spi_config);
+Std_ReturnType SPI_Deinit(spi_config_t* spi_config);
+Std_ReturnType SPI_Master_Transcieve_Blocking(uint8 data_to_transmit , uint8* received_data , pin_config_t* slave_select_gpio_pin);
+Std_ReturnType SPI_Master_Transmit_Blocking(uint8 data_to_transmit , pin_config_t* slave_select_gpio_pin);
+Std_ReturnType SPI_Master_Receive_Blocking(uint8* received_data , pin_config_t* slave_select_gpio_pin);
+Std_ReturnType SPI_Slave_Receive_Blocking(uint8* received_data);
+Std_ReturnType SPI_Slave_Receive_Non_Blocking(uint8* received_data);
+uint8 SPI_Slave_Receive_status(void);
+# 1 "MCAL_Layer/SPI/hal_spi.c" 2
 
-static uint16 timer3_preload;
-static __attribute__((inline)) void Timer3_Mode_Select(const timer3_t *_timer);
+static void SPI_Pins_Direction_Initialize(spi_config_t* spi_config);
 
 
+InterruptHandler SPI_InterruptHandler = ((void*)0);
+static void SPI_Interrupt_Init(spi_config_t* spi_config);
 
-
-
-Std_ReturnType Timer3_Init(const timer3_t *_timer)
+uint8 SPI_Slave_Receive_Status =0;
+Std_ReturnType SPI_Init(spi_config_t* spi_config)
 {
-     Std_ReturnType ret=(Std_ReturnType)0x01;
-    if(_timer==((void*)0)){
-        ret=(Std_ReturnType)0x00;
+    Std_ReturnType ret = (Std_ReturnType)0x01;
+    if(((void*)0) == spi_config)
+    {
+      ret = (Std_ReturnType)0x00;
     }
     else
     {
-        ((*((volatile T3CON_t *)(0xFB1))).TMR3ON = 0);
-        ((*((volatile T3CON_t *)(0xFB1))).T3CKPS = _timer->prescaler_value);
-        Timer3_Mode_Select(_timer);
-        (*((volatile uint8 *)(0xFB3))) = (_timer->timer3_preload_value) >> 8 ;
-        (*((volatile uint8 *)(0xFB2))) = (uint8)(_timer->timer3_preload_value);
-        timer3_preload = _timer->timer3_preload_value;
+        ((*((volatile SSPCON1_t *)(0xFC6))).SSPEN=0);
+        ((*((volatile SSPCON1_t *)(0xFC6))).CKP = spi_config->spi_polarity_cfg);
+        ((*((volatile SSPSTAT_t *)(0xFC7))).CKE = spi_config->spi_transmit_phase_cfg);
+        ((*((volatile SSPSTAT_t *)(0xFC7))).SMP = spi_config->spi_sample_time_cfg);
+        SPI_Pins_Direction_Initialize(spi_config);
+        ((*((volatile SSPCON1_t *)(0xFC6))).SSPM = spi_config->spi_clk_mode);
 
+        SPI_Interrupt_Init(spi_config);
 
-        ((*((volatile PIE2_t *)(0xFA0))).TMR3IE=1);
-        ((*((volatile PIR2_t *)(0xFA1))).TMR3IF=0);
-        TMR3_InterruptHandler = _timer->TMR3_InterruptHandler;
-
-
-
-
-
-
-            ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
-            if(_timer->priority == INTERRUPT_HIGH_PRIORITY){
-                ((*((volatile IPR2_t *)(0xFA2))).TMR3IP=1);
-                ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-            }
-            else if(_timer->priority == INTERRUPT_LOW_PRIORITY)
-            {
-             ((*((volatile IPR2_t *)(0xFA2))).TMR3IP=0);
-             ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-             ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1);
-            }
-
-
-        ((*((volatile T3CON_t *)(0xFB1))).TMR3ON = 1);
+        ((*((volatile SSPCON1_t *)(0xFC6))).SSPEN=1);
     }
     return ret;
 }
-
-
-
-
-
-Std_ReturnType Timer3_DeInit(const timer3_t *_timer)
+Std_ReturnType SPI_Deinit(spi_config_t* spi_config)
 {
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-    if(_timer==((void*)0)){
-        ret=(Std_ReturnType)0x00;
+    Std_ReturnType ret = (Std_ReturnType)0x01;
+    if(((void*)0) == spi_config)
+    {
+      ret = (Std_ReturnType)0x00;
     }
     else
     {
 
-        ((*((volatile PIE2_t *)(0xFA0))).TMR3IE=0);
+        ((*((volatile PIE1_t *)(0xF9D))).SSPIE=0);
 
-        ((*((volatile T3CON_t *)(0xFB1))).TMR3ON = 0);
+        ((*((volatile SSPCON1_t *)(0xFC6))).SSPEN=0);
     }
     return ret;
 }
-
-
-
-
-
-
-Std_ReturnType Timer3_Write_Value(const timer3_t *_timer , uint16 _value)
+Std_ReturnType SPI_Master_Transcieve_Blocking(uint8 data_to_transmit , uint8* received_data , pin_config_t* slave_select_gpio_pin)
 {
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-    if(_timer==((void*)0)){
-        ret=(Std_ReturnType)0x00;
+    Std_ReturnType ret = (Std_ReturnType)0x01;
+    if( (((void*)0) == received_data))
+    {
+      ret = (Std_ReturnType)0x00;
     }
     else
     {
-        (*((volatile uint8 *)(0xFB3))) = (_value)>>8;
-        (*((volatile uint8 *)(0xFB2))) = (uint8)(_value);
+        gpio_pin_write_logic(slave_select_gpio_pin,LOW);
+        (*( (volatile uint8 *)(0xFC9) ) ) = data_to_transmit;
+        while (0x01 != ((*((volatile SSPSTAT_t *)(0xFC7))).BF));
+        *received_data = (*( (volatile uint8 *)(0xFC9) ) );
+        gpio_pin_write_logic(slave_select_gpio_pin,HIGH);
     }
     return ret;
 }
-
-
-
-
-
-
-Std_ReturnType Timer3_Read_Value(const timer3_t *_timer , uint16 *_value)
+Std_ReturnType SPI_Master_Transmit_Blocking(uint8 data_to_transmit , pin_config_t* slave_select_gpio_pin)
 {
-    Std_ReturnType ret=(Std_ReturnType)0x01;
-    uint8 tmr3_L = 0 , tmr3_H = 0 ;
-    if((_timer==((void*)0))||(_value == ((void*)0))){
-        ret=(Std_ReturnType)0x00;
+    Std_ReturnType ret = (Std_ReturnType)0x01;
+    uint8 dummy_buffer=0;
+    gpio_pin_write_logic(slave_select_gpio_pin,LOW);
+    (*( (volatile uint8 *)(0xFC9) ) ) = data_to_transmit;
+    while (0x01 != ((*((volatile SSPSTAT_t *)(0xFC7))).BF));
+    dummy_buffer = (*( (volatile uint8 *)(0xFC9) ) );
+    gpio_pin_write_logic(slave_select_gpio_pin,HIGH);
+    return ret;
+}
+Std_ReturnType SPI_Master_Receive_Blocking(uint8* received_data , pin_config_t* slave_select_gpio_pin)
+{
+    Std_ReturnType ret = (Std_ReturnType)0x01;
+    uint8 dummy_data =0x00;
+    if( (((void*)0) == received_data) )
+    {
+      ret = (Std_ReturnType)0x00;
     }
     else
     {
-        tmr3_L = (*((volatile uint8 *)(0xFB2)));
-        tmr3_H = (*((volatile uint8 *)(0xFB3)));
-        *_value = (uint16)((tmr3_H << 8) | tmr3_L );
+        gpio_pin_write_logic(slave_select_gpio_pin,LOW);
+        (*( (volatile uint8 *)(0xFC9) ) ) = dummy_data;
+        while (0x01 != ((*((volatile SSPSTAT_t *)(0xFC7))).BF));
+        *received_data = (*( (volatile uint8 *)(0xFC9) ) );
+        gpio_pin_write_logic(slave_select_gpio_pin,HIGH);
     }
     return ret;
 }
-
-
-
-
-
-static __attribute__((inline)) void Timer3_Mode_Select(const timer3_t *_timer){
-   if (0 == _timer->timer3_mode){
-        ((*((volatile T3CON_t *)(0xFB1))).TMR3CS = 0);
+Std_ReturnType SPI_Slave_Receive_Blocking(uint8* received_data)
+{
+    Std_ReturnType ret = (Std_ReturnType)0x01;
+    if(((void*)0) == received_data)
+    {
+      ret = (Std_ReturnType)0x00;
     }
-    else if (1 == _timer->timer3_mode){
-        ((*((volatile T3CON_t *)(0xFB1))).TMR3CS = 1);
-            if (0 == _timer->timer3_counter_mode)
-            {
-               ((*((volatile T3CON_t *)(0xFB1))).T3SYNC = 0);
-            }
-            else if (1 == _timer->timer3_counter_mode)
-            {
-               ((*((volatile T3CON_t *)(0xFB1))).T3SYNC = 1);
-            }
-            else { }
+    else
+    {
+        while (0x01 != ((*((volatile SSPSTAT_t *)(0xFC7))).BF));
+        *received_data = (*( (volatile uint8 *)(0xFC9) ) );
     }
-    else { }
+    return ret;
+}
+Std_ReturnType SPI_Slave_Receive_Non_Blocking(uint8* received_data)
+{
+    Std_ReturnType ret = (Std_ReturnType)0x01;
+    if( (((void*)0) == received_data) )
+    {
+      ret = (Std_ReturnType)0x00;
+    }
+    else
+    {
+        SPI_Slave_Receive_Status= 0x01;
+        *received_data = (*( (volatile uint8 *)(0xFC9) ) );
+    }
+    return ret;
+}
+uint8 SPI_Slave_Receive_status(void)
+{
+    uint8 receive_status_temp=0;
+    receive_status_temp = SPI_Slave_Receive_Status;
+    if(SPI_Slave_Receive_Status == 0x01)
+    {
+      SPI_Slave_Receive_Status =0X00;
+    }
+    return receive_status_temp;
+}
+static void SPI_Pins_Direction_Initialize(spi_config_t* spi_config)
+{
+    (*((volatile uint8*)(0xF94)))&=(~(1<<5));
+    if (0X00U==spi_config->spi_mode )
+    {
+        (*((volatile uint8*)(0xF94)))&=(~(1<<3));
+    }
+    else if (0X01U==spi_config->spi_mode )
+    {
+        (*((volatile uint8*)(0xF94)))|=(1<<3);
+        (*((volatile uint8*)(0xF92)))|=(1<<5);
+    }
+    else{ }
 }
 
 
-void TMR3_ISR (void)
+static void SPI_Interrupt_Init(spi_config_t* spi_config)
 {
-    (*((volatile uint8 *)(0xFB3))) = (timer3_preload)>>8;
-    (*((volatile uint8 *)(0xFB2))) = (uint8)(timer3_preload);
-    ((*((volatile PIR2_t *)(0xFA1))).TMR3IF=0);
-      if(TMR3_InterruptHandler){
-       TMR3_InterruptHandler();
+    ((*((volatile PIR1_t *)(0xF9E))).SSPIF=0);
+    SPI_InterruptHandler = spi_config->SPI_InterruptHandler;
+    ((*((volatile PIE1_t *)(0xF9D))).SSPIE=1);
+
+
+
+
+
+    ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
+    if(spi_config->priority == INTERRUPT_HIGH_PRIORITY)
+    {
+        ((*((volatile IPR1_t *)(0xF9F))).SSPIP=1);
+        ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
     }
-     else{ }
+    else if(spi_config->priority == INTERRUPT_LOW_PRIORITY)
+    {
+        ((*((volatile IPR1_t *)(0xF9F))).SSPIP=0);
+        ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
+        ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1);
+    }
+
 }

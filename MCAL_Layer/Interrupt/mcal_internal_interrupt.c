@@ -7,6 +7,14 @@ void ADC_ISR(void){
        ADC_InterruptHandler();
     }
      else{ }
-   #endif
-   
+   #endif  
+}
+void MSSP_ISR(void){
+#if(MSSP_INTERRUPT_FEATURE_ENABLE == INTERRUPT_FEATURE_ENABLE)
+    MSSP_InterruptFlagClear();
+    if(SPI_InterruptHandler)
+    {
+     SPI_InterruptHandler();   
+    }
+#endif    
 }

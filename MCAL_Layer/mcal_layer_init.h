@@ -13,8 +13,8 @@
 //#include"Timer2/hal_timer2.h"
 //#include"Timer3/hal_timer3.h"
 //#include"Timer1/hal_timer1.h"
-#include"USART/hal_usart.h"
-
+//#include"USART/hal_usart.h"
+#include"SPI/hal_spi.h"
 /* Section : Macros Declaration */
 
 
@@ -26,7 +26,8 @@
 //extern timer3_t timer3_obj;
 //extern ccp_t ccp2_obj;
 //extern ccp_t ccp1_obj;
-
+extern pin_config_t SS1_Pin;
+extern pin_config_t SS2_Pin;
 /* Section : Functions Declaration */
 /*
 void Timer2_Timer_Init(void);
@@ -39,6 +40,5 @@ void CCP2_Callback_ISR(void);
 void TMR1_Callback_ISR(void);
  */
 void mcal_layer_initialize(void);
-void USART_TX_INT(void);
-void USART_RX_INT(void);
+void SPI_ISR(void);
 #endif	/* MCAL_LAYER_INIT_H */

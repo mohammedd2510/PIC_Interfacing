@@ -147,11 +147,26 @@
     #endif 
 #endif
 
-
+#if (MSSP_INTERRUPT_FEATURE_ENABLE ==INTERRUPT_FEATURE_ENABLE )
+    extern InterruptHandler SPI_InterruptHandler;
+    /* This routing clears the interrupt enable for the MSSP Module */
+    #define MSSP_InterruptDisable() (PIE1_bits.SSPIE=0)
+    /* This routing sets the interrupt enable for the MSSP Module */
+    #define MSSP_InterruptEnable() (PIE1_bits.SSPIE=1)
+    /* This routing clears the interrupt flag for the MSSP Module */
+    #define MSSP_InterruptFlagClear() (PIR1_bits.SSPIF=0)
+    #if INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_ENABLE 
+        /* This routing sets the MSSP interrupt priority to be High priority */
+        #define MSSP_HighPrioritySet() (IPR1_bits.SSPIP=1)
+        /* This routing sets the MSSP interrupt priority to be Low priority */
+        #define MSSP_LowPrioritySet() (IPR1_bits.SSPIP=0)
+    #endif 
+#endif
 /* Section : Data Types Declaration */
 
 
 /* Section : Functions Declaration */
 
+    
 #endif	/* MCAL_INTERNAL_INTERRUPT_H */
 

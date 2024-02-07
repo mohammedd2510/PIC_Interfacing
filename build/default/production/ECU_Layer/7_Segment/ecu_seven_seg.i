@@ -5095,6 +5095,41 @@ typedef struct
    uint8 RCIDL :1;
    uint8 ABDOVF :1;
 }BAUDCON_t;
+# 537 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/../my_pic18f4620.h"
+typedef struct
+{
+   uint8 BF :1;
+   uint8 UA :1;
+   uint8 RW :1;
+   uint8 S :1;
+   uint8 P :1;
+   uint8 DA :1;
+   uint8 CKE :1;
+   uint8 SMP :1;
+}SSPSTAT_t;
+
+
+
+
+typedef union
+{
+    struct
+    {
+        uint8 SSPM0 :1;
+        uint8 SSPM1 :1;
+        uint8 SSPM2 :1;
+        uint8 SSPM3 :1;
+        uint8 CKP :1;
+        uint8 SSPEN :1;
+        uint8 SSPOV :1;
+        uint8 WCOL :1;
+    };
+    struct
+    {
+        uint8 SSPM :4;
+        uint8 :4;
+    };
+}SSPCON1_t;
 # 13 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
 # 1 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1

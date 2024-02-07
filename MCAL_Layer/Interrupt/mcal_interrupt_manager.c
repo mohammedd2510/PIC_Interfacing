@@ -69,6 +69,10 @@ void __interrupt() InterruptManagerHigh(void){
         EUSART_RX_ISR();
     }
     else {/*Nothing*/}
+    if((INTERRUPT_PRIORITY_HIGH == IPR1_bits.SSPIP)&&(INTERRUPT_OCCUR == PIR1_bits.SSPIF)){
+        MSSP_ISR();
+    }
+    else {/*Nothing*/}
 }
 void __interrupt(low_priority) InterruptManagerLow(void){
       if((INTERRUPT_PRIORITY_LOW == INTCON3_bits.INT1IP)&&(INTERRUPT_OCCUR == INTCON3_bits.INT1IF)){
@@ -133,6 +137,10 @@ void __interrupt(low_priority) InterruptManagerLow(void){
     else {/*Nothing*/}
     if((INTERRUPT_PRIORITY_LOW == IPR1_bits.RCIP)&&(INTERRUPT_OCCUR == PIR1_bits.RCIF)){
         EUSART_RX_ISR();
+    }
+    else {/*Nothing*/}
+    if((INTERRUPT_PRIORITY_LOW == IPR1_bits.SSPIP)&&(INTERRUPT_OCCUR == PIR1_bits.SSPIF)){
+        MSSP_ISR();
     }
     else {/*Nothing*/}  
 }
@@ -205,6 +213,10 @@ void __interrupt() InterruptManager(void){
     if((INTERRUPT_ENABLE == PIE1_bits.RCIE)&&(INTERRUPT_OCCUR == PIR1_bits.RCIF)){
         EUSART_RX_ISR();
     }
-    else {/*Nothing*/}  
+    else {/*Nothing*/}
+    if((INTERRUPT_ENABLE == PIE1_bits.SSPIE)&&(INTERRUPT_OCCUR == PIR1_bits.SSPIF)){
+        MSSP_ISR();
+    }
+    else {/*Nothing*/}
 }
 #endif

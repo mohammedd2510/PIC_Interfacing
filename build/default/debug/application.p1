@@ -1,40 +1,30 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"41 ./MCAL_Layer/mcal_layer_init.h
-[; ;./MCAL_Layer/mcal_layer_init.h: 41: void mcal_layer_initialize(void);
+"42 ./MCAL_Layer/mcal_layer_init.h
+[; ;./MCAL_Layer/mcal_layer_init.h: 42: void mcal_layer_initialize(void);
 [v _mcal_layer_initialize `(v ~T0 @X0 0 ef ]
 "29 ./ECU_Layer/ecu_layer_init.h
 [; ;./ECU_Layer/ecu_layer_init.h: 29: void ecu_layer_initialize(void);
 [v _ecu_layer_initialize `(v ~T0 @X0 0 ef ]
-[v F680 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\builtins.h
-[v __delay `JF680 ~T0 @X0 0 e ]
-[p i __delay ]
-"84 ./ECU_Layer/Chr_LCD/ecu_chr_lcd.h
-[; ;./ECU_Layer/Chr_LCD/ecu_chr_lcd.h: 84: Std_ReturnType convert_uint8_to_string(uint8 value , uint8 *str);
-[v _convert_uint8_to_string `(uc ~T0 @X0 0 ef2`uc`*uc ]
+"82 ./MCAL_Layer/SPI/hal_spi.h
+[; ;./MCAL_Layer/SPI/hal_spi.h: 82: extern uint8 SPI_Slave_Receive_Status;
+[v _SPI_Slave_Receive_Status `uc ~T0 @X0 0 e ]
 "60 ./ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/hal_gpio.h
-[s S316 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S316 . port pin direction logic ]
+[s S320 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S320 . port pin direction logic ]
 "53 ./ECU_Layer/Chr_LCD/ecu_chr_lcd.h
 [; ;./ECU_Layer/Chr_LCD/ecu_chr_lcd.h: 53: typedef struct {
-[s S329 `S316 1 `S316 1 `S316 -> 4 `i ]
+[s S329 `S320 1 `S320 1 `S320 -> 4 `i ]
 [n S329 . lcd_rs lcd_en lcd_data ]
-"66
-[; ;./ECU_Layer/Chr_LCD/ecu_chr_lcd.h: 66: Std_ReturnType lcd_4bit_send_command (const chr_lcd_4bit_t *lcd, uint8 command);
-[v _lcd_4bit_send_command `(uc ~T0 @X0 0 ef2`*CS329`uc ]
+"67
+[; ;./ECU_Layer/Chr_LCD/ecu_chr_lcd.h: 67: Std_ReturnType lcd_4bit_send_char_data (const chr_lcd_4bit_t *lcd, uint8 data);
+[v _lcd_4bit_send_char_data `(uc ~T0 @X0 0 ef2`*CS329`uc ]
 "26 ./ECU_Layer/ecu_layer_init.h
 [; ;./ECU_Layer/ecu_layer_init.h: 26: extern chr_lcd_4bit_t lcd1;
 [v _lcd1 `S329 ~T0 @X0 0 e ]
-"69 ./ECU_Layer/Chr_LCD/ecu_chr_lcd.h
-[; ;./ECU_Layer/Chr_LCD/ecu_chr_lcd.h: 69: Std_ReturnType lcd_4bit_send_string (const chr_lcd_4bit_t *lcd, uint8 *str);
-[v _lcd_4bit_send_string `(uc ~T0 @X0 0 ef2`*CS329`*uc ]
-"121 ./MCAL_Layer/USART/hal_usart.h
-[; ;./MCAL_Layer/USART/hal_usart.h: 121: Std_ReturnType EUSART_ASYNC_ReadByteNonBlocking(uint8 *data);
-[v _EUSART_ASYNC_ReadByteNonBlocking `(uc ~T0 @X0 0 ef1`*uc ]
-"67 ./ECU_Layer/Chr_LCD/ecu_chr_lcd.h
-[; ;./ECU_Layer/Chr_LCD/ecu_chr_lcd.h: 67: Std_ReturnType lcd_4bit_send_char_data (const chr_lcd_4bit_t *lcd, uint8 data);
-[v _lcd_4bit_send_char_data `(uc ~T0 @X0 0 ef2`*CS329`uc ]
+"91 ./MCAL_Layer/SPI/hal_spi.h
+[; ;./MCAL_Layer/SPI/hal_spi.h: 91: Std_ReturnType SPI_Slave_Receive_Non_Blocking(uint8* received_data);
+[v _SPI_Slave_Receive_Non_Blocking `(uc ~T0 @X0 0 ef1`*uc ]
 "54 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -446,108 +436,85 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"12 application.c
-[; ;application.c: 12: volatile uint8 counter =0;
-[v _counter `Vuc ~T0 @X0 1 e ]
-[i _counter
+"10 application.c
+[; ;application.c: 10: volatile uint8 Data =0;
+[v _Data `Vuc ~T0 @X0 1 e ]
+[i _Data
 -> -> 0 `i `uc
 ]
-"13
-[; ;application.c: 13: volatile uint8 Recieved_char =0;
-[v _Recieved_char `Vuc ~T0 @X0 1 e ]
-[i _Recieved_char
+"11
+[; ;application.c: 11: volatile uint8 Receive_Status=0;
+[v _Receive_Status `Vuc ~T0 @X0 1 e ]
+[i _Receive_Status
+-> -> 0 `i `uc
+]
+"12
+[; ;application.c: 12: uint8 status =0;
+[v _status `uc ~T0 @X0 1 e ]
+[i _status
 -> -> 0 `i `uc
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"14
-[; ;application.c: 14: int main()
+"13
+[; ;application.c: 13: int main()
 [v _main `(i ~T0 @X0 1 ef ]
-"15
-[; ;application.c: 15: {
+"14
+[; ;application.c: 14: {
 {
 [e :U _main ]
 [f ]
-"16
-[; ;application.c: 16:     mcal_layer_initialize();
+"15
+[; ;application.c: 15:     mcal_layer_initialize();
 [e ( _mcal_layer_initialize ..  ]
-"17
-[; ;application.c: 17:     ecu_layer_initialize();
+"16
+[; ;application.c: 16:     ecu_layer_initialize();
 [e ( _ecu_layer_initialize ..  ]
-"18
-[; ;application.c: 18:     while(1)
+"17
+[; ;application.c: 17:     while(1)
 [e :U 333 ]
-"19
-[; ;application.c: 19:     {
+"18
+[; ;application.c: 18:     {
 {
-"22
-[; ;application.c: 22:         _delay((unsigned long)((1500)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"23
-[; ;application.c: 23:     }
+"28
+[; ;application.c: 28:         if(0x01 == SPI_Slave_Receive_Status){
+[e $ ! == -> 1 `i -> _SPI_Slave_Receive_Status `i 335  ]
+{
+"29
+[; ;application.c: 29:             lcd_4bit_send_char_data(&lcd1,Data);
+[e ( _lcd_4bit_send_char_data (2 , -> &U _lcd1 `*CS329 _Data ]
+"30
+[; ;application.c: 30:             SPI_Slave_Receive_Status =0X00;
+[e = _SPI_Slave_Receive_Status -> -> 0 `i `uc ]
+"31
+[; ;application.c: 31:         }
+}
+[e :U 335 ]
+"32
+[; ;application.c: 32:     }
 }
 [e :U 332 ]
 [e $U 333  ]
 [e :U 334 ]
-"24
-[; ;application.c: 24:         return (0);
+"33
+[; ;application.c: 33:         return (0);
 [e ) -> 0 `i ]
 [e $UE 331  ]
-"25
-[; ;application.c: 25: }
+"34
+[; ;application.c: 34: }
 [e :UE 331 ]
 }
-"28
-[; ;application.c: 28: void USART_TX_INT(void)
-[v _USART_TX_INT `(v ~T0 @X0 1 ef ]
-"29
-[; ;application.c: 29: {
-{
-[e :U _USART_TX_INT ]
-[f ]
-[v F3631 `uc ~T0 @X0 -> 4 `i s ]
-[i F3631
-:U ..
-"30
-[; ;application.c: 30:     uint8 counter_Str[4]={0};
--> -> 0 `i `uc
-..
-]
-[v _counter_Str `uc ~T0 @X0 -> 4 `i a ]
-[e = _counter_Str F3631 ]
-"31
-[; ;application.c: 31:     counter++;
-[e ++ _counter -> -> 1 `i `Vuc ]
-"32
-[; ;application.c: 32:     convert_uint8_to_string(counter,counter_Str);
-[e ( _convert_uint8_to_string (2 , _counter &U _counter_Str ]
-"33
-[; ;application.c: 33:     lcd_4bit_send_command(&lcd1,0X01);
-[e ( _lcd_4bit_send_command (2 , -> &U _lcd1 `*CS329 -> -> 1 `i `uc ]
-"34
-[; ;application.c: 34:     lcd_4bit_send_string(&lcd1,counter_Str);
-[e ( _lcd_4bit_send_string (2 , -> &U _lcd1 `*CS329 &U _counter_Str ]
 "35
-[; ;application.c: 35: }
-[e :UE 335 ]
-}
+[; ;application.c: 35: void SPI_ISR(void)
+[v _SPI_ISR `(v ~T0 @X0 1 ef ]
 "36
-[; ;application.c: 36: void USART_RX_INT(void)
-[v _USART_RX_INT `(v ~T0 @X0 1 ef ]
-"37
-[; ;application.c: 37: {
+[; ;application.c: 36: {
 {
-[e :U _USART_RX_INT ]
+[e :U _SPI_ISR ]
 [f ]
+"37
+[; ;application.c: 37:   SPI_Slave_Receive_Non_Blocking(&Data);
+[e ( _SPI_Slave_Receive_Non_Blocking (1 -> &U _Data `*uc ]
 "38
-[; ;application.c: 38:   EUSART_ASYNC_ReadByteNonBlocking(&Recieved_char);
-[e ( _EUSART_ASYNC_ReadByteNonBlocking (1 -> &U _Recieved_char `*uc ]
-"39
-[; ;application.c: 39:   lcd_4bit_send_command(&lcd1,0X01);
-[e ( _lcd_4bit_send_command (2 , -> &U _lcd1 `*CS329 -> -> 1 `i `uc ]
-"40
-[; ;application.c: 40:   lcd_4bit_send_char_data(&lcd1,Recieved_char);
-[e ( _lcd_4bit_send_char_data (2 , -> &U _lcd1 `*CS329 _Recieved_char ]
-"42
-[; ;application.c: 42: }
+[; ;application.c: 38: }
 [e :UE 336 ]
 }
