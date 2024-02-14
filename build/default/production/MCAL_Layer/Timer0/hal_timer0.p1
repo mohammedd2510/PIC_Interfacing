@@ -1,17 +1,15 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F3468 `(v ~T0 @X0 0 tf ]
-[v F3469 `(v ~T0 @X0 0 tf ]
-[v F3447 `(v ~T0 @X0 0 tf ]
+[v F3480 `(v ~T0 @X0 0 tf ]
+[v F3481 `(v ~T0 @X0 0 tf ]
+[v F3460 `(v ~T0 @X0 0 tf ]
 "15 MCAL_Layer/Timer0/hal_timer0.c
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 15: Std_ReturnType Timer0_Init(const timer0_t *_timer){
-[c E3355 0 1 .. ]
-[n E3355 . INTERRUPT_LOW_PRIORITY INTERRUPT_HIGH_PRIORITY  ]
-[c E3435 0 1 2 3 4 5 6 7 .. ]
-[n E3435 . TIMER0_PRESCALER_DIV_BY_2 TIMER0_PRESCALER_DIV_BY_4 TIMER0_PRESCALER_DIV_BY_8 TIMER0_PRESCALER_DIV_BY_16 TIMER0_PRESCALER_DIV_BY_32 TIMER0_PRESCALER_DIV_BY_64 TIMER0_PRESCALER_DIV_BY_128 TIMER0_PRESCALER_DIV_BY_256  ]
+[c E3448 0 1 2 3 4 5 6 7 .. ]
+[n E3448 . TIMER0_PRESCALER_DIV_BY_2 TIMER0_PRESCALER_DIV_BY_4 TIMER0_PRESCALER_DIV_BY_8 TIMER0_PRESCALER_DIV_BY_16 TIMER0_PRESCALER_DIV_BY_32 TIMER0_PRESCALER_DIV_BY_64 TIMER0_PRESCALER_DIV_BY_128 TIMER0_PRESCALER_DIV_BY_256  ]
 "61 MCAL_Layer/Timer0/hal_timer0.h
 [; ;MCAL_Layer/Timer0/hal_timer0.h: 61: typedef struct{
-[s S322 `*F3447 1 `E3355 1 `ui 1 `E3435 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]
-[n S322 . TMR0_InterruptHandler priority timer0_preload_value prescaler_value prescaler_enable timer0_counter_edge timer0_mode timer0_register_size . ]
+[s S323 `*F3460 1 `ui 1 `E3448 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S323 . TMR0_InterruptHandler timer0_preload_value prescaler_value prescaler_enable timer0_counter_edge timer0_mode timer0_register_size . ]
 "339 MCAL_Layer/Timer0/../my_pic18f4620.h
 [s S296 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S296 . T0PS0 T0PS1 T0PS2 PSA T0SE T0CS T08BIT TMR0ON ]
@@ -30,28 +28,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 "101
 [u S273 `S274 1 `S275 1 ]
 [n S273 . . . ]
-"235
-[s S284 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S284 . BOR POR PD TO RI . SBOREN IPEN ]
-"122
-[s S276 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S276 . RBIP . TMR0IP . INTEDG2 INTEDG1 INTEDG0 RBPU ]
-[v F3472 `(v ~T0 @X0 1 tf1`*CS322 ]
+[v F3484 `(v ~T0 @X0 1 tf1`*CS323 ]
 "7 MCAL_Layer/Timer0/hal_timer0.c
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 7: static __attribute__((inline)) void Timer0_Prescaler_Config(const timer0_t *_timer);
-[v _Timer0_Prescaler_Config `TF3472 ~T0 @X0 0 s ]
-[v F3475 `(v ~T0 @X0 1 tf1`*CS322 ]
+[v _Timer0_Prescaler_Config `TF3484 ~T0 @X0 0 s ]
+[v F3487 `(v ~T0 @X0 1 tf1`*CS323 ]
 "8
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 8: static __attribute__((inline)) void Timer0_Mode_Select(const timer0_t *_timer);
-[v _Timer0_Mode_Select `TF3475 ~T0 @X0 0 s ]
-[v F3478 `(v ~T0 @X0 1 tf1`*CS322 ]
+[v _Timer0_Mode_Select `TF3487 ~T0 @X0 0 s ]
+[v F3490 `(v ~T0 @X0 1 tf1`*CS323 ]
 "9
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 9: static __attribute__((inline)) void Timer0_Register_Size_Config(const timer0_t *_timer);
-[v _Timer0_Register_Size_Config `TF3478 ~T0 @X0 0 s ]
+[v _Timer0_Register_Size_Config `TF3490 ~T0 @X0 0 s ]
 "5947 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 5947: extern volatile unsigned char TMR0H __attribute__((address(0xFD7)));
 [v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
-[v F3500 `(v ~T0 @X0 0 tf ]
+[v F3512 `(v ~T0 @X0 0 tf ]
 "54 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -465,19 +457,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "4 MCAL_Layer/Timer0/hal_timer0.c
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 4: InterruptHandler TMR0_InterruptHandler = ((void*)0);
-[v _TMR0_InterruptHandler `*F3468 ~T0 @X0 1 e ]
+[v _TMR0_InterruptHandler `*F3480 ~T0 @X0 1 e ]
 [i _TMR0_InterruptHandler
--> -> -> 0 `i `*v `*F3469
+-> -> -> 0 `i `*v `*F3481
 ]
 "6
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 6: static uint16 timer0_preload;
 [v _timer0_preload `ui ~T0 @X0 1 s ]
 "15
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 15: Std_ReturnType Timer0_Init(const timer0_t *_timer){
-[v _Timer0_Init `(uc ~T0 @X0 1 ef1`*CS322 ]
+[v _Timer0_Init `(uc ~T0 @X0 1 ef1`*CS323 ]
 {
 [e :U _Timer0_Init ]
-[v __timer `*CS322 ~T0 @X0 1 r1 ]
+[v __timer `*CS323 ~T0 @X0 1 r1 ]
 [f ]
 "16
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 16:     Std_ReturnType ret=(Std_ReturnType)0x01;
@@ -485,7 +477,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _ret -> -> 1 `i `uc ]
 "17
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 17:     if(_timer==((void*)0)){
-[e $ ! == __timer -> -> -> 0 `i `*v `*CS322 324  ]
+[e $ ! == __timer -> -> -> 0 `i `*v `*CS323 325  ]
 {
 "18
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 18:         ret=(Std_ReturnType)0x00;
@@ -493,10 +485,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "19
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 19:     }
 }
-[e $U 325  ]
+[e $U 326  ]
 "20
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 20:     else{
-[e :U 324 ]
+[e :U 325 ]
 {
 "21
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 21:         ((*((volatile T0CON_t *)(0xFD5))).TMR0ON = 0);
@@ -504,54 +496,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 23:             TMR0_InterruptHandler = _timer->TMR0_InterruptHandler;
 [e = _TMR0_InterruptHandler . *U __timer 0 ]
+"25
+[; ;MCAL_Layer/Timer0/hal_timer0.c: 25:                 ((*((volatile INTCON_t *)(0xFF2))).GIE = 1);
+[e = . . *U -> -> 4082 `i `*VS273 0 7 -> -> 1 `i `uc ]
+"26
+[; ;MCAL_Layer/Timer0/hal_timer0.c: 26:                 ((*((volatile INTCON_t *)(0xFF2))).PEIE = 1);
+[e = . . *U -> -> 4082 `i `*VS273 0 6 -> -> 1 `i `uc ]
 "28
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 28:             ((*((volatile INTCON_t *)(0xFF2))).TMR0IE=1);
 [e = . . *U -> -> 4082 `i `*VS273 0 5 -> -> 1 `i `uc ]
 "29
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 29:             ((*((volatile INTCON_t *)(0xFF2))).TMR0IF=0);
 [e = . . *U -> -> 4082 `i `*VS273 0 2 -> -> 0 `i `uc ]
-"31
-[; ;MCAL_Layer/Timer0/hal_timer0.c: 31:                 ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
-[e = . *U -> -> 4048 `i `*VS284 7 -> -> 1 `i `uc ]
-"32
-[; ;MCAL_Layer/Timer0/hal_timer0.c: 32:                 if(INTERRUPT_HIGH_PRIORITY == _timer->priority){
-[e $ ! == -> . `E3355 1 `ui -> . *U __timer 1 `ui 326  ]
-{
-"33
-[; ;MCAL_Layer/Timer0/hal_timer0.c: 33:                     ((*((volatile INTCON2_t *)(0xFF1))).TMR0IP=1);
-[e = . *U -> -> 4081 `i `*VS276 2 -> -> 1 `i `uc ]
-"34
-[; ;MCAL_Layer/Timer0/hal_timer0.c: 34:                     ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-[e = . . *U -> -> 4082 `i `*VS273 1 2 -> -> 1 `i `uc ]
-"35
-[; ;MCAL_Layer/Timer0/hal_timer0.c: 35:                 }
-}
-[e $U 327  ]
-"36
-[; ;MCAL_Layer/Timer0/hal_timer0.c: 36:                 else if (INTERRUPT_LOW_PRIORITY == _timer->priority){
-[e :U 326 ]
-[e $ ! == -> . `E3355 0 `ui -> . *U __timer 1 `ui 328  ]
-{
-"37
-[; ;MCAL_Layer/Timer0/hal_timer0.c: 37:                     ((*((volatile INTCON2_t *)(0xFF1))).TMR0IP=0);
-[e = . *U -> -> 4081 `i `*VS276 2 -> -> 0 `i `uc ]
-"38
-[; ;MCAL_Layer/Timer0/hal_timer0.c: 38:                     ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-[e = . . *U -> -> 4082 `i `*VS273 1 2 -> -> 1 `i `uc ]
-"39
-[; ;MCAL_Layer/Timer0/hal_timer0.c: 39:                     ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1);
-[e = . . *U -> -> 4082 `i `*VS273 1 1 -> -> 1 `i `uc ]
-"40
-[; ;MCAL_Layer/Timer0/hal_timer0.c: 40:                 }
-}
-[e $U 329  ]
-"41
-[; ;MCAL_Layer/Timer0/hal_timer0.c: 41:                 else { }
-[e :U 328 ]
-{
-}
-[e :U 329 ]
-[e :U 327 ]
 "44
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 44:         Timer0_Prescaler_Config(_timer);
 [e ( _Timer0_Prescaler_Config (1 __timer ]
@@ -563,34 +519,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _Timer0_Register_Size_Config (1 __timer ]
 "47
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 47:         timer0_preload = (_timer->timer0_preload_value);
-[e = _timer0_preload . *U __timer 2 ]
+[e = _timer0_preload . *U __timer 1 ]
 "48
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 48:         TMR0H = (_timer->timer0_preload_value)>>8;
-[e = _TMR0H -> >> . *U __timer 2 -> 8 `i `uc ]
+[e = _TMR0H -> >> . *U __timer 1 -> 8 `i `uc ]
 "49
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 49:         (*((volatile uint8 *)(0xFD6))) = (uint8)(_timer->timer0_preload_value);
-[e = *U -> -> 4054 `i `*Vuc -> . *U __timer 2 `uc ]
+[e = *U -> -> 4054 `i `*Vuc -> . *U __timer 1 `uc ]
 "50
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 50:         ((*((volatile T0CON_t *)(0xFD5))).TMR0ON = 1);
 [e = . . *U -> -> 4053 `i `*VS295 0 7 -> -> 1 `i `uc ]
 "51
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 51:         }
 }
-[e :U 325 ]
+[e :U 326 ]
 "52
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 52:     return ret;
 [e ) _ret ]
-[e $UE 323  ]
+[e $UE 324  ]
 "54
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 54: }
-[e :UE 323 ]
+[e :UE 324 ]
 }
 "60
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 60: Std_ReturnType Timer0_DeInit(const timer0_t *_timer){
-[v _Timer0_DeInit `(uc ~T0 @X0 1 ef1`*CS322 ]
+[v _Timer0_DeInit `(uc ~T0 @X0 1 ef1`*CS323 ]
 {
 [e :U _Timer0_DeInit ]
-[v __timer `*CS322 ~T0 @X0 1 r1 ]
+[v __timer `*CS323 ~T0 @X0 1 r1 ]
 [f ]
 "61
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 61: Std_ReturnType ret=(Std_ReturnType)0x01;
@@ -598,7 +554,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _ret -> -> 1 `i `uc ]
 "62
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 62:     if(_timer==((void*)0)){
-[e $ ! == __timer -> -> -> 0 `i `*v `*CS322 331  ]
+[e $ ! == __timer -> -> -> 0 `i `*v `*CS323 328  ]
 {
 "63
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 63:         ret=(Std_ReturnType)0x00;
@@ -606,10 +562,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "64
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 64:     }
 }
-[e $U 332  ]
+[e $U 329  ]
 "65
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 65:     else{
-[e :U 331 ]
+[e :U 328 ]
 {
 "66
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 66:         ((*((volatile T0CON_t *)(0xFD5))).TMR0ON = 0);
@@ -623,21 +579,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "71
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 71:         }
 }
-[e :U 332 ]
+[e :U 329 ]
 "72
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 72:     return ret;
 [e ) _ret ]
-[e $UE 330  ]
+[e $UE 327  ]
 "73
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 73: }
-[e :UE 330 ]
+[e :UE 327 ]
 }
 "80
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 80: Std_ReturnType Timer0_Write_Value(const timer0_t *_timer , uint16 _value){
-[v _Timer0_Write_Value `(uc ~T0 @X0 1 ef2`*CS322`ui ]
+[v _Timer0_Write_Value `(uc ~T0 @X0 1 ef2`*CS323`ui ]
 {
 [e :U _Timer0_Write_Value ]
-[v __timer `*CS322 ~T0 @X0 1 r1 ]
+[v __timer `*CS323 ~T0 @X0 1 r1 ]
 [v __value `ui ~T0 @X0 1 r2 ]
 [f ]
 "81
@@ -646,7 +602,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _ret -> -> 1 `i `uc ]
 "82
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 82:     if(_timer==((void*)0)){
-[e $ ! == __timer -> -> -> 0 `i `*v `*CS322 334  ]
+[e $ ! == __timer -> -> -> 0 `i `*v `*CS323 331  ]
 {
 "83
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 83:         ret=(Std_ReturnType)0x00;
@@ -654,10 +610,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "84
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 84:     }
 }
-[e $U 335  ]
+[e $U 332  ]
 "85
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 85:     else{
-[e :U 334 ]
+[e :U 331 ]
 {
 "86
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 86:         TMR0H = (_value)>>8;
@@ -668,21 +624,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "88
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 88:         }
 }
-[e :U 335 ]
+[e :U 332 ]
 "89
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 89:     return ret;
 [e ) _ret ]
-[e $UE 333  ]
+[e $UE 330  ]
 "90
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 90: }
-[e :UE 333 ]
+[e :UE 330 ]
 }
 "97
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 97: Std_ReturnType Timer0_Read_Value(const timer0_t *_timer , uint16 *_value){
-[v _Timer0_Read_Value `(uc ~T0 @X0 1 ef2`*CS322`*ui ]
+[v _Timer0_Read_Value `(uc ~T0 @X0 1 ef2`*CS323`*ui ]
 {
 [e :U _Timer0_Read_Value ]
-[v __timer `*CS322 ~T0 @X0 1 r1 ]
+[v __timer `*CS323 ~T0 @X0 1 r1 ]
 [v __value `*ui ~T0 @X0 1 r2 ]
 [f ]
 "98
@@ -697,7 +653,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _l_tmr0h -> -> 0 `i `uc ]
 "100
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 100:     if((_timer==((void*)0))||(_value == ((void*)0))){
-[e $ ! || == __timer -> -> -> 0 `i `*v `*CS322 == __value -> -> -> 0 `i `*v `*ui 337  ]
+[e $ ! || == __timer -> -> -> 0 `i `*v `*CS323 == __value -> -> -> 0 `i `*v `*ui 334  ]
 {
 "101
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 101:         ret=(Std_ReturnType)0x00;
@@ -705,10 +661,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "102
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 102:     }
 }
-[e $U 338  ]
+[e $U 335  ]
 "103
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 103:     else{
-[e :U 337 ]
+[e :U 334 ]
 {
 "104
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 104:         l_tmr0l = (*((volatile uint8 *)(0xFD6)));
@@ -722,14 +678,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "107
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 107:         }
 }
-[e :U 338 ]
+[e :U 335 ]
 "108
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 108:     return ret;
 [e ) _ret ]
-[e $UE 336  ]
+[e $UE 333  ]
 "109
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 109: }
-[e :UE 336 ]
+[e :UE 333 ]
 }
 "110
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 110: void TMR0_ISR(void){
@@ -748,7 +704,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . *U -> -> 4082 `i `*VS273 0 2 -> -> 0 `i `uc ]
 "115
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 115:       if(TMR0_InterruptHandler){
-[e $ ! != _TMR0_InterruptHandler -> -> 0 `i `*F3500 340  ]
+[e $ ! != _TMR0_InterruptHandler -> -> 0 `i `*F3512 337  ]
 {
 "116
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 116:        TMR0_InterruptHandler();
@@ -756,43 +712,43 @@ Version 4.0 HI-TECH Software Intermediate Code
 "117
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 117:     }
 }
-[e $U 341  ]
+[e $U 338  ]
 "118
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 118:      else{ }
-[e :U 340 ]
+[e :U 337 ]
 {
 }
-[e :U 341 ]
+[e :U 338 ]
 "120
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 120: }
-[e :UE 339 ]
+[e :UE 336 ]
 }
-[v F3502 `(v ~T0 @X0 1 tf1`*CS322 ]
+[v F3514 `(v ~T0 @X0 1 tf1`*CS323 ]
 "122
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 122: static __attribute__((inline)) void Timer0_Prescaler_Config(const timer0_t *_timer){
-[v _Timer0_Prescaler_Config `TF3502 ~T0 @X0 1 s ]
+[v _Timer0_Prescaler_Config `TF3514 ~T0 @X0 1 s ]
 {
 [e :U _Timer0_Prescaler_Config ]
-[v __timer `*CS322 ~T0 @X0 1 r1 ]
+[v __timer `*CS323 ~T0 @X0 1 r1 ]
 [f ]
 "123
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 123:     if (1 == _timer->prescaler_enable){
-[e $ ! == -> 1 `i -> . *U __timer 4 `i 343  ]
+[e $ ! == -> 1 `i -> . *U __timer 3 `i 340  ]
 {
 "124
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 124:         ((*((volatile T0CON_t *)(0xFD5))).PSA = 0);
 [e = . . *U -> -> 4053 `i `*VS295 0 3 -> -> 0 `i `uc ]
 "125
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 125:         (*((volatile T0CON_t *)(0xFD5))).T0PS = _timer->prescaler_value;
-[e = . . *U -> -> 4053 `i `*VS295 1 0 -> . *U __timer 3 `uc ]
+[e = . . *U -> -> 4053 `i `*VS295 1 0 -> . *U __timer 2 `uc ]
 "126
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 126:     }
 }
-[e $U 344  ]
+[e $U 341  ]
 "127
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 127:     else if (0 == _timer->prescaler_enable){
-[e :U 343 ]
-[e $ ! == -> 0 `i -> . *U __timer 4 `i 345  ]
+[e :U 340 ]
+[e $ ! == -> 0 `i -> . *U __timer 3 `i 342  ]
 {
 "128
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 128:         ((*((volatile T0CON_t *)(0xFD5))).PSA = 1);
@@ -800,29 +756,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 "129
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 129:     }
 }
-[e $U 346  ]
+[e $U 343  ]
 "130
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 130:     else { }
-[e :U 345 ]
+[e :U 342 ]
 {
 }
-[e :U 346 ]
-[e :U 344 ]
+[e :U 343 ]
+[e :U 341 ]
 "131
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 131: }
-[e :UE 342 ]
+[e :UE 339 ]
 }
-[v F3505 `(v ~T0 @X0 1 tf1`*CS322 ]
+[v F3517 `(v ~T0 @X0 1 tf1`*CS323 ]
 "132
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 132: static __attribute__((inline)) void Timer0_Mode_Select(const timer0_t *_timer){
-[v _Timer0_Mode_Select `TF3505 ~T0 @X0 1 s ]
+[v _Timer0_Mode_Select `TF3517 ~T0 @X0 1 s ]
 {
 [e :U _Timer0_Mode_Select ]
-[v __timer `*CS322 ~T0 @X0 1 r1 ]
+[v __timer `*CS323 ~T0 @X0 1 r1 ]
 [f ]
 "133
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 133:     if (1 == _timer->timer0_mode){
-[e $ ! == -> 1 `i -> . *U __timer 6 `i 348  ]
+[e $ ! == -> 1 `i -> . *U __timer 5 `i 345  ]
 {
 "134
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 134:         ((*((volatile T0CON_t *)(0xFD5))).T0CS = 0);
@@ -830,18 +786,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "135
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 135:     }
 }
-[e $U 349  ]
+[e $U 346  ]
 "136
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 136:     else if (0 == _timer->timer0_mode){
-[e :U 348 ]
-[e $ ! == -> 0 `i -> . *U __timer 6 `i 350  ]
+[e :U 345 ]
+[e $ ! == -> 0 `i -> . *U __timer 5 `i 347  ]
 {
 "137
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 137:         ((*((volatile T0CON_t *)(0xFD5))).T0CS = 1);
 [e = . . *U -> -> 4053 `i `*VS295 0 5 -> -> 1 `i `uc ]
 "138
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 138:             if (1 == _timer->timer0_counter_edge)
-[e $ ! == -> 1 `i -> . *U __timer 5 `i 351  ]
+[e $ ! == -> 1 `i -> . *U __timer 4 `i 348  ]
 "139
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 139:             {
 {
@@ -851,11 +807,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "141
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 141:             }
 }
-[e $U 352  ]
+[e $U 349  ]
 "142
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 142:             else if (0 == _timer->timer0_counter_edge)
-[e :U 351 ]
-[e $ ! == -> 0 `i -> . *U __timer 5 `i 353  ]
+[e :U 348 ]
+[e $ ! == -> 0 `i -> . *U __timer 4 `i 350  ]
 "143
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 143:             {
 {
@@ -865,40 +821,40 @@ Version 4.0 HI-TECH Software Intermediate Code
 "145
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 145:             }
 }
-[e $U 354  ]
+[e $U 351  ]
 "146
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 146:             else { }
-[e :U 353 ]
-{
-}
-[e :U 354 ]
-[e :U 352 ]
-"147
-[; ;MCAL_Layer/Timer0/hal_timer0.c: 147:     }
-}
-[e $U 355  ]
-"148
-[; ;MCAL_Layer/Timer0/hal_timer0.c: 148:     else { }
 [e :U 350 ]
 {
 }
-[e :U 355 ]
+[e :U 351 ]
 [e :U 349 ]
+"147
+[; ;MCAL_Layer/Timer0/hal_timer0.c: 147:     }
+}
+[e $U 352  ]
+"148
+[; ;MCAL_Layer/Timer0/hal_timer0.c: 148:     else { }
+[e :U 347 ]
+{
+}
+[e :U 352 ]
+[e :U 346 ]
 "149
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 149: }
-[e :UE 347 ]
+[e :UE 344 ]
 }
-[v F3508 `(v ~T0 @X0 1 tf1`*CS322 ]
+[v F3520 `(v ~T0 @X0 1 tf1`*CS323 ]
 "150
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 150: static __attribute__((inline)) void Timer0_Register_Size_Config(const timer0_t *_timer){
-[v _Timer0_Register_Size_Config `TF3508 ~T0 @X0 1 s ]
+[v _Timer0_Register_Size_Config `TF3520 ~T0 @X0 1 s ]
 {
 [e :U _Timer0_Register_Size_Config ]
-[v __timer `*CS322 ~T0 @X0 1 r1 ]
+[v __timer `*CS323 ~T0 @X0 1 r1 ]
 [f ]
 "151
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 151:     if (1 == _timer->timer0_register_size){
-[e $ ! == -> 1 `i -> . *U __timer 7 `i 357  ]
+[e $ ! == -> 1 `i -> . *U __timer 6 `i 354  ]
 {
 "152
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 152:         ((*((volatile T0CON_t *)(0xFD5))).T08BIT = 1);
@@ -906,11 +862,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "153
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 153:     }
 }
-[e $U 358  ]
+[e $U 355  ]
 "154
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 154:     else if (0 == _timer->timer0_register_size){
-[e :U 357 ]
-[e $ ! == -> 0 `i -> . *U __timer 7 `i 359  ]
+[e :U 354 ]
+[e $ ! == -> 0 `i -> . *U __timer 6 `i 356  ]
 {
 "155
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 155:         ((*((volatile T0CON_t *)(0xFD5))).T08BIT = 0);
@@ -918,15 +874,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "156
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 156:     }
 }
-[e $U 360  ]
+[e $U 357  ]
 "157
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 157:     else { }
-[e :U 359 ]
+[e :U 356 ]
 {
 }
-[e :U 360 ]
-[e :U 358 ]
+[e :U 357 ]
+[e :U 355 ]
 "158
 [; ;MCAL_Layer/Timer0/hal_timer0.c: 158: }
-[e :UE 356 ]
+[e :UE 353 ]
 }

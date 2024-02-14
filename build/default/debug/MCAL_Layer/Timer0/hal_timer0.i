@@ -5127,6 +5127,21 @@ typedef union
         uint8 :4;
     };
 }SSPCON1_t;
+
+
+
+
+typedef struct
+{
+   uint8 SEN :1;
+   uint8 RSEN :1;
+   uint8 PEN :1;
+   uint8 RCEN :1;
+   uint8 ACKEN :1;
+   uint8 ACKDT :1;
+   uint8 ACKSTAT :1;
+   uint8 GCEN :1;
+}SSPCON2_t;
 # 13 "MCAL_Layer/Timer0/../GPIO/hal_gpio.h" 2
 
 # 1 "MCAL_Layer/Timer0/../GPIO/hal_gpio_cfg.h" 1
@@ -5263,7 +5278,7 @@ typedef struct {
 
         void(*ADC_InterruptHandler)(void);
 
-        interrupt_priority_cfg priority;
+
 
 
     adc_acquisition_time_t acquisition_time;
@@ -5288,6 +5303,8 @@ Std_ReturnType ADC_StartConversion_Interrupt(const adc_conf_t *_adc, adc_channel
 # 14 "MCAL_Layer/Timer0/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
 # 151 "MCAL_Layer/Timer0/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h"
     extern InterruptHandler SPI_InterruptHandler;
+    extern InterruptHandler I2C_DefaultInterruptHandler;
+    extern InterruptHandler I2C_Report_Write_Collision_InterruptHandler;
 # 13 "MCAL_Layer/Timer0/hal_timer0.h" 2
 # 48 "MCAL_Layer/Timer0/hal_timer0.h"
 extern InterruptHandler TMR0_InterruptHandler;
@@ -5307,7 +5324,7 @@ typedef struct{
 
         void(*TMR0_InterruptHandler)(void);
 
-        interrupt_priority_cfg priority;
+
 
 
     uint16 timer0_preload_value;
@@ -5349,25 +5366,12 @@ Std_ReturnType Timer0_Init(const timer0_t *_timer){
 
             TMR0_InterruptHandler = _timer->TMR0_InterruptHandler;
 
-
-
+                ((*((volatile INTCON_t *)(0xFF2))).GIE = 1);
+                ((*((volatile INTCON_t *)(0xFF2))).PEIE = 1);
 
             ((*((volatile INTCON_t *)(0xFF2))).TMR0IE=1);
             ((*((volatile INTCON_t *)(0xFF2))).TMR0IF=0);
-
-                ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
-                if(INTERRUPT_HIGH_PRIORITY == _timer->priority){
-                    ((*((volatile INTCON2_t *)(0xFF1))).TMR0IP=1);
-                    ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-                }
-                else if (INTERRUPT_LOW_PRIORITY == _timer->priority){
-                    ((*((volatile INTCON2_t *)(0xFF1))).TMR0IP=0);
-                    ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-                    ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1);
-                }
-                else { }
-
-
+# 44 "MCAL_Layer/Timer0/hal_timer0.c"
         Timer0_Prescaler_Config(_timer);
         Timer0_Mode_Select(_timer);
         Timer0_Register_Size_Config(_timer);

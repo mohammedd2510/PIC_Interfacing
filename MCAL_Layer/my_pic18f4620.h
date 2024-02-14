@@ -572,8 +572,25 @@ typedef union
 #define SSPCON1_bits (*((volatile SSPCON1_t *)(0xFC6)))
 #define SSPCON1 (*( (volatile uint8 *)(0xFC6) ) )
 
-#define SSPBUF (*( (volatile uint8 *)(0xFC9) ) )
+typedef struct 
+{  
+   uint8 SEN    :1; 
+   uint8 RSEN    :1;
+   uint8 PEN    :1;
+   uint8 RCEN     :1;
+   uint8 ACKEN     :1;
+   uint8 ACKDT    :1;
+   uint8 ACKSTAT   :1;
+   uint8 GCEN   :1;
+}SSPCON2_t;
 
+#define SSPCON2_bits (*((volatile SSPCON2_t *)(0xFC5)))
+#define SSPCON2 (*( (volatile uint8 *)(0xFC5) ) )
+
+
+
+#define SSPBUF (*( (volatile uint8 *)(0xFC9) ) )
+#define SSPADD (*( (volatile uint8 *)(0xFC8) ) )
 
 #endif	/* MY_PIC18F4620_H */
 

@@ -4,73 +4,73 @@
 [d chip 18F4620 ]
 [d frameptr 4065 ]
 "7 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/7_Segment/ecu_seven_seg.c
-[e E3355 . `uc
+[e E3365 . `uc
 SEGMENT_COMMON_ANODE 0
 SEGMENT_COMMON_CATHODE 1
 ]
 "32
-[e E3295 . `uc
+[e E3305 . `uc
 LOW 0
 HIGH 1
 ]
 "7 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/button/ecu_button.c
-[e E3355 . `uc
+[e E3365 . `uc
 BUTTON_PRESSED 0
 BUTTON_RELEASED 1
 ]
-[e E3359 . `uc
+[e E3369 . `uc
 BUTTON_ACTIVE_HIGH 0
 BUTTON_ACTIVE_LOW 1
 ]
 "25
-[e E3295 . `uc
+[e E3305 . `uc
 LOW 0
 HIGH 1
 ]
 "49 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/Chr_LCD/ecu_chr_lcd.c
-[e E3295 . `uc
+[e E3305 . `uc
 LOW 0
 HIGH 1
 ]
 "29 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/DC_Motor/ecu_dc_motor.c
-[e E3295 . `uc
+[e E3305 . `uc
 LOW 0
 HIGH 1
 ]
 "47 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/KeyPad/ecu_keypad.c
-[e E3295 . `uc
+[e E3305 . `uc
 LOW 0
 HIGH 1
 ]
 "9 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/LED/ecu_led.c
-[e E3299 . `uc
+[e E3309 . `uc
 OUTPUT 0
 INPUT 1
 ]
 "30
-[e E3295 . `uc
+[e E3305 . `uc
 LOW 0
 HIGH 1
 ]
 "9 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/Relay/ecu_relay.c
-[e E3299 . `uc
+[e E3309 . `uc
 OUTPUT 0
 INPUT 1
 ]
 "30
-[e E3295 . `uc
+[e E3305 . `uc
 LOW 0
 HIGH 1
 ]
 "3 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/ecu_layer_init.c
-[e E3313 . `uc
+[e E3323 . `uc
 PORTA_INDEX 0
 PORTB_INDEX 1
 PORTC_INDEX 2
 PORTD_INDEX 3
 PORTE_INDEX 4
 ]
-[e E3303 . `uc
+[e E3313 . `uc
 PIN0 0
 PIN1 1
 PIN2 2
@@ -80,20 +80,16 @@ PIN5 5
 PIN6 6
 PIN7 7
 ]
-[e E3299 . `uc
+[e E3309 . `uc
 OUTPUT 0
 INPUT 1
 ]
-[e E3295 . `uc
+[e E3305 . `uc
 LOW 0
 HIGH 1
 ]
 "23 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/ADC/hal_adc.c
-[e E3355 . `uc
-INTERRUPT_LOW_PRIORITY 0
-INTERRUPT_HIGH_PRIORITY 1
-]
-[e E3380 . `uc
+[e E3394 . `uc
 ADC_0_TAD 0
 ADC_2_TAD 1
 ADC_4_TAD 2
@@ -103,7 +99,7 @@ ADC_12_TAD 5
 ADC_16_TAD 6
 ADC_20_TAD 7
 ]
-[e E3390 . `uc
+[e E3404 . `uc
 ADC_CONVERSION_CLOCK_FOSC_DIV_2 0
 ADC_CONVERSION_CLOCK_FOSC_DIV_8 1
 ADC_CONVERSION_CLOCK_FOSC_DIV_32 2
@@ -112,7 +108,7 @@ ADC_CONVERSION_CLOCK_FOSC_DIV_4 4
 ADC_CONVERSION_CLOCK_FOSC_DIV_16 5
 ADC_CONVERSION_CLOCK_FOSC_DIV_64 6
 ]
-[e E3365 . `uc
+[e E3379 . `uc
 ADC_CHANNEL_AN0 0
 ADC_CHANNEL_AN1 1
 ADC_CHANNEL_AN2 2
@@ -128,36 +124,36 @@ ADC_CHANNEL_AN11 11
 ADC_CHANNEL_AN12 12
 ]
 "26 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/CCP/hal_ccp.c
-[e E3442 . `uc
+[e E3455 . `uc
 CCP1_CCP2_TIMER1 0
 CCP1_TIMER1_CCP2_TIMER3 1
 CCP1_CCP2_TIMER3 2
 ]
-[e E3438 . `uc
+[e E3451 . `uc
 CCP1_INST 0
 CCP2_INST 1
 ]
-[e E3433 . `uc
+[e E3446 . `uc
 CCP_CAPTURE_MODE_SELECTED 0
 CCP_COMPARE_MODE_SELECTED 1
 CCP_PWM_MODE_SELECTED 2
 ]
-[e E3355 . `uc
+[e E3365 . `uc
 INTERRUPT_LOW_PRIORITY 0
 INTERRUPT_HIGH_PRIORITY 1
 ]
 "31 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/GPIO/hal_gpio.c
-[e E3295 . `uc
+[e E3305 . `uc
 LOW 0
 HIGH 1
 ]
 "58
-[e E3299 . `uc
+[e E3309 . `uc
 OUTPUT 0
 INPUT 1
 ]
 "161
-[e E3313 . `uc
+[e E3323 . `uc
 PORTA_INDEX 0
 PORTB_INDEX 1
 PORTC_INDEX 2
@@ -165,21 +161,21 @@ PORTD_INDEX 3
 PORTE_INDEX 4
 ]
 "44 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Interrupt/mcal_external_interrupt.c
-[e E3361 . `uc
+[e E3371 . `uc
 INTERRUPT_FALLING_EDGE 0
 INTERRUPT_RISING_EDGE 1
 ]
-[e E3365 . `uc
+[e E3375 . `uc
 INTERRUPT_EXTERNAL_INT0 0
 INTERRUPT_EXTERNAL_INT1 1
 INTERRUPT_EXTERNAL_INT2 2
 ]
-[e E3355 . `uc
+[e E3365 . `uc
 INTERRUPT_LOW_PRIORITY 0
 INTERRUPT_HIGH_PRIORITY 1
 ]
 "500
-[e E3303 . `uc
+[e E3313 . `uc
 PIN0 0
 PIN1 1
 PIN2 2
@@ -190,7 +186,7 @@ PIN6 6
 PIN7 7
 ]
 "9 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/SPI/hal_spi.c
-[e E3433 . `uc
+[e E3446 . `uc
 SPI_MASTER_MODE_CLK_FOSC_DIV_4 0
 SPI_MASTER_MODE_CLK_FOSC_DIV_16 1
 SPI_MASTER_MODE_CLK_FOSC_DIV_64 2
@@ -198,21 +194,13 @@ SPI_MASTER_MODE_CLK_TMR2_OUTPUT_DIV_2 3
 SPI_SLAVE_MODE_SS_PIN_CONTROL_ENABLED 4
 SPI_SLAVE_MODE_SS_PIN_CONTROL_DISABLED 5
 ]
-[e E3355 . `uc
-INTERRUPT_LOW_PRIORITY 0
-INTERRUPT_HIGH_PRIORITY 1
-]
 "56
-[e E3295 . `uc
+[e E3305 . `uc
 LOW 0
 HIGH 1
 ]
 "15 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer0/hal_timer0.c
-[e E3355 . `uc
-INTERRUPT_LOW_PRIORITY 0
-INTERRUPT_HIGH_PRIORITY 1
-]
-[e E3435 . `uc
+[e E3448 . `uc
 TIMER0_PRESCALER_DIV_BY_2 0
 TIMER0_PRESCALER_DIV_BY_4 1
 TIMER0_PRESCALER_DIV_BY_8 2
@@ -222,18 +210,8 @@ TIMER0_PRESCALER_DIV_BY_64 5
 TIMER0_PRESCALER_DIV_BY_128 6
 TIMER0_PRESCALER_DIV_BY_256 7
 ]
-"12 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer1/hal_timer1.c
-[e E3355 . `uc
-INTERRUPT_LOW_PRIORITY 0
-INTERRUPT_HIGH_PRIORITY 1
-]
-"12 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer3/hal_timer3.c
-[e E3355 . `uc
-INTERRUPT_LOW_PRIORITY 0
-INTERRUPT_HIGH_PRIORITY 1
-]
 "18 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/USART/hal_usart.c
-[e E3433 . `uc
+[e E3446 . `uc
 BAUDRATE_ASYNC_8BIT_LOW_SPEED 0
 BAUDRATE_ASYNC_8BIT_HIGH_SPEED 1
 BAUDRATE_ASYNC_16BIT_LOW_SPEED 2
@@ -241,12 +219,12 @@ BAUDRATE_ASYNC_16BIT_HIGH_SPEED 3
 BAUDRATE_SYNC_8BIT 4
 BAUDRATE_SYNC_16BIT 5
 ]
-[e E3355 . `uc
+[e E3365 . `uc
 INTERRUPT_LOW_PRIORITY 0
 INTERRUPT_HIGH_PRIORITY 1
 ]
 "11 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/mcal_layer_init.c
-[e E3433 . `uc
+[e E3446 . `uc
 SPI_MASTER_MODE_CLK_FOSC_DIV_4 0
 SPI_MASTER_MODE_CLK_FOSC_DIV_16 1
 SPI_MASTER_MODE_CLK_FOSC_DIV_64 2
@@ -254,12 +232,8 @@ SPI_MASTER_MODE_CLK_TMR2_OUTPUT_DIV_2 3
 SPI_SLAVE_MODE_SS_PIN_CONTROL_ENABLED 4
 SPI_SLAVE_MODE_SS_PIN_CONTROL_DISABLED 5
 ]
-[e E3355 . `uc
-INTERRUPT_LOW_PRIORITY 0
-INTERRUPT_HIGH_PRIORITY 1
-]
 "105
-[e E3313 . `uc
+[e E3323 . `uc
 PORTA_INDEX 0
 PORTB_INDEX 1
 PORTC_INDEX 2
@@ -267,7 +241,7 @@ PORTD_INDEX 3
 PORTE_INDEX 4
 ]
 "107
-[e E3303 . `uc
+[e E3313 . `uc
 PIN0 0
 PIN1 1
 PIN2 2
@@ -278,20 +252,21 @@ PIN6 6
 PIN7 7
 ]
 "109
-[e E3299 . `uc
+[e E3309 . `uc
 OUTPUT 0
 INPUT 1
 ]
 "111
-[e E3295 . `uc
+[e E3305 . `uc
 LOW 0
 HIGH 1
 ]
 "13 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
+[v _I2C_SLAVE_ISR I2C_SLAVE_ISR `(v  1 e 1 0 ]
+"48
 [v _main main `(i  1 e 2 0 ]
-"35
-[v _SPI_ISR SPI_ISR `(v  1 e 1 0 ]
-[v i2_SPI_ISR SPI_ISR `(v  1 e 1 0 ]
+"85
+[v _I2C_Slave_2_Init I2C_Slave_2_Init `(v  1 e 1 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\float.c
@@ -324,9 +299,7 @@ HIGH 1
 [v ___omul __omul `(uo  1 e 8 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"13 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/Chr_LCD/ecu_chr_lcd.c
-[v _lcd_4bit_initialize lcd_4bit_initialize `(uc  1 e 1 0 ]
-"43
+"43 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/Chr_LCD/ecu_chr_lcd.c
 [v _lcd_4bit_send_command lcd_4bit_send_command `(uc  1 e 1 0 ]
 "63
 [v _lcd_4bit_send_char_data lcd_4bit_send_char_data `(uc  1 e 1 0 ]
@@ -350,6 +323,12 @@ HIGH 1
 [v _lcd_4bit_set_cursor lcd_4bit_set_cursor `(uc  1 s 1 lcd_4bit_set_cursor ]
 "154 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/ecu_layer_init.c
 [v _ecu_layer_initialize ecu_layer_initialize `(v  1 e 1 0 ]
+"7 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/LED/ecu_led.c
+[v _led_initialize led_initialize `(uc  1 e 1 0 ]
+"23
+[v _led_turn_on led_turn_on `(uc  1 e 1 0 ]
+"39
+[v _led_turn_off led_turn_off `(uc  1 e 1 0 ]
 "102 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/ADC/hal_adc.c
 [v _ADC_SelectChannel ADC_SelectChannel `(uc  1 e 1 0 ]
 "122
@@ -370,16 +349,14 @@ HIGH 1
 [v _CCP_Capture_Compare_Timer_Config CCP_Capture_Compare_Timer_Config `(uc  1 s 1 CCP_Capture_Compare_Timer_Config ]
 "496
 [v _CCP1_Interrupt_Init CCP1_Interrupt_Init `(uc  1 s 1 CCP1_Interrupt_Init ]
-"533
+"532
 [v _CCP2_Interrupt_Init CCP2_Interrupt_Init `(uc  1 s 1 CCP2_Interrupt_Init ]
-"570
+"568
 [v _CCP_Interrupt_Init CCP_Interrupt_Init `(uc  1 s 1 CCP_Interrupt_Init ]
-"596
+"594
 [v _CCP1_ISR CCP1_ISR `(v  1 e 1 0 ]
-[v i2_CCP1_ISR CCP1_ISR `(v  1 e 1 0 ]
-"606
+"604
 [v _CCP2_ISR CCP2_ISR `(v  1 e 1 0 ]
-[v i2_CCP2_ISR CCP2_ISR `(v  1 e 1 0 ]
 "66 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/EEPROM/hal_eeprom.c
 [v _EEPROM_UPDATE_ADDRESS_REG EEPROM_UPDATE_ADDRESS_REG `(v  1 s 1 EEPROM_UPDATE_ADDRESS_REG ]
 "70
@@ -400,32 +377,46 @@ HIGH 1
 [v _gpio_pin_read_logic gpio_pin_read_logic `(uc  1 e 1 0 ]
 "141
 [v _gpio_pin_toggle_logic gpio_pin_toggle_logic `(uc  1 e 1 0 ]
+"11 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/I2C/hal_i2c.c
+[v _MSSP_I2C_Init MSSP_I2C_Init `(uc  1 e 1 0 ]
+"103
+[v _MSSP_I2C_Master_Send_Start MSSP_I2C_Master_Send_Start `(uc  1 e 1 0 ]
+"147
+[v _MSSP_I2C_Master_Send_Stop MSSP_I2C_Master_Send_Stop `(uc  1 e 1 0 ]
+"173
+[v _MSSP_I2C_Master_Write_Blocking MSSP_I2C_Master_Write_Blocking `(uc  1 e 1 0 ]
+"233
+[v _MSSP_I2C_Clear_Buffer MSSP_I2C_Clear_Buffer `(v  1 e 1 0 ]
+"237
+[v _MSSP_I2C_Write_To_Buffer MSSP_I2C_Write_To_Buffer `(v  1 e 1 0 ]
+"241
+[v _MSSP_I2C_Read_From_Buffer MSSP_I2C_Read_From_Buffer `(uc  1 e 1 0 ]
+"246
+[v _MSSP_I2C_Mode_GPIO_CFG MSSP_I2C_Mode_GPIO_CFG `T(v  1 s 1 MSSP_I2C_Mode_GPIO_CFG ]
+"251
+[v _I2C_Master_Mode_Clock_Configurations I2C_Master_Mode_Clock_Configurations `T(v  1 s 1 I2C_Master_Mode_Clock_Configurations ]
+"256
+[v _I2C_Slave_Mode_Configurations I2C_Slave_Mode_Configurations `T(v  1 s 1 I2C_Slave_Mode_Configurations ]
+"261
+[v _MSSP_I2C_Interrupt_Configurations MSSP_I2C_Interrupt_Configurations `T(v  1 s 1 MSSP_I2C_Interrupt_Configurations ]
 "132 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Interrupt/mcal_external_interrupt.c
 [v _INT0_ISR INT0_ISR `(v  1 e 1 0 ]
 "140
 [v _INT1_ISR INT1_ISR `(v  1 e 1 0 ]
-[v i2_INT1_ISR INT1_ISR `(v  1 e 1 0 ]
 "148
 [v _INT2_ISR INT2_ISR `(v  1 e 1 0 ]
-[v i2_INT2_ISR INT2_ISR `(v  1 e 1 0 ]
 "156
 [v _RB4_ISR RB4_ISR `(v  1 e 1 0 ]
-[v i2_RB4_ISR RB4_ISR `(v  1 e 1 0 ]
 "164
 [v _RB5_ISR RB5_ISR `(v  1 e 1 0 ]
-[v i2_RB5_ISR RB5_ISR `(v  1 e 1 0 ]
 "172
 [v _RB6_ISR RB6_ISR `(v  1 e 1 0 ]
-[v i2_RB6_ISR RB6_ISR `(v  1 e 1 0 ]
 "180
 [v _RB7_ISR RB7_ISR `(v  1 e 1 0 ]
-[v i2_RB7_ISR RB7_ISR `(v  1 e 1 0 ]
 "195
 [v _Interrupt_INTx_Enable Interrupt_INTx_Enable `(uc  1 s 1 Interrupt_INTx_Enable ]
 "243
 [v _Interrupt_INTx_Disable Interrupt_INTx_Disable `(uc  1 s 1 Interrupt_INTx_Disable ]
-"264
-[v _Interrupt_INTx_Priority_Init Interrupt_INTx_Priority_Init `(uc  1 s 1 Interrupt_INTx_Priority_Init ]
 "292
 [v _Interrupt_INTx_Edge_Init Interrupt_INTx_Edge_Init `(uc  1 s 1 Interrupt_INTx_Edge_Init ]
 "324
@@ -444,8 +435,6 @@ HIGH 1
 [v _Interrupt_RBx_Enable Interrupt_RBx_Enable `(uc  1 s 1 Interrupt_RBx_Enable ]
 "449
 [v _Interrupt_RBx_Disable Interrupt_RBx_Disable `(uc  1 s 1 Interrupt_RBx_Disable ]
-"465
-[v _Interrupt_RBx_Priority_Init Interrupt_RBx_Priority_Init `(uc  1 s 1 Interrupt_RBx_Priority_Init ]
 "478
 [v _Interrupt_RBx_Pin_Init Interrupt_RBx_Pin_Init `(uc  1 s 1 Interrupt_RBx_Pin_Init ]
 "488
@@ -462,81 +451,75 @@ HIGH 1
 [v _Interrupt_RBx_set_pin_init_value Interrupt_RBx_set_pin_init_value `(uc  1 s 1 Interrupt_RBx_set_pin_init_value ]
 "3 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Interrupt/mcal_internal_interrupt.c
 [v _ADC_ISR ADC_ISR `(v  1 e 1 0 ]
-[v i2_ADC_ISR ADC_ISR `(v  1 e 1 0 ]
 "12
 [v _MSSP_ISR MSSP_ISR `(v  1 e 1 0 ]
-[v i2_MSSP_ISR MSSP_ISR `(v  1 e 1 0 ]
-"3 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Interrupt/mcal_interrupt_manager.c
-[v _InterruptManagerHigh InterruptManagerHigh `IIH(v  1 e 1 0 ]
-"77
-[v _InterruptManagerLow InterruptManagerLow `IIL(v  1 e 1 0 ]
-"20 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/mcal_layer_init.c
-[v _mcal_layer_initialize mcal_layer_initialize `(v  1 e 1 0 ]
-"94
+"24
+[v _MSSP_Bus_Collision_ISR MSSP_Bus_Collision_ISR `(v  1 e 1 0 ]
+"156 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Interrupt/mcal_interrupt_manager.c
+[v _InterruptManager InterruptManager `IIH(v  1 e 1 0 ]
+"94 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/mcal_layer_init.c
 [v _SPI_Slave_Init SPI_Slave_Init `(v  1 e 1 0 ]
 "9 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/SPI/hal_spi.c
 [v _SPI_Init SPI_Init `(uc  1 e 1 0 ]
-"107
-[v _SPI_Slave_Receive_Non_Blocking SPI_Slave_Receive_Non_Blocking `(uc  1 e 1 0 ]
-[v i2_SPI_Slave_Receive_Non_Blocking SPI_Slave_Receive_Non_Blocking `(uc  1 e 1 0 ]
-"131
+"122
 [v _SPI_Pins_Direction_Initialize SPI_Pins_Direction_Initialize `(v  1 s 1 SPI_Pins_Direction_Initialize ]
-"147
+"138
 [v _SPI_Interrupt_Init SPI_Interrupt_Init `(v  1 s 1 SPI_Interrupt_Init ]
 "110 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer0/hal_timer0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
-[v i2_TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
 "122
 [v _Timer0_Prescaler_Config Timer0_Prescaler_Config `T(v  1 s 1 Timer0_Prescaler_Config ]
 "132
 [v _Timer0_Mode_Select Timer0_Mode_Select `T(v  1 s 1 Timer0_Mode_Select ]
 "150
 [v _Timer0_Register_Size_Config Timer0_Register_Size_Config `T(v  1 s 1 Timer0_Register_Size_Config ]
-"114 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer1/hal_timer1.c
+"113 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer1/hal_timer1.c
 [v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
-[v i2_TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
-"127
+"126
 [v _Timer1_Mode_Select Timer1_Mode_Select `T(v  1 s 1 Timer1_Mode_Select ]
-"111 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer2/hal_timer2.c
+"110 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer2/hal_timer2.c
 [v _TMR2_ISR TMR2_ISR `(v  1 e 1 0 ]
-[v i2_TMR2_ISR TMR2_ISR `(v  1 e 1 0 ]
-"119 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer3/hal_timer3.c
+"118 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer3/hal_timer3.c
 [v _Timer3_Mode_Select Timer3_Mode_Select `T(v  1 s 1 Timer3_Mode_Select ]
-"139
+"138
 [v _TMR3_ISR TMR3_ISR `(v  1 e 1 0 ]
-[v i2_TMR3_ISR TMR3_ISR `(v  1 e 1 0 ]
 "57 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/USART/hal_usart.c
 [v _EUSART_ASYNC_WriteByteBlocking EUSART_ASYNC_WriteByteBlocking `(uc  1 e 1 0 ]
 "146
 [v _EUSART_Baud_Rate_Calcualtion EUSART_Baud_Rate_Calcualtion `(v  1 s 1 EUSART_Baud_Rate_Calcualtion ]
 "191
 [v _EUSART_ASYNC_TX_Init EUSART_ASYNC_TX_Init `(v  1 s 1 EUSART_ASYNC_TX_Init ]
-"239
+"238
 [v _EUSART_ASYNC_RX_Init EUSART_ASYNC_RX_Init `(v  1 s 1 EUSART_ASYNC_RX_Init ]
-"291
+"289
 [v _EUSART_TX_ISR EUSART_TX_ISR `(v  1 e 1 0 ]
-[v i2_EUSART_TX_ISR EUSART_TX_ISR `(v  1 e 1 0 ]
-"302
+"300
 [v _EUSART_RX_ISR EUSART_RX_ISR `(v  1 e 1 0 ]
-[v i2_EUSART_RX_ISR EUSART_RX_ISR `(v  1 e 1 0 ]
-"10 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
-[v _Data Data `VEuc  1 e 1 0 ]
-"11
-[v _Receive_Status Receive_Status `VEuc  1 e 1 0 ]
+"11 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
+[v _Received_Data Received_Data `VEuc  1 e 1 0 ]
+"12
+[v _flag flag `VEuc  1 e 1 0 ]
+[s S2779 . 3 `uc 1 i2c_mode_cfg 1 0 `uc 1 i2c_slave_address 1 1 `uc 1 i2c_mode 1 2 :1:0 
+`uc 1 i2c_slew_rate 1 2 :1:1 
+`uc 1 i2c_SMBus_control 1 2 :1:2 
+`uc 1 i2c_general_call 1 2 :1:3 
+`uc 1 i2c_reserved 1 2 :4:4 
+]
+"47
+[s S2787 . 13 `ul 1 i2c_clock 4 0 `*.37(v 1 I2C_Report_Write_Collision 2 4 `*.37(v 1 I2C_Report_Receieve_Overflow 2 6 `*.37(v 1 I2C_DefaultInterruptHandler 2 8 `S2779 1 i2c_cfg 3 10 ]
+[v _i2c_obj i2c_obj `S2787  1 e 13 0 ]
 "4655 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
 "4662
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
 "5947
 [v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
-[s S24 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
+[s S476 . 1 `uc 1 port_name 1 0 :4:0 
+`uc 1 pin 1 0 :3:4 
+`uc 1 led_status 1 0 :1:7 
 ]
-"3 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/ecu_layer_init.c
-[s S117 . 6 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[4]S24 1 lcd_data 4 2 ]
-[v _lcd1 lcd1 `S117  1 e 6 0 ]
+"130 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/ecu_layer_init.c
+[v _led1 led1 `S476  1 e 1 0 ]
 "3 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/KeyPad/ecu_keypad.c
 [v _btn_values btn_values `C[4][4]uc  1 s 16 btn_values ]
 "6 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/ADC/hal_adc.c
@@ -551,6 +534,12 @@ HIGH 1
 [v _lat_registers lat_registers `[5]*.39VEuc  1 e 10 0 ]
 "13
 [v _port_registers port_registers `[5]*.39VEuc  1 e 10 0 ]
+"6 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/I2C/hal_i2c.c
+[v _I2C_DefaultInterruptHandler I2C_DefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"7
+[v _I2C_Report_Write_Collision_InterruptHandler I2C_Report_Write_Collision_InterruptHandler `*.37(v  1 e 2 0 ]
+"8
+[v _I2C_Report_Receive_Overflow_InterruptHandler I2C_Report_Receive_Overflow_InterruptHandler `*.37(v  1 e 2 0 ]
 "3 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Interrupt/mcal_external_interrupt.c
 [v _INT0_InterruptHandler INT0_InterruptHandler `*.37(v  1 s 2 INT0_InterruptHandler ]
 "4
@@ -573,16 +562,21 @@ HIGH 1
 [v _RB6_pin_init_value RB6_pin_init_value `VEuc  1 e 1 0 ]
 "15
 [v _RB7_pin_init_value RB7_pin_init_value `VEuc  1 e 1 0 ]
-[s S2064 . 5 `uc 1 spi_transmit_phase_cfg 1 0 :1:0 
+[s S1964 . 4 `uc 1 spi_transmit_phase_cfg 1 0 :1:0 
 `uc 1 spi_sample_time_cfg 1 0 :1:1 
 `uc 1 spi_polarity_cfg 1 0 :1:2 
 `uc 1 spi_mode 1 0 :1:3 
 `uc 1 spi_reserved 1 0 :4:4 
-`E3433 1 spi_clk_mode 1 1 `*.37(v 1 SPI_InterruptHandler 2 2 `E3355 1 priority 1 4 ]
+`E3446 1 spi_clk_mode 1 1 `*.37(v 1 SPI_InterruptHandler 2 2 ]
 "11 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/mcal_layer_init.c
-[v _spi_obj spi_obj `S2064  1 e 5 0 ]
+[v _spi_obj spi_obj `S1964  1 e 4 0 ]
 "12
-[v _spi_obj2 spi_obj2 `S2064  1 e 5 0 ]
+[v _spi_obj2 spi_obj2 `S1964  1 e 4 0 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
 "13
 [v _SS1_Pin SS1_Pin `S24  1 e 1 0 ]
 "14
@@ -613,204 +607,263 @@ HIGH 1
 [v _EUSART_FramingErrorHandler EUSART_FramingErrorHandler `*.37(v  1 e 2 0 ]
 "9
 [v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
-"13 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
+"48 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
 [v _main main `(i  1 e 2 0 ]
 {
-"34
-} 0
-"20 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/mcal_layer_init.c
-[v _mcal_layer_initialize mcal_layer_initialize `(v  1 e 1 0 ]
-{
-"24
-} 0
-"94
-[v _SPI_Slave_Init SPI_Slave_Init `(v  1 e 1 0 ]
-{
-"102
-} 0
-"9 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/SPI/hal_spi.c
-[v _SPI_Init SPI_Init `(uc  1 e 1 0 ]
-{
-[s S2064 . 5 `uc 1 spi_transmit_phase_cfg 1 0 :1:0 
-`uc 1 spi_sample_time_cfg 1 0 :1:1 
-`uc 1 spi_polarity_cfg 1 0 :1:2 
-`uc 1 spi_mode 1 0 :1:3 
-`uc 1 spi_reserved 1 0 :4:4 
-`E3433 1 spi_clk_mode 1 1 `*.37(v 1 SPI_InterruptHandler 2 2 `E3355 1 priority 1 4 ]
-[v SPI_Init@spi_config spi_config `*.39S2064  1 p 2 18 ]
-"30
-} 0
-"131
-[v _SPI_Pins_Direction_Initialize SPI_Pins_Direction_Initialize `(v  1 s 1 SPI_Pins_Direction_Initialize ]
-{
-[s S2064 . 5 `uc 1 spi_transmit_phase_cfg 1 0 :1:0 
-`uc 1 spi_sample_time_cfg 1 0 :1:1 
-`uc 1 spi_polarity_cfg 1 0 :1:2 
-`uc 1 spi_mode 1 0 :1:3 
-`uc 1 spi_reserved 1 0 :4:4 
-`E3433 1 spi_clk_mode 1 1 `*.37(v 1 SPI_InterruptHandler 2 2 `E3355 1 priority 1 4 ]
-[v SPI_Pins_Direction_Initialize@spi_config spi_config `*.39S2064  1 p 2 15 ]
-"144
-} 0
-"147
-[v _SPI_Interrupt_Init SPI_Interrupt_Init `(v  1 s 1 SPI_Interrupt_Init ]
-{
-[s S2064 . 5 `uc 1 spi_transmit_phase_cfg 1 0 :1:0 
-`uc 1 spi_sample_time_cfg 1 0 :1:1 
-`uc 1 spi_polarity_cfg 1 0 :1:2 
-`uc 1 spi_mode 1 0 :1:3 
-`uc 1 spi_reserved 1 0 :4:4 
-`E3433 1 spi_clk_mode 1 1 `*.37(v 1 SPI_InterruptHandler 2 2 `E3355 1 priority 1 4 ]
-[v SPI_Interrupt_Init@spi_config spi_config `*.39S2064  1 p 2 15 ]
-"170
-} 0
-"63 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/Chr_LCD/ecu_chr_lcd.c
-[v _lcd_4bit_send_char_data lcd_4bit_send_char_data `(uc  1 e 1 0 ]
-{
 "64
-[v lcd_4bit_send_char_data@ret ret `uc  1 a 1 4 ]
+} 0
+"23 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/LED/ecu_led.c
+[v _led_turn_on led_turn_on `(uc  1 e 1 0 ]
+{
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"63
-[s S117 . 6 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[4]S24 1 lcd_data 4 2 ]
-[v lcd_4bit_send_char_data@lcd lcd `*.39CS117  1 p 2 1 ]
-[v lcd_4bit_send_char_data@data data `uc  1 p 1 3 ]
-"76
+"25
+[v led_turn_on@pin_obj pin_obj `S24  1 a 1 16 ]
+[s S476 . 1 `uc 1 port_name 1 0 :4:0 
+`uc 1 pin 1 0 :3:4 
+`uc 1 led_status 1 0 :1:7 
+]
+"23
+[v led_turn_on@led led `*.39CS476  1 p 2 13 ]
+"24
+[v led_turn_on@F3390 F3390 `S24  1 s 1 F3390 ]
+"33
+} 0
+"39
+[v _led_turn_off led_turn_off `(uc  1 e 1 0 ]
+{
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"41
+[v led_turn_off@pin_obj pin_obj `S24  1 a 1 16 ]
+[s S476 . 1 `uc 1 port_name 1 0 :4:0 
+`uc 1 pin 1 0 :3:4 
+`uc 1 led_status 1 0 :1:7 
+]
+"39
+[v led_turn_off@led led `*.39CS476  1 p 2 13 ]
+"40
+[v led_turn_off@F3395 F3395 `S24  1 s 1 F3395 ]
+"49
 } 0
 "154 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/ecu_layer_init.c
 [v _ecu_layer_initialize ecu_layer_initialize `(v  1 e 1 0 ]
 {
-"157
+"158
 } 0
-"13 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/Chr_LCD/ecu_chr_lcd.c
-[v _lcd_4bit_initialize lcd_4bit_initialize `(uc  1 e 1 0 ]
+"7 E:\The Courses\Embedded Systems\PIC Interfacing\application\ECU_Layer/LED/ecu_led.c
+[v _led_initialize led_initialize `(uc  1 e 1 0 ]
 {
-"14
-[v lcd_4bit_initialize@ret ret `uc  1 a 1 10 ]
-"15
-[v lcd_4bit_initialize@l_data_pins_counter l_data_pins_counter `uc  1 a 1 9 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"13
-[s S117 . 6 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[4]S24 1 lcd_data 4 2 ]
-[v lcd_4bit_initialize@lcd lcd `*.39CS117  1 p 2 5 ]
-"35
-} 0
-"43
-[v _lcd_4bit_send_command lcd_4bit_send_command `(uc  1 e 1 0 ]
-{
-"44
-[v lcd_4bit_send_command@ret ret `uc  1 a 1 4 ]
-[s S24 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
+"9
+[v led_initialize@pin_obj pin_obj `S24  1 a 1 21 ]
+"8
+[v led_initialize@ret ret `uc  1 a 1 20 ]
+[s S476 . 1 `uc 1 port_name 1 0 :4:0 
+`uc 1 pin 1 0 :3:4 
+`uc 1 led_status 1 0 :1:7 
 ]
-"43
-[s S117 . 6 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[4]S24 1 lcd_data 4 2 ]
-[v lcd_4bit_send_command@lcd lcd `*.39CS117  1 p 2 1 ]
-[v lcd_4bit_send_command@command command `uc  1 p 1 3 ]
-"56
-} 0
-"396
-[v _lcd_send_4bits lcd_send_4bits `(uc  1 s 1 lcd_send_4bits ]
-{
-"397
-[v lcd_send_4bits@ret ret `uc  1 a 1 0 ]
-[s S24 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
-]
-"396
-[s S117 . 6 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[4]S24 1 lcd_data 4 2 ]
-[v lcd_send_4bits@lcd lcd `*.39CS117  1 p 2 25 ]
-[v lcd_send_4bits@_data_command _data_command `uc  1 p 1 27 ]
-"408
-} 0
-"409
-[v _lcd_4bit_send_enable_signal lcd_4bit_send_enable_signal `(uc  1 s 1 lcd_4bit_send_enable_signal ]
-{
-"410
-[v lcd_4bit_send_enable_signal@ret ret `uc  1 a 1 27 ]
-[s S24 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
-]
-"409
-[s S117 . 6 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[4]S24 1 lcd_data 4 2 ]
-[v lcd_4bit_send_enable_signal@lcd lcd `*.39CS117  1 p 2 25 ]
-"420
+"7
+[v led_initialize@led led `*.39CS476  1 p 2 17 ]
+"8
+[v led_initialize@F3385 F3385 `S24  1 s 1 F3385 ]
+"17
 } 0
 "24 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/GPIO/hal_gpio.c
 [v _gpio_pin_initialize gpio_pin_initialize `(uc  1 e 1 0 ]
 {
 "25
-[v gpio_pin_initialize@ret ret `uc  1 a 1 0 ]
+[v gpio_pin_initialize@ret ret `uc  1 a 1 16 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
 "24
-[v gpio_pin_initialize@pin_config pin_config `*.39CS24  1 p 2 25 ]
+[v gpio_pin_initialize@pin_config pin_config `*.39CS24  1 p 2 13 ]
 "34
 } 0
 "94
 [v _gpio_pin_write_logic gpio_pin_write_logic `(uc  1 e 1 0 ]
 {
 "95
-[v gpio_pin_write_logic@ret ret `uc  1 a 1 24 ]
+[v gpio_pin_write_logic@ret ret `uc  1 a 1 12 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
 "94
-[v gpio_pin_write_logic@pin_config pin_config `*.39CS24  1 p 2 15 ]
-[v gpio_pin_write_logic@logic logic `E3295  1 p 1 17 ]
+[v gpio_pin_write_logic@pin_config pin_config `*.39CS24  1 p 2 3 ]
+[v gpio_pin_write_logic@logic logic `E3305  1 p 1 5 ]
 "111
 } 0
 "44
 [v _gpio_pin_direction_initialize gpio_pin_direction_initialize `(uc  1 e 1 0 ]
 {
 "45
-[v gpio_pin_direction_initialize@ret ret `uc  1 a 1 23 ]
+[v gpio_pin_direction_initialize@ret ret `uc  1 a 1 11 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
 "44
-[v gpio_pin_direction_initialize@pin_config pin_config `*.39CS24  1 p 2 15 ]
+[v gpio_pin_direction_initialize@pin_config pin_config `*.39CS24  1 p 2 3 ]
 "62
 } 0
-"77 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Interrupt/mcal_interrupt_manager.c
-[v _InterruptManagerLow InterruptManagerLow `IIL(v  1 e 1 0 ]
+"85 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
+[v _I2C_Slave_2_Init I2C_Slave_2_Init `(v  1 e 1 0 ]
 {
-"146
+"95
 } 0
-"139 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer3/hal_timer3.c
+"11 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/I2C/hal_i2c.c
+[v _MSSP_I2C_Init MSSP_I2C_Init `(uc  1 e 1 0 ]
+{
+[s S2779 . 3 `uc 1 i2c_mode_cfg 1 0 `uc 1 i2c_slave_address 1 1 `uc 1 i2c_mode 1 2 :1:0 
+`uc 1 i2c_slew_rate 1 2 :1:1 
+`uc 1 i2c_SMBus_control 1 2 :1:2 
+`uc 1 i2c_general_call 1 2 :1:3 
+`uc 1 i2c_reserved 1 2 :4:4 
+]
+[s S2787 . 13 `ul 1 i2c_clock 4 0 `*.37(v 1 I2C_Report_Write_Collision 2 4 `*.37(v 1 I2C_Report_Receieve_Overflow 2 6 `*.37(v 1 I2C_DefaultInterruptHandler 2 8 `S2779 1 i2c_cfg 3 10 ]
+[v MSSP_I2C_Init@i2c_obj i2c_obj `*.39CS2787  1 p 2 71 ]
+"83
+} 0
+"246
+[v _MSSP_I2C_Mode_GPIO_CFG MSSP_I2C_Mode_GPIO_CFG `T(v  1 s 1 MSSP_I2C_Mode_GPIO_CFG ]
+{
+"250
+} 0
+"261
+[v _MSSP_I2C_Interrupt_Configurations MSSP_I2C_Interrupt_Configurations `T(v  1 s 1 MSSP_I2C_Interrupt_Configurations ]
+{
+[s S2779 . 3 `uc 1 i2c_mode_cfg 1 0 `uc 1 i2c_slave_address 1 1 `uc 1 i2c_mode 1 2 :1:0 
+`uc 1 i2c_slew_rate 1 2 :1:1 
+`uc 1 i2c_SMBus_control 1 2 :1:2 
+`uc 1 i2c_general_call 1 2 :1:3 
+`uc 1 i2c_reserved 1 2 :4:4 
+]
+[s S2787 . 13 `ul 1 i2c_clock 4 0 `*.37(v 1 I2C_Report_Write_Collision 2 4 `*.37(v 1 I2C_Report_Receieve_Overflow 2 6 `*.37(v 1 I2C_DefaultInterruptHandler 2 8 `S2779 1 i2c_cfg 3 10 ]
+[v MSSP_I2C_Interrupt_Configurations@i2c_obj i2c_obj `*.39CS2787  1 p 2 3 ]
+"298
+} 0
+"256
+[v _I2C_Slave_Mode_Configurations I2C_Slave_Mode_Configurations `T(v  1 s 1 I2C_Slave_Mode_Configurations ]
+{
+[s S2779 . 3 `uc 1 i2c_mode_cfg 1 0 `uc 1 i2c_slave_address 1 1 `uc 1 i2c_mode 1 2 :1:0 
+`uc 1 i2c_slew_rate 1 2 :1:1 
+`uc 1 i2c_SMBus_control 1 2 :1:2 
+`uc 1 i2c_general_call 1 2 :1:3 
+`uc 1 i2c_reserved 1 2 :4:4 
+]
+[s S2787 . 13 `ul 1 i2c_clock 4 0 `*.37(v 1 I2C_Report_Write_Collision 2 4 `*.37(v 1 I2C_Report_Receieve_Overflow 2 6 `*.37(v 1 I2C_DefaultInterruptHandler 2 8 `S2779 1 i2c_cfg 3 10 ]
+[v I2C_Slave_Mode_Configurations@i2c_obj i2c_obj `*.39CS2787  1 p 2 3 ]
+"259
+} 0
+"251
+[v _I2C_Master_Mode_Clock_Configurations I2C_Master_Mode_Clock_Configurations `T(v  1 s 1 I2C_Master_Mode_Clock_Configurations ]
+{
+[s S2779 . 3 `uc 1 i2c_mode_cfg 1 0 `uc 1 i2c_slave_address 1 1 `uc 1 i2c_mode 1 2 :1:0 
+`uc 1 i2c_slew_rate 1 2 :1:1 
+`uc 1 i2c_SMBus_control 1 2 :1:2 
+`uc 1 i2c_general_call 1 2 :1:3 
+`uc 1 i2c_reserved 1 2 :4:4 
+]
+[s S2787 . 13 `ul 1 i2c_clock 4 0 `*.37(v 1 I2C_Report_Write_Collision 2 4 `*.37(v 1 I2C_Report_Receieve_Overflow 2 6 `*.37(v 1 I2C_DefaultInterruptHandler 2 8 `S2779 1 i2c_cfg 3 10 ]
+[v I2C_Master_Mode_Clock_Configurations@i2c_obj i2c_obj `*.39CS2787  1 p 2 68 ]
+"255
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 13 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 12 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 3 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 11 ]
+"44
+} 0
+"43 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 67 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 66 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 58 ]
+"70
+} 0
+"11 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 36 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 29 ]
+"20
+[v ___fldiv@new_exp new_exp `s  1 a 2 34 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 41 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 40 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 33 ]
+"11
+[v ___fldiv@b b `d  1 p 4 17 ]
+[v ___fldiv@a a `d  1 p 4 21 ]
+"185
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 57 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 56 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 55 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 54 ]
+"10
+[v ___fladd@b b `d  1 p 4 42 ]
+[v ___fladd@a a `d  1 p 4 46 ]
+"237
+} 0
+"156 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Interrupt/mcal_interrupt_manager.c
+[v _InterruptManager InterruptManager `IIH(v  1 e 1 0 ]
+{
+"233
+} 0
+"138 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer3/hal_timer3.c
 [v _TMR3_ISR TMR3_ISR `(v  1 e 1 0 ]
 {
-"148
+"147
 } 0
-"111 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer2/hal_timer2.c
+"110 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer2/hal_timer2.c
 [v _TMR2_ISR TMR2_ISR `(v  1 e 1 0 ]
 {
-"120
+"119
 } 0
-"114 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer1/hal_timer1.c
+"113 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer1/hal_timer1.c
 [v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
 {
-"122
+"121
 } 0
 "110 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer0/hal_timer0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
@@ -840,18 +893,38 @@ HIGH 1
 "12 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Interrupt/mcal_internal_interrupt.c
 [v _MSSP_ISR MSSP_ISR `(v  1 e 1 0 ]
 {
-"20
+"23
 } 0
-"35 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
-[v _SPI_ISR SPI_ISR `(v  1 e 1 0 ]
+"13 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
+[v _I2C_SLAVE_ISR I2C_SLAVE_ISR `(v  1 e 1 0 ]
 {
-"38
+"42
 } 0
-"107 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/SPI/hal_spi.c
-[v _SPI_Slave_Receive_Non_Blocking SPI_Slave_Receive_Non_Blocking `(uc  1 e 1 0 ]
+"237 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/I2C/hal_i2c.c
+[v _MSSP_I2C_Write_To_Buffer MSSP_I2C_Write_To_Buffer `(v  1 e 1 0 ]
 {
-[v SPI_Slave_Receive_Non_Blocking@received_data received_data `*.39uc  1 p 2 6 ]
-"120
+[v MSSP_I2C_Write_To_Buffer@Data Data `uc  1 a 1 wreg ]
+[v MSSP_I2C_Write_To_Buffer@Data Data `uc  1 a 1 wreg ]
+"239
+[v MSSP_I2C_Write_To_Buffer@Data Data `uc  1 a 1 0 ]
+"240
+} 0
+"241
+[v _MSSP_I2C_Read_From_Buffer MSSP_I2C_Read_From_Buffer `(uc  1 e 1 0 ]
+{
+"242
+[v MSSP_I2C_Read_From_Buffer@Temp_Data Temp_Data `uc  1 a 1 0 ]
+"245
+} 0
+"233
+[v _MSSP_I2C_Clear_Buffer MSSP_I2C_Clear_Buffer `(v  1 e 1 0 ]
+{
+"236
+} 0
+"24 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Interrupt/mcal_internal_interrupt.c
+[v _MSSP_Bus_Collision_ISR MSSP_Bus_Collision_ISR `(v  1 e 1 0 ]
+{
+"32
 } 0
 "148 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Interrupt/mcal_external_interrupt.c
 [v _INT2_ISR INT2_ISR `(v  1 e 1 0 ]
@@ -863,129 +936,33 @@ HIGH 1
 {
 "147
 } 0
-"291 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/USART/hal_usart.c
+"132
+[v _INT0_ISR INT0_ISR `(v  1 e 1 0 ]
+{
+"139
+} 0
+"289 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/USART/hal_usart.c
 [v _EUSART_TX_ISR EUSART_TX_ISR `(v  1 e 1 0 ]
 {
-"300
+"298
 } 0
-"302
+"300
 [v _EUSART_RX_ISR EUSART_RX_ISR `(v  1 e 1 0 ]
 {
-"318
+"316
 } 0
-"606 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/CCP/hal_ccp.c
+"604 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/CCP/hal_ccp.c
 [v _CCP2_ISR CCP2_ISR `(v  1 e 1 0 ]
 {
-"615
+"613
 } 0
-"596
+"594
 [v _CCP1_ISR CCP1_ISR `(v  1 e 1 0 ]
 {
-"605
+"603
 } 0
 "3 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Interrupt/mcal_internal_interrupt.c
 [v _ADC_ISR ADC_ISR `(v  1 e 1 0 ]
 {
 "11
-} 0
-"3 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Interrupt/mcal_interrupt_manager.c
-[v _InterruptManagerHigh InterruptManagerHigh `IIH(v  1 e 1 0 ]
-{
-"76
-} 0
-"139 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer3/hal_timer3.c
-[v i2_TMR3_ISR TMR3_ISR `(v  1 e 1 0 ]
-{
-"148
-} 0
-"111 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer2/hal_timer2.c
-[v i2_TMR2_ISR TMR2_ISR `(v  1 e 1 0 ]
-{
-"120
-} 0
-"114 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer1/hal_timer1.c
-[v i2_TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
-{
-"122
-} 0
-"110 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Timer0/hal_timer0.c
-[v i2_TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
-{
-"120
-} 0
-"180 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Interrupt/mcal_external_interrupt.c
-[v i2_RB7_ISR RB7_ISR `(v  1 e 1 0 ]
-{
-"187
-} 0
-"172
-[v i2_RB6_ISR RB6_ISR `(v  1 e 1 0 ]
-{
-"179
-} 0
-"164
-[v i2_RB5_ISR RB5_ISR `(v  1 e 1 0 ]
-{
-"171
-} 0
-"156
-[v i2_RB4_ISR RB4_ISR `(v  1 e 1 0 ]
-{
-"163
-} 0
-"12 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Interrupt/mcal_internal_interrupt.c
-[v i2_MSSP_ISR MSSP_ISR `(v  1 e 1 0 ]
-{
-"20
-} 0
-"35 E:\The Courses\Embedded Systems\PIC Interfacing\application\application.c
-[v i2_SPI_ISR SPI_ISR `(v  1 e 1 0 ]
-{
-"38
-} 0
-"107 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/SPI/hal_spi.c
-[v i2_SPI_Slave_Receive_Non_Blocking SPI_Slave_Receive_Non_Blocking `(uc  1 e 1 0 ]
-{
-[v i2SPI_Slave_Receive_Non_Blocking@received_data received_data `*.39uc  1 p 2 0 ]
-"120
-} 0
-"148 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Interrupt/mcal_external_interrupt.c
-[v i2_INT2_ISR INT2_ISR `(v  1 e 1 0 ]
-{
-"155
-} 0
-"140
-[v i2_INT1_ISR INT1_ISR `(v  1 e 1 0 ]
-{
-"147
-} 0
-"291 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/USART/hal_usart.c
-[v i2_EUSART_TX_ISR EUSART_TX_ISR `(v  1 e 1 0 ]
-{
-"300
-} 0
-"302
-[v i2_EUSART_RX_ISR EUSART_RX_ISR `(v  1 e 1 0 ]
-{
-"318
-} 0
-"606 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/CCP/hal_ccp.c
-[v i2_CCP2_ISR CCP2_ISR `(v  1 e 1 0 ]
-{
-"615
-} 0
-"596
-[v i2_CCP1_ISR CCP1_ISR `(v  1 e 1 0 ]
-{
-"605
-} 0
-"3 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Interrupt/mcal_internal_interrupt.c
-[v i2_ADC_ISR ADC_ISR `(v  1 e 1 0 ]
-{
-"11
-} 0
-"132 E:\The Courses\Embedded Systems\PIC Interfacing\application\MCAL_Layer/Interrupt/mcal_external_interrupt.c
-[v _INT0_ISR INT0_ISR `(v  1 e 1 0 ]
-{
-"139
 } 0

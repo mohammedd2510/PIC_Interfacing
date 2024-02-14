@@ -5131,6 +5131,21 @@ typedef union
         uint8 :4;
     };
 }SSPCON1_t;
+
+
+
+
+typedef struct
+{
+   uint8 SEN :1;
+   uint8 RSEN :1;
+   uint8 PEN :1;
+   uint8 RCEN :1;
+   uint8 ACKEN :1;
+   uint8 ACKDT :1;
+   uint8 ACKSTAT :1;
+   uint8 GCEN :1;
+}SSPCON2_t;
 # 13 "MCAL_Layer/ADC/../GPIO/hal_gpio.h" 2
 
 # 1 "MCAL_Layer/ADC/../GPIO/hal_gpio_cfg.h" 1
@@ -5208,6 +5223,8 @@ typedef void (*InterruptHandler)(void);
 # 14 "MCAL_Layer/ADC/../Interrupt/mcal_internal_interrupt.h" 2
 # 151 "MCAL_Layer/ADC/../Interrupt/mcal_internal_interrupt.h"
     extern InterruptHandler SPI_InterruptHandler;
+    extern InterruptHandler I2C_DefaultInterruptHandler;
+    extern InterruptHandler I2C_Report_Write_Collision_InterruptHandler;
 # 16 "MCAL_Layer/ADC/../Interrupt/../ADC/hal_adc.h" 2
 # 100 "MCAL_Layer/ADC/../Interrupt/../ADC/hal_adc.h"
 extern InterruptHandler ADC_InterruptHandler;
@@ -5264,7 +5281,7 @@ typedef struct {
 
         void(*ADC_InterruptHandler)(void);
 
-        interrupt_priority_cfg priority;
+
 
 
     adc_acquisition_time_t acquisition_time;
@@ -5315,26 +5332,12 @@ Std_ReturnType ADC_Init(const adc_conf_t *_adc){
 
             ADC_InterruptHandler = _adc->ADC_InterruptHandler;
 
-
-
+                ((*((volatile INTCON_t *)(0xFF2))).GIE = 1);
+                ((*((volatile INTCON_t *)(0xFF2))).PEIE = 1);
 
             ((*((volatile PIE1_t *)(0xF9D))).ADIE=1);
             ((*((volatile PIR1_t *)(0xF9E))).ADIF=0);
-
-                ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
-                if(INTERRUPT_HIGH_PRIORITY == _adc->priority){
-                    ((*((volatile IPR1_t *)(0xF9F))).ADIP=1);
-                    ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-                }
-                else if (INTERRUPT_LOW_PRIORITY == _adc->priority){
-                    ((*((volatile IPR1_t *)(0xF9F))).ADIP=0);
-                    ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-                    ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1);
-                }
-                else { }
-
-
-
+# 62 "MCAL_Layer/ADC/hal_adc.c"
         select_result_format(_adc);
 
         configure_voltage_reference(_adc);

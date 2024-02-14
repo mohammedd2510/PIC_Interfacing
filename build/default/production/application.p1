@@ -1,30 +1,68 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"538 ./MCAL_Layer/I2C/../Interrupt/../ADC/../../MCAL_Layer/my_pic18f4620.h
+[s S316 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S316 . BF UA RW S P DA CKE SMP ]
+"123 ./MCAL_Layer/I2C/hal_i2c.h
+[; ;./MCAL_Layer/I2C/hal_i2c.h: 123: uint8 MSSP_I2C_Read_From_Buffer(void);
+[v _MSSP_I2C_Read_From_Buffer `(uc ~T0 @X0 0 ef ]
+"121
+[; ;./MCAL_Layer/I2C/hal_i2c.h: 121: void MSSP_I2C_Clear_Buffer(void);
+[v _MSSP_I2C_Clear_Buffer `(v ~T0 @X0 0 ef ]
+"122
+[; ;./MCAL_Layer/I2C/hal_i2c.h: 122: void MSSP_I2C_Write_To_Buffer(uint8 Data);
+[v _MSSP_I2C_Write_To_Buffer `(v ~T0 @X0 0 ef1`uc ]
+"555 ./MCAL_Layer/I2C/../Interrupt/../ADC/../../MCAL_Layer/my_pic18f4620.h
+[s S318 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S318 . SSPM0 SSPM1 SSPM2 SSPM3 CKP SSPEN SSPOV WCOL ]
+"566
+[s S319 :4 `uc 1 :4 `uc 1 ]
+[n S319 . SSPM . ]
+"553
+[u S317 `S318 1 `S319 1 ]
+[n S317 . . . ]
+[v F3458 `(v ~T0 @X0 0 tf ]
+[v F3460 `(v ~T0 @X0 0 tf ]
+[v F3462 `(v ~T0 @X0 0 tf ]
+"87 ./MCAL_Layer/I2C/hal_i2c.h
+[; ;./MCAL_Layer/I2C/hal_i2c.h: 87: {
+[s S323 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S323 . i2c_mode_cfg i2c_slave_address i2c_mode i2c_slew_rate i2c_SMBus_control i2c_general_call i2c_reserved ]
+"98
+[; ;./MCAL_Layer/I2C/hal_i2c.h: 98: {
+[s S324 `ul 1 `*F3458 1 `*F3460 1 `*F3462 1 `S323 1 ]
+[n S324 . i2c_clock I2C_Report_Write_Collision I2C_Report_Receieve_Overflow I2C_DefaultInterruptHandler i2c_cfg ]
 [p mainexit ]
-"42 ./MCAL_Layer/mcal_layer_init.h
-[; ;./MCAL_Layer/mcal_layer_init.h: 42: void mcal_layer_initialize(void);
-[v _mcal_layer_initialize `(v ~T0 @X0 0 ef ]
+"45 application.c
+[; ;application.c: 45: void I2C_Slave_2_Init(void);
+[v _I2C_Slave_2_Init `(v ~T0 @X0 0 ef ]
 "29 ./ECU_Layer/ecu_layer_init.h
 [; ;./ECU_Layer/ecu_layer_init.h: 29: void ecu_layer_initialize(void);
 [v _ecu_layer_initialize `(v ~T0 @X0 0 ef ]
-"82 ./MCAL_Layer/SPI/hal_spi.h
-[; ;./MCAL_Layer/SPI/hal_spi.h: 82: extern uint8 SPI_Slave_Receive_Status;
-[v _SPI_Slave_Receive_Status `uc ~T0 @X0 0 e ]
-"60 ./ECU_Layer/Chr_LCD/../../MCAL_Layer/GPIO/hal_gpio.h
-[s S320 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S320 . port pin direction logic ]
-"53 ./ECU_Layer/Chr_LCD/ecu_chr_lcd.h
-[; ;./ECU_Layer/Chr_LCD/ecu_chr_lcd.h: 53: typedef struct {
-[s S329 `S320 1 `S320 1 `S320 -> 4 `i ]
-[n S329 . lcd_rs lcd_en lcd_data ]
-"67
-[; ;./ECU_Layer/Chr_LCD/ecu_chr_lcd.h: 67: Std_ReturnType lcd_4bit_send_char_data (const chr_lcd_4bit_t *lcd, uint8 data);
-[v _lcd_4bit_send_char_data `(uc ~T0 @X0 0 ef2`*CS329`uc ]
-"26 ./ECU_Layer/ecu_layer_init.h
-[; ;./ECU_Layer/ecu_layer_init.h: 26: extern chr_lcd_4bit_t lcd1;
-[v _lcd1 `S329 ~T0 @X0 0 e ]
-"91 ./MCAL_Layer/SPI/hal_spi.h
-[; ;./MCAL_Layer/SPI/hal_spi.h: 91: Std_ReturnType SPI_Slave_Receive_Non_Blocking(uint8* received_data);
-[v _SPI_Slave_Receive_Non_Blocking `(uc ~T0 @X0 0 ef1`*uc ]
+"27 ./ECU_Layer/LED/ecu_led.h
+[; ;./ECU_Layer/LED/ecu_led.h: 27: typedef struct{
+[s S328 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S328 . port_name pin led_status ]
+"35
+[; ;./ECU_Layer/LED/ecu_led.h: 35: Std_ReturnType led_turn_on(const led_t *led);
+[v _led_turn_on `(uc ~T0 @X0 0 ef1`*CS328 ]
+"27 ./ECU_Layer/ecu_layer_init.h
+[; ;./ECU_Layer/ecu_layer_init.h: 27: extern led_t led1;
+[v _led1 `S328 ~T0 @X0 0 e ]
+"36 ./ECU_Layer/LED/ecu_led.h
+[; ;./ECU_Layer/LED/ecu_led.h: 36: Std_ReturnType led_turn_off(const led_t *led);
+[v _led_turn_off `(uc ~T0 @X0 0 ef1`*CS328 ]
+"114 ./MCAL_Layer/I2C/hal_i2c.h
+[; ;./MCAL_Layer/I2C/hal_i2c.h: 114: Std_ReturnType MSSP_I2C_Init(const mssp_i2c_t *i2c_obj);
+[v _MSSP_I2C_Init `(uc ~T0 @X0 0 ef1`*CS324 ]
+"116
+[; ;./MCAL_Layer/I2C/hal_i2c.h: 116: Std_ReturnType MSSP_I2C_Master_Send_Start(const mssp_i2c_t *i2c_obj);
+[v _MSSP_I2C_Master_Send_Start `(uc ~T0 @X0 0 ef1`*CS324 ]
+"119
+[; ;./MCAL_Layer/I2C/hal_i2c.h: 119: Std_ReturnType MSSP_I2C_Master_Write_Blocking(const mssp_i2c_t *i2c_obj, uint8 i2c_data, uint8 *ack);
+[v _MSSP_I2C_Master_Write_Blocking `(uc ~T0 @X0 0 ef3`*CS324`uc`*uc ]
+"118
+[; ;./MCAL_Layer/I2C/hal_i2c.h: 118: Std_ReturnType MSSP_I2C_Master_Send_Stop(const mssp_i2c_t *i2c_obj);
+[v _MSSP_I2C_Master_Send_Stop `(uc ~T0 @X0 0 ef1`*CS324 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -436,85 +474,300 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"10 application.c
-[; ;application.c: 10: volatile uint8 Data =0;
-[v _Data `Vuc ~T0 @X0 1 e ]
-[i _Data
--> -> 0 `i `uc
-]
-"11
-[; ;application.c: 11: volatile uint8 Receive_Status=0;
-[v _Receive_Status `Vuc ~T0 @X0 1 e ]
-[i _Receive_Status
+"11 application.c
+[; ;application.c: 11: volatile uint8 Received_Data =0;
+[v _Received_Data `Vuc ~T0 @X0 1 e ]
+[i _Received_Data
 -> -> 0 `i `uc
 ]
 "12
-[; ;application.c: 12: uint8 status =0;
-[v _status `uc ~T0 @X0 1 e ]
-[i _status
+[; ;application.c: 12: volatile uint8 flag =0;
+[v _flag `Vuc ~T0 @X0 1 e ]
+[i _flag
 -> -> 0 `i `uc
 ]
-[v $root$_main `(v ~T0 @X0 0 e ]
 "13
-[; ;application.c: 13: int main()
-[v _main `(i ~T0 @X0 1 ef ]
+[; ;application.c: 13: void I2C_SLAVE_ISR(void)
+[v _I2C_SLAVE_ISR `(v ~T0 @X0 1 ef ]
 "14
 [; ;application.c: 14: {
 {
-[e :U _main ]
+[e :U _I2C_SLAVE_ISR ]
 [f ]
 "15
-[; ;application.c: 15:     mcal_layer_initialize();
-[e ( _mcal_layer_initialize ..  ]
+[; ;application.c: 15:     if((((*((volatile SSPSTAT_t *)(0xFC7))).RW == 0)&&((*((volatile SSPSTAT_t *)(0xFC7))).DA == 1)))
+[e $ ! && == -> . *U -> -> 4039 `i `*VS316 2 `i -> 0 `i == -> . *U -> -> 4039 `i `*VS316 5 `i -> 1 `i 334  ]
 "16
-[; ;application.c: 16:     ecu_layer_initialize();
-[e ( _ecu_layer_initialize ..  ]
+[; ;application.c: 16:     {
+{
 "17
-[; ;application.c: 17:     while(1)
-[e :U 333 ]
-"18
-[; ;application.c: 18:     {
+[; ;application.c: 17:         Received_Data = MSSP_I2C_Read_From_Buffer();
+[e = _Received_Data ( _MSSP_I2C_Read_From_Buffer ..  ]
+"19
+[; ;application.c: 19:     }
+}
+[e :U 334 ]
+"21
+[; ;application.c: 21:     if((((*((volatile SSPSTAT_t *)(0xFC7))).RW == 0)&&((*((volatile SSPSTAT_t *)(0xFC7))).DA == 0)))
+[e $ ! && == -> . *U -> -> 4039 `i `*VS316 2 `i -> 0 `i == -> . *U -> -> 4039 `i `*VS316 5 `i -> 0 `i 335  ]
+"22
+[; ;application.c: 22:     {
 {
-"28
-[; ;application.c: 28:         if(0x01 == SPI_Slave_Receive_Status){
-[e $ ! == -> 1 `i -> _SPI_Slave_Receive_Status `i 335  ]
-{
-"29
-[; ;application.c: 29:             lcd_4bit_send_char_data(&lcd1,Data);
-[e ( _lcd_4bit_send_char_data (2 , -> &U _lcd1 `*CS329 _Data ]
-"30
-[; ;application.c: 30:             SPI_Slave_Receive_Status =0;
-[e = _SPI_Slave_Receive_Status -> -> 0 `i `uc ]
-"31
-[; ;application.c: 31:         }
+"23
+[; ;application.c: 23:         MSSP_I2C_Clear_Buffer();
+[e ( _MSSP_I2C_Clear_Buffer ..  ]
+"25
+[; ;application.c: 25:     }
 }
 [e :U 335 ]
-"32
-[; ;application.c: 32:     }
-}
-[e :U 332 ]
-[e $U 333  ]
-[e :U 334 ]
-"33
-[; ;application.c: 33:         return (0);
-[e ) -> 0 `i ]
-[e $UE 331  ]
-"34
-[; ;application.c: 34: }
-[e :UE 331 ]
-}
-"35
-[; ;application.c: 35: void SPI_ISR(void)
-[v _SPI_ISR `(v ~T0 @X0 1 ef ]
-"36
-[; ;application.c: 36: {
+"26
+[; ;application.c: 26:     if((((*((volatile SSPSTAT_t *)(0xFC7))).RW == 1)&&((*((volatile SSPSTAT_t *)(0xFC7))).DA == 0)))
+[e $ ! && == -> . *U -> -> 4039 `i `*VS316 2 `i -> 1 `i == -> . *U -> -> 4039 `i `*VS316 5 `i -> 0 `i 336  ]
+"27
+[; ;application.c: 27:     {
 {
-[e :U _SPI_ISR ]
-[f ]
+"28
+[; ;application.c: 28:         MSSP_I2C_Clear_Buffer();
+[e ( _MSSP_I2C_Clear_Buffer ..  ]
+"29
+[; ;application.c: 29:         if(flag == 0)
+[e $ ! == -> _flag `i -> 0 `i 337  ]
+"30
+[; ;application.c: 30:         {
+{
+"31
+[; ;application.c: 31:             flag =1;
+[e = _flag -> -> 1 `i `uc ]
+"32
+[; ;application.c: 32:             MSSP_I2C_Write_To_Buffer('b');
+[e ( _MSSP_I2C_Write_To_Buffer (1 -> -> 98 `ui `uc ]
+"33
+[; ;application.c: 33:             ((*((volatile SSPCON1_t *)(0xFC6))).CKP = 1);
+[e = . . *U -> -> 4038 `i `*VS317 0 4 -> -> 1 `i `uc ]
+"34
+[; ;application.c: 34:         }
+}
+[e $U 338  ]
+"35
+[; ;application.c: 35:         else
+[e :U 337 ]
+"36
+[; ;application.c: 36:         {
+{
 "37
-[; ;application.c: 37:   SPI_Slave_Receive_Non_Blocking(&Data);
-[e ( _SPI_Slave_Receive_Non_Blocking (1 -> &U _Data `*uc ]
+[; ;application.c: 37:             flag =0;
+[e = _flag -> -> 0 `i `uc ]
 "38
-[; ;application.c: 38: }
-[e :UE 336 ]
+[; ;application.c: 38:             MSSP_I2C_Write_To_Buffer('d');
+[e ( _MSSP_I2C_Write_To_Buffer (1 -> -> 100 `ui `uc ]
+"39
+[; ;application.c: 39:             ((*((volatile SSPCON1_t *)(0xFC6))).CKP = 1);
+[e = . . *U -> -> 4038 `i `*VS317 0 4 -> -> 1 `i `uc ]
+"40
+[; ;application.c: 40:         }
+}
+[e :U 338 ]
+"41
+[; ;application.c: 41:     }
+}
+[e :U 336 ]
+"42
+[; ;application.c: 42: }
+[e :UE 333 ]
+}
+"47
+[; ;application.c: 47: mssp_i2c_t i2c_obj;
+[v _i2c_obj `S324 ~T0 @X0 1 e ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"48
+[; ;application.c: 48: int main()
+[v _main `(i ~T0 @X0 1 ef ]
+"49
+[; ;application.c: 49: {
+{
+[e :U _main ]
+[f ]
+"50
+[; ;application.c: 50:     I2C_Slave_2_Init();
+[e ( _I2C_Slave_2_Init ..  ]
+"51
+[; ;application.c: 51:     ecu_layer_initialize();
+[e ( _ecu_layer_initialize ..  ]
+"53
+[; ;application.c: 53:     while(1)
+[e :U 341 ]
+"54
+[; ;application.c: 54:     {
+{
+"55
+[; ;application.c: 55:         if(Received_Data == 'B'){
+[e $ ! == -> _Received_Data `ui -> 66 `ui 343  ]
+{
+"56
+[; ;application.c: 56:             led_turn_on(&led1);
+[e ( _led_turn_on (1 -> &U _led1 `*CS328 ]
+"57
+[; ;application.c: 57:         }
+}
+[e :U 343 ]
+"58
+[; ;application.c: 58:         if(Received_Data == 'D'){
+[e $ ! == -> _Received_Data `ui -> 68 `ui 344  ]
+{
+"59
+[; ;application.c: 59:             led_turn_off(&led1);
+[e ( _led_turn_off (1 -> &U _led1 `*CS328 ]
+"60
+[; ;application.c: 60:         }
+}
+[e :U 344 ]
+"62
+[; ;application.c: 62:     }
+}
+[e :U 340 ]
+[e $U 341  ]
+[e :U 342 ]
+"63
+[; ;application.c: 63:     return (0);
+[e ) -> 0 `i ]
+[e $UE 339  ]
+"64
+[; ;application.c: 64: }
+[e :UE 339 ]
+}
+"65
+[; ;application.c: 65: void I2C_Master_Init(void)
+[v _I2C_Master_Init `(v ~T0 @X0 1 ef ]
+"66
+[; ;application.c: 66: {
+{
+[e :U _I2C_Master_Init ]
+[f ]
+"67
+[; ;application.c: 67:     i2c_obj.i2c_clock = 100000;
+[e = . _i2c_obj 0 -> -> 100000 `l `ul ]
+"68
+[; ;application.c: 68:     i2c_obj.i2c_cfg.i2c_SMBus_control = 0X00U;
+[e = . . _i2c_obj 4 4 -> -> 0 `ui `uc ]
+"69
+[; ;application.c: 69:     i2c_obj.i2c_cfg.i2c_mode = 0X01U;
+[e = . . _i2c_obj 4 2 -> -> 1 `ui `uc ]
+"70
+[; ;application.c: 70:     i2c_obj.i2c_cfg.i2c_slew_rate=0X01U;
+[e = . . _i2c_obj 4 3 -> -> 1 `ui `uc ]
+"71
+[; ;application.c: 71:     i2c_obj.i2c_cfg.i2c_mode_cfg = 0X08U;
+[e = . . _i2c_obj 4 0 -> -> 8 `ui `uc ]
+"72
+[; ;application.c: 72:     MSSP_I2C_Init(&i2c_obj);
+[e ( _MSSP_I2C_Init (1 -> &U _i2c_obj `*CS324 ]
+"73
+[; ;application.c: 73: }
+[e :UE 345 ]
+}
+"74
+[; ;application.c: 74: void I2C_Slave_1_Init(void)
+[v _I2C_Slave_1_Init `(v ~T0 @X0 1 ef ]
+"75
+[; ;application.c: 75: {
+{
+[e :U _I2C_Slave_1_Init ]
+[f ]
+"76
+[; ;application.c: 76:     i2c_obj.i2c_cfg.i2c_SMBus_control = 0X00U;
+[e = . . _i2c_obj 4 4 -> -> 0 `ui `uc ]
+"77
+[; ;application.c: 77:     i2c_obj.i2c_cfg.i2c_mode = 0X00U;
+[e = . . _i2c_obj 4 2 -> -> 0 `ui `uc ]
+"78
+[; ;application.c: 78:     i2c_obj.i2c_cfg.i2c_slew_rate=0X01U;
+[e = . . _i2c_obj 4 3 -> -> 1 `ui `uc ]
+"79
+[; ;application.c: 79:     i2c_obj.i2c_cfg.i2c_mode_cfg = 0X06U;
+[e = . . _i2c_obj 4 0 -> -> 6 `ui `uc ]
+"80
+[; ;application.c: 80:     i2c_obj.i2c_cfg.i2c_general_call = 0X00U;
+[e = . . _i2c_obj 4 5 -> -> 0 `ui `uc ]
+"81
+[; ;application.c: 81:     i2c_obj.I2C_DefaultInterruptHandler =I2C_SLAVE_ISR;
+[e = . _i2c_obj 3 &U _I2C_SLAVE_ISR ]
+"82
+[; ;application.c: 82:     i2c_obj.i2c_cfg.i2c_slave_address = 0x18;
+[e = . . _i2c_obj 4 1 -> -> 24 `i `uc ]
+"83
+[; ;application.c: 83:     MSSP_I2C_Init(&i2c_obj);
+[e ( _MSSP_I2C_Init (1 -> &U _i2c_obj `*CS324 ]
+"84
+[; ;application.c: 84: }
+[e :UE 346 ]
+}
+"85
+[; ;application.c: 85: void I2C_Slave_2_Init(void)
+[v _I2C_Slave_2_Init `(v ~T0 @X0 1 ef ]
+"86
+[; ;application.c: 86: {
+{
+[e :U _I2C_Slave_2_Init ]
+[f ]
+"87
+[; ;application.c: 87:     i2c_obj.i2c_cfg.i2c_SMBus_control = 0X00U;
+[e = . . _i2c_obj 4 4 -> -> 0 `ui `uc ]
+"88
+[; ;application.c: 88:     i2c_obj.i2c_cfg.i2c_mode = 0X00U;
+[e = . . _i2c_obj 4 2 -> -> 0 `ui `uc ]
+"89
+[; ;application.c: 89:     i2c_obj.i2c_cfg.i2c_slew_rate=0X01U;
+[e = . . _i2c_obj 4 3 -> -> 1 `ui `uc ]
+"90
+[; ;application.c: 90:     i2c_obj.i2c_cfg.i2c_mode_cfg = 0X06U;
+[e = . . _i2c_obj 4 0 -> -> 6 `ui `uc ]
+"91
+[; ;application.c: 91:     i2c_obj.i2c_cfg.i2c_general_call = 0X00U;
+[e = . . _i2c_obj 4 5 -> -> 0 `ui `uc ]
+"92
+[; ;application.c: 92:     i2c_obj.I2C_DefaultInterruptHandler =I2C_SLAVE_ISR;
+[e = . _i2c_obj 3 &U _I2C_SLAVE_ISR ]
+"93
+[; ;application.c: 93:     i2c_obj.i2c_cfg.i2c_slave_address = 0x62;
+[e = . . _i2c_obj 4 1 -> -> 98 `i `uc ]
+"94
+[; ;application.c: 94:     MSSP_I2C_Init(&i2c_obj);
+[e ( _MSSP_I2C_Init (1 -> &U _i2c_obj `*CS324 ]
+"95
+[; ;application.c: 95: }
+[e :UE 347 ]
+}
+"96
+[; ;application.c: 96: void I2C_Send_1_byte(uint8 add , uint8 Data)
+[v _I2C_Send_1_byte `(v ~T0 @X0 1 ef2`uc`uc ]
+"97
+[; ;application.c: 97: {
+{
+[e :U _I2C_Send_1_byte ]
+"96
+[; ;application.c: 96: void I2C_Send_1_byte(uint8 add , uint8 Data)
+[v _add `uc ~T0 @X0 1 r1 ]
+[v _Data `uc ~T0 @X0 1 r2 ]
+"97
+[; ;application.c: 97: {
+[f ]
+"98
+[; ;application.c: 98:     uint8 ack =0;
+[v _ack `uc ~T0 @X0 1 a ]
+[e = _ack -> -> 0 `i `uc ]
+"99
+[; ;application.c: 99:     MSSP_I2C_Master_Send_Start(&i2c_obj);
+[e ( _MSSP_I2C_Master_Send_Start (1 -> &U _i2c_obj `*CS324 ]
+"100
+[; ;application.c: 100:     MSSP_I2C_Master_Write_Blocking(&i2c_obj,add,&ack);
+[e ( _MSSP_I2C_Master_Write_Blocking (3 , , -> &U _i2c_obj `*CS324 _add &U _ack ]
+"101
+[; ;application.c: 101:     MSSP_I2C_Master_Write_Blocking(&i2c_obj,Data,&ack);
+[e ( _MSSP_I2C_Master_Write_Blocking (3 , , -> &U _i2c_obj `*CS324 _Data &U _ack ]
+"102
+[; ;application.c: 102:     MSSP_I2C_Master_Send_Stop(&i2c_obj);
+[e ( _MSSP_I2C_Master_Send_Stop (1 -> &U _i2c_obj `*CS324 ]
+"103
+[; ;application.c: 103: }
+[e :UE 348 ]
 }

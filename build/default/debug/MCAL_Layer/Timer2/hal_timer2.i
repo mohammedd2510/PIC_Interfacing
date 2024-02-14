@@ -5126,6 +5126,21 @@ typedef union
         uint8 :4;
     };
 }SSPCON1_t;
+
+
+
+
+typedef struct
+{
+   uint8 SEN :1;
+   uint8 RSEN :1;
+   uint8 PEN :1;
+   uint8 RCEN :1;
+   uint8 ACKEN :1;
+   uint8 ACKDT :1;
+   uint8 ACKSTAT :1;
+   uint8 GCEN :1;
+}SSPCON2_t;
 # 13 "MCAL_Layer/Timer2/../Interrupt/mcal_interrupt_config.h" 2
 
 # 1 "MCAL_Layer/Timer2/../Interrupt/mcal_interrupt_gen_cfg.h" 1
@@ -5264,7 +5279,7 @@ typedef struct {
 
         void(*ADC_InterruptHandler)(void);
 
-        interrupt_priority_cfg priority;
+
 
 
     adc_acquisition_time_t acquisition_time;
@@ -5289,6 +5304,8 @@ Std_ReturnType ADC_StartConversion_Interrupt(const adc_conf_t *_adc, adc_channel
 # 14 "MCAL_Layer/Timer2/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
 # 151 "MCAL_Layer/Timer2/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h"
     extern InterruptHandler SPI_InterruptHandler;
+    extern InterruptHandler I2C_DefaultInterruptHandler;
+    extern InterruptHandler I2C_Report_Write_Collision_InterruptHandler;
 # 12 "MCAL_Layer/Timer2/hal_timer2.h" 2
 # 55 "MCAL_Layer/Timer2/hal_timer2.h"
 typedef struct
@@ -5336,7 +5353,7 @@ Std_ReturnType Timer2_Init(const timer2_t *_timer)
         ((*((volatile T2CON_t *)(0xFCA))).T2CKPS = _timer->prescaler_value);
         (*((volatile uint8 *)(0xFCC))) = _timer->timer2_preload_value;
         timer2_preload = _timer->timer2_preload_value;
-# 50 "MCAL_Layer/Timer2/hal_timer2.c"
+# 49 "MCAL_Layer/Timer2/hal_timer2.c"
         ((*((volatile T2CON_t *)(0xFCA))).TMR2ON = 1);
     }
     return ret;

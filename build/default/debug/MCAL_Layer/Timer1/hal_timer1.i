@@ -5126,6 +5126,21 @@ typedef union
         uint8 :4;
     };
 }SSPCON1_t;
+
+
+
+
+typedef struct
+{
+   uint8 SEN :1;
+   uint8 RSEN :1;
+   uint8 PEN :1;
+   uint8 RCEN :1;
+   uint8 ACKEN :1;
+   uint8 ACKDT :1;
+   uint8 ACKSTAT :1;
+   uint8 GCEN :1;
+}SSPCON2_t;
 # 13 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_config.h" 2
 
 # 1 "MCAL_Layer/Timer1/../Interrupt/mcal_interrupt_gen_cfg.h" 1
@@ -5264,7 +5279,7 @@ typedef struct {
 
         void(*ADC_InterruptHandler)(void);
 
-        interrupt_priority_cfg priority;
+
 
 
     adc_acquisition_time_t acquisition_time;
@@ -5289,6 +5304,8 @@ Std_ReturnType ADC_StartConversion_Interrupt(const adc_conf_t *_adc, adc_channel
 # 14 "MCAL_Layer/Timer1/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
 # 151 "MCAL_Layer/Timer1/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h"
     extern InterruptHandler SPI_InterruptHandler;
+    extern InterruptHandler I2C_DefaultInterruptHandler;
+    extern InterruptHandler I2C_Report_Write_Collision_InterruptHandler;
 # 12 "MCAL_Layer/Timer1/hal_timer1.h" 2
 # 65 "MCAL_Layer/Timer1/hal_timer1.h"
 typedef struct
@@ -5296,7 +5313,7 @@ typedef struct
 
         void(*TMR1_InterruptHandler)(void);
 
-        interrupt_priority_cfg priority;
+
 
 
     uint16 timer1_preload_value;
@@ -5346,23 +5363,9 @@ Std_ReturnType Timer1_Init(const timer1_t *_timer)
         TMR1_InterruptHandler = _timer->TMR1_InterruptHandler;
 
 
-
-
-
-
-            ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
-            if(_timer->priority == INTERRUPT_HIGH_PRIORITY){
-                ((*((volatile IPR1_t *)(0xF9F))).TMR1IP=1);
-                ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-            }
-            else if(_timer->priority == INTERRUPT_LOW_PRIORITY)
-            {
-             ((*((volatile IPR1_t *)(0xF9F))).TMR1IP=0);
-             ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-             ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1);
-            }
-
-
+            ((*((volatile INTCON_t *)(0xFF2))).GIE = 1);
+            ((*((volatile INTCON_t *)(0xFF2))).PEIE = 1);
+# 49 "MCAL_Layer/Timer1/hal_timer1.c"
         ((*((volatile T1CON_t *)(0xFCD))).TMR1ON = 1);
     }
     return ret;

@@ -5124,6 +5124,21 @@ typedef union
         uint8 :4;
     };
 }SSPCON1_t;
+
+
+
+
+typedef struct
+{
+   uint8 SEN :1;
+   uint8 RSEN :1;
+   uint8 PEN :1;
+   uint8 RCEN :1;
+   uint8 ACKEN :1;
+   uint8 ACKDT :1;
+   uint8 ACKSTAT :1;
+   uint8 GCEN :1;
+}SSPCON2_t;
 # 13 "MCAL_Layer/Interrupt/mcal_interrupt_config.h" 2
 
 # 1 "MCAL_Layer/Interrupt/mcal_interrupt_gen_cfg.h" 1
@@ -5219,150 +5234,84 @@ void CCP2_ISR(void);
 void EUSART_TX_ISR(void);
 void EUSART_RX_ISR(void);
 void MSSP_ISR(void);
+void MSSP_Bus_Collision_ISR(void);
 # 1 "MCAL_Layer/Interrupt/mcal_interrupt_manager.c" 2
-
-
-void __attribute__((picinterrupt(("")))) InterruptManagerHigh(void){
+# 156 "MCAL_Layer/Interrupt/mcal_interrupt_manager.c"
+void __attribute__((picinterrupt(("")))) InterruptManager(void){
     if((1 == (*((volatile INTCON_t *)(0xFF2))).INT0IE)&&(1 == (*((volatile INTCON_t *)(0xFF2))).INT0IF)){
         INT0_ISR();
     }
     else { }
-     if((1 == (*((volatile INTCON3_t *)(0xFF0))).INT1IP)&&(1 == (*((volatile INTCON3_t *)(0xFF0))).INT1IF)){
+    if((1 == (*((volatile INTCON3_t *)(0xFF0))).INT1IE)&&(1 == (*((volatile INTCON3_t *)(0xFF0))).INT1IF)){
         INT1_ISR();
     }
     else { }
-    if((1 == (*((volatile INTCON3_t *)(0xFF0))).INT2IP)&&(1 == (*((volatile INTCON3_t *)(0xFF0))).INT2IF)){
+    if((1 == (*((volatile INTCON3_t *)(0xFF0))).INT2IE)&&(1 == (*((volatile INTCON3_t *)(0xFF0))).INT2IF)){
         INT2_ISR();
     }
     else { }
-     if((1 == (*((volatile INTCON2_t *)(0xFF1))).RBIP)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>4)&((uint8)0x01)))!=RB4_pin_init_value)){
+    if((1 == (*((volatile INTCON_t *)(0xFF2))).RBIE)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>4)&((uint8)0x01)))!=RB4_pin_init_value)){
         RB4_pin_init_value^=1;
         RB4_ISR();
     }
     else { }
-       if((1 == (*((volatile INTCON2_t *)(0xFF1))).RBIP)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>5)&((uint8)0x01)))!=RB5_pin_init_value)){
+       if((1 == (*((volatile INTCON_t *)(0xFF2))).RBIE)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>5)&((uint8)0x01)))!=RB5_pin_init_value)){
         RB5_pin_init_value^=1;
         RB5_ISR();
     }
     else { }
-       if((1 == (*((volatile INTCON2_t *)(0xFF1))).RBIP)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>6)&((uint8)0x01)))!=RB6_pin_init_value)){
+       if((1 == (*((volatile INTCON_t *)(0xFF2))).RBIE)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>6)&((uint8)0x01)))!=RB6_pin_init_value)){
         RB6_pin_init_value^=1;
         RB6_ISR();
     }
     else { }
-       if((1 == (*((volatile INTCON2_t *)(0xFF1))).RBIP)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>7)&((uint8)0x01)))!=RB7_pin_init_value)){
+       if((1 == (*((volatile INTCON_t *)(0xFF2))).RBIE)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>7)&((uint8)0x01)))!=RB7_pin_init_value)){
         RB7_pin_init_value^=1;
         RB7_ISR();
     }
     else { }
-    if((1 == (*((volatile IPR1_t *)(0xF9F))).ADIP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).ADIF)){
+     if((1== (*((volatile PIE1_t *)(0xF9D))).ADIE)&&(1 == (*((volatile PIR1_t *)(0xF9E))).ADIF)){
         ADC_ISR();
     }
     else { }
-    if((1 == (*((volatile INTCON2_t *)(0xFF1))).TMR0IP)&&(1 == (*((volatile INTCON_t *)(0xFF2))).TMR0IF)){
+       if((1 == (*((volatile INTCON_t *)(0xFF2))).TMR0IE)&&(1 == (*((volatile INTCON_t *)(0xFF2))).TMR0IF)){
         TMR0_ISR();
     }
     else { }
-    if((1 == (*((volatile IPR1_t *)(0xF9F))).TMR1IP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).TMR1IF)){
+    if((1 == (*((volatile PIE1_t *)(0xF9D))).TMR1IE)&&(1 ==(*((volatile PIR1_t *)(0xF9E))).TMR1IF)){
         TMR1_ISR();
     }
     else { }
-    if((1 == (*((volatile IPR1_t *)(0xF9F))).TMR2IP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).TMR2IF)){
+    if((1 == (*((volatile PIE1_t *)(0xF9D))).TMR2IE)&&(1 ==(*((volatile PIR1_t *)(0xF9E))).TMR2IF)){
         TMR2_ISR();
     }
     else { }
-    if((1 == (*((volatile IPR2_t *)(0xFA2))).TMR3IP)&&(1 == (*((volatile PIR2_t *)(0xFA1))).TMR3IF)){
+    if((1 == (*((volatile PIE2_t *)(0xFA0))).TMR3IE)&&(1 ==(*((volatile PIR2_t *)(0xFA1))).TMR3IF)){
         TMR3_ISR();
     }
     else { }
-    if((1 == (*((volatile IPR1_t *)(0xF9F))).CCP1IP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).CCP1IF)){
+    if((1 == (*((volatile PIE1_t *)(0xF9D))).CCP1IE)&&(1 ==(*((volatile PIR1_t *)(0xF9E))).CCP1IF)){
         CCP1_ISR();
     }
     else { }
-      if((1 == (*((volatile IPR2_t *)(0xFA2))).CCP2IP)&&(1 == (*((volatile PIR2_t *)(0xFA1))).CCP2IF)){
+    if((1 == (*((volatile PIE2_t *)(0xFA0))).CCP2IE)&&(1 ==(*((volatile PIR2_t *)(0xFA1))).CCP2IF)){
         CCP2_ISR();
     }
     else { }
-    if((1 == (*((volatile IPR1_t *)(0xF9F))).TXIP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).TXIF)){
+    if((1 == (*((volatile PIE1_t *)(0xF9D))).TXIE)&&(1 == (*((volatile PIR1_t *)(0xF9E))).TXIF)){
         EUSART_TX_ISR();
     }
     else { }
-    if((1 == (*((volatile IPR1_t *)(0xF9F))).RCIP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).RCIF)){
+    if((1 == (*((volatile PIE1_t *)(0xF9D))).RCIE)&&(1 == (*((volatile PIR1_t *)(0xF9E))).RCIF)){
         EUSART_RX_ISR();
     }
     else { }
-    if((1 == (*((volatile IPR1_t *)(0xF9F))).SSPIP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).SSPIF)){
+    if((1 == (*((volatile PIE1_t *)(0xF9D))).SSPIE)&&(1 == (*((volatile PIR1_t *)(0xF9E))).SSPIF)){
         MSSP_ISR();
     }
     else { }
-}
-void __attribute__((picinterrupt(("low_priority")))) InterruptManagerLow(void){
-      if((0 == (*((volatile INTCON3_t *)(0xFF0))).INT1IP)&&(1 == (*((volatile INTCON3_t *)(0xFF0))).INT1IF)){
-        INT1_ISR();
-    }
-    else { }
-    if((0 == (*((volatile INTCON3_t *)(0xFF0))).INT2IP)&&(1 == (*((volatile INTCON3_t *)(0xFF0))).INT2IF)){
-        INT2_ISR();
-    }
-    else { }
-     if((0 == (*((volatile INTCON2_t *)(0xFF1))).RBIP)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>4)&((uint8)0x01)))!=RB4_pin_init_value)){
-        RB4_pin_init_value^=1;
-        RB4_ISR();
-    }
-    else { }
-       if((0 == (*((volatile INTCON2_t *)(0xFF1))).RBIP)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>5)&((uint8)0x01)))!=RB5_pin_init_value)){
-        RB5_pin_init_value^=1;
-        RB5_ISR();
-    }
-    else { }
-       if((0 == (*((volatile INTCON2_t *)(0xFF1))).RBIP)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>6)&((uint8)0x01)))!=RB6_pin_init_value)){
-        RB6_pin_init_value^=1;
-        RB6_ISR();
-    }
-    else { }
-       if((0 == (*((volatile INTCON2_t *)(0xFF1))).RBIP)&&(1 == (*((volatile INTCON_t *)(0xFF2))).RBIF) && (((((*((volatile uint8*)(0xF81)))>>7)&((uint8)0x01)))!=RB7_pin_init_value)){
-        RB7_pin_init_value^=1;
-        RB7_ISR();
-    }
-    else { }
-     if((0 == (*((volatile IPR1_t *)(0xF9F))).ADIP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).ADIF)){
-        ADC_ISR();
-    }
-    else { }
-    if((0 == (*((volatile INTCON2_t *)(0xFF1))).TMR0IP)&&(1 == (*((volatile INTCON_t *)(0xFF2))).TMR0IF)){
-        TMR0_ISR();
-    }
-    else { }
-    if((0 == (*((volatile IPR1_t *)(0xF9F))).TMR1IP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).TMR1IF)){
-        TMR1_ISR();
-    }
-    else { }
-      if((0 == (*((volatile IPR1_t *)(0xF9F))).TMR2IP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).TMR2IF)){
-        TMR2_ISR();
-    }
-    else { }
-     if((0 == (*((volatile IPR2_t *)(0xFA2))).TMR3IP)&&(1 == (*((volatile PIR2_t *)(0xFA1))).TMR3IF)){
-        TMR3_ISR();
-    }
-    else { }
-      if((0 == (*((volatile IPR1_t *)(0xF9F))).CCP1IP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).CCP1IF)){
-        CCP1_ISR();
-    }
-    else { }
-      if((0 == (*((volatile IPR2_t *)(0xFA2))).CCP2IP)&&(1 == (*((volatile PIR2_t *)(0xFA1))).CCP2IF)){
-        CCP2_ISR();
-    }
-    else { }
-    if((0 == (*((volatile IPR1_t *)(0xF9F))).TXIP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).TXIF)){
-        EUSART_TX_ISR();
-    }
-    else { }
-    if((0 == (*((volatile IPR1_t *)(0xF9F))).RCIP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).RCIF)){
-        EUSART_RX_ISR();
-    }
-    else { }
-    if((0 == (*((volatile IPR1_t *)(0xF9F))).SSPIP)&&(1 == (*((volatile PIR1_t *)(0xF9E))).SSPIF)){
-        MSSP_ISR();
+    if((1 == (*((volatile PIE2_t *)(0xFA0))).BCLIE)&&(1 == (*((volatile PIR2_t *)(0xFA1))).BCLIF)){
+        MSSP_Bus_Collision_ISR();
     }
     else { }
 }

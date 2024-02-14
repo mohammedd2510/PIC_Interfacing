@@ -9,7 +9,8 @@
 #define	APPLICATION_H
 
 /* Section : Includes */
-#include"MCAL_Layer/mcal_layer_init.h"
+//#include"MCAL_Layer/mcal_layer_init.h"
+#include"MCAL_Layer/I2C/hal_i2c.h"
 #include"ECU_Layer/ecu_layer_init.h"
 
 /* Section : Macros Declaration */

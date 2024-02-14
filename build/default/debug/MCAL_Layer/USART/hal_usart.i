@@ -5130,6 +5130,21 @@ typedef union
         uint8 :4;
     };
 }SSPCON1_t;
+
+
+
+
+typedef struct
+{
+   uint8 SEN :1;
+   uint8 RSEN :1;
+   uint8 PEN :1;
+   uint8 RCEN :1;
+   uint8 ACKEN :1;
+   uint8 ACKDT :1;
+   uint8 ACKSTAT :1;
+   uint8 GCEN :1;
+}SSPCON2_t;
 # 13 "MCAL_Layer/USART/../GPIO/hal_gpio.h" 2
 
 # 1 "MCAL_Layer/USART/../GPIO/hal_gpio_cfg.h" 1
@@ -5268,7 +5283,7 @@ typedef struct {
 
         void(*ADC_InterruptHandler)(void);
 
-        interrupt_priority_cfg priority;
+
 
 
     adc_acquisition_time_t acquisition_time;
@@ -5293,6 +5308,8 @@ Std_ReturnType ADC_StartConversion_Interrupt(const adc_conf_t *_adc, adc_channel
 # 14 "MCAL_Layer/USART/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
 # 151 "MCAL_Layer/USART/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h"
     extern InterruptHandler SPI_InterruptHandler;
+    extern InterruptHandler I2C_DefaultInterruptHandler;
+    extern InterruptHandler I2C_Report_Write_Collision_InterruptHandler;
 # 16 "MCAL_Layer/USART/hal_usart.h" 2
 # 65 "MCAL_Layer/USART/hal_usart.h"
 typedef enum {
@@ -5507,35 +5524,35 @@ static void EUSART_Baud_Rate_Calcualtion(const usart_t* _eusart)
             (*((volatile TXSTA_t *)(0xFAC))).SYNC = 0;
             (*((volatile TXSTA_t *)(0xFAC))).BRGH = 0;
             (*((volatile BAUDCON_t *)(0xFB8))).BRG16 = 0;
-            Baud_Rate_Temp = ((4000000UL/(float)_eusart->BaudRate)/64)-1;
+            Baud_Rate_Temp = ((8000000UL/(float)_eusart->BaudRate)/64)-1;
             break;
         case BAUDRATE_ASYNC_8BIT_HIGH_SPEED:
             (*((volatile TXSTA_t *)(0xFAC))).SYNC = 0;
             (*((volatile TXSTA_t *)(0xFAC))).BRGH = 1;
             (*((volatile BAUDCON_t *)(0xFB8))).BRG16 = 0;
-            Baud_Rate_Temp = ((4000000UL/(float)_eusart->BaudRate)/16)-1;
+            Baud_Rate_Temp = ((8000000UL/(float)_eusart->BaudRate)/16)-1;
             break;
         case BAUDRATE_ASYNC_16BIT_LOW_SPEED:
             (*((volatile TXSTA_t *)(0xFAC))).SYNC = 0;
             (*((volatile TXSTA_t *)(0xFAC))).BRGH = 0;
             (*((volatile BAUDCON_t *)(0xFB8))).BRG16 = 1;
-            Baud_Rate_Temp = ((4000000UL/(float)_eusart->BaudRate)/16)-1;
+            Baud_Rate_Temp = ((8000000UL/(float)_eusart->BaudRate)/16)-1;
             break;
         case BAUDRATE_ASYNC_16BIT_HIGH_SPEED:
             (*((volatile TXSTA_t *)(0xFAC))).SYNC = 0;
             (*((volatile TXSTA_t *)(0xFAC))).BRGH = 1;
             (*((volatile BAUDCON_t *)(0xFB8))).BRG16 = 1;
-            Baud_Rate_Temp = ((4000000UL/(float)_eusart->BaudRate)/4)-1;
+            Baud_Rate_Temp = ((8000000UL/(float)_eusart->BaudRate)/4)-1;
             break;
         case BAUDRATE_SYNC_8BIT:
             (*((volatile TXSTA_t *)(0xFAC))).SYNC = 1;
             (*((volatile BAUDCON_t *)(0xFB8))).BRG16 = 0;
-            Baud_Rate_Temp = ((4000000UL/(float)_eusart->BaudRate)/4)-1;
+            Baud_Rate_Temp = ((8000000UL/(float)_eusart->BaudRate)/4)-1;
             break;
         case BAUDRATE_SYNC_16BIT:
             (*((volatile TXSTA_t *)(0xFAC))).SYNC = 1;
             (*((volatile BAUDCON_t *)(0xFB8))).BRG16 = 1;
-            Baud_Rate_Temp = ((4000000UL/(float)_eusart->BaudRate)/4)-1;
+            Baud_Rate_Temp = ((8000000UL/(float)_eusart->BaudRate)/4)-1;
             break;
         default: ;
     }
@@ -5562,24 +5579,9 @@ static void EUSART_ASYNC_TX_Init(const usart_t* _eusart)
       EUSART_TX_InterruptHandler = _eusart->EUSART_TxDefaultInterruptHandler;
 
 
-
-
-
-
-            ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
-            if(_eusart->usart_tx_cfg.usart_tx_int_priority == INTERRUPT_HIGH_PRIORITY){
-                ((*((volatile IPR1_t *)(0xF9F))).TXIP=1);
-                ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-            }
-            else if(_eusart->usart_tx_cfg.usart_tx_int_priority == INTERRUPT_LOW_PRIORITY)
-            {
-             ((*((volatile IPR1_t *)(0xF9F))).TXIP=0);
-             ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-             ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1);
-            }
-
-
-
+            ((*((volatile INTCON_t *)(0xFF2))).GIE = 1);
+            ((*((volatile INTCON_t *)(0xFF2))).PEIE = 1);
+# 227 "MCAL_Layer/USART/hal_usart.c"
         if(1 == _eusart->usart_tx_cfg.usart_tx_9bit_enable)
         {
             (*((volatile TXSTA_t *)(0xFAC))).TX9 =1;
@@ -5612,24 +5614,10 @@ static void EUSART_ASYNC_RX_Init(const usart_t* _eusart)
         EUSART_OverrunErrorHandler = _eusart->EUSART_OverrunErrorHandler;
 
 
-
-
-
-
-            ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
-            if(_eusart->usart_rx_cfg.usart_rx_int_priority == INTERRUPT_HIGH_PRIORITY){
-                ((*((volatile IPR1_t *)(0xF9F))).RCIP=1);
-                ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-            }
-            else if(_eusart->usart_rx_cfg.usart_rx_int_priority == INTERRUPT_LOW_PRIORITY)
-            {
-             ((*((volatile IPR1_t *)(0xF9F))).RCIP=0);
-             ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-             ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1);
-            }
-
-
-
+            INTERRUPT_PriorityLevelsDisable();
+            ((*((volatile INTCON_t *)(0xFF2))).GIE = 1);
+            ((*((volatile INTCON_t *)(0xFF2))).PEIE = 1);
+# 277 "MCAL_Layer/USART/hal_usart.c"
         if(1 == _eusart->usart_rx_cfg.usart_rx_9bit_enable)
         {
 

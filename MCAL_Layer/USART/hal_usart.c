@@ -207,7 +207,6 @@ static void EUSART_ASYNC_TX_Init(const usart_t* _eusart)
       EUSART_TX_InterruptHandler = _eusart->EUSART_TxDefaultInterruptHandler;
         /*   Interrupt  Priority Configurations   */   
 #if (INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_DISABLE)
-            INTERRUPT_PriorityLevelsDisable();
             INTERRUPT_GlobalInterruptEnable();
             INTERRUPT_PeripheralInterruptEnable();
     #elif (INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_ENABLE)
@@ -257,7 +256,6 @@ static void EUSART_ASYNC_RX_Init(const usart_t* _eusart)
         EUSART_OverrunErrorHandler = _eusart->EUSART_OverrunErrorHandler;
         /*   Interrupt  Priority Configurations   */   
 #if (INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_DISABLE)
-            INTERRUPT_PriorityLevelsDisable();
             INTERRUPT_GlobalInterruptEnable();
             INTERRUPT_PeripheralInterruptEnable();
     #elif (INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_ENABLE)

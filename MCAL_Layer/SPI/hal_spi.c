@@ -141,7 +141,6 @@ static void SPI_Interrupt_Init(spi_config_t* spi_config)
     SPI_InterruptHandler = spi_config->SPI_InterruptHandler;
     MSSP_InterruptEnable();
 #if(INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_DISABLE)
-    INTERRUPT_PriorityLevelsDisable();
     INTERRUPT_GlobalInterruptEnable();
     INTERRUPT_PeripheralInterruptEnable();
 #elif (INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_ENABLE)

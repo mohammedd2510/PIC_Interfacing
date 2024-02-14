@@ -5127,6 +5127,21 @@ typedef union
         uint8 :4;
     };
 }SSPCON1_t;
+
+
+
+
+typedef struct
+{
+   uint8 SEN :1;
+   uint8 RSEN :1;
+   uint8 PEN :1;
+   uint8 RCEN :1;
+   uint8 ACKEN :1;
+   uint8 ACKDT :1;
+   uint8 ACKSTAT :1;
+   uint8 GCEN :1;
+}SSPCON2_t;
 # 13 "MCAL_Layer/CCP/../GPIO/hal_gpio.h" 2
 
 # 1 "MCAL_Layer/CCP/../GPIO/hal_gpio_cfg.h" 1
@@ -5263,7 +5278,7 @@ typedef struct {
 
         void(*ADC_InterruptHandler)(void);
 
-        interrupt_priority_cfg priority;
+
 
 
     adc_acquisition_time_t acquisition_time;
@@ -5288,6 +5303,8 @@ Std_ReturnType ADC_StartConversion_Interrupt(const adc_conf_t *_adc, adc_channel
 # 14 "MCAL_Layer/CCP/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
 # 151 "MCAL_Layer/CCP/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h"
     extern InterruptHandler SPI_InterruptHandler;
+    extern InterruptHandler I2C_DefaultInterruptHandler;
+    extern InterruptHandler I2C_Report_Write_Collision_InterruptHandler;
 # 14 "MCAL_Layer/CCP/hal_ccp.h" 2
 
 # 1 "MCAL_Layer/CCP/ccp_cfg.h" 1
@@ -5740,23 +5757,9 @@ static Std_ReturnType CCP1_Interrupt_Init(const ccp_t * _ccp_obj )
         CCP1_InterruptHandler = _ccp_obj->CCP_Interrupt_Handler;
 
 
-
-
-
-
-            ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
-            if(_ccp_obj->priority == INTERRUPT_HIGH_PRIORITY){
-                ((*((volatile IPR1_t *)(0xF9F))).CCP1IP=1);
-                ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-            }
-            else if(_ccp_obj->priority == INTERRUPT_LOW_PRIORITY)
-            {
-             ((*((volatile IPR1_t *)(0xF9F))).CCP1IP=0);
-             ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-             ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1);
-            }
-            else {ret = (Std_ReturnType)0x00;}
-
+            ((*((volatile INTCON_t *)(0xFF2))).GIE = 1);
+            ((*((volatile INTCON_t *)(0xFF2))).PEIE = 1);
+# 526 "MCAL_Layer/CCP/hal_ccp.c"
     }
     return ret;
 }
@@ -5777,23 +5780,9 @@ static Std_ReturnType CCP2_Interrupt_Init(const ccp_t * _ccp_obj )
         CCP2_InterruptHandler = _ccp_obj->CCP_Interrupt_Handler;
 
 
-
-
-
-
-            ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
-            if(_ccp_obj->priority == INTERRUPT_HIGH_PRIORITY){
-                ((*((volatile IPR2_t *)(0xFA2))).CCP2IP=1);
-                ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-            }
-            else if(_ccp_obj->priority == INTERRUPT_LOW_PRIORITY)
-            {
-             ((*((volatile IPR2_t *)(0xFA2))).CCP2IP=0);
-             ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-             ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1);
-            }
-            else {ret = (Std_ReturnType)0x00;}
-
+            ((*((volatile INTCON_t *)(0xFF2))).GIE = 1);
+            ((*((volatile INTCON_t *)(0xFF2))).PEIE = 1);
+# 562 "MCAL_Layer/CCP/hal_ccp.c"
     }
     return ret;
 }

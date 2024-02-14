@@ -2,16 +2,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 "150 MCAL_Layer/Interrupt/../ADC/../../MCAL_Layer/my_pic18f4620.h
 [s S278 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S278 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
-[v F3362 `(v ~T0 @X0 0 tf ]
+[v F3372 `(v ~T0 @X0 0 tf ]
 "100 MCAL_Layer/Interrupt/../ADC/hal_adc.h
 [; ;MCAL_Layer/Interrupt/../ADC/hal_adc.h: 100: extern InterruptHandler ADC_InterruptHandler;
-[v _ADC_InterruptHandler `*F3362 ~T0 @X0 0 e ]
-[v F3434 `(v ~T0 @X0 0 tf ]
-[v F3432 `(v ~T0 @X0 0 tf ]
+[v _ADC_InterruptHandler `*F3372 ~T0 @X0 0 e ]
+[v F3447 `(v ~T0 @X0 0 tf ]
+[v F3441 `(v ~T0 @X0 0 tf ]
 "151 MCAL_Layer/Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h
 [; ;MCAL_Layer/Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h: 151:     extern InterruptHandler SPI_InterruptHandler;
-[v _SPI_InterruptHandler `*F3432 ~T0 @X0 0 e ]
-[v F3436 `(v ~T0 @X0 0 tf ]
+[v _SPI_InterruptHandler `*F3441 ~T0 @X0 0 e ]
+[v F3449 `(v ~T0 @X0 0 tf ]
+[v F3443 `(v ~T0 @X0 0 tf ]
+"152
+[; ;MCAL_Layer/Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h: 152:     extern InterruptHandler I2C_DefaultInterruptHandler;
+[v _I2C_DefaultInterruptHandler `*F3443 ~T0 @X0 0 e ]
+[v F3450 `(v ~T0 @X0 0 tf ]
+"164 MCAL_Layer/Interrupt/../ADC/../../MCAL_Layer/my_pic18f4620.h
+[s S279 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S279 . CCP2IF TMR3IF HLVDIF BCLIF EEIF . CMIF OSCFIF ]
+[v F3445 `(v ~T0 @X0 0 tf ]
+"153 MCAL_Layer/Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h
+[; ;MCAL_Layer/Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h: 153:     extern InterruptHandler I2C_Report_Write_Collision_InterruptHandler;
+[v _I2C_Report_Write_Collision_InterruptHandler `*F3445 ~T0 @X0 0 e ]
+[v F3452 `(v ~T0 @X0 0 tf ]
 "54 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -434,7 +447,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . *U -> -> 3998 `i `*VS278 6 -> -> 0 `i `uc ]
 "6
 [; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 6:       if(ADC_InterruptHandler){
-[e $ ! != _ADC_InterruptHandler -> -> 0 `i `*F3434 323  ]
+[e $ ! != _ADC_InterruptHandler -> -> 0 `i `*F3447 324  ]
 {
 "7
 [; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 7:        ADC_InterruptHandler();
@@ -442,16 +455,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8
 [; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 8:     }
 }
-[e $U 324  ]
+[e $U 325  ]
 "9
 [; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 9:      else{ }
-[e :U 323 ]
+[e :U 324 ]
 {
 }
-[e :U 324 ]
+[e :U 325 ]
 "11
 [; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 11: }
-[e :UE 322 ]
+[e :UE 323 ]
 }
 "12
 [; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 12: void MSSP_ISR(void){
@@ -464,7 +477,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . *U -> -> 3998 `i `*VS278 3 -> -> 0 `i `uc ]
 "15
 [; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 15:     if(SPI_InterruptHandler)
-[e $ ! != _SPI_InterruptHandler -> -> 0 `i `*F3436 326  ]
+[e $ ! != _SPI_InterruptHandler -> -> 0 `i `*F3449 327  ]
 "16
 [; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 16:     {
 {
@@ -474,8 +487,45 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18
 [; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 18:     }
 }
-[e :U 326 ]
+[e :U 327 ]
+"19
+[; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 19:     if(I2C_DefaultInterruptHandler){
+[e $ ! != _I2C_DefaultInterruptHandler -> -> 0 `i `*F3450 328  ]
+{
 "20
-[; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 20: }
-[e :UE 325 ]
+[; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 20:         I2C_DefaultInterruptHandler();
+[e ( *U _I2C_DefaultInterruptHandler ..  ]
+"21
+[; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 21:     }
+}
+[e :U 328 ]
+"23
+[; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 23: }
+[e :UE 326 ]
+}
+"24
+[; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 24: void MSSP_Bus_Collision_ISR(void)
+[v _MSSP_Bus_Collision_ISR `(v ~T0 @X0 1 ef ]
+"25
+[; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 25: {
+{
+[e :U _MSSP_Bus_Collision_ISR ]
+[f ]
+"27
+[; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 27:     ((*((volatile PIR2_t *)(0xFA1))).BCLIF=0);
+[e = . *U -> -> 4001 `i `*VS279 3 -> -> 0 `i `uc ]
+"28
+[; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 28:     if(I2C_Report_Write_Collision_InterruptHandler){
+[e $ ! != _I2C_Report_Write_Collision_InterruptHandler -> -> 0 `i `*F3452 330  ]
+{
+"29
+[; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 29:         I2C_Report_Write_Collision_InterruptHandler();
+[e ( *U _I2C_Report_Write_Collision_InterruptHandler ..  ]
+"30
+[; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 30:     }
+}
+[e :U 330 ]
+"32
+[; ;MCAL_Layer/Interrupt/mcal_internal_interrupt.c: 32: }
+[e :UE 329 ]
 }

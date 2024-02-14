@@ -5127,6 +5127,21 @@ typedef union
         uint8 :4;
     };
 }SSPCON1_t;
+
+
+
+
+typedef struct
+{
+   uint8 SEN :1;
+   uint8 RSEN :1;
+   uint8 PEN :1;
+   uint8 RCEN :1;
+   uint8 ACKEN :1;
+   uint8 ACKDT :1;
+   uint8 ACKSTAT :1;
+   uint8 GCEN :1;
+}SSPCON2_t;
 # 13 "MCAL_Layer/SPI/../GPIO/hal_gpio.h" 2
 
 # 1 "MCAL_Layer/SPI/../GPIO/hal_gpio_cfg.h" 1
@@ -5265,7 +5280,7 @@ typedef struct {
 
         void(*ADC_InterruptHandler)(void);
 
-        interrupt_priority_cfg priority;
+
 
 
     adc_acquisition_time_t acquisition_time;
@@ -5290,6 +5305,8 @@ Std_ReturnType ADC_StartConversion_Interrupt(const adc_conf_t *_adc, adc_channel
 # 14 "MCAL_Layer/SPI/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
 # 151 "MCAL_Layer/SPI/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h"
     extern InterruptHandler SPI_InterruptHandler;
+    extern InterruptHandler I2C_DefaultInterruptHandler;
+    extern InterruptHandler I2C_Report_Write_Collision_InterruptHandler;
 # 15 "MCAL_Layer/SPI/hal_spi.h" 2
 
 # 1 "MCAL_Layer/SPI/hal_spi_cfg.h" 1
@@ -5316,7 +5333,7 @@ typedef struct
 
     InterruptHandler SPI_InterruptHandler ;
 
-    interrupt_priority_cfg priority ;
+
 
 
 }spi_config_t;
@@ -5331,7 +5348,6 @@ Std_ReturnType SPI_Master_Transmit_Blocking(uint8 data_to_transmit , pin_config_
 Std_ReturnType SPI_Master_Receive_Blocking(uint8* received_data , pin_config_t* slave_select_gpio_pin);
 Std_ReturnType SPI_Slave_Receive_Blocking(uint8* received_data);
 Std_ReturnType SPI_Slave_Receive_Non_Blocking(uint8* received_data);
-uint8 SPI_Slave_Receive_status(void);
 # 1 "MCAL_Layer/SPI/hal_spi.c" 2
 
 static void SPI_Pins_Direction_Initialize(spi_config_t* spi_config);
@@ -5453,16 +5469,7 @@ Std_ReturnType SPI_Slave_Receive_Non_Blocking(uint8* received_data)
     }
     return ret;
 }
-uint8 SPI_Slave_Receive_status(void)
-{
-    uint8 receive_status_temp=0;
-    receive_status_temp = SPI_Slave_Receive_Status;
-    if(SPI_Slave_Receive_Status == 0x01)
-    {
-      SPI_Slave_Receive_Status =0X00;
-    }
-    return receive_status_temp;
-}
+
 static void SPI_Pins_Direction_Initialize(spi_config_t* spi_config)
 {
     (*((volatile uint8*)(0xF94)))&=(~(1<<5));
@@ -5485,21 +5492,7 @@ static void SPI_Interrupt_Init(spi_config_t* spi_config)
     SPI_InterruptHandler = spi_config->SPI_InterruptHandler;
     ((*((volatile PIE1_t *)(0xF9D))).SSPIE=1);
 
-
-
-
-
-    ((*((volatile RCON_t *)(0xFD0))).IPEN=1);
-    if(spi_config->priority == INTERRUPT_HIGH_PRIORITY)
-    {
-        ((*((volatile IPR1_t *)(0xF9F))).SSPIP=1);
-        ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-    }
-    else if(spi_config->priority == INTERRUPT_LOW_PRIORITY)
-    {
-        ((*((volatile IPR1_t *)(0xF9F))).SSPIP=0);
-        ((*((volatile INTCON_t *)(0xFF2))).GIEH = 1);
-        ((*((volatile INTCON_t *)(0xFF2))).GIEL = 1);
-    }
-
+    ((*((volatile INTCON_t *)(0xFF2))).GIE = 1);
+    ((*((volatile INTCON_t *)(0xFF2))).PEIE = 1);
+# 160 "MCAL_Layer/SPI/hal_spi.c"
 }

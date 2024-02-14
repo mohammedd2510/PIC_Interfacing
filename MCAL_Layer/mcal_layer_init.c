@@ -97,7 +97,7 @@ void SPI_Slave_Init(void){
     spi_obj2.spi_polarity_cfg=SPI_POLARITY_LOW_LEVEL;
     spi_obj2.spi_transmit_phase_cfg=SPI_TRANSMIT_ON_LEADING_EDGE;
     spi_obj2.spi_sample_time_cfg=SPI_SAMPLE_AT_END_OF_DATA_OUTPUT;
-    spi_obj2.SPI_InterruptHandler = SPI_ISR;
+ //   spi_obj2.SPI_InterruptHandler = SPI_ISR;
     SPI_Init(&spi_obj2);
 }
 void SS_Pins_Init()

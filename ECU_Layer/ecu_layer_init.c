@@ -128,12 +128,12 @@ keypad_t keypad1={
 };*/
 
 led_t led1 = {
-    .port_name=PORTB_INDEX,
-    .pin=PIN7,
+    .port_name=PORTD_INDEX,
+    .pin=PIN0,
     .led_status=LOW
 };
-/*
-led_t led2 = {
+
+/*led_t led2 = {
     .port_name=PORTD_INDEX,
     .pin=PIN1,
     .led_status=LOW
@@ -153,5 +153,6 @@ led_t led4 = {
 */
 void ecu_layer_initialize(void){
      Std_ReturnType ret=E_NOT_OK;
-     ret = lcd_4bit_initialize(&lcd1);
+     //ret = lcd_4bit_initialize(&lcd1);
+     ret = led_initialize(&led1);
 }

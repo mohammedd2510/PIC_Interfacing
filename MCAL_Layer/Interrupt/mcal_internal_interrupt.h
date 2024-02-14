@@ -149,17 +149,24 @@
 
 #if (MSSP_INTERRUPT_FEATURE_ENABLE ==INTERRUPT_FEATURE_ENABLE )
     extern InterruptHandler SPI_InterruptHandler;
+    extern InterruptHandler I2C_DefaultInterruptHandler;
+    extern InterruptHandler I2C_Report_Write_Collision_InterruptHandler;
     /* This routing clears the interrupt enable for the MSSP Module */
     #define MSSP_InterruptDisable() (PIE1_bits.SSPIE=0)
+    #define MSSP_BUS_COL_InterruptDisable() (PIE2_bits.BCLIE=0)
     /* This routing sets the interrupt enable for the MSSP Module */
     #define MSSP_InterruptEnable() (PIE1_bits.SSPIE=1)
+    #define MSSP_BUS_COL_InterruptEnable() (PIE2_bits.BCLIE=1)
     /* This routing clears the interrupt flag for the MSSP Module */
     #define MSSP_InterruptFlagClear() (PIR1_bits.SSPIF=0)
+    #define MSSP_BUS_COL_InterruptFlagClear() (PIR2_bits.BCLIF=0)
     #if INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_ENABLE 
         /* This routing sets the MSSP interrupt priority to be High priority */
         #define MSSP_HighPrioritySet() (IPR1_bits.SSPIP=1)
+        #define MSSP_BUS_COL_HighPrioritySet() (IPR2_bits.BCLIP=1)
         /* This routing sets the MSSP interrupt priority to be Low priority */
         #define MSSP_LowPrioritySet() (IPR1_bits.SSPIP=0)
+        #define MSSP_BUS_COL_LowPrioritySet() (IPR2_bits.BCLIP=0)
     #endif 
 #endif
 /* Section : Data Types Declaration */

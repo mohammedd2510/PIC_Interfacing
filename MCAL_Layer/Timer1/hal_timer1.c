@@ -30,7 +30,6 @@ Std_ReturnType Timer1_Init(const timer1_t *_timer)
         TMR1_InterruptHandler = _timer->TMR1_InterruptHandler;
     /*   Interrupt  Priority Configurations   */    
     #if (INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_DISABLE)
-            INTERRUPT_PriorityLevelsDisable();
             INTERRUPT_GlobalInterruptEnable();
             INTERRUPT_PeripheralInterruptEnable();
     #elif (INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_ENABLE)

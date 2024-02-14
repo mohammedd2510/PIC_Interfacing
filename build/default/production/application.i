@@ -15,17 +15,15 @@
 
 
 # 1 "./application.h" 1
-# 12 "./application.h"
-# 1 "./MCAL_Layer/mcal_layer_init.h" 1
-# 17 "./MCAL_Layer/mcal_layer_init.h"
-# 1 "./MCAL_Layer/SPI/hal_spi.h" 1
-# 12 "./MCAL_Layer/SPI/hal_spi.h"
-# 1 "./MCAL_Layer/SPI/../GPIO/hal_gpio.h" 1
-# 11 "./MCAL_Layer/SPI/../GPIO/hal_gpio.h"
-# 1 "./MCAL_Layer/SPI/../GPIO/../mcal_std_types.h" 1
-# 12 "./MCAL_Layer/SPI/../GPIO/../mcal_std_types.h"
-# 1 "./MCAL_Layer/std_libraries.h" 1
-# 11 "./MCAL_Layer/std_libraries.h"
+# 13 "./application.h"
+# 1 "./MCAL_Layer/I2C/hal_i2c.h" 1
+# 12 "./MCAL_Layer/I2C/hal_i2c.h"
+# 1 "./MCAL_Layer/I2C/../GPIO/hal_gpio.h" 1
+# 11 "./MCAL_Layer/I2C/../GPIO/hal_gpio.h"
+# 1 "./MCAL_Layer/I2C/../GPIO/../mcal_std_types.h" 1
+# 12 "./MCAL_Layer/I2C/../GPIO/../mcal_std_types.h"
+# 1 "./MCAL_Layer/I2C/../GPIO/../std_libraries.h" 1
+# 11 "./MCAL_Layer/I2C/../GPIO/../std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
 
 
@@ -190,7 +188,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 11 "./MCAL_Layer/std_libraries.h" 2
+# 11 "./MCAL_Layer/I2C/../GPIO/../std_libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
@@ -254,7 +252,7 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 12 "./MCAL_Layer/std_libraries.h" 2
+# 12 "./MCAL_Layer/I2C/../GPIO/../std_libraries.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 3
@@ -313,11 +311,11 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 13 "./MCAL_Layer/std_libraries.h" 2
-# 12 "./MCAL_Layer/SPI/../GPIO/../mcal_std_types.h" 2
+# 13 "./MCAL_Layer/I2C/../GPIO/../std_libraries.h" 2
+# 12 "./MCAL_Layer/I2C/../GPIO/../mcal_std_types.h" 2
 
-# 1 "./MCAL_Layer/compiler.h" 1
-# 11 "./MCAL_Layer/compiler.h"
+# 1 "./MCAL_Layer/I2C/../GPIO/../compiler.h" 1
+# 11 "./MCAL_Layer/I2C/../GPIO/../compiler.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4692,8 +4690,8 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\\pic\\include\\xc.h" 2 3
-# 11 "./MCAL_Layer/compiler.h" 2
-# 13 "./MCAL_Layer/SPI/../GPIO/../mcal_std_types.h" 2
+# 11 "./MCAL_Layer/I2C/../GPIO/../compiler.h" 2
+# 13 "./MCAL_Layer/I2C/../GPIO/../mcal_std_types.h" 2
 
 
 typedef unsigned char uint8;
@@ -4704,13 +4702,13 @@ typedef signed int sint16;
 typedef signed long sint32;
 
 typedef uint8 Std_ReturnType;
-# 11 "./MCAL_Layer/SPI/../GPIO/hal_gpio.h" 2
+# 11 "./MCAL_Layer/I2C/../GPIO/hal_gpio.h" 2
 
-# 1 "./MCAL_Layer/SPI/../GPIO/../device_config.h" 1
-# 12 "./MCAL_Layer/SPI/../GPIO/hal_gpio.h" 2
+# 1 "./MCAL_Layer/I2C/../GPIO/../device_config.h" 1
+# 12 "./MCAL_Layer/I2C/../GPIO/hal_gpio.h" 2
 
-# 1 "./MCAL_Layer/SPI/../GPIO/../my_pic18f4620.h" 1
-# 101 "./MCAL_Layer/SPI/../GPIO/../my_pic18f4620.h"
+# 1 "./MCAL_Layer/I2C/../GPIO/../my_pic18f4620.h" 1
+# 101 "./MCAL_Layer/I2C/../GPIO/../my_pic18f4620.h"
 typedef union {
   struct {
    uint8 RBIF :1;
@@ -4855,7 +4853,7 @@ typedef struct {
   uint8 SBOREN :1;
   uint8 IPEN :1;
 }RCON_t;
-# 257 "./MCAL_Layer/SPI/../GPIO/../my_pic18f4620.h"
+# 257 "./MCAL_Layer/I2C/../GPIO/../my_pic18f4620.h"
 typedef struct {
   uint8 RD :1;
   uint8 WR :1;
@@ -4953,7 +4951,7 @@ typedef union {
    uint8 :5;
 };
 }T0CON_t;
-# 362 "./MCAL_Layer/SPI/../GPIO/../my_pic18f4620.h"
+# 362 "./MCAL_Layer/I2C/../GPIO/../my_pic18f4620.h"
 typedef union {
   struct {
    uint8 TMR1ON :1;
@@ -4971,7 +4969,7 @@ typedef union {
    uint8 :2;
 };
 }T1CON_t;
-# 387 "./MCAL_Layer/SPI/../GPIO/../my_pic18f4620.h"
+# 387 "./MCAL_Layer/I2C/../GPIO/../my_pic18f4620.h"
 typedef union {
   struct {
    uint8 T2CKPS0 :1;
@@ -5061,7 +5059,7 @@ typedef union {
    uint8 :2;
 };
 }CCP2CON_t;
-# 485 "./MCAL_Layer/SPI/../GPIO/../my_pic18f4620.h"
+# 485 "./MCAL_Layer/I2C/../GPIO/../my_pic18f4620.h"
 typedef struct
 {
    uint8 TX9D :1;
@@ -5103,7 +5101,7 @@ typedef struct
    uint8 RCIDL :1;
    uint8 ABDOVF :1;
 }BAUDCON_t;
-# 537 "./MCAL_Layer/SPI/../GPIO/../my_pic18f4620.h"
+# 537 "./MCAL_Layer/I2C/../GPIO/../my_pic18f4620.h"
 typedef struct
 {
    uint8 BF :1;
@@ -5138,11 +5136,26 @@ typedef union
         uint8 :4;
     };
 }SSPCON1_t;
-# 13 "./MCAL_Layer/SPI/../GPIO/hal_gpio.h" 2
 
-# 1 "./MCAL_Layer/SPI/../GPIO/hal_gpio_cfg.h" 1
-# 14 "./MCAL_Layer/SPI/../GPIO/hal_gpio.h" 2
-# 31 "./MCAL_Layer/SPI/../GPIO/hal_gpio.h"
+
+
+
+typedef struct
+{
+   uint8 SEN :1;
+   uint8 RSEN :1;
+   uint8 PEN :1;
+   uint8 RCEN :1;
+   uint8 ACKEN :1;
+   uint8 ACKDT :1;
+   uint8 ACKSTAT :1;
+   uint8 GCEN :1;
+}SSPCON2_t;
+# 13 "./MCAL_Layer/I2C/../GPIO/hal_gpio.h" 2
+
+# 1 "./MCAL_Layer/I2C/../GPIO/hal_gpio_cfg.h" 1
+# 14 "./MCAL_Layer/I2C/../GPIO/hal_gpio.h" 2
+# 31 "./MCAL_Layer/I2C/../GPIO/hal_gpio.h"
 typedef enum{
     LOW=0,
     HIGH
@@ -5192,36 +5205,36 @@ Std_ReturnType gpio_port_get_direction_status(port_index_t port, uint8* directio
 Std_ReturnType gpio_port_write_logic(port_index_t port, uint8 logic);
 Std_ReturnType gpio_port_read_logic(port_index_t port, uint8* logic);
 Std_ReturnType gpio_port_toggle_logic(port_index_t port);
-# 12 "./MCAL_Layer/SPI/hal_spi.h" 2
+# 12 "./MCAL_Layer/I2C/hal_i2c.h" 2
 
 
 
-# 1 "./MCAL_Layer/SPI/../Interrupt/mcal_internal_interrupt.h" 1
-# 13 "./MCAL_Layer/SPI/../Interrupt/mcal_internal_interrupt.h"
-# 1 "./MCAL_Layer/SPI/../Interrupt/mcal_interrupt_config.h" 1
-# 14 "./MCAL_Layer/SPI/../Interrupt/mcal_interrupt_config.h"
-# 1 "./MCAL_Layer/SPI/../Interrupt/mcal_interrupt_gen_cfg.h" 1
-# 14 "./MCAL_Layer/SPI/../Interrupt/mcal_interrupt_config.h" 2
-# 59 "./MCAL_Layer/SPI/../Interrupt/mcal_interrupt_config.h"
+# 1 "./MCAL_Layer/I2C/../Interrupt/mcal_internal_interrupt.h" 1
+# 13 "./MCAL_Layer/I2C/../Interrupt/mcal_internal_interrupt.h"
+# 1 "./MCAL_Layer/I2C/../Interrupt/mcal_interrupt_config.h" 1
+# 14 "./MCAL_Layer/I2C/../Interrupt/mcal_interrupt_config.h"
+# 1 "./MCAL_Layer/I2C/../Interrupt/mcal_interrupt_gen_cfg.h" 1
+# 14 "./MCAL_Layer/I2C/../Interrupt/mcal_interrupt_config.h" 2
+# 59 "./MCAL_Layer/I2C/../Interrupt/mcal_interrupt_config.h"
 typedef enum {
     INTERRUPT_LOW_PRIORITY = 0 ,
     INTERRUPT_HIGH_PRIORITY
 }interrupt_priority_cfg;
 
 typedef void (*InterruptHandler)(void);
-# 13 "./MCAL_Layer/SPI/../Interrupt/mcal_internal_interrupt.h" 2
+# 13 "./MCAL_Layer/I2C/../Interrupt/mcal_internal_interrupt.h" 2
 
-# 1 "./MCAL_Layer/SPI/../Interrupt/../ADC/hal_adc.h" 1
-# 12 "./MCAL_Layer/SPI/../Interrupt/../ADC/hal_adc.h"
-# 1 "./MCAL_Layer/SPI/../Interrupt/../ADC/hal_adc_cfg.h" 1
-# 12 "./MCAL_Layer/SPI/../Interrupt/../ADC/hal_adc.h" 2
-
-
+# 1 "./MCAL_Layer/I2C/../Interrupt/../ADC/hal_adc.h" 1
+# 12 "./MCAL_Layer/I2C/../Interrupt/../ADC/hal_adc.h"
+# 1 "./MCAL_Layer/I2C/../Interrupt/../ADC/hal_adc_cfg.h" 1
+# 12 "./MCAL_Layer/I2C/../Interrupt/../ADC/hal_adc.h" 2
 
 
-# 1 "./MCAL_Layer/SPI/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 1
-# 16 "./MCAL_Layer/SPI/../Interrupt/../ADC/hal_adc.h" 2
-# 100 "./MCAL_Layer/SPI/../Interrupt/../ADC/hal_adc.h"
+
+
+# 1 "./MCAL_Layer/I2C/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 1
+# 16 "./MCAL_Layer/I2C/../Interrupt/../ADC/hal_adc.h" 2
+# 100 "./MCAL_Layer/I2C/../Interrupt/../ADC/hal_adc.h"
 extern InterruptHandler ADC_InterruptHandler;
 
 
@@ -5244,7 +5257,7 @@ typedef enum {
     ADC_CHANNEL_AN11,
     ADC_CHANNEL_AN12,
 }adc_channel_select_t;
-# 130 "./MCAL_Layer/SPI/../Interrupt/../ADC/hal_adc.h"
+# 130 "./MCAL_Layer/I2C/../Interrupt/../ADC/hal_adc.h"
 typedef enum {
     ADC_0_TAD = 0,
     ADC_2_TAD,
@@ -5276,7 +5289,7 @@ typedef struct {
 
         void(*ADC_InterruptHandler)(void);
 
-        interrupt_priority_cfg priority;
+
 
 
     adc_acquisition_time_t acquisition_time;
@@ -5298,59 +5311,52 @@ Std_ReturnType ADC_IsConversionDone(const adc_conf_t *_adc, uint8 *conversion_st
 Std_ReturnType ADC_GetConversionResult(const adc_conf_t *_adc, adc_result_t *conversion_result);
 Std_ReturnType ADC_GetConversion_Blocking(const adc_conf_t *_adc, adc_channel_select_t channel ,adc_result_t *conversion_result );
 Std_ReturnType ADC_StartConversion_Interrupt(const adc_conf_t *_adc, adc_channel_select_t channel);
-# 14 "./MCAL_Layer/SPI/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
-# 151 "./MCAL_Layer/SPI/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h"
+# 14 "./MCAL_Layer/I2C/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
+# 151 "./MCAL_Layer/I2C/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h"
     extern InterruptHandler SPI_InterruptHandler;
-# 15 "./MCAL_Layer/SPI/hal_spi.h" 2
-
-# 1 "./MCAL_Layer/SPI/hal_spi_cfg.h" 1
-# 16 "./MCAL_Layer/SPI/hal_spi.h" 2
-# 56 "./MCAL_Layer/SPI/hal_spi.h"
-typedef enum
+    extern InterruptHandler I2C_DefaultInterruptHandler;
+    extern InterruptHandler I2C_Report_Write_Collision_InterruptHandler;
+# 15 "./MCAL_Layer/I2C/hal_i2c.h" 2
+# 86 "./MCAL_Layer/I2C/hal_i2c.h"
+typedef struct
 {
-    SPI_MASTER_MODE_CLK_FOSC_DIV_4 = 0 ,
-    SPI_MASTER_MODE_CLK_FOSC_DIV_16,
-    SPI_MASTER_MODE_CLK_FOSC_DIV_64,
-    SPI_MASTER_MODE_CLK_TMR2_OUTPUT_DIV_2 ,
-    SPI_SLAVE_MODE_SS_PIN_CONTROL_ENABLED,
-    SPI_SLAVE_MODE_SS_PIN_CONTROL_DISABLED,
-}spi_clk_mode_t;
+    uint8 i2c_mode_cfg;
+    uint8 i2c_slave_address;
+    uint8 i2c_mode : 1;
+    uint8 i2c_slew_rate : 1;
+    uint8 i2c_SMBus_control : 1;
+    uint8 i2c_general_call : 1;
+    uint8 i2c_reserved : 4;
+}i2c_configs_t;
 
 typedef struct
 {
-    uint8 spi_transmit_phase_cfg :1;
-    uint8 spi_sample_time_cfg :1;
-    uint8 spi_polarity_cfg :1;
-    uint8 spi_mode :1;
-    uint8 spi_reserved :4;
-    spi_clk_mode_t spi_clk_mode;
+    uint32 i2c_clock;
 
-    InterruptHandler SPI_InterruptHandler ;
-
-    interrupt_priority_cfg priority ;
+    InterruptHandler I2C_Report_Write_Collision;
+    InterruptHandler I2C_Report_Receieve_Overflow;
+    InterruptHandler I2C_DefaultInterruptHandler;
 
 
-}spi_config_t;
-
-extern uint8 SPI_Slave_Receive_Status;
 
 
-Std_ReturnType SPI_Init(spi_config_t* spi_config);
-Std_ReturnType SPI_Deinit(spi_config_t* spi_config);
-Std_ReturnType SPI_Master_Transcieve_Blocking(uint8 data_to_transmit , uint8* received_data , pin_config_t* slave_select_gpio_pin);
-Std_ReturnType SPI_Master_Transmit_Blocking(uint8 data_to_transmit , pin_config_t* slave_select_gpio_pin);
-Std_ReturnType SPI_Master_Receive_Blocking(uint8* received_data , pin_config_t* slave_select_gpio_pin);
-Std_ReturnType SPI_Slave_Receive_Blocking(uint8* received_data);
-Std_ReturnType SPI_Slave_Receive_Non_Blocking(uint8* received_data);
-uint8 SPI_Slave_Receive_status(void);
-# 17 "./MCAL_Layer/mcal_layer_init.h" 2
-# 29 "./MCAL_Layer/mcal_layer_init.h"
-extern pin_config_t SS1_Pin;
-extern pin_config_t SS2_Pin;
-# 42 "./MCAL_Layer/mcal_layer_init.h"
-void mcal_layer_initialize(void);
-void SPI_ISR(void);
-# 12 "./application.h" 2
+
+    i2c_configs_t i2c_cfg;
+
+}mssp_i2c_t;
+
+
+Std_ReturnType MSSP_I2C_Init(const mssp_i2c_t *i2c_obj);
+Std_ReturnType MSSP_I2C_DeInit(const mssp_i2c_t *i2c_obj);
+Std_ReturnType MSSP_I2C_Master_Send_Start(const mssp_i2c_t *i2c_obj);
+Std_ReturnType MSSP_I2C_Master_Send_Repeated_Start(const mssp_i2c_t *i2c_obj);
+Std_ReturnType MSSP_I2C_Master_Send_Stop(const mssp_i2c_t *i2c_obj);
+Std_ReturnType MSSP_I2C_Master_Write_Blocking(const mssp_i2c_t *i2c_obj, uint8 i2c_data, uint8 *ack);
+Std_ReturnType MSSP_I2C_Master_Read_Blocking(const mssp_i2c_t *i2c_obj, uint8 ack, uint8* i2c_data);
+void MSSP_I2C_Clear_Buffer(void);
+void MSSP_I2C_Write_To_Buffer(uint8 Data);
+uint8 MSSP_I2C_Read_From_Buffer(void);
+# 13 "./application.h" 2
 
 # 1 "./ECU_Layer/ecu_layer_init.h" 1
 # 12 "./ECU_Layer/ecu_layer_init.h"
@@ -5523,28 +5529,101 @@ extern chr_lcd_4bit_t lcd1;
 extern led_t led1;
 
 void ecu_layer_initialize(void);
-# 13 "./application.h" 2
+# 14 "./application.h" 2
 # 8 "application.c" 2
 
 
-volatile uint8 Data =0;
-volatile uint8 Receive_Status=0;
-uint8 status =0;
-int main()
+
+volatile uint8 Received_Data =0;
+volatile uint8 flag =0;
+void I2C_SLAVE_ISR(void)
 {
-    mcal_layer_initialize();
-    ecu_layer_initialize();
-    while(1)
+    if((((*((volatile SSPSTAT_t *)(0xFC7))).RW == 0)&&((*((volatile SSPSTAT_t *)(0xFC7))).DA == 1)))
     {
-# 28 "application.c"
-        if(0x01 == SPI_Slave_Receive_Status){
-            lcd_4bit_send_char_data(&lcd1,Data);
-            SPI_Slave_Receive_Status =0;
+        Received_Data = MSSP_I2C_Read_From_Buffer();
+
+    }
+
+    if((((*((volatile SSPSTAT_t *)(0xFC7))).RW == 0)&&((*((volatile SSPSTAT_t *)(0xFC7))).DA == 0)))
+    {
+        MSSP_I2C_Clear_Buffer();
+
+    }
+    if((((*((volatile SSPSTAT_t *)(0xFC7))).RW == 1)&&((*((volatile SSPSTAT_t *)(0xFC7))).DA == 0)))
+    {
+        MSSP_I2C_Clear_Buffer();
+        if(flag == 0)
+        {
+            flag =1;
+            MSSP_I2C_Write_To_Buffer('b');
+            ((*((volatile SSPCON1_t *)(0xFC6))).CKP = 1);
+        }
+        else
+        {
+            flag =0;
+            MSSP_I2C_Write_To_Buffer('d');
+            ((*((volatile SSPCON1_t *)(0xFC6))).CKP = 1);
         }
     }
-        return (0);
 }
-void SPI_ISR(void)
+void I2C_Master_Init(void);
+void I2C_Slave_1_Init(void);
+void I2C_Slave_2_Init(void);
+void I2C_Send_1_byte(uint8 add , uint8 Data);
+mssp_i2c_t i2c_obj;
+int main()
 {
-  SPI_Slave_Receive_Non_Blocking(&Data);
+    I2C_Slave_2_Init();
+    ecu_layer_initialize();
+
+    while(1)
+    {
+        if(Received_Data == 'B'){
+            led_turn_on(&led1);
+        }
+        if(Received_Data == 'D'){
+            led_turn_off(&led1);
+        }
+
+    }
+    return (0);
+}
+void I2C_Master_Init(void)
+{
+    i2c_obj.i2c_clock = 100000;
+    i2c_obj.i2c_cfg.i2c_SMBus_control = 0X00U;
+    i2c_obj.i2c_cfg.i2c_mode = 0X01U;
+    i2c_obj.i2c_cfg.i2c_slew_rate=0X01U;
+    i2c_obj.i2c_cfg.i2c_mode_cfg = 0X08U;
+    MSSP_I2C_Init(&i2c_obj);
+}
+void I2C_Slave_1_Init(void)
+{
+    i2c_obj.i2c_cfg.i2c_SMBus_control = 0X00U;
+    i2c_obj.i2c_cfg.i2c_mode = 0X00U;
+    i2c_obj.i2c_cfg.i2c_slew_rate=0X01U;
+    i2c_obj.i2c_cfg.i2c_mode_cfg = 0X06U;
+    i2c_obj.i2c_cfg.i2c_general_call = 0X00U;
+    i2c_obj.I2C_DefaultInterruptHandler =I2C_SLAVE_ISR;
+    i2c_obj.i2c_cfg.i2c_slave_address = 0x18;
+    MSSP_I2C_Init(&i2c_obj);
+}
+void I2C_Slave_2_Init(void)
+{
+    i2c_obj.i2c_cfg.i2c_SMBus_control = 0X00U;
+    i2c_obj.i2c_cfg.i2c_mode = 0X00U;
+    i2c_obj.i2c_cfg.i2c_slew_rate=0X01U;
+    i2c_obj.i2c_cfg.i2c_mode_cfg = 0X06U;
+    i2c_obj.i2c_cfg.i2c_general_call = 0X00U;
+    i2c_obj.I2C_DefaultInterruptHandler =I2C_SLAVE_ISR;
+    i2c_obj.i2c_cfg.i2c_slave_address = 0x62;
+    MSSP_I2C_Init(&i2c_obj);
+}
+void I2C_Send_1_byte(uint8 add , uint8 Data)
+{
+    uint8 ack =0;
+    MSSP_I2C_Master_Send_Start(&i2c_obj);
+    MSSP_I2C_Master_Write_Blocking(&i2c_obj,add,&ack);
+    MSSP_I2C_Master_Write_Blocking(&i2c_obj,Data,&ack);
+    MSSP_I2C_Master_Send_Stop(&i2c_obj);
 }

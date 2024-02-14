@@ -5129,6 +5129,21 @@ typedef union
         uint8 :4;
     };
 }SSPCON1_t;
+
+
+
+
+typedef struct
+{
+   uint8 SEN :1;
+   uint8 RSEN :1;
+   uint8 PEN :1;
+   uint8 RCEN :1;
+   uint8 ACKEN :1;
+   uint8 ACKDT :1;
+   uint8 ACKSTAT :1;
+   uint8 GCEN :1;
+}SSPCON2_t;
 # 13 "MCAL_Layer/SPI/../GPIO/hal_gpio.h" 2
 
 # 1 "MCAL_Layer/SPI/../GPIO/hal_gpio_cfg.h" 1
@@ -5267,7 +5282,7 @@ typedef struct {
 
         void(*ADC_InterruptHandler)(void);
 
-        interrupt_priority_cfg priority;
+
 
 
     adc_acquisition_time_t acquisition_time;
@@ -5292,6 +5307,8 @@ Std_ReturnType ADC_StartConversion_Interrupt(const adc_conf_t *_adc, adc_channel
 # 14 "MCAL_Layer/SPI/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h" 2
 # 151 "MCAL_Layer/SPI/../Interrupt/../ADC/../Interrupt/mcal_internal_interrupt.h"
     extern InterruptHandler SPI_InterruptHandler;
+    extern InterruptHandler I2C_DefaultInterruptHandler;
+    extern InterruptHandler I2C_Report_Write_Collision_InterruptHandler;
 # 15 "MCAL_Layer/SPI/hal_spi.h" 2
 
 # 1 "MCAL_Layer/SPI/hal_spi_cfg.h" 1
@@ -5318,7 +5335,7 @@ typedef struct
 
     InterruptHandler SPI_InterruptHandler ;
 
-    interrupt_priority_cfg priority ;
+
 
 
 }spi_config_t;
@@ -5333,7 +5350,6 @@ Std_ReturnType SPI_Master_Transmit_Blocking(uint8 data_to_transmit , pin_config_
 Std_ReturnType SPI_Master_Receive_Blocking(uint8* received_data , pin_config_t* slave_select_gpio_pin);
 Std_ReturnType SPI_Slave_Receive_Blocking(uint8* received_data);
 Std_ReturnType SPI_Slave_Receive_Non_Blocking(uint8* received_data);
-uint8 SPI_Slave_Receive_status(void);
 # 17 "MCAL_Layer/mcal_layer_init.h" 2
 # 29 "MCAL_Layer/mcal_layer_init.h"
 extern pin_config_t SS1_Pin;
@@ -5350,7 +5366,7 @@ typedef struct
 
         void(*TMR1_InterruptHandler)(void);
 
-        interrupt_priority_cfg priority;
+
 
 
     uint16 timer1_preload_value;
@@ -5407,7 +5423,7 @@ void SPI_Slave_Init(void){
     spi_obj2.spi_polarity_cfg=0x00U;
     spi_obj2.spi_transmit_phase_cfg=0x00U;
     spi_obj2.spi_sample_time_cfg=0x01U;
-    spi_obj2.SPI_InterruptHandler = SPI_ISR;
+
     SPI_Init(&spi_obj2);
 }
 void SS_Pins_Init()

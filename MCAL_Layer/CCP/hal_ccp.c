@@ -507,7 +507,6 @@ static Std_ReturnType CCP1_Interrupt_Init(const ccp_t * _ccp_obj )
         CCP1_InterruptHandler = _ccp_obj->CCP_Interrupt_Handler;
     /*   Interrupt  Priority Configurations   */    
     #if (INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_DISABLE)
-            INTERRUPT_PriorityLevelsDisable();
             INTERRUPT_GlobalInterruptEnable();
             INTERRUPT_PeripheralInterruptEnable();
     #elif (INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_ENABLE)
@@ -544,7 +543,6 @@ static Std_ReturnType CCP2_Interrupt_Init(const ccp_t * _ccp_obj )
         CCP2_InterruptHandler = _ccp_obj->CCP_Interrupt_Handler;
     /*   Interrupt  Priority Configurations   */    
     #if (INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_DISABLE)
-            INTERRUPT_PriorityLevelsDisable();
             INTERRUPT_GlobalInterruptEnable();
             INTERRUPT_PeripheralInterruptEnable();
     #elif (INTERRUPT_PRIORITY_LEVELS_ENABLE == INTERRUPT_FEATURE_ENABLE)

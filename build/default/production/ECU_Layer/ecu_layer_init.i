@@ -5132,6 +5132,21 @@ typedef union
         uint8 :4;
     };
 }SSPCON1_t;
+
+
+
+
+typedef struct
+{
+   uint8 SEN :1;
+   uint8 RSEN :1;
+   uint8 PEN :1;
+   uint8 RCEN :1;
+   uint8 ACKEN :1;
+   uint8 ACKDT :1;
+   uint8 ACKSTAT :1;
+   uint8 GCEN :1;
+}SSPCON2_t;
 # 13 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio.h" 2
 
 # 1 "ECU_Layer/7_Segment/../../MCAL_Layer/GPIO/hal_gpio_cfg.h" 1
@@ -5383,12 +5398,13 @@ chr_lcd_4bit_t lcd1 ={
 };
 # 130 "ECU_Layer/ecu_layer_init.c"
 led_t led1 = {
-    .port_name=PORTB_INDEX,
-    .pin=PIN7,
+    .port_name=PORTD_INDEX,
+    .pin=PIN0,
     .led_status=LOW
 };
 # 154 "ECU_Layer/ecu_layer_init.c"
 void ecu_layer_initialize(void){
      Std_ReturnType ret=(Std_ReturnType)0x00;
-     ret = lcd_4bit_initialize(&lcd1);
+
+     ret = led_initialize(&led1);
 }
